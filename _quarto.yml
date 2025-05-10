@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Bezia Lemma"
+  sidebar:
+    contents: auto
+    search: false
+format:
+  html:
+    theme:
+      - cosmo
+    css: styles.css
+    toc: true
+
+engines: ['julia']
+
+

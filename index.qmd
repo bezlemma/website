@@ -1,0 +1,60 @@
+---
+title: "" # Restored page title
+engine: julia
+format:
+  html:
+    toc: false # No table of contents for a splash page
+    css: styles.css # Ensure styles.css is linked
+---
+
+::: {.hero}
+```{=html}
+<div class="hero-content">
+  <div class="hero-image-container">
+    <img src="./assets/bezflag.jpg" alt="Bezia Lemma" class="hero-image"/> <!-- Corrected image path -->
+  </div>
+  <div class="hero-text">
+    <h2>Exploring the Frontiers of Biophysics</h2>
+  </div>
+</div>
+```
+:::
+
+
+## Major Publications
+
+::: {.papers-grid}
+
+::: {.paper-box .color1}
+::: {.paper-image}
+![](./assets/ActiveMicrophase.png){width="120px"}
+:::
+::: {.paper-details}
+#### [Active microphase separation in mixtures of microtubules and tip-accumulating molecular motors](https://journals.aps.org/prx/pdf/10.1103/PhysRevX.12.031006)
+```{=html}
+<p class="paper-year">2022</p>
+```
+:::
+:::
+
+::: {.paper-box .color2}
+::: {.paper-image}
+![](./assets/SpatialPatterning.png){width="120px"}
+:::
+::: {.paper-details}
+#### [Spatial patterning of energy metabolism during tissue morphogenesis](https://www.sciencedirect.com/science/article/pii/S0955067423000844)
+```{=html}
+<p class="paper-year">2023</p>
+```
+:::
+:::
+
+::: {.paper-box .color3}
+::: {.paper-image}
+![](./assets/StructureandDynamics.png){width="120px"}
+:::
+::: {.paper-details}
+#### [Structure and dynamics of motor-driven microtubule bundles](https://pubs.rsc.org/en/content/articlehtml/2024/sm/d3sm01336g)
+```{=html}
+<p class="paper-year">2024</p>
+```

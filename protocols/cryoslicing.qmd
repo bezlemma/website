@@ -1,0 +1,41 @@
+---
+title: "Cryo-Embedding and Slicing"
+format:
+  html:
+    toc: false
+---
+
+> **Reference:** Plasticity in airway smooth muscle differentiation during mouse lung development, Goodwin, Katharine et al. Developmental Cell, Volume 58, Issue 5, 338 - 347.e4
+
+## Preparing for Frozen Embedding
+
+1.  Fix in 4% PFA at 4 degrees (time depends on sample, at least 30 min).
+2.  Rinse in PBS or wash in PBS overnight, depending on sample.
+3.  Wash 1 hr on shaker at room temperature in 20% sucrose (=2 g of sucrose in a 15 ml tube filled up to 10 ml with preferably sterile 1X PBS, store at 4C).
+4.  Wash 1 hr on shaker at room temperature in 30% sucrose (=3 g of sucrose in a 15 ml tube filled up to 10 ml with preferably sterile 1X PBS, store at 4C).
+5.  Wash 1 hr on shaker at room temperature in 1:1 OCT:30% sucrose (store at 4C).
+6.  Wash overnight on shaker at 4 degrees in 1:1 OCT:30% sucrose.
+
+## Embedding and Freezing
+
+### Materials Needed
+- Dry Ice or similar freezing agent.
+- Cube plastic inserts.
+- OCT (Optimal Cutting Temperature compound).
+- Forceps.
+- Sharpie.
+
+### Procedure
+
+1.  Add a drop of OCT from the squeeze bottle to each insert, enough to cover the bottom of the insert well, and label each insert using a sharpie.
+2.  Using forceps, transfer lungs over to the inserts. Depending on tissue size, you might be able to move the sample in a little bubble of OCT suspended between the tips of the forceps.
+3.  Pipette away solution from around the lung to remove sucrose.
+4.  Remove one piece of dry ice, maybe 1-2 inches long, and place on bench to sublimate until it has a flat surface.
+5.  Flip the dry ice piece over and place a plastic cube insert onto the flat surface. After a few moments the OCT will turn white as it freezes.
+6.  After freezing, add more OCT on top to fill the insert.
+7.  Keep holding the insert on the dry ice until the OCT block has frozen through.
+8.  Store at -80°C until ready to cryo-slice.
+
+## Slicing and Mounting
+
+*(Procedure details to be added)*

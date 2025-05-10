@@ -1,0 +1,119 @@
+---
+title: "Julia Quick Start"
+---
+
+Download Julia here: [https://julialang.org/downloads/](https://julialang.org/downloads/)
+
+Open the Julia application. You should see a startup banner similar to this:
+
+```text
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version x.y.z (YYYY-MM-DD)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia>
+```
+*Try typing in 2+2 and hitting enter, or π or other commands to play around for a second*
+
+## Install Visual Studio Code (VS Code)
+
+*After* confirming Julia runs, download and install VS Code: [https://code.visualstudio.com/](https://code.visualstudio.com/)
+
+*   Open VS Code.
+*   Click on the **Extensions** icon in the Activity Bar on the side of the window. It looks like four squares forming a larger square, with the top-right square slightly detached.
+*   Search for "Julia" in the search bar.
+*   Find the extension named **Julia** published by `julialang` and click **Install**.
+
+## Create and Run Your First Julia File
+
+*   Create a new file named `HelloJulia.jl`.
+*   Open this file in VS Code.
+*   Paste the following code into the file:
+
+```julia
+println("The first digits of pi are: ", pi)
+```
+
+*   Run the code by clicking the **Run** button (a trinagluar play icon) in the top-right corner of the editor.
+
+
+# Manage Julia Packages
+
+In the VS Code terminal panel where you saw the output, you should see the Julia prompt `julia>`. Press the `]` key (right square bracket). The prompt will change to indicate you are in package mode. To exit `Pkg` mode and return to the standard `julia>` prompt, press the `Backspace` key.
+
+While in `Pkg` mode, type the following command and press Enter:
+
+```julia
+add GLMakie CairoMakie DataFrames
+```
+
+Then wait for installation, this can take awhile.
+
+
+## Graph some data
+
+Now you can modify your `HelloJulia.jl` script (or create a new one) to use these packages. Here's an example that creates a simple plot using Makie and saves it as a PDF:
+
+```{julia}
+using GLMakie, DataFrames #using GLMakie, CairoMakie, 
+
+# Activate CairoMakie for saving vector graphics like PDF
+GLMakie.activate!() #CairoMakie.activate!()
+
+# Create some sample data
+x = 0:0.1:2pi
+y_sin = sin.(x)
+y_cos = cos.(x)
+
+# Create a DataFrame (optional, but useful to show now rather that later)
+df = DataFrame(X=x, SinY=y_sin, CosY=y_cos)
+
+# Create the plot figure and axis
+fig1 = Figure(size = (400, 400))
+ax = Axis(fig1[1, 1], xlabel = "X [um]", ylabel = "Y [Pa]",
+          title = "Sine and Cosine Waves")
+
+# Plot the lines
+lines!(ax, df.X, df.SinY, label = "sin(x)", color = :blue, linewidth = 2)
+lines!(ax, df.X, df.CosY, label = "cos(x)", color = :red, linewidth = 2)
+
+axislegend(ax) # Add a legend
+
+# Show the plot in an interactive window (uses GLMakie backend)
+# GLMakie.activate!() # GLMakie is often the default interactive backend
+#display(fig) # Or just `fig` as the last line in a Quarto cell
+
+# Save the plot as a PDF (uses CairoMakie backend)
+# Ensure CairoMakie is active if you uncomment this
+# CairoMakie.activate!()
+# save("plot.pdf", fig) # This would save to the current directory (tutorials/)
+fig1
+```
+
+
+## WGLMakie Plots
+
+Here is a fancier bit of code to make a 3D plot:
+
+```{julia}
+#| label: fig-makie
+#| fig-cap: "A Makie Plot"
+
+using WGLMakie
+
+WGLMakie.activate!()
+x = y = z = 1..10 # start, stop, intervl
+x_r = y_r = z_r = 1:10
+f(x, y, z) = x^2 + y^2 + z^2
+vol = [f(ix, iy, iz) for ix in x_r, iy in y_r, iz in z_r]
+fig2 = Figure(size = (400,400))
+ax2 = Axis3(fig2[1,1]; perspectiveness = 0.5, azimuth = 2.19,
+    elevation = 0.57, aspect = (1, 1, 1))
+contour!(ax2, x, y, z, vol; levels = 10, colormap = :Egypt, transparency = true)
+fig2
+```
