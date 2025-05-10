@@ -123,27 +123,3 @@ contour!(ax_contour, x, y, z, vol; levels = 10, colormap = :Egypt, transparency 
 
 fig_contour # Return the figure object directly
 ```
-
-```{julia}
-#| label: fig-interactive-plot
-#| fig-cap: "Interactive WGLMakie Plot"
-#| warning: false
-using WGLMakie
-using JSServe
-# using Markdown # Not needed if not explicitly using JSServe.App/Page
-WGLMakie.activate!()
-# set_theme!(theme_light()) # Optional
-
-# Sample data
-categories = ["A", "B", "C", "D", "E"]
-values = [10, 20, 15, 25, 30]
-colors = [:red, :blue, :green, :yellow, :purple]
-
-# Create the figure
-fig_bar = Figure(size = (600, 400)) # Renamed variable
-ax_bar = Axis(fig_bar[1, 1], title = "Interactive Bar Chart")
-barplot!(ax_bar, 1:length(categories), values, color = colors)
-ax_bar.xticks = (1:length(categories), categories)
-
-fig_bar # Return the figure object directly
-```
