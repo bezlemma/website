@@ -314,18 +314,10 @@ julia&gt;</code></pre>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">contour!</span>(ax_contour, x, y, z, vol; levels <span class="op">=</span> <span class="fl">10</span>, colormap <span class="op">=</span> <span class="op">:</span>Egypt, transparency <span class="op">=</span> <span class="cn">true</span>)</span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>fig_contour <span class="co"># Return the figure object directly</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-bright-green-fg ansi-bold">Precompiling</span> JSServe...
-   2155.8 ms<span class="ansi-green-fg">  ✓ </span>JSServe
-  1 dependency successfully precompiled in 3 seconds. 50 already precompiled.
-</pre>
-</div>
-</div>
 <div id="fig-makie" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-makie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="bonito-fragment" id="b432f7f5-fb1d-445a-8f53-b51b056ed766" data-jscall-id="root">
+<div class="bonito-fragment" id="a6007494-be6e-4b44-8724-a4868b3cba3b" data-jscall-id="root">
   <div>
     <script src="http://localhost:9384/assets/9bde8b9b714acb06025ad706b0d4e4b5d27d59d5-Bonito.bundled.js?1a6c13a306d05f37f64912f41d6795fa07f57642" type="module"></script>
     <style></style>
@@ -333,13 +325,13 @@ julia&gt;</code></pre>
   </div>
   <div>
     <script type="module">    Bonito.lock_loading(() => {
-        return Bonito.fetch_binary('http://localhost:9384/assets/6dd5e2437676e98ef2b1ba4c8297caf6b9ebfab2-10940805945038417273.bin').then(msgs=> Bonito.init_session('b432f7f5-fb1d-445a-8f53-b51b056ed766', msgs, 'root', false));
+        return Bonito.fetch_binary('http://localhost:9384/assets/d93e91582720329ac1962bf445bd177015536d23-5201737084367512101.bin').then(msgs=> Bonito.init_session('a6007494-be6e-4b44-8724-a4868b3cba3b', msgs, 'root', false));
     })
 </script>
     <script type="module">    import('http://localhost:9384/assets/43b5b8ddec3893869fdace7d4e11e7413b3ab69d-Websocket.bundled.js?3577d252c5b9352acc5d2c244cca9f65721974ec').then(WS => {
         WS.setup_connection({
             proxy_url: 'http://localhost:9384',
-            session_id: 'b432f7f5-fb1d-445a-8f53-b51b056ed766',
+            session_id: 'a6007494-be6e-4b44-8724-a4868b3cba3b',
             compression_enabled: false,
             query: '',
             main_connection: true
@@ -354,61 +346,6 @@ julia&gt;</code></pre>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-makie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: A Makie Plot
-</figcaption>
-</figure>
-</div>
-</div>
-<div id="cell-fig-interactive-plot" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">WGLMakie</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">JSServe</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># using Markdown # Not needed if not explicitly using JSServe.App/Page</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>WGLMakie.<span class="fu">activate!</span>()</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># set_theme!(theme_light()) # Optional</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>categories <span class="op">=</span> [<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>]</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [<span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">15</span>, <span class="fl">25</span>, <span class="fl">30</span>]</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="op">:</span>red, <span class="op">:</span>blue, <span class="op">:</span>green, <span class="op">:</span>yellow, <span class="op">:</span>purple]</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the figure</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>fig_bar <span class="op">=</span> <span class="fu">Figure</span>(size <span class="op">=</span> (<span class="fl">600</span>, <span class="fl">400</span>)) <span class="co"># Renamed variable</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>ax_bar <span class="op">=</span> <span class="fu">Axis</span>(fig_bar[<span class="fl">1</span>, <span class="fl">1</span>], title <span class="op">=</span> <span class="st">"Interactive Bar Chart"</span>)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot!</span>(ax_bar, <span class="fl">1</span><span class="op">:</span><span class="fu">length</span>(categories), values, color <span class="op">=</span> colors)</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>ax_bar.xticks <span class="op">=</span> (<span class="fl">1</span><span class="op">:</span><span class="fu">length</span>(categories), categories)</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>fig_bar <span class="co"># Return the figure object directly</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-interactive-plot" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-interactive-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="bonito-fragment" id="7d9b988d-6b40-4652-ae85-7f84da2e0b1d" data-jscall-id="root">
-  <div>
-    <script src="http://localhost:9384/assets/9bde8b9b714acb06025ad706b0d4e4b5d27d59d5-Bonito.bundled.js?1a6c13a306d05f37f64912f41d6795fa07f57642" type="module"></script>
-    <style></style>
-    <div></div>
-  </div>
-  <div>
-    <script type="module">    Bonito.lock_loading(() => {
-        return Bonito.fetch_binary('http://localhost:9384/assets/a65af42b7e6921755f69fe6ba1b2ca1720a86b52-13615168882587085116.bin').then(msgs=> Bonito.init_session('7d9b988d-6b40-4652-ae85-7f84da2e0b1d', msgs, 'root', false));
-    })
-</script>
-    <script type="module">    import('http://localhost:9384/assets/43b5b8ddec3893869fdace7d4e11e7413b3ab69d-Websocket.bundled.js?3577d252c5b9352acc5d2c244cca9f65721974ec').then(WS => {
-        WS.setup_connection({
-            proxy_url: 'http://localhost:9384',
-            session_id: '7d9b988d-6b40-4652-ae85-7f84da2e0b1d',
-            compression_enabled: false,
-            query: '',
-            main_connection: true
-        })
-    })
-</script>
-    <div style="width: 100%; height: 100%" data-jscall-id="1">
-      <canvas data-jp-suppress-context-menu="" style="display: block" data-jscall-id="2" data-lm-suppress-shortcuts="true" tabindex="0"></canvas>
-    </div>
-  </div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-interactive-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Interactive WGLMakie Plot
 </figcaption>
 </figure>
 </div>
