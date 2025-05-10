@@ -14,14 +14,12 @@ format:
     <img src="./assets/bezflag.jpg" alt="Bezia Lemma" class="hero-image"/> <!-- Corrected image path -->
   </div>
   <div class="hero-text">
-    <h2>Exploring the Frontiers of Biophysics</h2>
+    <h2>From multiscale physics to physiology</h2>
   </div>
 </div>
 ```
 :::
 
-
-## Major Publications
 
 ::: {.papers-grid}
 

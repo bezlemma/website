@@ -1,5 +1,9 @@
 ---
 title: "Julia Quick Start"
+format:
+  html:
+    toc: false
+    embed-resources: false
 ---
 
 Download Julia here: [https://julialang.org/downloads/](https://julialang.org/downloads/)
@@ -18,7 +22,7 @@ Open the Julia application. You should see a startup banner similar to this:
 
 julia>
 ```
-*Try typing in 2+2 and hitting enter, or π or other commands to play around for a second*
+*Try typing in 2+2 and hitting enter. If you know LaTeX, Julia is happy to think about LaTeX commands, so try typing in \pi whcih turns into π and hitting enter*
 
 ## Install Visual Studio Code (VS Code)
 
@@ -105,15 +109,41 @@ Here is a fancier bit of code to make a 3D plot:
 #| fig-cap: "A Makie Plot"
 
 using WGLMakie
+using JSServe # JSServe is a dependency of WGLMakie, but explicit import is fine
 
 WGLMakie.activate!()
-x = y = z = 1..10 # start, stop, intervl
+x = y = z = 1..10
 x_r = y_r = z_r = 1:10
-f(x, y, z) = x^2 + y^2 + z^2
+f(ix, iy, iz) = ix^2 + iy^2 + iz^2
 vol = [f(ix, iy, iz) for ix in x_r, iy in y_r, iz in z_r]
-fig2 = Figure(size = (400,400))
-ax2 = Axis3(fig2[1,1]; perspectiveness = 0.5, azimuth = 2.19,
+fig_contour = Figure(size = (400,400)) # Renamed variable
+ax_contour = Axis3(fig_contour[1,1]; perspectiveness = 0.5, azimuth = 2.19,
     elevation = 0.57, aspect = (1, 1, 1))
-contour!(ax2, x, y, z, vol; levels = 10, colormap = :Egypt, transparency = true)
-fig2
+contour!(ax_contour, x, y, z, vol; levels = 10, colormap = :Egypt, transparency = true)
+
+fig_contour # Return the figure object directly
+```
+
+```{julia}
+#| label: fig-interactive-plot
+#| fig-cap: "Interactive WGLMakie Plot"
+#| warning: false
+using WGLMakie
+using JSServe
+# using Markdown # Not needed if not explicitly using JSServe.App/Page
+WGLMakie.activate!()
+# set_theme!(theme_light()) # Optional
+
+# Sample data
+categories = ["A", "B", "C", "D", "E"]
+values = [10, 20, 15, 25, 30]
+colors = [:red, :blue, :green, :yellow, :purple]
+
+# Create the figure
+fig_bar = Figure(size = (600, 400)) # Renamed variable
+ax_bar = Axis(fig_bar[1, 1], title = "Interactive Bar Chart")
+barplot!(ax_bar, 1:length(categories), values, color = colors)
+ax_bar.xticks = (1:length(categories), categories)
+
+fig_bar # Return the figure object directly
 ```
