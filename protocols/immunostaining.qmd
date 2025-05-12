@@ -27,9 +27,16 @@ format:
 
 ### Day 1
 
-1.  **Fixation:** Add sample to PFA with at least a 1:20 sample-to-PFA volume ratio.
+1.  **Fixation:** Add sample to cold PFA with at least a 1:20 sample-to-PFA volume ratio.
     *   Use 4% just-made or just-thawed cold PFA, in PBS or other pH ~7 buffered solution.
-    *   Excess PFA is okay; often use 1 mL by default.
+    *   Use 1 mL PFA by default.
+
+    ::: {.column-margin}
+    **Formaldehyde ($CH_2O$) Chemistry**
+
+    $CH_2O$ reacts with primary amine groups, R-$NH_2$, in proteins. This forms a $R-N=CH_2$ which can react with another amine group to form a stable methylene bridge $R-NH-CH_2-NH-R'$. These bridges cross-link proteins, solidifying the biological structure.
+    :::
+
 2.  **Incubation (Cold):** Place on a cold shaker (4°C) for 30 minutes.
     *   PFA diffusion into the lung at 4°C takes ~30 minutes for 400 µm.
 3.  **Crosslinking:** Bring the sample back to room temperature (RT) to allow PFA to cross-link for 15 minutes.
@@ -69,10 +76,7 @@ format:
     *   Secondaries can be frozen once but not freeze-thawed repeatedly.
     *   Large samples may need 2-3 days of incubation.
 
-#### Note on 2-Photon (2P) Microscopy Compatibility:
-A compatible set of secondaries/dyes for 2P imaging: DAPI, 488 Phalloidin, 568 Donkey anti-Rabbit (or 594), 680 Donkey anti-Mouse.
-
-### Day 4 (or Day 3 Evening) - Washing & Clearing
+### Day 4 - Washing & Clearing
 
 13. **Wash 4:** Perform 3 washes with TBST for 15 minutes each at RT.
     *   To exchange media, use a narrow pipette tip (≤200 µL) kept above the sample, or use a cut tip carefully.

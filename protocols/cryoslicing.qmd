@@ -38,4 +38,3 @@ format:
 
 ## Slicing and Mounting
 
-*(Procedure details to be added)*
