@@ -37,7 +37,7 @@
     "href": "tutorials/install_julia.html#graph-some-data",
     "title": "Julia Quick Start",
     "section": "Graph some data",
-    "text": "Graph some data\nNow you can modify your HelloJulia.jl script (or create a new one) to use these packages. Here’s an example that creates a simple plot using Makie and saves it as a PDF:\n\nusing GLMakie, DataFrames #using GLMakie, CairoMakie, \n\n# Activate CairoMakie for saving vector graphics like PDF\nGLMakie.activate!() #CairoMakie.activate!()\n\n# Create some sample data\nx = 0:0.1:2pi\ny_sin = sin.(x)\ny_cos = cos.(x)\n\n# Create a DataFrame (optional, but useful to show now rather that later)\ndf = DataFrame(X=x, SinY=y_sin, CosY=y_cos)\n\n# Create the plot figure and axis\nfig1 = Figure(size = (400, 400))\nax = Axis(fig1[1, 1], xlabel = \"X [um]\", ylabel = \"Y [Pa]\",\n          title = \"Sine and Cosine Waves\")\n\n# Plot the lines\nlines!(ax, df.X, df.SinY, label = \"sin(x)\", color = :blue, linewidth = 2)\nlines!(ax, df.X, df.CosY, label = \"cos(x)\", color = :red, linewidth = 2)\n\naxislegend(ax) # Add a legend\n\n# Show the plot in an interactive window (uses GLMakie backend)\n# GLMakie.activate!() # GLMakie is often the default interactive backend\n#display(fig) # Or just `fig` as the last line in a Quarto cell\n\n# Save the plot as a PDF (uses CairoMakie backend)\n# Ensure CairoMakie is active if you uncomment this\n# CairoMakie.activate!()\n# save(\"plot.pdf\", fig) # This would save to the current directory (tutorials/)\nfig1",
+    "text": "Graph some data\nNow you can modify your HelloJulia.jl script (or create a new one) to use these packages. Here’s an example that creates a simple plot using Makie and saves it as a PDF:\n\nusing GLMakie, DataFrames # CairoMakie\n\n# Create some sample data\nx = 0:0.1:2pi\ny_sin = sin.(x)\ny_cos = cos.(x)\n\n# Create a DataFrame (optional, but useful to show now rather that later)\ndf = DataFrame(X=x, SinY=y_sin, CosY=y_cos)\n\n# Create the plot figure and axis\nfig = Figure(size = (400, 400))\nax = Axis(fig[1, 1], xlabel = \"X [um]\", ylabel = \"Y [Pa]\")\n\n# Plot the lines\nlines!(ax, df.X, df.SinY, label = \"sin(x)\", color = :blue, linewidth = 2)\nlines!(ax, df.X, df.CosY, label = \"cos(x)\", color = :red, linewidth = 2)\n\naxislegend(ax) # Add a legend\n\n# Show the plot in an interactive window\n#GLMakie.activate!() \nfig #or display(fig)\n\n\n# Save the plot as a PDF\n#CairoMakie.activate!()\n#save(\"plot.pdf\", fig)",
     "crumbs": [
       "Tutorials",
       "Julia Quick Start"
@@ -48,7 +48,7 @@
     "href": "tutorials/install_julia.html#wglmakie-plots",
     "title": "Julia Quick Start",
     "section": "WGLMakie Plots",
-    "text": "WGLMakie Plots\nHere is a fancier bit of code to make a 3D plot:\n\nusing WGLMakie\nusing JSServe # JSServe is a dependency of WGLMakie, but explicit import is fine\n\nWGLMakie.activate!()\nx = y = z = 1..10\nx_r = y_r = z_r = 1:10\nf(ix, iy, iz) = ix^2 + iy^2 + iz^2\nvol = [f(ix, iy, iz) for ix in x_r, iy in y_r, iz in z_r]\nfig_contour = Figure(size = (400,400)) # Renamed variable\nax_contour = Axis3(fig_contour[1,1]; perspectiveness = 0.5, azimuth = 2.19,\n    elevation = 0.57, aspect = (1, 1, 1))\ncontour!(ax_contour, x, y, z, vol; levels = 10, colormap = :Egypt, transparency = true)\n\nfig_contour # Return the figure object directly\n\n\n\n\n  \n    \n    \n    \n  \n  \n    \n    \n    \n      \n    \n  \n\n\n\nFigure 1: A Makie Plot",
+    "text": "WGLMakie Plots",
     "crumbs": [
       "Tutorials",
       "Julia Quick Start"

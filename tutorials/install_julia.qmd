@@ -3,7 +3,7 @@ title: "Julia Quick Start"
 format:
   html:
     toc: false
-    embed-resources: false
+    embed-resources: true
 ---
 
 Download Julia here: [https://julialang.org/downloads/](https://julialang.org/downloads/)
@@ -64,10 +64,7 @@ Then wait for installation, this can take awhile.
 Now you can modify your `HelloJulia.jl` script (or create a new one) to use these packages. Here's an example that creates a simple plot using Makie and saves it as a PDF:
 
 ```{julia}
-using GLMakie, DataFrames #using GLMakie, CairoMakie, 
-
-# Activate CairoMakie for saving vector graphics like PDF
-GLMakie.activate!() #CairoMakie.activate!()
+using GLMakie, DataFrames # CairoMakie
 
 # Create some sample data
 x = 0:0.1:2pi
@@ -78,9 +75,8 @@ y_cos = cos.(x)
 df = DataFrame(X=x, SinY=y_sin, CosY=y_cos)
 
 # Create the plot figure and axis
-fig1 = Figure(size = (400, 400))
-ax = Axis(fig1[1, 1], xlabel = "X [um]", ylabel = "Y [Pa]",
-          title = "Sine and Cosine Waves")
+fig = Figure(size = (400, 400))
+ax = Axis(fig[1, 1], xlabel = "X [um]", ylabel = "Y [Pa]")
 
 # Plot the lines
 lines!(ax, df.X, df.SinY, label = "sin(x)", color = :blue, linewidth = 2)
@@ -88,38 +84,12 @@ lines!(ax, df.X, df.CosY, label = "cos(x)", color = :red, linewidth = 2)
 
 axislegend(ax) # Add a legend
 
-# Show the plot in an interactive window (uses GLMakie backend)
-# GLMakie.activate!() # GLMakie is often the default interactive backend
-#display(fig) # Or just `fig` as the last line in a Quarto cell
-
-# Save the plot as a PDF (uses CairoMakie backend)
-# Ensure CairoMakie is active if you uncomment this
-# CairoMakie.activate!()
-# save("plot.pdf", fig) # This would save to the current directory (tutorials/)
-fig1
-```
+# Show the plot in an interactive window
+#GLMakie.activate!() 
+fig #or display(fig)
 
 
-## WGLMakie Plots
-
-Here is a fancier bit of code to make a 3D plot:
-
-```{julia}
-#| label: fig-makie
-#| fig-cap: "A Makie Plot"
-
-using WGLMakie
-using JSServe # JSServe is a dependency of WGLMakie, but explicit import is fine
-
-WGLMakie.activate!()
-x = y = z = 1..10
-x_r = y_r = z_r = 1:10
-f(ix, iy, iz) = ix^2 + iy^2 + iz^2
-vol = [f(ix, iy, iz) for ix in x_r, iy in y_r, iz in z_r]
-fig_contour = Figure(size = (400,400)) # Renamed variable
-ax_contour = Axis3(fig_contour[1,1]; perspectiveness = 0.5, azimuth = 2.19,
-    elevation = 0.57, aspect = (1, 1, 1))
-contour!(ax_contour, x, y, z, vol; levels = 10, colormap = :Egypt, transparency = true)
-
-fig_contour # Return the figure object directly
+# Save the plot as a PDF
+#CairoMakie.activate!()
+#save("plot.pdf", fig)
 ```
