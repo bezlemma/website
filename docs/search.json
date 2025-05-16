@@ -44,33 +44,33 @@
     ]
   },
   {
-    "objectID": "tutorials/two_photon_microscopy.html#how-do-you-explain-2p-in-a-way-that-offers-predictive-power",
-    "href": "tutorials/two_photon_microscopy.html#how-do-you-explain-2p-in-a-way-that-offers-predictive-power",
+    "objectID": "tutorials/two_photon_microscopy.html#how-do-you-explain-this-in-a-way-that-offers-predictive-power",
+    "href": "tutorials/two_photon_microscopy.html#how-do-you-explain-this-in-a-way-that-offers-predictive-power",
     "title": "Two-Photon Microscopy",
-    "section": "How do you explain 2P in a way that offers predictive power?",
-    "text": "How do you explain 2P in a way that offers predictive power?\nI’ve been thinking about this for years. I used to offer two explanations of two-photon, one classical, one quantum. But the right way to explain this is from quantum field theory. The question is, how can you present a quantum field theory explanation of the two-photon excitation of a molecule that provides a microscopist with any experimental intuition at all?",
+    "section": "How do you explain this in a way that offers predictive power?",
+    "text": "How do you explain this in a way that offers predictive power?\nI’ve been thinking about this for years. I used to offer two explanations of two-photon, one classical, one quantum. But the right way to explain this is from quantum field theory. The question is, how can you present a quantum field theory explanation of the two-photon excitation of a molecule that provides a microscopist with any experimental intuition at all?",
     "crumbs": [
       "Tutorials",
       "Two-Photon Microscopy"
     ]
   },
   {
-    "objectID": "tutorials/two_photon_microscopy.html#where-are-the-models-of-2p-spectra",
-    "href": "tutorials/two_photon_microscopy.html#where-are-the-models-of-2p-spectra",
+    "objectID": "tutorials/two_photon_microscopy.html#where-are-the-models-of-spectra",
+    "href": "tutorials/two_photon_microscopy.html#where-are-the-models-of-spectra",
     "title": "Two-Photon Microscopy",
-    "section": "Where are the models of 2P spectra?",
-    "text": "Where are the models of 2P spectra?\nThere is very little experimental excitation spectra of 2P (despite the great efforts of some scientists!). There just isn’t any reward for that kind of work, and the people who build the fluorophores don’t quantify them via 2P before selling them. It does seem however for small molecules like the Janellia Fluorophores and the Alexa Fluorophores that one can model the excitation spectra using some quantum chemistry simulations. Where is it? Some enterprising physics student should do this and contact me.",
+    "section": "Where are the models of spectra?",
+    "text": "Where are the models of spectra?\nThere is very little experimental excitation spectra of 2P (despite the great efforts of some scientists!). There just isn’t any reward for that kind of work, and the people who build the fluorophores don’t quantify them via 2P before selling them. It does seem however for small molecules like the Janellia Fluorophores and the Alexa Fluorophores that one can model the excitation spectra using some quantum chemistry simulations. Where is it? Some enterprising physics student should do this and contact me.",
     "crumbs": [
       "Tutorials",
       "Two-Photon Microscopy"
     ]
   },
   {
-    "objectID": "tutorials/two_photon_microscopy.html#can-you-make-a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-2p-wavelength",
-    "href": "tutorials/two_photon_microscopy.html#can-you-make-a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-2p-wavelength",
+    "objectID": "tutorials/two_photon_microscopy.html#a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-or-different-wavelength",
+    "href": "tutorials/two_photon_microscopy.html#a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-or-different-wavelength",
     "title": "Two-Photon Microscopy",
-    "section": "Can you make a suite of fluorophores that excel at exciting at the same 2P wavelength?",
-    "text": "Can you make a suite of fluorophores that excel at exciting at the same 2P wavelength?\nIt would be very nice to have a single laser, and get a ton of emission that you simply seperate by wavelength. This sort of happens by accident for many small molecule fluorophores, but can you do it on purpose? Can you do it on purpose with proteins as well? Can you intentionally not do it so that I can seperate out everything?",
+    "section": "A suite of fluorophores that excel at exciting at the same or different wavelength?",
+    "text": "A suite of fluorophores that excel at exciting at the same or different wavelength?\nIt would be very nice to have a single laser, and get a ton of emission that you simply seperate by wavelength. This sort of happens by accident for many small molecule fluorophores, but can you do it on purpose? Can you do it on purpose with proteins as well? Can you intentionally not do it to help minimize imaging bleedthrough?",
     "crumbs": [
       "Tutorials",
       "Two-Photon Microscopy"
@@ -169,7 +169,7 @@
     "href": "index.html",
     "title": "Bezia Lemma",
     "section": "",
-    "text": "From multiscale physics to physiology\n    \n      Google Scholar\n       | \n      Bluesky\n    \n  \n\n\n\n\n\n\n\n\n\nStructure and dynamics of motor-driven microtubule bundles\n2024\n\n\n\n\n\n\n\nSpatial patterning of energy metabolism during tissue morphogenesis\n2023\n\n\n\n\n\n\n\nActive microphase separation in mixtures of microtubules and tip-accumulating molecular motors\n2022\n\n\n\n\n\n\n\nHierarchical phases of filamentary active matter\n2021"
+    "text": "From multiscale physics to physiology\n    \n      Google Scholar\n       | \n      Bluesky\n       | \n      LabOnTheCheap\n    \n  \n\n\n\n\n\n\n\n\n\nStructure and dynamics of motor-driven microtubule bundles\n2024\n\n\n\n\n\n\n\nSpatial patterning of energy metabolism during tissue morphogenesis\n2023\n\n\n\n\n\n\n\nActive microphase separation in mixtures of microtubules and tip-accumulating molecular motors\n2022\n\n\n\n\n\n\n\nHierarchical phases of filamentary active matter\n2021\n\n\n\n\n\n\n\nSelf-straining of actively crosslinked microtubule networks\n2019\n\n\n\n\n\n\n\nRe-entrant solidification in polymer–colloid mixtures as a consequence of competing entropic and enthalpic attractions\n2015"
   },
   {
     "objectID": "protocols/cryoslicing.html",

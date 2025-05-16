@@ -9,14 +9,33 @@ body {
 }
 
 .hero {
-    background-color: #005f73; /* A deep teal color */
+    background-color: #000000; /* Light gray background */
+    position: relative; /* Needed for z-indexing if using pseudo-elements for opacity */
     color: white;
     padding: 40px 20px; /* Adjusted padding */
     text-align: center;
-    border-bottom: 5px solid #0a9396; /* Slightly lighter teal for accent */
+    border-bottom: 5px solid #f0f0f0; /* Slightly lighter teal for accent */
+    overflow: hidden; /* Ensures pseudo-elements don't overflow */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('assets/Banner.gif');
+    background-size: cover; /* Or 'contain', 'auto', etc. based on preference */
+    background-position: center;
+    background-repeat: no-repeat; /* Or 'repeat' if desired */
+    opacity: 0.6; /* 50% transparency for the background image */
+    z-index: 1; /* Ensure it's behind the content */
 }
 
 .hero-content {
+    position: relative; /* Ensure content is above the pseudo-element */
+    z-index: 2; /* Higher z-index than the ::before pseudo-element */
     display: flex;
     flex-direction: column; /* Stack image and text vertically by default */
     align-items: center;

@@ -19,6 +19,8 @@ format:
       <a href="https://scholar.google.com/citations?hl=en&user=lmS0Yw8AAAAJ" style="color: orange; text-decoration: none;">Google Scholar</a>
       <span style="color: white;"> | </span>
       <a href="https://bsky.app/profile/bezbez.bsky.social" style="color: orange; text-decoration: none;">Bluesky</a>
+      <span style="color: white;"> | </span>
+      <a href="https://www.labonthecheap.com/" style="color: orange; text-decoration: none;">LabOnTheCheap</a>
     </div>
   </div>
 
@@ -26,7 +28,7 @@ format:
 ```
 :::
 
-::: {.papers-grid}
+::: {.papers-grid style="margin-top: 20px;"}
 
 
 ::: {.paper-box .color3}
@@ -76,7 +78,6 @@ format:
 ```
 :::
 :::
-:::
 
 ::: {.paper-box .color2}
 ::: {.paper-image}
@@ -89,5 +90,19 @@ format:
 ```
 :::
 :::
+
+
+::: {.paper-box .color1}
+::: {.paper-image}
+![](./assets/ColloidPaper.png){width="120px"}
+:::
+::: {.paper-details}
+#### [Re-entrant solidification in polymer–colloid mixtures as a consequence of competing entropic and enthalpic attractions](https://www.nature.com/articles/nmat4109)
+```{=html}
+<p class="paper-year">2015</p>
+```
+:::
+:::
+
 :::
 
