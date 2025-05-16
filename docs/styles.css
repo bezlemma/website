@@ -9,12 +9,10 @@ body {
 }
 
 .hero {
-    background-color: #000000; /* Light gray background */
+    background-color: #4b4b4b; /* Light gray background */
     position: relative; /* Needed for z-indexing if using pseudo-elements for opacity */
-    color: white;
     padding: 40px 20px; /* Adjusted padding */
     text-align: center;
-    border-bottom: 5px solid #f0f0f0; /* Slightly lighter teal for accent */
     overflow: hidden; /* Ensures pseudo-elements don't overflow */
 }
 
@@ -29,7 +27,7 @@ body {
     background-size: cover; /* Or 'contain', 'auto', etc. based on preference */
     background-position: center;
     background-repeat: no-repeat; /* Or 'repeat' if desired */
-    opacity: 0.5; /* 50% transparency for the background image */
+    opacity: 0.8; /* 50% transparency for the background image */
     z-index: 1; /* Ensure it's behind the content */
 }
 
@@ -50,13 +48,6 @@ body {
     object-fit: cover; /* Ensures the image covers the area without distortion */
     border: 4px solid #ade8f4; /* A light border, matching subtitle color */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Subtle shadow for depth */
-}
-
-.hero-text h2 { /* Styles for the text next to/below the image */
-    margin: 0;
-    font-size: 1.8em; /* Slightly adjusted font size */
-    font-weight: normal;
-    color: #ade8f4;
 }
 
 /* Responsive adjustments for hero section */
@@ -91,6 +82,7 @@ body {
     font-size: 1.5em;
     font-weight: normal;
     color: #ade8f4; 
+    text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.9); /
 }
 
 .page-container {

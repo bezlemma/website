@@ -16,11 +16,11 @@ format:
   <div class="hero-text">
     <h2>From multiscale physics to physiology</h2>
     <div style="text-align: left;">
-      <a href="https://scholar.google.com/citations?hl=en&user=lmS0Yw8AAAAJ" style="color: orange; text-decoration: none;">Google Scholar</a>
+      <a href="https://scholar.google.com/citations?hl=en&user=lmS0Yw8AAAAJ" style="color: orange; text-decoration: none; text-shadow: 1px 1px 3px #000000;">Google Scholar</a>
       <span style="color: white;"> | </span>
-      <a href="https://bsky.app/profile/bezbez.bsky.social" style="color: orange; text-decoration: none;">Bluesky</a>
+      <a href="https://bsky.app/profile/bezbez.bsky.social" style="color: orange; text-decoration: none; text-shadow: 1px 1px 3px #000000;">Bluesky</a>
       <span style="color: white;"> | </span>
-      <a href="https://www.labonthecheap.com/" style="color: orange; text-decoration: none;">LabOnTheCheap</a>
+      <a href="https://www.labonthecheap.com/" style="color: orange; text-decoration: none; text-shadow: 1px 1px 3px #000000;">LabOnTheCheap</a>
     </div>
   </div>
 
