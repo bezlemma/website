@@ -43,5 +43,8 @@
   },
   "tutorials/microscopy_training_checklist.qmd": {
     "microscopy_training_checklist.html": "97eed1ad"
+  },
+  "index2.qmd": {
+    "index2.html": "940827e7"
   }
 }

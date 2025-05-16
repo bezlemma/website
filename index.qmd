@@ -1,10 +1,9 @@
 ---
-title: "" # Restored page title
+title: "" 
 engine: julia
 format:
   html:
     toc: false # No table of contents for a splash page
-    css: styles.css # Ensure styles.css is linked
 ---
 
 ::: {.hero}
@@ -17,10 +16,14 @@ format:
     <h2>From multiscale physics to physiology</h2>
     <div style="text-align: left;">
       <a href="https://scholar.google.com/citations?hl=en&user=lmS0Yw8AAAAJ" style="color: orange; text-decoration: none; text-shadow: 1px 1px 3px #000000;">Google Scholar</a>
-      <span style="color: white;"> | </span>
+            <span style="color: white;"> | </span>
       <a href="https://bsky.app/profile/bezbez.bsky.social" style="color: orange; text-decoration: none; text-shadow: 1px 1px 3px #000000;">Bluesky</a>
-      <span style="color: white;"> | </span>
+            <span style="color: white;"> | </span>
       <a href="https://www.labonthecheap.com/" style="color: orange; text-decoration: none; text-shadow: 1px 1px 3px #000000;">LabOnTheCheap</a>
+            <span style="color: white;"> | </span>
+      <a href="https://drive.google.com/file/d/1TKT5qWleCYIHKMVkth1lZY96RRLdZ2So/view?usp=drive_link" style="color: orange; text-decoration: none; text-shadow: 1px 1px 3px #000000;">CV</a>
+            <span style="color: white;"> | </span>
+      <a href="https://github.com/bezlemma" style="color: orange; text-decoration: none; text-shadow: 1px 1px 3px #000000;">Github</a>
     </div>
   </div>
 
