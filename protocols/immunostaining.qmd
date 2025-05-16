@@ -5,6 +5,13 @@ format:
     toc: false
 ---
 
+<!-- TO DO: -->
+<!-- include pictures of each step if possible' -->
+<!-- write a section about debugging too much / too little incubation time and antibody amount -->
+<!-- give the writeup of diffusion time. -->
+<!-- (give the pictures of how it works. -->
+
+
 *October 19, 2023*
 
 > **Note:** This protocol is a modification of a protocl given to me by Katie Goodwin, inspired by Crystal Rogers's suggestion to add CaCl2 and use TBS to accommodate ECad staining in the chicken. It is optimized for simultaneously accommodating staining of Mitochondria (Tom20) / Ecadherin and Actin (through Phalloidin) at the same time. You can achieve better results if you drop one or two of those stains. For instance, Methanol is much better in Murray's clear than Ethanol if you can drop Phalloidin. ECad staining looks much better without Glutaraldehyde if you can drop mito. And Mito staining looks a little bit better using PBS instead of TBS if you can drop ECad.

@@ -171,6 +171,12 @@ window.Quarto = {
  <span class="menu-text">Julia Quick Start</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/twophoton.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Two-Photon Microscopy</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -202,6 +208,11 @@ window.Quarto = {
 </header>
 
 
+<!-- TO DO: -->
+<!-- include pictures of each step if possible' -->
+<!-- write a section about debugging too much / too little incubation time and antibody amount -->
+<!-- give the writeup of diffusion time. -->
+<!-- (give the pictures of how it works. -->
 <p><em>October 19, 2023</em></p>
 <blockquote class="blockquote">
 <p><strong>Note:</strong> This protocol is a modification of a protocl given to me by Katie Goodwin, inspired by Crystal Rogers’s suggestion to add CaCl2 and use TBS to accommodate ECad staining in the chicken. It is optimized for simultaneously accommodating staining of Mitochondria (Tom20) / Ecadherin and Actin (through Phalloidin) at the same time. You can achieve better results if you drop one or two of those stains. For instance, Methanol is much better in Murray’s clear than Ethanol if you can drop Phalloidin. ECad staining looks much better without Glutaraldehyde if you can drop mito. And Mito staining looks a little bit better using PBS instead of TBS if you can drop ECad.</p>
@@ -272,23 +283,11 @@ window.Quarto = {
 <ul>
 <li>Primary antibodies can be refrozen.</li>
 <li>Large samples may need 3 days of incubation.</li>
-</ul>
-</li>
+</ul></li>
 </ol>
 <div class="no-row-height column-margin column-container"><div class="">
 <p><strong>Formaldehyde (<span class="math inline">\(CH_2O\)</span>) Chemistry</strong></p>
 <p><span class="math inline">\(CH_2O\)</span> reacts with primary amine groups, R-<span class="math inline">\(NH_2\)</span>, in proteins. This forms a <span class="math inline">\(R-N=CH_2\)</span> which can react with another amine group to form a stable methylene bridge <span class="math inline">\(R-NH-CH_2-NH-R'\)</span>. These bridges cross-link proteins, solidifying the biological structure.</p>
-</div><div class="">
-<p><strong>Antibody Structure &amp; Diffusion</strong></p>
-<p>Antibodies (immunoglobulins, e.g., IgG type) are relatively large, Y-shaped protein molecules, typically around 150 kiloDaltons (kDa) in molecular weight. Their physical dimensions are in the range of 10-15 nanometers.</p>
-Due to their size, antibodies diffuse slowly into fixed tissues. Key factors influencing their diffusion include:
-<ul>
-<li><strong>Size and Shape:</strong> Larger or more complex molecules diffuse more slowly.</li>
-<li><strong>Tissue Density &amp; Porosity:</strong> The cross-linked meshwork created by PFA fixation can act as a barrier. Denser tissues or more extensively cross-linked tissues will further slow diffusion.</li>
-<li><strong>Concentration Gradient:</strong> A higher concentration of antibody in the solution surrounding the tissue provides a stronger driving force for diffusion into the tissue.</li>
-<li><strong>Temperature:</strong> While 4°C slows the intrinsic diffusion rate, it’s crucial for long incubations to preserve antibody integrity and minimize non-specific binding or degradation.</li>
-<li><strong>Binding Affinity:</strong> High-affinity antibodies might bind strongly to targets near the tissue surface, potentially limiting their penetration deeper into the sample (this is sometimes called a “binding-site barrier”).</li>
-</ul>
 </div></div></section>
 <section id="day-3" class="level3">
 <h3 class="anchored" data-anchor-id="day-3">Day 3</h3>
@@ -315,13 +314,9 @@ Due to their size, antibodies diffuse slowly into fixed tissues. Key factors inf
 <li>Large samples may need 2-3 days of incubation.</li>
 </ul></li>
 </ol>
-<section id="note-on-2-photon-2p-microscopy-compatibility" class="level4">
-<h4 class="anchored" data-anchor-id="note-on-2-photon-2p-microscopy-compatibility">Note on 2-Photon (2P) Microscopy Compatibility:</h4>
-<p>A compatible set of secondaries/dyes for 2P imaging: DAPI, 488 Phalloidin, 568 Donkey anti-Rabbit (or 594), 680 Donkey anti-Mouse.</p>
 </section>
-</section>
-<section id="day-4-or-day-3-evening---washing-clearing" class="level3">
-<h3 class="anchored" data-anchor-id="day-4-or-day-3-evening---washing-clearing">Day 4 (or Day 3 Evening) - Washing &amp; Clearing</h3>
+<section id="day-4---washing-clearing" class="level3">
+<h3 class="anchored" data-anchor-id="day-4---washing-clearing">Day 4 - Washing &amp; Clearing</h3>
 <ol start="13" type="1">
 <li><strong>Wash 4:</strong> Perform 3 washes with TBST for 15 minutes each at RT.
 <ul>

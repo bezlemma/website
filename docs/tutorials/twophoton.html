@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Bezia Lemma</title>
+<title>Two-Photon Microscopy – Bezia Lemma</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +23,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -68,11 +68,40 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating fullcontent quarto-light">
+<body class="nav-sidebar floating slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -81,9 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Bezia Lemma
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/install_julia.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/twophoton.html">Two-Photon Microscopy</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -95,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Bezia Lemma</a> 
+      <a href="../">Bezia Lemma</a> 
     </div>
       </div>
     <div class="sidebar-menu-container"> 
@@ -111,19 +138,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./protocols/cryoslicing.html" class="sidebar-item-text sidebar-link">
+  <a href="../protocols/cryoslicing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cryo-Embedding and Slicing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./protocols/immunostaining.html" class="sidebar-item-text sidebar-link">
+  <a href="../protocols/immunostaining.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Crystal Immunostaining</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./protocols/lung_culture.html" class="sidebar-item-text sidebar-link">
+  <a href="../protocols/lung_culture.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lung Culture</span></a>
   </div>
 </li>
@@ -140,13 +167,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/install_julia.html" class="sidebar-item-text sidebar-link">
+  <a href="../tutorials/install_julia.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Julia Quick Start</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/twophoton.html" class="sidebar-item-text sidebar-link">
+  <a href="../tutorials/twophoton.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Two-Photon Microscopy</span></a>
   </div>
 </li>
@@ -157,54 +184,220 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#two-photon-excitation-is-not-double-normal-excitation" id="toc-two-photon-excitation-is-not-double-normal-excitation" class="nav-link active" data-scroll-target="#two-photon-excitation-is-not-double-normal-excitation">Two-Photon Excitation is Not Double Normal Excitation</a></li>
+  <li><a href="#how-two-photon-excitation-works" id="toc-how-two-photon-excitation-works" class="nav-link" data-scroll-target="#how-two-photon-excitation-works">How Two-Photon Excitation Works</a>
+  <ul class="collapse">
+  <li><a href="#a-photon-needs-enough-energy-to-excite-a-molecule." id="toc-a-photon-needs-enough-energy-to-excite-a-molecule." class="nav-link" data-scroll-target="#a-photon-needs-enough-energy-to-excite-a-molecule.">A Photon Needs Enough Energy to Excite a Molecule.</a></li>
+  <li><a href="#the-energy-time-uncertainty-principle" id="toc-the-energy-time-uncertainty-principle" class="nav-link" data-scroll-target="#the-energy-time-uncertainty-principle">The Energy-Time Uncertainty Principle</a></li>
+  <li><a href="#photon-accesses-a-different-excited-state" id="toc-photon-accesses-a-different-excited-state" class="nav-link" data-scroll-target="#photon-accesses-a-different-excited-state">2-Photon accesses a different excited state</a></li>
+  <li><a href="#vibrational-states" id="toc-vibrational-states" class="nav-link" data-scroll-target="#vibrational-states">Vibrational States</a></li>
+  </ul></li>
+  <li><a href="#my-2-photon-excitations" id="toc-my-2-photon-excitations" class="nav-link" data-scroll-target="#my-2-photon-excitations">My 2-Photon Excitations</a></li>
+  <li><a href="#some-open-questions." id="toc-some-open-questions." class="nav-link" data-scroll-target="#some-open-questions.">Some open questions.</a>
+  <ul class="collapse">
+  <li><a href="#how-do-you-explain-2p-in-a-way-that-offers-predictive-power" id="toc-how-do-you-explain-2p-in-a-way-that-offers-predictive-power" class="nav-link" data-scroll-target="#how-do-you-explain-2p-in-a-way-that-offers-predictive-power">How do you explain 2P in a way that offers predictive power?</a></li>
+  <li><a href="#where-are-the-models-of-2p-spectra" id="toc-where-are-the-models-of-2p-spectra" class="nav-link" data-scroll-target="#where-are-the-models-of-2p-spectra">Where are the models of 2P spectra?</a></li>
+  <li><a href="#can-you-make-a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-2p-wavelength" id="toc-can-you-make-a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-2p-wavelength" class="nav-link" data-scroll-target="#can-you-make-a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-2p-wavelength">Can you make a suite of fluorophores that excel at exciting at the same 2P wavelength?</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/install_julia.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/twophoton.html">Two-Photon Microscopy</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Two-Photon Microscopy</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<div class="hero">
-<div class="hero-content">
-  <div class="hero-image-container">
-    <img src="./assets/bezflag.jpg" alt="Bezia Lemma" class="hero-image"> <!-- Corrected image path -->
+    
+  
+    
   </div>
-  <div class="hero-text">
-    <h2 class="anchored">From multiscale physics to physiology</h2>
-  </div>
-</div>
-</div>
-<div class="papers-grid">
-<div class="paper-box color1">
-<div class="paper-image">
-<p><img src="./assets/ActiveMicrophase.png" class="img-fluid" width="120"></p>
-</div>
-<section id="active-microphase-separation-in-mixtures-of-microtubules-and-tip-accumulating-molecular-motors" class="level4 paper-details">
-<h4 class="anchored" data-anchor-id="active-microphase-separation-in-mixtures-of-microtubules-and-tip-accumulating-molecular-motors"><a href="https://journals.aps.org/prx/pdf/10.1103/PhysRevX.12.031006">Active microphase separation in mixtures of microtubules and tip-accumulating molecular motors</a></h4>
-<p class="paper-year">2022</p>
+  
+
+
+</header>
+
+
+<!-- TO DO: -->
+<!-- include pictures of transition states, symmetries -->
+<section id="two-photon-excitation-is-not-double-normal-excitation" class="level1">
+<h1>Two-Photon Excitation is Not Double Normal Excitation</h1>
+<p>The most common thing I hear is the way you find the excitation wavelength to image 2P is you take the normal excitation, and double it. I’m not going to show a diagram of that concept here, because I don’t want to perpetuate it. Instead let me show you some spectra.</p>
+<p>Here is the spectra for eGFP; normal excitation is <span class="math inline">\(488 \text{ nm}\)</span>, but double that to <span class="math inline">\(976 \text{ nm}\)</span> and you get about <em>half</em> the efficiency of the real peak at <span class="math inline">\(926 \text{ nm}\)</span>.</p>
+<p><img src="../assets/eGFP_2P.jpg" class="img-fluid"></p>
+<p>If it were simply doubling the wavelength, those spectra would look very different.</p>
+<p>And then consider the Alexa fluorophores: Alexa 488, Alexa 568, Alexa 594, Alexa 647. You’d expect 2P wavelengths of <span class="math inline">\(976 \text{ nm}\)</span>, <span class="math inline">\(1136 \text{ nm}\)</span>, <span class="math inline">\(1188 \text{ nm}\)</span>, and <span class="math inline">\(1294 \text{ nm}\)</span>, respectively. Instead, you’ll find peak excitations around <span class="math inline">\(900 \text{ nm}\)</span>, <span class="math inline">\(810 \text{ nm}\)</span>, <span class="math inline">\(800 \text{ nm}\)</span>, and <span class="math inline">\(800 \text{ nm}\)</span> respectively, with secondary peaks of excitation, for instance with Alexa 647 at <span class="math inline">\(1200 \text{ nm}\)</span>. In fact, you can excite almost every single Alexa fluorophore at <span class="math inline">\(800 \text{ nm}\)</span> through 2P. Someone should really write a paper about that and make a modern database of 2P excitation spectra while you are at it!</p>
+<p>So, ** 2P excitation is not double normal excitation **.</p>
 </section>
-</div>
-<div class="paper-box color2">
-<div class="paper-image">
-<p><img src="./assets/SpatialPatterning.png" class="img-fluid" width="120"></p>
-</div>
-<section id="spatial-patterning-of-energy-metabolism-during-tissue-morphogenesis" class="level4 paper-details">
-<h4 class="anchored" data-anchor-id="spatial-patterning-of-energy-metabolism-during-tissue-morphogenesis"><a href="https://www.sciencedirect.com/science/article/pii/S0955067423000844">Spatial patterning of energy metabolism during tissue morphogenesis</a></h4>
-<p class="paper-year">2023</p>
+<section id="how-two-photon-excitation-works" class="level1 page-columns page-full">
+<h1>How Two-Photon Excitation Works</h1>
+<section id="a-photon-needs-enough-energy-to-excite-a-molecule." class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="a-photon-needs-enough-energy-to-excite-a-molecule.">A Photon Needs Enough Energy to Excite a Molecule.</h2>
+<p>A molecule might have two states, a ground state <span class="math inline">\(S_0\)</span>, and an excited state <span class="math inline">\(S_1\)</span>. A photon can excite the molecule to the <span class="math inline">\(S_1\)</span> state if it has enough energy.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><strong>A photon’s energy is:</strong> <span class="math display">\[E = \frac{hc}{\lambda}\]</span></p>
+<p>Where <span class="math inline">\(h\)</span> is Planck’s constant, <span class="math inline">\(c\)</span> is the speed of light, and <span class="math inline">\(\lambda\)</span> is the wavelength. The shorter the wavelength, the higher the energy.</p>
+</div></div><p>Usually, if the photon does not have enough energy, it does not matter how many photons the molecule interacts with; it will never excite. If a small wave does not have enough energy to knock over a sailboat, that sailboat can withstand an infinite number of those small waves. There is an exception:</p>
 </section>
-</div>
-<div class="paper-box color3">
-<div class="paper-image">
-<p><img src="./assets/StructureandDynamics.png" class="img-fluid" width="120"></p>
-</div>
-<section id="structure-and-dynamics-of-motor-driven-microtubule-bundles" class="level4 paper-details">
-<h4 class="anchored" data-anchor-id="structure-and-dynamics-of-motor-driven-microtubule-bundles"><a href="https://pubs.rsc.org/en/content/articlehtml/2024/sm/d3sm01336g">Structure and dynamics of motor-driven microtubule bundles</a></h4>
-<p class="paper-year">2024</p>
+<section id="the-energy-time-uncertainty-principle" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-energy-time-uncertainty-principle">The Energy-Time Uncertainty Principle</h2>
+<p>From experiment, we have discovered a rule of physics that there exists a timescale in which the universe does not resolve energy transitions. <span class="math display">\[ \Delta E \Delta t \ge \frac{\hbar}{2} \]</span> Where <span class="math inline">\(\hbar=h/2\pi\)</span>. <span class="math inline">\(\Delta t\)</span> is the timescale, and <span class="math inline">\(\Delta E\)</span> is the relevant energy. In the case of two-photon, the relevant energy is similar to the mismatch between the photon energy and the energy needed to excite the molecule.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>If you have an <span class="math inline">\(800 \text{ nm}\)</span> photon, it has an energy of approximately <span class="math inline">\(2.5 \times 10^-19 J\)</span>. If you need an energy of approximately <span class="math inline">\(5 \times 10^-19 J\)</span>, then: <span class="math display">\[ \Delta t \approx \frac{\hbar}{2 \Delta E}\]</span> <span class="math display">\[ \approx \frac{10^-34 \text{ J} \cdot \text{s}}{2\times2.5\times10^-19 \text{ J}} \]</span> <span class="math display">\[ \approx 2 \times 10^{-16} \text{ s}, \]</span> roughly a femtosecond.</p>
+</div></div><p>If we can introduce two photons to the molecule in a timescale smaller than <span class="math inline">\(\Delta t\)</span>, roughly a femtosecond, we can start to consider second-order interactions between the molecule and multiple “simultaneous” photons. Note the bigger the energy gap <span class="math inline">\(\Delta E\)</span> between the photon and the actual excitation that you need, the smaller the timescale <span class="math inline">\(\Delta t\)</span>.</p>
+<p>To do this experimentally, we build really high-power lasers. We pulse these high-power lasers to send out all the photons in as short a chirp as we can, to increase the probability that we get one of these interactions. Also, note that you don’t need to use two photons of the same energy. If you have the luxury of having multiple two-photon lasers, it is possible to get some very good excitations from two different wavelengths coming in at the same pulse.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><strong>Symmetry Selection Rules</strong> It is worth noting that a single photon exciting a molecule transitions the symmetry of the state, while two photons exciting a molecule do not change the symmetry of the state. So the one-photon excited state, <span class="math inline">\(S_1\)</span>, is a different (lower) state than the two-photon excited state (S_+).</p>
+</div></div></section>
+<section id="photon-accesses-a-different-excited-state" class="level2">
+<h2 class="anchored" data-anchor-id="photon-accesses-a-different-excited-state">2-Photon accesses a different excited state</h2>
+<p>The two-photon process for Alexa 647 is accessing an excited state, <span class="math inline">\(S_1^+\)</span>, that is slightly higher in energy than the <span class="math inline">\(S_1\)</span> state. The shorter wavelength, <span class="math inline">\(800 \text{ nm}\)</span>, means each photon carries <em>more</em> energy. The two-photon process does not access the same electronic state as the one-photon process. I think that the fact that many Alexa fluorophores can be efficiently excited around <span class="math inline">\(800 \text{ nm}\)</span> is because these dyes, despite their varying <span class="math inline">\(S_0 \rightarrow S_1\)</span> energy gaps, have a common higher-lying electronic state that is strongly 2P-allowed and accessible with the combined energy of two <span class="math inline">\(\approx 800 \text{ nm}\)</span> photons. This isn’t entirely surprising, as the Alexa dyes are based on related rhodamine or cyanine core structures, which could possess similar higher-energy manifolds of electronic states. The presence of multiple 2P excitation peaks for Alexa 647 (around <span class="math inline">\(800 \text{ nm}\)</span> and <span class="math inline">\(1200 \text{ nm}\)</span>) indicates that there are at least two different electronic states (or distinct vibronic progressions to different states) that can be efficiently accessed via 2PA. The <span class="math inline">\(\approx 1200 \text{ nm}\)</span> peak is closer to the “doubled” 1P wavelength, suggesting it might access a 2P-allowed state energetically nearer to the <span class="math inline">\(S_1\)</span> state, while the <span class="math inline">\(\approx 800 \text{ nm}\)</span> peak accesses a much higher energy state.</p>
+<p>After two-photon excitation, the higher state <span class="math inline">\(S_+\)</span> falls back to a state like <span class="math inline">\(S_1\)</span> (typically via internal conversion and vibrational relaxation to the lowest vibrational level of the lowest excited singlet state), which then falls back to the ground state <span class="math inline">\(S_0\)</span>. That final transition gives you the normal emission that you expect from a fluorophore. There is often a small but systematic red-shift of that final emission. Understanding where that red-shift comes from is left as an exercise to the reader.</p>
+</section>
+<section id="vibrational-states" class="level2">
+<h2 class="anchored" data-anchor-id="vibrational-states">Vibrational States</h2>
+<p>Just to be clear on why you get a whole spectra of excitations for a fluorphore rather than just a few precise wavelengths that work.</p>
+<p>Each electronic state (<span class="math inline">\(S_0\)</span>, <span class="math inline">\(S_1\)</span>) has many closely spaced vibrational energy levels. A molecule in the <span class="math inline">\(S_N\)</span> electronic state can be in vibrational levels (<span class="math inline">\(v=0, v=1, ...\)</span>).</p>
+<p>When a photon is absorbed, the molecule transitions from <span class="math inline">\(S_0, v=0\)</span> to one of the many vibrational levels in <span class="math inline">\(S_1\)</span>. The energy of the absorbed photon matches the energy difference between the initial vibronic state (electronic + vibrational) and the final vibronic state. Because there are many possible vibrational levels in <span class="math inline">\(S_1\)</span> that the molecule can transition to, there’s a range of photon wavelengths that can cause excitation, this results in the absorption spectrum.</p>
+</section>
+</section>
+<section id="my-2-photon-excitations" class="level1">
+<h1>My 2-Photon Excitations</h1>
+<p>I don’t have spectra for the fluorophores I use (easy to get though), but here are the wavelengths I find work best for various fluorophores.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Fluorophore</th>
+<th>Peak Excitation (nm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ATPRed1</td>
+<td>1100</td>
+</tr>
+<tr class="even">
+<td>Alexa 350</td>
+<td>700</td>
+</tr>
+<tr class="odd">
+<td>Alexa 405+</td>
+<td>800-900</td>
+</tr>
+<tr class="even">
+<td>Alexa 430</td>
+<td>715</td>
+</tr>
+<tr class="odd">
+<td>Alexa 488</td>
+<td>800-1000</td>
+</tr>
+<tr class="even">
+<td>Alexa 555, 555+</td>
+<td>1000-1050</td>
+</tr>
+<tr class="odd">
+<td>Alexa 568</td>
+<td>800</td>
+</tr>
+<tr class="even">
+<td>Alexa 594</td>
+<td>800-850</td>
+</tr>
+<tr class="odd">
+<td>Alexa 647, 647+</td>
+<td>800, 1200</td>
+</tr>
+<tr class="even">
+<td>Alexa 680</td>
+<td>1280</td>
+</tr>
+<tr class="odd">
+<td>Alexa 700</td>
+<td>800</td>
+</tr>
+<tr class="even">
+<td>Alexa 750</td>
+<td>800</td>
+</tr>
+<tr class="odd">
+<td>Alexa 790</td>
+<td>800</td>
+</tr>
+<tr class="even">
+<td>Brilliant Violet 421</td>
+<td>450</td>
+</tr>
+<tr class="odd">
+<td>CF 488</td>
+<td>800-950</td>
+</tr>
+<tr class="even">
+<td>CF 568</td>
+<td>800, 1150</td>
+</tr>
+<tr class="odd">
+<td>CF 750</td>
+<td>800-850</td>
+</tr>
+<tr class="even">
+<td>Dendra2 (both GFP, RFP)</td>
+<td>920</td>
+</tr>
+<tr class="odd">
+<td>Lipidspot488</td>
+<td>910</td>
+</tr>
+<tr class="even">
+<td>MitoView 633</td>
+<td>850, 1125</td>
+</tr>
+<tr class="odd">
+<td>Pkmito DeepRed</td>
+<td>800</td>
+</tr>
+<tr class="even">
+<td>Spy505</td>
+<td>800</td>
+</tr>
+<tr class="odd">
+<td>Spy555</td>
+<td>860</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="some-open-questions." class="level1">
+<h1>Some open questions.</h1>
+<section id="how-do-you-explain-2p-in-a-way-that-offers-predictive-power" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-you-explain-2p-in-a-way-that-offers-predictive-power">How do you explain 2P in a way that offers predictive power?</h2>
+<p>I’ve been thinking about this for years. I used to offer two explanations of two-photon, one classical, one quantum. But the right way to explain this is from quantum field theory. The question is, how can you present a quantum field theory explanation of the two-photon excitation of a molecule that provides a microscopist with any experimental intuition at all?</p>
+</section>
+<section id="where-are-the-models-of-2p-spectra" class="level2">
+<h2 class="anchored" data-anchor-id="where-are-the-models-of-2p-spectra">Where are the models of 2P spectra?</h2>
+<p>There is very little experimental excitation spectra of 2P (despite the great efforts of some scientists!). There just isn’t any reward for that kind of work, and the people who build the fluorophores don’t quantify them via 2P before selling them. It does seem however for small molecules like the Janellia Fluorophores and the Alexa Fluorophores that one can model the excitation spectra using some quantum chemistry simulations. Where is it? Some undergraduate physics student should do this and contact me.</p>
+</section>
+<section id="can-you-make-a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-2p-wavelength" class="level2">
+<h2 class="anchored" data-anchor-id="can-you-make-a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-2p-wavelength">Can you make a suite of fluorophores that excel at exciting at the same 2P wavelength?</h2>
+<p>It would be very nice to have a single laser, and get a ton of emission that you simply seperate by wavelength. This sort of happens by accident for many small molecule fluorophores, but can you do it on purpose? Can you do it on purpose with proteins as well? Can you intentionally not do it so that I can seperate out everything?</p>
 
 
 </section>
-</div>
-</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

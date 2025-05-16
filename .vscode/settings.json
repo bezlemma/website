@@ -1,1 +1,3 @@
-{}
+"github.copilot.chat.useProjectTemplates": false,
+"github.copilot.chat.welcomeMessage": "never",
+"workbench.editor.empty.hint": "hidden"
