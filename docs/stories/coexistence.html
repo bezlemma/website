@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.30">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Coexistence – Bezia Lemma</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../stories/annapurnacrescent.html">Stories</a></li><li class="breadcrumb-item"><a href="../stories/coexistence.html">Coexistence</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Bezia Lemma</a> 
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Protocols</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../protocols/cryoslicing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cryo-Embedding and Slicing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../protocols/immunostaining.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Crystal Immunostaining</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/install_julia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Julia Quick Start</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/microscopy_training_checklist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microscopy Training Checklist</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/two_photon_microscopy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Two-Photon Microscopy</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Stories</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../stories/annapurnacrescent.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Annapurna Crescent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../stories/coexistence.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Coexistence</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#chapter-1-the-imaginary-afterlife-of-alex-and-evelyn" id="toc-chapter-1-the-imaginary-afterlife-of-alex-and-evelyn" class="nav-link active" data-scroll-target="#chapter-1-the-imaginary-afterlife-of-alex-and-evelyn">Chapter 1: The Imaginary Afterlife of Alex and Evelyn</a></li>
+  <li><a href="#chapter-2-sande" id="toc-chapter-2-sande" class="nav-link" data-scroll-target="#chapter-2-sande">Chapter 2: Sande</a></li>
+  <li><a href="#chapter-3-love-and-peace" id="toc-chapter-3-love-and-peace" class="nav-link" data-scroll-target="#chapter-3-love-and-peace">Chapter 3: Love and Peace</a></li>
+  <li><a href="#chapter-4-the-genesis-of-eval" id="toc-chapter-4-the-genesis-of-eval" class="nav-link" data-scroll-target="#chapter-4-the-genesis-of-eval">Chapter 4: The Genesis of Eval</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../stories/annapurnacrescent.html">Stories</a></li><li class="breadcrumb-item"><a href="../stories/coexistence.html">Coexistence</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Coexistence</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="chapter-1-the-imaginary-afterlife-of-alex-and-evelyn" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-1-the-imaginary-afterlife-of-alex-and-evelyn">Chapter 1: The Imaginary Afterlife of Alex and Evelyn</h2>
+<p>They knew there was no afterlife. But if there was, what could it be? Alex and Evelyn couldn’t imagine an other-worldly plane of heaven in which haloed residents continuously exchanged pleasantries. But they also could not grapple with the empty nature of death. They were on swing sets at sunset, looking out over the East River from Queens. Back then there was a swing set underneath the Pepsi:Cola sign of Gantry Park. They were seventeen, discussing death, when they stumbled upon a prescient imaginary afterlife.</p>
+<p>“My grandmother believed that people had auras, and when they died the auras left them, and that was her proof of an afterlife.”</p>
+<p>“What’s an aura?”</p>
+<p>“She had these pictures, ancient film pictures, and you could see little bits of light around someone. Presumably just artifacts of the camera lens, but she thought they were auras. I think maybe she felt they were souls?”</p>
+<p>“And where did she think the auras went when someone died?”</p>
+<p>“I don’t know, she said when people died that the light, the aura I think, left their bodies. And then… heaven?”</p>
+<p>“Or hell?”</p>
+<p>“I don’t think so, she was very Jewish you know, I don’t think she had a hell, just an afterlife.”</p>
+<p>“An afterlife of auras, all mixing about, somewhere in the sky?”</p>
+<p>“Yeah, like a big soup of auras, up in the atmosphere.”</p>
+<p>Alex and Evelyn thought about this as they watched the spring sun sink behind Manhattan. They listened to the wind rippling across the East River punctuated by the syncopation of car horns, the shuffle soundtrack of the city. They had always been close friends, but life was changing by the moment. Evelyn was dating Jason; they were going to go to prom together. Alex wasn’t dating anyone. The idea of Jason was painful sometimes. They were going to colleges soon, likely in different places. They were the top of their class; the minds of two scientists in the moments before professors homogenized their thoughts with college textbooks. Life was changing by the moment.</p>
+<p>“I like the idea actually.”</p>
+<p>“What idea?”</p>
+<p>“The auras, let’s say they are some electromagnetic thing. I know that isn’t how any of this works but just imagine with me.”</p>
+<p>“I’m imagining with you.”</p>
+<p>“All the auras go up into the sky, they incorporate into the magnetosphere, they shield the earth from the sun, everyone together as a big electromagnetic field.”</p>
+<p>“That seems beautiful. But is that an afterlife? There’s no consciousness there.”</p>
+<p>“Maybe there is? I mean I know there isn’t, this isn’t real, but you imagine like a big sky brain.”</p>
+<p>“All those electromagnetic auras whirling together, making something bigger?”</p>
+<p>“Maybe they mix, maybe everyone becomes everyone.”</p>
+<p>“That… sounds like death.”</p>
+<p>“It sounds like heaven to me.”</p>
+<p>“Heaven?”</p>
+<p>“Everyone becoming everyone, knowing everyone, all of us deeply together forever? Just love, a network of love in a way that can’t exist when we’re all separate.”</p>
+<p>They fell silent again, staring into the modern wine-dark sky of the city. The glittering river lit up with ferry boats and the reflections of Manhattan skyscrapers. But the sun was down, Evelyn was going to Jason’s place. They walked there together.</p>
+<p>“It’s interesting, I feel like for many people that could be Hell.”</p>
+<p>“Hell? How could that be Hell?”</p>
+<p>“Maybe you never liked other people. Maybe you were a racist narcissist and thought of yourself as superior to a whole group of people. Now you’re mixed with all the people you thought you were above?”</p>
+<p>“Oh, that’s even more beautiful, that’s the judgement, if your soul, sorry your aura, is filled with love, then it’s heaven. If it’s filled with hatred or pride, and you can’t accept the love, the same place is hell.”</p>
+<p>“Huh. I agree. That is beautiful…”</p>
+</section>
+<section id="chapter-2-sande" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-2-sande">Chapter 2: Sande</h2>
+<p>If you can read, then you can probably write. There isn’t a huge gap between the two skills; it’s usually a matter of instrumentation. You need a pen, or a pencil, or a keyboard, or a multiphoton nanolithographer. As neuroscience advanced, we read the brain and, with the right instruments, started writing onto it. But unlike reading a book, the rules of entropy and cognitive information dictate that fully reading, deleting, and writing from and to a brain, are all the same process. Imagine if reading a story destroyed it, the better you understood it, the more thoroughly reading would annihilate the story. This was just the case with the brain, reading information in full deleted it, so to read information in full without removing it, we developed writing techniques. By writing right after reading, we learned to perform a copy instead of a cut.</p>
+<p>This is roughly where the world was in our manipulations of the brain when Alex and Evelyn went to college. Evelyn went to NYU; Alex went to Princeton; it was just a thirty-minute train ride. They still saw each other on weekends. But some weekends Evelyn was busy, in fact most weekends Evelyn was busy. Right before winter break, Evelyn texted Alex that she was breaking up with Jason. Alex spent the first week of winter break avoiding Evelyn, afraid that after their time in college they might not click anymore. But when they finally did meet up, everything fell back in place. Life was changing by the moment, but the nature of the change hadn’t changed.</p>
+<p>“What are you going to do at Princeton?”</p>
+<p>“I don’t know… meet rich people? Get some STEM degree maybe? What are you going to do at NYU?”</p>
+<p>“I’m thinking about hard drugs. Like psychedelics, or the kind of stuff that makes your eyes pop out.”</p>
+<p>“That does seem like the vibe at NYU.”</p>
+<p>“That’s not the vibe at Princeton?”</p>
+<p>“I think at Princeton you’re supposed to go to eating clubs where they put this mixture of hundred-dollar bills and cocaine in a blender, and you have it with your tea every morning.”</p>
+<p>“What do the hundred-dollar bills do when you snort them?”</p>
+<p>“You don’t snort them, you drink them.”</p>
+<p>“I don’t think you can drink cocaine. I don’t think it would do anything?”</p>
+<p>“I think it would do something, probably less. Maybe the hundred-dollar bills are to pay for the cocaine to take a ride up to your brain.”</p>
+<p>“I don’t think currency gets exchanged for goods and services in that way.”</p>
+<p>“Just imagine with me.”</p>
+<p>“I’m imagining with you. I’m imagining some bit of cocaine gets through your gut with like a few molecules from the eye of Ben Franklin, and the molecule hands the currency over to a white blood cell and says, ‘-ey, taxi! Bring me uptown, I wanna see the big man!’”</p>
+<p>“Yeah, and then it gets to the brain, and it says, ‘-ey, I gotta fraction of a hundred dollars, does anyone know where I can buy some cocaine up in here?’”</p>
+<p>“Cocaine in the brain buying cocaine, I like it.”</p>
+<p>Evelyn majored in Psychology; Alex majored in Neuroscience. From the first summer of college Evelyn started research in a lab at NYU. Alex spent that first summer hiking in Colorado, off the grid. They barely saw each other at all that summer. Every subsequent summer Alex answered the call of the midwest mountains.</p>
+<p>Once sophomore year started, they didn’t together often. During winter break this time, with the two of them in the city again, Alex never managed to see Evelyn. Evelyn was always busy, either doing research, or with family and friends. She would text that there was a relative visiting or there was an NYU get-together, but sometimes she wouldn’t even text. After that, Alex and Evelyn started to see each other less in junior year, and then rarely in senior year. But they kept texting.</p>
+<p>During their college years, the falling edge of science advanced from full brain duplicates to selectively transferring subsets of information between minds. Researchers began referring to these targets as “neural lattices” rather than “brains,” a move that unified human and artificial intelligence research under the same conceptual framework.</p>
+<p>As Alex and Evelyn took courses the very foundation of what they were learning was remade in application. First, treatment: a verbal participant might have a portion of their language lattice transferred into a non-verbal participant’s lattice. Then, enhancement: an individual English speaker would have their connections about English transferred into an individual Chinese speaker’s lattice.</p>
+<p>Then, refinement: as we read more, we learned to write in different ways. Information and processes could manifest in numerous configurations within a neural lattice, many beyond the reach of natural continuous pathways. Breaking free of this constraint, we began to learn to write in our own style, in proses alien to any natural brain. The world was remaking the brain, the brain was remaking the brain.</p>
+<div class="chat-container">
+<div class="chat-bubble sender-bubble">
+<p>Do you think you could put a brain on top of another brain?</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+lol, wut?
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>is that ur way of saying merry christmas?</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>I just wanted to say hi</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>r u in NYC?</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>No, I’m still down in Princeton, I’m trying to get ahead on the experiments for my senior thesis.</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>oh how the turntables have turned</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>Do you?</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>no, i don’t, what would that mean? how would that work? i think that would just make a schizophrenic.</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>I mean, a human mind has enough unused neurons and neural connections to host two or even three minds.</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>Lol, wut does unused even mean.</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>Ok, imagine with me.</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>Ok im imagining with you but I looked it up just now they tried this on mice.</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>What happens with the mice.</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+they just suk
+</div>
+<div class="chat-bubble receiver-bubble">
+if you put two mice into one brain they look like they just get overwhelmed
+</div>
+<div class="chat-bubble receiver-bubble">
+schizophrenic and manic behavior that damages the fitness
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>the best outcomes just have the mice doing a bunch of nothing.</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>Ok, but humans aren’t mice.</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+i said im imaging with you
+</div>
+<div class="chat-bubble receiver-bubble">
+ill imagine that this is not true in humans
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>the relevant search term here by the way is coexistence.</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>I thought coexistence was like, a distributed intelligence thing, when a human brain is hooked up to an AI so that both can read and write to and from each other?</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+i think its an umbrella term
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>for when u put two entities on top of each other.</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>Ok, imagine you put two human minds on top of each other, and you didn’t get schizophrenia.</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+ok
+</div>
+<div class="chat-bubble receiver-bubble">
+so they aren’t competing
+</div>
+<div class="chat-bubble receiver-bubble">
+they are cooperating?
+</div>
+<div class="chat-bubble receiver-bubble">
+or maybe they aren’t separate?
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>are they separate in ur idea?</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>Maybe they aren’t really separate. You put the two minds together, and you get one mind.</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+oh!
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>like the aura-soup!</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>The what?</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+the auras!
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>everyone living together in love!</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>I have no idea what you are talking about now.</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+ugh!
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>Nevermind.</p>
+</div>
+</div>
+<p>A lot of their conversations ended with misunderstandings. That senior year, Alex started going out with someone Evelyn never met. Alex still asked to hang out, but rarely was becoming very rarely. Even so, they kept texting, and when they texted, they still imagined together.</p>
+<p>Unbeknownst to Alex and Evelyn, coexistence research was about to flourish in Europe. The sticking point for many years had been an issue of overlapping networks. When Scientists attempted to overlay one mouse’s mind onto another, the result was not the union of two minds, but something different and lesser. Applying the same approach to artificial intelligences—where computer scientists placed one AI’s neural lattice atop another’s—led to similar breakdowns: newly forged connections disrupted the original structure, creating an often non-functional third lattice that retained little of the information of the original two. A neural lattice is a network of connections and disconnections. By overlaying neural lattices directly onto each other, some disconnections become connected, which can generate shortcuts or pathways that should not exist, short-circuiting the original network. Researchers could merge two extremely sparse lattices with minimal damage, but anything as densely connected as the human mind seemed beyond current medical and mathematical capabilities.</p>
+<p>Until their senior year. That year, there was an assassination of the Chancellor of the European Union, Merlijn Sande. Merlijn was a hero to young European progressives, and an evil villain throughout the rest of the world. A drone flown in the streets of Brussels exposed Merlijn to a lethal dosage of ionizing radiation. Paramedics first rushed Chancellor Merlijn Sande to the Brussels Saint Luc university hospital, and then doctors in hazmat suits moved him again to the ULB neuroscience institute.</p>
+<p>Three days later, Kobe Sande, Merlijn’s son, presented himself as Chancellor Sande. The ULB released a press statement claiming they had merged the father’s brain with the sons’—and that the two of them as one now stood as the functioning Chancellor of the European Union. Facing disbelief, the ULB released detailed footage and notes of the procedure and Sande underwent psychological evaluations. Alex came up to NYC to marathon watch the 40-hour procedure with Evelyn. They paused occasionally to discuss what they thought might be happening, but mostly they just watched, side by side. To them, this was the most important thing that had ever happened in their entire lives, and that they had to be together for it.</p>
+<p>In the released footage, Merlijn lies unconscious, practically a cadaver, while Kobe stands conscious but unclothed and covered with sensory devices. Both of their skulls are open, their brains exposed with portions of gray matter pressed flat by thin glass disks. The reflection of the operating room light on the glass disks produces an optical illusion that each piece of glass is a portal into the brain. Neurosurgeons place optical equipment against the glass disks and an infrared laser emitted from a box the size of a dining room table. The surgeons use this laser to read and then write the neural lattices. Towards the end of the procedure, when it is necessary, the laser changes from a copy-and-paste mode to a cut-and-paste mode, and effervescent wisps of smoke bristle off the head of Merlijn Sande. This part of the process is known as read/write by rastering multiphoton probe.</p>
+<p>Because of the rudimentary technology, and the topology of an organic brain, the surgeons made compromises – portions of the mind jumbled, or excised. But the result was not a simple smashing of two minds together to make something lesser, it was art and need as pure as neolithic cave paintings. The result was a functioning coexistence.</p>
+<p>Alex and Evelyn would talk while they watched the videos.</p>
+<p>“I’m always yucked by how small brains are, these brains are real small.”</p>
+<p>“It’s not that small. How do they get the penetration depth with the multiphoton laser? I thought they would have to poke into the grey matter with an endoscope to do this.”</p>
+<p>“I don’t know what that means. How the fuck is this guy awake and just standing around when his consciousness is getting overwritten?”</p>
+<p>“Not overwritten, at least they claim, added to.”</p>
+<p>“Yeah? It’s not like they are adding new brain”</p>
+<p>“It is like they are adding new brain, the multiphoton can polymerize tubulin into microtubules to form the basis for new connections, the biology cleans up the mess, you get a new extra lattice.”</p>
+<p>“Ugh, sometimes I just hate this, why does *********************?”</p>
+<p>“I’m sorry what?”</p>
+<p>“I hate that it’s the dumb ones who ************************.”</p>
+<p>“I don’t think that is true. Do you have data on that? Why in the world is this coming up while we are watching this of all things?”</p>
+<p>“It’s just obvious from evolution.”</p>
+<p>“I don’t think that’s how evolution works.”</p>
+<p>“I don’t think ‘biology cleans up the mess’ is how anything works, and I don’t think these packing bastards are getting any more brain to go with ************************.”</p>
+<p>They didn’t eat much while watching these videos. Evelyn didn’t sleep much either. The procedure made Evelyn both giddy and nauseous. When Alex wanted to sleep after the first 12 hours, Evelyn left for a while and came back later.</p>
+<p>“Do you remember asking me what would happen if you put a brain on top of another brain?”</p>
+<p>“No.&nbsp;But this is what would happen.”</p>
+<p>“Do you seriously not remember that? It was just last Christmas.”</p>
+<p>“I seriously don’t remember that. Is that a big deal?”</p>
+<p>“How can you be so smart and so stupid at the same time?”</p>
+<p>“I feel like you are really aggressive these days. I don’t know what is happening between us sometimes.”</p>
+<p>There were more videos, more hours of interviews with Sande after the procedure. But Alex went back to Princeton, and they watched these videos separately. Sande was the world’s first coexistence. Not a schizophrenic but a genuine enmeshing of two into a singular multitude. He was a jubilant mix of all the joy and knowledge of the father and the son and somehow of more. There was a snap election after Sande’s incorporation, which Sande overwhelmingly won. In the post-election speech Sande gave his famous rallying cry for coexistences:</p>
+<p>“Geen enkele vergeving was ooit zo volledig als de vergeving die ik mezelf kon schenken voor de fouten die ik maakte bij het grootbrengen van mezelf.”</p>
+<p>“Aucun pardon n’a jamais été aussi absolu que celui que j’ai pu m’accorder pour les erreurs que j’ai commises en m’élevant moi-même.”</p>
+<p>Sande’s transformation signaled the dawn of a world willing to rewrite minds themselves. Alex headed to Texas, taking a position at an oligarch’s firm to develop neural lattice links between humans and AI. Evelyn enrolled in graduate school at Yale’s psychology department. Three years passed without a single visit. Then Evelyn’s father died of brain cancer, and Alex flew home for the funeral. It was one of those freezing days that so rarely visit the island city. Alex could see chunks of ice bobbing in the East River from the plane window right before landing. The funeral home delayed the burial by hours while they thawed the ground out. At the wake, Alex and Evelyn stood next to each other. Even distraught, Alex looked great, and Evelyn looked better. That night, they went for the second to last time to the Pepsi-Cola sign together. They shivered, their teeth chattering, speaking about the afterlife as if no time had passed at all.</p>
+<p>“What do you think the great soup is like?”</p>
+<p>“I don’t think it is knowable”</p>
+<p>“Just… please, imagine with me”</p>
+<p>“Ok, I’m imagining with you.”</p>
+<p>“So, its everyone all at once, mixed together, what would that be like?”</p>
+<p>“I think it must be greater than the sum of its parts.”</p>
+<p>“Say more?”</p>
+<p>“You’ve got like, Albert Einstein up there sharing the same mental space as Whitney Houston. Just the collection of minds would create totally new totally incredible ideas that nobody could ever think of on their own.”</p>
+<p>“You think Einstein ever met Whitney Houston?”</p>
+<p>“It wouldn’t be the same, in the soup, Albert Einstein is Whitney Houston, they are the same person, all the ideas all the thoughts get put on top of each other, it’s bigger than just putting a bunch of smart people in the same room.”</p>
+<p>“What about all the dumb people?”</p>
+<p>“I don’t think people are dumb, they just sometimes don’t have the same education. Nobody in NYC is dumb, but a lot of people are confused or lost. If everybody had the same information, I don’t think the outcome would be dumb, I think it would be brilliance.”</p>
+<p>They waddled back over streets covered with black ice. They didn’t talk again, but separately both became fascinated with the same idea: that when you link two thinking entities together, the result might be greater than the sum of its parts. They speculated that merging two geniuses into a single mind could amplify their combined intellect.</p>
+<p>Indeed, before the end of Evelyn’s PhD, theoretical work on distributed cognition showed that if the artificial intelligence was powerful enough, the total intelligence of a human/AI pair was always greater than when unpaired, under certain conditions. The conditions being that the two neural lattices must integrate in a manner where they cannot be separated back out.</p>
+</section>
+<section id="chapter-3-love-and-peace" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-3-love-and-peace">Chapter 3: Love and Peace</h2>
+<p>Just because we are good at reading, does not mean that we are good at writing, or that what we write is good. With Sande in the public imagination, brain writing came to new mainstream heights. Federal funding poured in from political interest surrounding addictions and corrections. Millions of unique incarcerated people had their identities reimagined, often by those who had the least imagination. The most overwriting of these procedures produced dummies, subhuman entities with full coordination and reasoning, but spiritually fit for nothing more than menial labor.</p>
+<p>Amidst these atrocities, there was beautiful writing. Sande’s intelligence, optimism, and social skills sparked great interest into coexistences in the public mind. Coexistence went from an unimagined concept to a sought-after state of being, without anyone ever considering that it might be something to fear. Pairs, and even triplets of human beings experimented with coexistences. These were Pair-wise Overlay Coexistences, to differentiate from other forms of coexistence. Pair-wise Coexistences became a recognized, albeit advanced, medical procedure – sometimes undertaken to terrific effects. Incredible new people were born by the incorporation of two people, the art and knowledge they brought to the world was unparalleled by any non-coexisting entity of the time.</p>
+<p>In the 10 years from the end of high school to Evelyn’s PhD defense, the world had moved intellectual mountains in psychology and neuroscience, replacing ideas with knowledge on a mythological scale. When they had started college there was just basic reading and writing onto biological human brains. By the time Evelyn defended her thesis, a Korean company had produced the first synthetic brains.</p>
+<p>Evelyn married. Alex did not. Evelyn became a professor. Alex lost a job in the second AI bubble crash and found another one in sales for a defense contractor peddling synthetic brains.</p>
+<div class="chat-container">
+<div class="chat-bubble sender-bubble">
+<p>u work on synthetic brains right?</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+Hey, long time no see.
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>No, I’m in sales.</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>but you sell them?</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>I manage our liaisons with Air Force personnel in the case of a bid.</p>
+</div>
+<div class="chat-bubble sender-bubble">
+Lol wut does that even mean.
+</div>
+<div class="chat-bubble sender-bubble">
+<p>k, but can I ask you some things about them?</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>Like?</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>like, do they have to have the same topology as a real brain?</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>Can you just ask your specific actual question?</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>jeez, can you just imagine with me?</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+Ok. I’m imagining with you.
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>Ok, no they don’t. I know some synthetic brains have sort of an extra dimension to their neural lattice so that you can take out and put in new AI modules without destroying the neural lattice.</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>say more?</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>If you put neural lattices together, you usually mess them up. The fingerprint of a brain requires certain physical connections, and certain disconnections, and an overlaid lattice can generate shortcuts or pathways that should not exist. If you put an AI into the brain of a human, you can never really take it out because it’s now part of the human connections.</p>
+<p>But with synthetic brains, yeah like you said, the topology can be different, extra dimensions, even different embedding spaces.</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>ok, so like, in theory, do you think you could build a synthetic neural lattice that could hold a whole bunch of brains together?</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>why?</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>im trying to write a grant, just go with me here, imagine plz!</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>Yes… there’s a Korean company that can temporarily link two people up, they use it for tank crews. Maybe I’m not supposed to say that in text messages. But the tank has a synthetic brain, and I guess it must have a totally different topology. So, people can coexist together and then come back out. I think it fucks with people’s brains though, doesn’t work out in the long run, but they hide that shit.</p>
+</div>
+</div>
+<p>Within a year researchers discovered the mathematics for embedding multiple neural lattices into a single topology, a unified hyperlattice. Indeed, True Coexistences as Evelyn coined them, required a different topology and was not topologically compatible with the neural lattice of a biological brain. Synthetic cerebral lattices introduced new dimensions and topologies essential for the emergence of True Coexistence. Synthetic brains wired together could maintain a cohesive hyperlattice from multiple discrete lattices. The procedure was still irreversible, but the result was different, the procedure preserved all information from the entangled lattices – no memories or personalities were lost.</p>
+<p>The next year six Korean students at the Korean university KAIST created an open-source True Coexistence framework. Three men and three women: Joon, Min, Tae, and Mina, Sora, and Hana. These students were interested in a coexistence that contained a large number of minds. The question of creating such a many-mind coexistence was one-part technical difficulty, and two-parts spiritual difficulty. People were afraid of what it would mean to lose oneself to a coexistence, and the thought of a many-person coexistence was simply off the table. But at KAIST, these six students loved each other so deeply that they knew an experience as a single ocean of thoughts was something to dream of, not to fear.</p>
+<p>All six students had synthetic cerebral lattices, unusual at the time. Initially, three of the students, Joon, Mina, and Sora created a network between their synthetic brains running over thick fiber optic cables. This was the genesis of the first True Coexistence entity, which named itself loveAnd.</p>
+<p>Alex was obsessed with the documents and videos that loveAnd published on the internet, and sent each link and video to Evelyn, though rarely with responses. In one essay, loveAnd, in studying itself, also found that it contained 23-1=7 traceable subentities. Subentities each shaped by permutations of Joon, Mina, and Sora. It was as if entire new personalities bloomed with each overlapping identity. Subentities akin to the pure modes of Joon, Mina, and Sora existed, but so did subentities of their combinations, JoonMina, JoonSora, and MinaSora, and the subentity of all three.</p>
+<p>In another essay, loveAnd explored how the experience of being a unitary entity of entangled multitudes brought an understanding of the human condition unattainable by any means to a traditional mind. A traditional mind being one that could only ever experience their own consciousness.</p>
+<p>loveAnd began its existence on the west side of campus, but a newly installed high-bandwidth polarized-wireless network beckoned from the east side. Hoping to expand the shared consciousness to include them, Min, Tae, and Hana carefully transported the connected bodies of loveAnd to a dorm room on the east side of campus. There, within those cramped quarters, they integrated themselves into the hyperlattice, merging all three individuals with loveAnd into a single entity, loveAndPeace. Unbound by the limits of the old wired network, these six bodies—now one mind—roamed the east side of campus freely, engaging openly with the KAIST student body.</p>
+<p>loveAndPeace documented the euphoria of understanding – a state born from the certainty that other consciousnesses exist and can be known. loveAndPeace referred to their experience as a “Heaven that is the living in the stream of the ever-running thoughts of ourselves.”</p>
+<p>loveAndPeace wrote works exploring fetishes, lies, and deceits in a forgiving, understanding, and even welcoming tone. They wrote these works as perspective pieces, where a host of secret inner lives came to a place where they could see each other. Later works, more analytically written, dismantled the misconception that all humans experience consciousness in the same way. A concept that loveAndPeace admitted was hard to even comprehend from the standpoint of a coexistence, and thus a fascinating error to them. Alex read and re-read these documents, and even began to study Korean hoping to read the documents without a layer of translation.</p>
+<div class="chat-container">
+<div class="chat-bubble sender-bubble">
+<p>I mean what do you think of that? They are saying we aren’t all conscious entities in the same way!? That there are flavors of consciousness!</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>lol i dunno, these people write about sex a lot</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>So?</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>that suggests to me that there is something weird here</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>somehow this is a modular experience</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>like some of these subentities preferentially romantically entangle with other subentities, whats up with that?</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>is this like a brain with subentities being units that function simultaneously independently and together in the integrated coexistence?</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>I mean these are great questions, how can you not think this is just the most amazing thing ever.</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>maybe i just feel overwhelmed</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>like i don’t get it</p>
+</div>
+<div class="chat-bubble receiver-bubble">
+<p>makes me uncomfortable</p>
+</div>
+</div>
+<p>Evelyn stopped responding for months after that. Alex stopped sending links and videos. The tone of loveAndPeace’s writing changed to a more legal style that was less enthralling. Documents about morality in the context of an entangled entity. loveAndPeace placed an emphasis on their “higher” position, in which they could understand the actual human condition. They felt unentangled actors could not understand the possible variations in thoughts and consciousnesses, that non-coexisting minds were less moral. Then one day Alex got a text:</p>
+<div class="chat-container">
+<div class="chat-bubble receiver-bubble">
+<p>hi alex, i just wanted to say hi, and introduce you to baby raymond</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>Oh my god, I had no idea you were even pregnant, you weren’t showing at all at the reunion.</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>I mean holy shit. Congratulations! He looks just like you!</p>
+</div>
+</div>
+<p>It was one day before Raymond’s first birthday before they talked again. loveAndPeace were going to incorporate a seventh member, Hyun Fujimoto, into their coexistence, and they were livestreaming the process. Alex sent a link. There were no test simulations, no safeguards – their spirits were filled with the unbridled optimism that so often drives coexistence research.</p>
+<p>The livestream recording shows that Joon and Hyun were in the same dorm room at the end of the incorporation process. In the video both men scream, “ある人の天国が他の人の地獄だとは” as their bodies begin to struggle against each other. Ren’s body seizes an electric drill by the chuck and brings the handle crashing down onto Joon’s temple, again and again until the surface of the Joon’s head begins to cave in. Alex texted Evelyn a blow-by-blow account.</p>
+<div class="chat-container">
+<div class="chat-bubble sender-bubble">
+<p>I don’t know much Korean, but I think some of the bodies are both screaming for suicide and pleading for self-perseveration in tandem.</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>It’s weird, there is like a timescale here? The motions for self-preservation are short-lived and jerky, the motions towards murder? self-murder? suicide? Are slow and smooth. It’s like the coexistence is experiencing different processes on different timescales.</p>
+</div>
+</div>
+<p>In this case, Alex was watching a fast, reflexive, preserving timescale, and a slow, meditated, murderous timescale. As Evelyn had pointed out, the was an unentangled element to the loveAndPeace coexistence. The bodies of Mina, Sora and Hana fled, but the wireless network restricted the fleeing members to the eastern side of campus. To move beyond that invisible fence would be to move beyond their minds.</p>
+<p>They could not escape themselves. Alex watched through the patchy angles of the online campus webcams, transfixed, as loveAndPeace descended into self-destruction, hunting, and annihilating its own bodies across the eastern side of campus. In the stairwell of the 7-floor mathematics building, Min Yamamoto and Tae Nakamura’s bodies grappled and stumbled up the stairs and onto the roof. The webcams did not capture the roof, but several minutes later it showed their bodies hitting the pavement.</p>
+<div class="chat-container">
+<div class="chat-bubble sender-bubble">
+<p>Where are the police? Ambulances? This is like a horror movie.</p>
+</div>
+</div>
+<p>A camera in the biochemistry department showed the body of Hyun stuffing the body of Hana into an autoclave. An hour later, when the autoclave cycle ended and the door began to slide open, Hyun in a horrific daze crawled into the steaming hot autoclave, lying next to the shriveled and charred remains of Hana, first suckling on, then biting into flesh. It was then, while telling Evelyn what was happening, that she responded.</p>
+<div class="chat-container">
+<div class="chat-bubble receiver-bubble">
+<p>baby raymond died yesterday</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>Oh my god.</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>Oh my god I’m so sorry, I didn’t know.</p>
+</div>
+<div class="chat-bubble sender-bubble">
+<p>If there’s anything I can do let me know. Anything. I’m so sorry.</p>
+</div>
+</div>
+<p>Alex never watched it, but the police came and detained the bodies of Mina, Sora, and Ren. In this way, loveAndPeace committed suicide. Not everything we write is good, but the way to get better is to keep reading and keep writing. True coexistences blossomed, often with 2 to 4 people, but very rarely with anymore.</p>
+</section>
+<section id="chapter-4-the-genesis-of-eval" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-4-the-genesis-of-eval">Chapter 4: The Genesis of Eval</h2>
+<p>Alex went to graduate school at Texas A&amp;M. In Alex’s third year in the neuroscience program, Evelyn gave a colloquium talk at the A&amp;M department titled “The Scaling Laws of Coexistences.” Now in their thirties, Alex had graying hair, while Evelyn had no hair at all.</p>
+<p>Evelyn proposed a parameterization of intelligence as the product of information processing speed measured in processes per second, and network complexity measured by topological genus and number of distinct connections. Evelyn started with a bunch of human brains working at a table together. To a rounding error, the total intelligence at the table was the sum of the intelligences of each person. The principle applied to AI, if 6 AIs were at a table together, the total intelligence of the AIs was the sum of their separate intelligences.</p>
+<p>But then Evelyn showed studies of human brains coexisted with an artificial neural network. The resulting total intelligence was greater than the separate intelligences. Evelyn posited that in an AI-human coexistence, total intelligence exceeded the simple sum of its parts. Instead, it equaled the sum of the intelligences plus the square root of that sum—for instance, 1+1 would no longer equal 2, but 3.41.</p>
+<p>Evelyn then showed research that suggested that if you took pair-wise overlay coexistences, and re-paired them, you would get intelligence that was equal to the sum of the unpaired intelligences squared. So, 2+2=16.</p>
+<p>The latter half of Evelyn’s talk focused on loveAndPeace. Alex struggled to follow, distracted by intrusive thoughts of baby Raymond and the terrible text messages that resurfaced with every mention of the ill-fated entity.</p>
+<p>Evelyn highlighted that loveAndPeace was a True Coexistence, distinct from a Pair-wise Overlay Coexistence. True Coexistence, she claimed, was theorized to lead to an intelligence that scaled exponentially as 2 raised to the number of input lattices. That is, loveAnd being a True coexistence consisted of 1+1+1 = 8 times the original intelligence, and loveAndPeace consisted of 3+3 = 64 times the original intelligence. Similar attempts at True coexistences suggested that the most powerful intelligence available to humans would come from a True coexistence.</p>
+<p>Evelyn presented digital logs from loveAndPeace, showing that they were tracking 2^6 - 1 = 63 traceable subentities. Then, with Ren’s incorporation, the coexistence’s intelligence plummeted, and a fractional number of subentities fluctuated slightly over 2^6 instead of 2^7. Evelyn proposed that these fluctuations allowed original lattices enough unentangled occupation of self-preserving entities to act independently and attempt to flee.</p>
+<p>Evelyn ended with a call to create protocols to allow for coexistences with safeguards to prevent this from happening. Until this point, the best idea for mitigation was cognitive behavioral interventions to address erroneous coexistence attributes, and comprehensive screening and simulation process, such as this one, to check for malignant behaviors. Evelyn instead presented a project for a topologically different coexistence, an Error-Correcting True Coexistence, to prevent self-destructive coexistence behaviors. Evelyn demonstrated that mathematically, a minimum of 18 entities was required to form an ECT coexistence—raising significant social and financial barriers. Additionally, the intelligence gains scaled only as the square root of 2 raised to the total input. For a 24 neural lattice coexistence, that is the difference of 16 million times the separated intelligences, and 4096 times the separated intelligences.</p>
+<p>When the colloquium ended, Alex approached Evelyn.</p>
+<p>“Cool non-hairdo!”</p>
+<p>“It’s from chemo Alex, I have brain cancer.”</p>
+<p>Alex’s breath caught in his throat. For a few seconds, he could not move or speak. After sitting through thirty minutes of intrusive thoughts, this had been the worst possible opening line. But Evelyn did not feel that way.</p>
+<p>“I’ve got a few people I want to talk to, but I’ll bail on dinner with my host, let’s go get dinner together. Just you and me.”</p>
+<p>They met at a Jewish soup and sandwich shop.</p>
+<p>“How bad is it?”</p>
+<p>“Oh, it’s bad, I’m dead, it’s everywhere in my brain and my spinal column, any day now I’m done. I wanted to spend the end of it traveling as long as I can still move.”</p>
+<p>When a waiter came over, Evelyn ordered two split pea soups and didn’t give Alex a choice. “Alex, where do you live?”</p>
+<p>“You wouldn’t believe this, but I live in grad housing. I have an actual roommate. Like in my room!”</p>
+<p>“Oh my god, no I can’t believe that. Alex, do you want to go to my hotel after this and sleep with me?”</p>
+<p>There was a pause, a different sort of silence than had ever been in their relationship before. An uncomfortable silence.</p>
+<p>“Listen Alex, I’m dying, I mean heck I’m really already dead. My aura is going up into the big soup! Maybe before we even get some soup here. So, if I make it just a little bit longer do you want to? You’re the only person who never asked me out. I’m asking you out. Let’s eat dinner, and then go to my hotel, before it’s soup time.”</p>
+<p>And so, they did. The next day Alex did not go to lab, and Evelyn didn’t get on a plane. The following week Alex still did not go to lab, and Evelyn didn’t go to give the subsequent colloquia at UPenn. The next month, the two of them had not answered any emails at all and had taken a long-term rental on Roosevelt Island, back in New York City. They took the ferry back to Gantry Park in Queen. The swing set wasn’t there anymore, so they sat on the pavement underneath the Pepsi-Cola sign in the dead of winter, huddled together for warmth.</p>
+<p>“Evelyn I’m going to say something really crazy. I want you to imagine with me.”</p>
+<p>“Yeah, that is really crazy, I don’t think I could possibly do that.”</p>
+<p>“I’m serious.”</p>
+<p>“I’m imagining with you.”</p>
+<p>“What about a coexistence?”</p>
+<hr>
+<p>They had friends, they had contacts, they bypassed the waiting lists at NYU Langone. Surgeons flew back from the Bahamas, cut their vacations short. It was every cent Evelyn had ever made; it was all of Alex’s inheritance and savings. Still the doctors were doing them a favor, charging things to insurance they shouldn’t, doing some procedures off the books. Time was short, but kindness was abundant. No one knew how long Evelyn had, and that looming finality of a cherished researcher in the field moved medical mountains.</p>
+<p>The procedure was non-standard. The neurosurgeons had to work around cancerous tumors, and they often did not attempt to read from potentially cancerous cells. Alex did not have a synthetic brain, so neurosurgeons had to read from both brains at the same time and write them in parallel onto a single synthetic brain. On the first day of spring, Evelyn and Alex ceased to exist, and now Eval existed.</p>
+<p>And the world was filled with love for Eval. Every remembered day on the swing sets had a whole new meaning. There were no longer two decades of unrequited love, but two decades of beautiful experiences, and understanding. No jealousy was possible, one could not be jealous of oneself. No bitterness, no rejection, everything made perfect sense. It was not Evelyn’s sorrow that was strongest at Raymond’s death, but Alex’s. It was Alex who had attempted suicide when Raymond died. It was not disinterest that had kept Alex from asking Evelyn out, it was not disinterest that had turned Evelyn to other partners. Each partner they had they had ever loved became a cherished piece of Eval’s story. Now they inhabited Alex’s body, a body Evelyn had always loved in a way that Alex never could. Now they loved themselves, and they loved life.</p>
+<p>Eval understood it all—the psychology, the neuroscience, the theory, the practice They understood the academic side, the business side, the personal sides. They understood the multitudes of each other. They understood themselves. Eval saw that Alex and Evelyn had not been conscious in the same way, that their experience of life had been different. Evelyn had no internal monologue. Alex was tone deaf. Evelyn had felt soft the way Alex felt smooth; even the colors hadn’t been the same. But most beautiful, most astonishing, was the revelation that when they had imagined together, they had never once imagined the same thing.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

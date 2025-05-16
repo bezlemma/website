@@ -5,7 +5,20 @@ project:
 website:
   title: "Bezia Lemma"
   sidebar:
-    contents: auto
+    contents:
+      - section: "Protocols"
+        contents:
+          - "protocols/cryoslicing.qmd"
+          - "protocols/immunostaining.qmd"
+      - section: "Tutorials"
+        contents:
+          - "tutorials/install_julia.qmd"
+          - "tutorials/microscopy_training_checklist.qmd"
+          - "tutorials/two_photon_microscopy.qmd"
+      - section: "Stories"
+        contents:
+          - "stories/annapurnacrescent.qmd"
+          - "stories/coexistence.qmd"
     search: false
 format:
   html:
