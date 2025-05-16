@@ -25,11 +25,11 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('assets/Banner.gif');
+    background-image: url('assets/Banner4.gif');
     background-size: cover; /* Or 'contain', 'auto', etc. based on preference */
     background-position: center;
     background-repeat: no-repeat; /* Or 'repeat' if desired */
-    opacity: 0.6; /* 50% transparency for the background image */
+    opacity: 0.5; /* 50% transparency for the background image */
     z-index: 1; /* Ensure it's behind the content */
 }
 
