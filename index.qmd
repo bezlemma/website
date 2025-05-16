@@ -15,22 +15,28 @@ format:
   </div>
   <div class="hero-text">
     <h2>From multiscale physics to physiology</h2>
+    <div style="text-align: left;">
+      <a href="https://scholar.google.com/citations?hl=en&user=lmS0Yw8AAAAJ" style="color: orange; text-decoration: none;">Google Scholar</a>
+      <span style="color: white;"> | </span>
+      <a href="https://bsky.app/profile/bezbez.bsky.social" style="color: orange; text-decoration: none;">Bluesky</a>
+    </div>
   </div>
+
 </div>
 ```
 :::
 
-
 ::: {.papers-grid}
 
-::: {.paper-box .color1}
+
+::: {.paper-box .color3}
 ::: {.paper-image}
-![](./assets/ActiveMicrophase.png){width="120px"}
+![](./assets/StructureandDynamics.png){width="120px"}
 :::
 ::: {.paper-details}
-#### [Active microphase separation in mixtures of microtubules and tip-accumulating molecular motors](https://journals.aps.org/prx/pdf/10.1103/PhysRevX.12.031006)
+#### [Structure and dynamics of motor-driven microtubule bundles](https://pubs.rsc.org/en/content/articlehtml/2024/sm/d3sm01336g)
 ```{=html}
-<p class="paper-year">2022</p>
+<p class="paper-year">2024</p>
 ```
 :::
 :::
@@ -47,12 +53,41 @@ format:
 :::
 :::
 
-::: {.paper-box .color3}
+::: {.paper-box .color1}
 ::: {.paper-image}
-![](./assets/StructureandDynamics.png){width="120px"}
+![](./assets/ActiveMicrophase.png){width="120px"}
 :::
 ::: {.paper-details}
-#### [Structure and dynamics of motor-driven microtubule bundles](https://pubs.rsc.org/en/content/articlehtml/2024/sm/d3sm01336g)
+#### [Active microphase separation in mixtures of microtubules and tip-accumulating molecular motors](https://journals.aps.org/prx/pdf/10.1103/PhysRevX.12.031006)
 ```{=html}
-<p class="paper-year">2024</p>
+<p class="paper-year">2022</p>
 ```
+:::
+:::
+
+::: {.paper-box .color3}
+::: {.paper-image}
+![](./assets/ThesisPhases.png){width="120px"}
+:::
+::: {.paper-details}
+#### [Hierarchical phases of filamentary active matter](https://dash.harvard.edu/bitstreams/e1c9c00f-49dd-4984-9ec7-f3310e0a91b8/download)
+```{=html}
+<p class="paper-year">2021</p>
+```
+:::
+:::
+:::
+
+::: {.paper-box .color2}
+::: {.paper-image}
+![](./assets/SelfStraining.png){width="120px"}
+:::
+::: {.paper-details}
+#### [Self-straining of actively crosslinked microtubule networks](https://www.nature.com/articles/s41567-019-0642-1)
+```{=html}
+<p class="paper-year">2019</p>
+```
+:::
+:::
+:::
+

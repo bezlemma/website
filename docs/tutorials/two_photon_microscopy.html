@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/install_julia.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/twophoton.html">Two-Photon Microscopy</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/install_julia.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/two_photon_microscopy.html">Two-Photon Microscopy</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -173,7 +173,13 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/twophoton.html" class="sidebar-item-text sidebar-link active">
+  <a href="../tutorials/microscopy_training_checklist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microscopy Training Checklist</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/two_photon_microscopy.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Two-Photon Microscopy</span></a>
   </div>
 </li>
@@ -184,33 +190,12 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#two-photon-excitation-is-not-double-normal-excitation" id="toc-two-photon-excitation-is-not-double-normal-excitation" class="nav-link active" data-scroll-target="#two-photon-excitation-is-not-double-normal-excitation">Two-Photon Excitation is Not Double Normal Excitation</a></li>
-  <li><a href="#how-two-photon-excitation-works" id="toc-how-two-photon-excitation-works" class="nav-link" data-scroll-target="#how-two-photon-excitation-works">How Two-Photon Excitation Works</a>
-  <ul class="collapse">
-  <li><a href="#a-photon-needs-enough-energy-to-excite-a-molecule." id="toc-a-photon-needs-enough-energy-to-excite-a-molecule." class="nav-link" data-scroll-target="#a-photon-needs-enough-energy-to-excite-a-molecule.">A Photon Needs Enough Energy to Excite a Molecule.</a></li>
-  <li><a href="#the-energy-time-uncertainty-principle" id="toc-the-energy-time-uncertainty-principle" class="nav-link" data-scroll-target="#the-energy-time-uncertainty-principle">The Energy-Time Uncertainty Principle</a></li>
-  <li><a href="#photon-accesses-a-different-excited-state" id="toc-photon-accesses-a-different-excited-state" class="nav-link" data-scroll-target="#photon-accesses-a-different-excited-state">2-Photon accesses a different excited state</a></li>
-  <li><a href="#vibrational-states" id="toc-vibrational-states" class="nav-link" data-scroll-target="#vibrational-states">Vibrational States</a></li>
-  </ul></li>
-  <li><a href="#my-2-photon-excitations" id="toc-my-2-photon-excitations" class="nav-link" data-scroll-target="#my-2-photon-excitations">My 2-Photon Excitations</a></li>
-  <li><a href="#some-open-questions." id="toc-some-open-questions." class="nav-link" data-scroll-target="#some-open-questions.">Some open questions.</a>
-  <ul class="collapse">
-  <li><a href="#how-do-you-explain-2p-in-a-way-that-offers-predictive-power" id="toc-how-do-you-explain-2p-in-a-way-that-offers-predictive-power" class="nav-link" data-scroll-target="#how-do-you-explain-2p-in-a-way-that-offers-predictive-power">How do you explain 2P in a way that offers predictive power?</a></li>
-  <li><a href="#where-are-the-models-of-2p-spectra" id="toc-where-are-the-models-of-2p-spectra" class="nav-link" data-scroll-target="#where-are-the-models-of-2p-spectra">Where are the models of 2P spectra?</a></li>
-  <li><a href="#can-you-make-a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-2p-wavelength" id="toc-can-you-make-a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-2p-wavelength" class="nav-link" data-scroll-target="#can-you-make-a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-2p-wavelength">Can you make a suite of fluorophores that excel at exciting at the same 2P wavelength?</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/install_julia.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/twophoton.html">Two-Photon Microscopy</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/install_julia.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/two_photon_microscopy.html">Two-Photon Microscopy</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Two-Photon Microscopy</h1>
 </div>
@@ -231,53 +216,49 @@ window.Quarto = {
 
 <!-- TO DO: -->
 <!-- include pictures of transition states, symmetries -->
-<section id="two-photon-excitation-is-not-double-normal-excitation" class="level1">
-<h1>Two-Photon Excitation is Not Double Normal Excitation</h1>
-<p>The most common thing I hear is the way you find the excitation wavelength to image 2P is you take the normal excitation, and double it. I’m not going to show a diagram of that concept here, because I don’t want to perpetuate it. Instead let me show you some spectra.</p>
-<p>Here is the spectra for eGFP; normal excitation is <span class="math inline">\(488 \text{ nm}\)</span>, but double that to <span class="math inline">\(976 \text{ nm}\)</span> and you get about <em>half</em> the efficiency of the real peak at <span class="math inline">\(926 \text{ nm}\)</span>.</p>
+<p>The most common thing I hear is the way you find the optimal excitation wavelength for two-photon microscopy is you take the normal excitation, and double it. If you are doing that, your microsocpy is deeply suboptimal. I’m not going to show a diagram of that concept here, because I don’t want to perpetuate it. Instead let me show you a spectra.</p>
+<p>Here is the spectra for eGFP; normal excitation is 488 nm, but double that to 976 nm and you get about <em>half</em> the efficiency of the real peak at 926 nm.</p>
 <p><img src="../assets/eGFP_2P.jpg" class="img-fluid"></p>
 <p>If it were simply doubling the wavelength, those spectra would look very different.</p>
-<p>And then consider the Alexa fluorophores: Alexa 488, Alexa 568, Alexa 594, Alexa 647. You’d expect 2P wavelengths of <span class="math inline">\(976 \text{ nm}\)</span>, <span class="math inline">\(1136 \text{ nm}\)</span>, <span class="math inline">\(1188 \text{ nm}\)</span>, and <span class="math inline">\(1294 \text{ nm}\)</span>, respectively. Instead, you’ll find peak excitations around <span class="math inline">\(900 \text{ nm}\)</span>, <span class="math inline">\(810 \text{ nm}\)</span>, <span class="math inline">\(800 \text{ nm}\)</span>, and <span class="math inline">\(800 \text{ nm}\)</span> respectively, with secondary peaks of excitation, for instance with Alexa 647 at <span class="math inline">\(1200 \text{ nm}\)</span>. In fact, you can excite almost every single Alexa fluorophore at <span class="math inline">\(800 \text{ nm}\)</span> through 2P. Someone should really write a paper about that and make a modern database of 2P excitation spectra while you are at it!</p>
-<p>So, ** 2P excitation is not double normal excitation **.</p>
-</section>
+<p>And then consider the Alexa fluorophores: Alexa 488, Alexa 568, Alexa 594, Alexa 647. You’d expect optimal two-photon excitation wavelengths of 976, 1136, 1188, and 1294 nm, respectively. Instead, you’ll find peak excitations around 800 nm. In fact, you can excite almost every single Alexa fluorophore at 800 nm through two-photon excitation. Someone should really write a paper about that and make a modern database of two-photon excitation spectra while you are at it!</p>
+<p>So, <strong>the optimal two-photon excitation is not double normal excitation</strong>.</p>
 <section id="how-two-photon-excitation-works" class="level1 page-columns page-full">
-<h1>How Two-Photon Excitation Works</h1>
+<h1>How two-photon excitation works</h1>
 <section id="a-photon-needs-enough-energy-to-excite-a-molecule." class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="a-photon-needs-enough-energy-to-excite-a-molecule.">A Photon Needs Enough Energy to Excite a Molecule.</h2>
+<h2 class="anchored" data-anchor-id="a-photon-needs-enough-energy-to-excite-a-molecule.">A photon needs enough energy to excite a molecule.</h2>
 <p>A molecule might have two states, a ground state <span class="math inline">\(S_0\)</span>, and an excited state <span class="math inline">\(S_1\)</span>. A photon can excite the molecule to the <span class="math inline">\(S_1\)</span> state if it has enough energy.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p><strong>A photon’s energy is:</strong> <span class="math display">\[E = \frac{hc}{\lambda}\]</span></p>
 <p>Where <span class="math inline">\(h\)</span> is Planck’s constant, <span class="math inline">\(c\)</span> is the speed of light, and <span class="math inline">\(\lambda\)</span> is the wavelength. The shorter the wavelength, the higher the energy.</p>
-</div></div><p>Usually, if the photon does not have enough energy, it does not matter how many photons the molecule interacts with; it will never excite. If a small wave does not have enough energy to knock over a sailboat, that sailboat can withstand an infinite number of those small waves. There is an exception:</p>
+</div></div><p>If the photon does not have enough energy, it does not matter how many photons the molecule interacts with; it will not excite. If a small wave does not have enough energy to knock over a sailboat, that sailboat can withstand an infinite number of those small waves. There is an exception:</p>
 </section>
 <section id="the-energy-time-uncertainty-principle" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="the-energy-time-uncertainty-principle">The Energy-Time Uncertainty Principle</h2>
-<p>From experiment, we have discovered a rule of physics that there exists a timescale in which the universe does not resolve energy transitions. <span class="math display">\[ \Delta E \Delta t \ge \frac{\hbar}{2} \]</span> Where <span class="math inline">\(\hbar=h/2\pi\)</span>. <span class="math inline">\(\Delta t\)</span> is the timescale, and <span class="math inline">\(\Delta E\)</span> is the relevant energy. In the case of two-photon, the relevant energy is similar to the mismatch between the photon energy and the energy needed to excite the molecule.</p>
+<h2 class="anchored" data-anchor-id="the-energy-time-uncertainty-principle">The energy-time uncertainty principle</h2>
+<p>There exists a timescale in which the universe does not resolve energy transitions. <span class="math display">\[ \Delta E \Delta t \ge \frac{\hbar}{2} \]</span> Where <span class="math inline">\(\hbar=h/2\pi\)</span>. <span class="math inline">\(\Delta t\)</span> is the timescale, and <span class="math inline">\(\Delta E\)</span> is the relevant energy. In the case of two-photon, the relevant energy is similar to the mismatch between the photon energy and the energy needed to excite the molecule.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p>If you have an <span class="math inline">\(800 \text{ nm}\)</span> photon, it has an energy of approximately <span class="math inline">\(2.5 \times 10^-19 J\)</span>. If you need an energy of approximately <span class="math inline">\(5 \times 10^-19 J\)</span>, then: <span class="math display">\[ \Delta t \approx \frac{\hbar}{2 \Delta E}\]</span> <span class="math display">\[ \approx \frac{10^-34 \text{ J} \cdot \text{s}}{2\times2.5\times10^-19 \text{ J}} \]</span> <span class="math display">\[ \approx 2 \times 10^{-16} \text{ s}, \]</span> roughly a femtosecond.</p>
+<p>If you have an 800 nm photon, it has an energy of approximately <span class="math inline">\(2.5 \times 10^-19 J\)</span>. If you need an energy of approximately <span class="math inline">\(5 \times 10^-19 J\)</span>, then: <span class="math display">\[ \Delta t \approx \frac{\hbar}{2 \Delta E}\]</span> <span class="math display">\[ \approx \frac{10^-34 \text{ J} \cdot \text{s}}{2\times2.5\times10^-19 \text{ J}} \]</span> <span class="math display">\[ \approx 2 \times 10^{-16} \text{ s}, \]</span> roughly a femtosecond.</p>
 </div></div><p>If we can introduce two photons to the molecule in a timescale smaller than <span class="math inline">\(\Delta t\)</span>, roughly a femtosecond, we can start to consider second-order interactions between the molecule and multiple “simultaneous” photons. Note the bigger the energy gap <span class="math inline">\(\Delta E\)</span> between the photon and the actual excitation that you need, the smaller the timescale <span class="math inline">\(\Delta t\)</span>.</p>
 <p>To do this experimentally, we build really high-power lasers. We pulse these high-power lasers to send out all the photons in as short a chirp as we can, to increase the probability that we get one of these interactions. Also, note that you don’t need to use two photons of the same energy. If you have the luxury of having multiple two-photon lasers, it is possible to get some very good excitations from two different wavelengths coming in at the same pulse.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p><strong>Symmetry Selection Rules</strong> It is worth noting that a single photon exciting a molecule transitions the symmetry of the state, while two photons exciting a molecule do not change the symmetry of the state. So the one-photon excited state, <span class="math inline">\(S_1\)</span>, is a different (lower) state than the two-photon excited state (S_+).</p>
+<p><strong>Symmetry Selection Rules</strong> A single photon exciting a molecule transitions the symmetry of the state, while two photons exciting a molecule do not change the symmetry of the state. So the one-photon excited state, <span class="math inline">\(S_1\)</span>, is a different (lower) state than the two-photon excited state <span class="math inline">\(S_1^+\)</span>.</p>
 </div></div></section>
-<section id="photon-accesses-a-different-excited-state" class="level2">
+<section id="photon-accesses-a-different-excited-state" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="photon-accesses-a-different-excited-state">2-Photon accesses a different excited state</h2>
-<p>The two-photon process for Alexa 647 is accessing an excited state, <span class="math inline">\(S_1^+\)</span>, that is slightly higher in energy than the <span class="math inline">\(S_1\)</span> state. The shorter wavelength, <span class="math inline">\(800 \text{ nm}\)</span>, means each photon carries <em>more</em> energy. The two-photon process does not access the same electronic state as the one-photon process. I think that the fact that many Alexa fluorophores can be efficiently excited around <span class="math inline">\(800 \text{ nm}\)</span> is because these dyes, despite their varying <span class="math inline">\(S_0 \rightarrow S_1\)</span> energy gaps, have a common higher-lying electronic state that is strongly 2P-allowed and accessible with the combined energy of two <span class="math inline">\(\approx 800 \text{ nm}\)</span> photons. This isn’t entirely surprising, as the Alexa dyes are based on related rhodamine or cyanine core structures, which could possess similar higher-energy manifolds of electronic states. The presence of multiple 2P excitation peaks for Alexa 647 (around <span class="math inline">\(800 \text{ nm}\)</span> and <span class="math inline">\(1200 \text{ nm}\)</span>) indicates that there are at least two different electronic states (or distinct vibronic progressions to different states) that can be efficiently accessed via 2PA. The <span class="math inline">\(\approx 1200 \text{ nm}\)</span> peak is closer to the “doubled” 1P wavelength, suggesting it might access a 2P-allowed state energetically nearer to the <span class="math inline">\(S_1\)</span> state, while the <span class="math inline">\(\approx 800 \text{ nm}\)</span> peak accesses a much higher energy state.</p>
-<p>After two-photon excitation, the higher state <span class="math inline">\(S_+\)</span> falls back to a state like <span class="math inline">\(S_1\)</span> (typically via internal conversion and vibrational relaxation to the lowest vibrational level of the lowest excited singlet state), which then falls back to the ground state <span class="math inline">\(S_0\)</span>. That final transition gives you the normal emission that you expect from a fluorophore. There is often a small but systematic red-shift of that final emission. Understanding where that red-shift comes from is left as an exercise to the reader.</p>
-</section>
-<section id="vibrational-states" class="level2">
-<h2 class="anchored" data-anchor-id="vibrational-states">Vibrational States</h2>
-<p>Just to be clear on why you get a whole spectra of excitations for a fluorphore rather than just a few precise wavelengths that work.</p>
+<p>The two-photon process does not access the same electronic state as the one-photon process. Consider exciting Alexa-647 with 800 nm instead of the prescribed 1294 nm.The shorter wavelength, 800 nm, means each photon carries <em>more</em> energy. The two-photon process for Alexa 647 is accessing an excited state, <span class="math inline">\(S_1^+\)</span>, that is higher in energy than the <span class="math inline">\(S_1\)</span> state. I think that the fact that many Alexa fluorophores can be efficiently excited around 800 nm is because these dyes, despite their varying <span class="math inline">\(S_0 \rightarrow S_1\)</span> energy gaps, have a common higher-lying electronic state that is strongly accessible with the combined energy of two 800 nm photons. The Alexa dyes are based on related rhodamine or cyanine core structures, with slight modifications to create their normal spectra, but the core structures probably possess similar higher-energy manifolds of electronic states. The presence of multiple two-photon excitation peaks for Alexa 647 at both 800 nm and 1200 nm indicates that there are at least two different electronic states that can be efficiently accessed. The 1200 nm peak is closer to the doubled wavelength, suggesting it might access a state energetically nearer to the one-photon state, while the 800 nm peak accesses a higher energy state.</p>
+<p>After two-photon excitation, the higher state <span class="math inline">\(S_+\)</span> falls back to the one-photon excited state <span class="math inline">\(S_1\)</span>, which then falls back to the ground state <span class="math inline">\(S_0\)</span>. That final transition gives you the normal emission that you expect from a fluorophore. There is often a small but systematic red-shift of that final emission. Understanding where that red-shift comes from is left as an exercise to the reader.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><strong>Vibrational States</strong></p>
 <p>Each electronic state (<span class="math inline">\(S_0\)</span>, <span class="math inline">\(S_1\)</span>) has many closely spaced vibrational energy levels. A molecule in the <span class="math inline">\(S_N\)</span> electronic state can be in vibrational levels (<span class="math inline">\(v=0, v=1, ...\)</span>).</p>
-<p>When a photon is absorbed, the molecule transitions from <span class="math inline">\(S_0, v=0\)</span> to one of the many vibrational levels in <span class="math inline">\(S_1\)</span>. The energy of the absorbed photon matches the energy difference between the initial vibronic state (electronic + vibrational) and the final vibronic state. Because there are many possible vibrational levels in <span class="math inline">\(S_1\)</span> that the molecule can transition to, there’s a range of photon wavelengths that can cause excitation, this results in the absorption spectrum.</p>
-</section>
+<p>When a photon is absorbed, the molecule transitions from <span class="math inline">\(S_0, v=0\)</span> to one of the many vibrational levels in <span class="math inline">\(S_1\)</span>. The energy of the absorbed photon matches the energy difference between the initial vibronic state (electronic + vibrational) and the final vibronic state. Because there are many possible vibrational levels in <span class="math inline">\(S_1\)</span> that the molecule can transition to, there’s a range of photon wavelengths that can cause excitation, this results in the absorption spectrum rather than just a few precise wavelengths that work. .</p>
+</div></div></section>
 </section>
 <section id="my-2-photon-excitations" class="level1">
 <h1>My 2-Photon Excitations</h1>
-<p>I don’t have spectra for the fluorophores I use (easy to get though), but here are the wavelengths I find work best for various fluorophores.</p>
+<p>Here are the wavelengths I find work best for various fluorophores.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -389,7 +370,7 @@ window.Quarto = {
 </section>
 <section id="where-are-the-models-of-2p-spectra" class="level2">
 <h2 class="anchored" data-anchor-id="where-are-the-models-of-2p-spectra">Where are the models of 2P spectra?</h2>
-<p>There is very little experimental excitation spectra of 2P (despite the great efforts of some scientists!). There just isn’t any reward for that kind of work, and the people who build the fluorophores don’t quantify them via 2P before selling them. It does seem however for small molecules like the Janellia Fluorophores and the Alexa Fluorophores that one can model the excitation spectra using some quantum chemistry simulations. Where is it? Some undergraduate physics student should do this and contact me.</p>
+<p>There is very little experimental excitation spectra of 2P (despite the great efforts of some scientists!). There just isn’t any reward for that kind of work, and the people who build the fluorophores don’t quantify them via 2P before selling them. It does seem however for small molecules like the Janellia Fluorophores and the Alexa Fluorophores that one can model the excitation spectra using some quantum chemistry simulations. Where is it? Some enterprising physics student should do this and contact me.</p>
 </section>
 <section id="can-you-make-a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-2p-wavelength" class="level2">
 <h2 class="anchored" data-anchor-id="can-you-make-a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-2p-wavelength">Can you make a suite of fluorophores that excel at exciting at the same 2P wavelength?</h2>

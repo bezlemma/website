@@ -1,62 +1,51 @@
 [
   {
-    "objectID": "tutorials/twophoton.html",
-    "href": "tutorials/twophoton.html",
+    "objectID": "tutorials/two_photon_microscopy.html",
+    "href": "tutorials/two_photon_microscopy.html",
     "title": "Two-Photon Microscopy",
     "section": "",
-    "text": "The most common thing I hear is the way you find the excitation wavelength to image 2P is you take the normal excitation, and double it. I’m not going to show a diagram of that concept here, because I don’t want to perpetuate it. Instead let me show you some spectra.\nHere is the spectra for eGFP; normal excitation is \\(488 \\text{ nm}\\), but double that to \\(976 \\text{ nm}\\) and you get about half the efficiency of the real peak at \\(926 \\text{ nm}\\).\n\nIf it were simply doubling the wavelength, those spectra would look very different.\nAnd then consider the Alexa fluorophores: Alexa 488, Alexa 568, Alexa 594, Alexa 647. You’d expect 2P wavelengths of \\(976 \\text{ nm}\\), \\(1136 \\text{ nm}\\), \\(1188 \\text{ nm}\\), and \\(1294 \\text{ nm}\\), respectively. Instead, you’ll find peak excitations around \\(900 \\text{ nm}\\), \\(810 \\text{ nm}\\), \\(800 \\text{ nm}\\), and \\(800 \\text{ nm}\\) respectively, with secondary peaks of excitation, for instance with Alexa 647 at \\(1200 \\text{ nm}\\). In fact, you can excite almost every single Alexa fluorophore at \\(800 \\text{ nm}\\) through 2P. Someone should really write a paper about that and make a modern database of 2P excitation spectra while you are at it!\nSo, ** 2P excitation is not double normal excitation **.",
+    "text": "The most common thing I hear is the way you find the optimal excitation wavelength for two-photon microscopy is you take the normal excitation, and double it. If you are doing that, your microsocpy is deeply suboptimal. I’m not going to show a diagram of that concept here, because I don’t want to perpetuate it. Instead let me show you a spectra.\nHere is the spectra for eGFP; normal excitation is 488 nm, but double that to 976 nm and you get about half the efficiency of the real peak at 926 nm.\nIf it were simply doubling the wavelength, those spectra would look very different.\nAnd then consider the Alexa fluorophores: Alexa 488, Alexa 568, Alexa 594, Alexa 647. You’d expect optimal two-photon excitation wavelengths of 976, 1136, 1188, and 1294 nm, respectively. Instead, you’ll find peak excitations around 800 nm. In fact, you can excite almost every single Alexa fluorophore at 800 nm through two-photon excitation. Someone should really write a paper about that and make a modern database of two-photon excitation spectra while you are at it!\nSo, the optimal two-photon excitation is not double normal excitation.",
     "crumbs": [
       "Tutorials",
       "Two-Photon Microscopy"
     ]
   },
   {
-    "objectID": "tutorials/twophoton.html#a-photon-needs-enough-energy-to-excite-a-molecule.",
-    "href": "tutorials/twophoton.html#a-photon-needs-enough-energy-to-excite-a-molecule.",
+    "objectID": "tutorials/two_photon_microscopy.html#a-photon-needs-enough-energy-to-excite-a-molecule.",
+    "href": "tutorials/two_photon_microscopy.html#a-photon-needs-enough-energy-to-excite-a-molecule.",
     "title": "Two-Photon Microscopy",
-    "section": "A Photon Needs Enough Energy to Excite a Molecule.",
-    "text": "A Photon Needs Enough Energy to Excite a Molecule.\nA molecule might have two states, a ground state \\(S_0\\), and an excited state \\(S_1\\). A photon can excite the molecule to the \\(S_1\\) state if it has enough energy.\n\n\nA photon’s energy is: \\[E = \\frac{hc}{\\lambda}\\]\nWhere \\(h\\) is Planck’s constant, \\(c\\) is the speed of light, and \\(\\lambda\\) is the wavelength. The shorter the wavelength, the higher the energy.\nUsually, if the photon does not have enough energy, it does not matter how many photons the molecule interacts with; it will never excite. If a small wave does not have enough energy to knock over a sailboat, that sailboat can withstand an infinite number of those small waves. There is an exception:",
+    "section": "A photon needs enough energy to excite a molecule.",
+    "text": "A photon needs enough energy to excite a molecule.\nA molecule might have two states, a ground state \\(S_0\\), and an excited state \\(S_1\\). A photon can excite the molecule to the \\(S_1\\) state if it has enough energy.\n\n\nA photon’s energy is: \\[E = \\frac{hc}{\\lambda}\\]\nWhere \\(h\\) is Planck’s constant, \\(c\\) is the speed of light, and \\(\\lambda\\) is the wavelength. The shorter the wavelength, the higher the energy.\nIf the photon does not have enough energy, it does not matter how many photons the molecule interacts with; it will not excite. If a small wave does not have enough energy to knock over a sailboat, that sailboat can withstand an infinite number of those small waves. There is an exception:",
     "crumbs": [
       "Tutorials",
       "Two-Photon Microscopy"
     ]
   },
   {
-    "objectID": "tutorials/twophoton.html#the-energy-time-uncertainty-principle",
-    "href": "tutorials/twophoton.html#the-energy-time-uncertainty-principle",
+    "objectID": "tutorials/two_photon_microscopy.html#the-energy-time-uncertainty-principle",
+    "href": "tutorials/two_photon_microscopy.html#the-energy-time-uncertainty-principle",
     "title": "Two-Photon Microscopy",
-    "section": "The Energy-Time Uncertainty Principle",
-    "text": "The Energy-Time Uncertainty Principle\nFrom experiment, we have discovered a rule of physics that there exists a timescale in which the universe does not resolve energy transitions. \\[ \\Delta E \\Delta t \\ge \\frac{\\hbar}{2} \\] Where \\(\\hbar=h/2\\pi\\). \\(\\Delta t\\) is the timescale, and \\(\\Delta E\\) is the relevant energy. In the case of two-photon, the relevant energy is similar to the mismatch between the photon energy and the energy needed to excite the molecule.\n\n\nIf you have an \\(800 \\text{ nm}\\) photon, it has an energy of approximately \\(2.5 \\times 10^-19 J\\). If you need an energy of approximately \\(5 \\times 10^-19 J\\), then: \\[ \\Delta t \\approx \\frac{\\hbar}{2 \\Delta E}\\] \\[ \\approx \\frac{10^-34 \\text{ J} \\cdot \\text{s}}{2\\times2.5\\times10^-19 \\text{ J}} \\] \\[ \\approx 2 \\times 10^{-16} \\text{ s}, \\] roughly a femtosecond.\nIf we can introduce two photons to the molecule in a timescale smaller than \\(\\Delta t\\), roughly a femtosecond, we can start to consider second-order interactions between the molecule and multiple “simultaneous” photons. Note the bigger the energy gap \\(\\Delta E\\) between the photon and the actual excitation that you need, the smaller the timescale \\(\\Delta t\\).\nTo do this experimentally, we build really high-power lasers. We pulse these high-power lasers to send out all the photons in as short a chirp as we can, to increase the probability that we get one of these interactions. Also, note that you don’t need to use two photons of the same energy. If you have the luxury of having multiple two-photon lasers, it is possible to get some very good excitations from two different wavelengths coming in at the same pulse.\n\n\nSymmetry Selection Rules It is worth noting that a single photon exciting a molecule transitions the symmetry of the state, while two photons exciting a molecule do not change the symmetry of the state. So the one-photon excited state, \\(S_1\\), is a different (lower) state than the two-photon excited state (S_+).",
+    "section": "The energy-time uncertainty principle",
+    "text": "The energy-time uncertainty principle\nThere exists a timescale in which the universe does not resolve energy transitions. \\[ \\Delta E \\Delta t \\ge \\frac{\\hbar}{2} \\] Where \\(\\hbar=h/2\\pi\\). \\(\\Delta t\\) is the timescale, and \\(\\Delta E\\) is the relevant energy. In the case of two-photon, the relevant energy is similar to the mismatch between the photon energy and the energy needed to excite the molecule.\n\n\nIf you have an 800 nm photon, it has an energy of approximately \\(2.5 \\times 10^-19 J\\). If you need an energy of approximately \\(5 \\times 10^-19 J\\), then: \\[ \\Delta t \\approx \\frac{\\hbar}{2 \\Delta E}\\] \\[ \\approx \\frac{10^-34 \\text{ J} \\cdot \\text{s}}{2\\times2.5\\times10^-19 \\text{ J}} \\] \\[ \\approx 2 \\times 10^{-16} \\text{ s}, \\] roughly a femtosecond.\nIf we can introduce two photons to the molecule in a timescale smaller than \\(\\Delta t\\), roughly a femtosecond, we can start to consider second-order interactions between the molecule and multiple “simultaneous” photons. Note the bigger the energy gap \\(\\Delta E\\) between the photon and the actual excitation that you need, the smaller the timescale \\(\\Delta t\\).\nTo do this experimentally, we build really high-power lasers. We pulse these high-power lasers to send out all the photons in as short a chirp as we can, to increase the probability that we get one of these interactions. Also, note that you don’t need to use two photons of the same energy. If you have the luxury of having multiple two-photon lasers, it is possible to get some very good excitations from two different wavelengths coming in at the same pulse.\n\n\nSymmetry Selection Rules A single photon exciting a molecule transitions the symmetry of the state, while two photons exciting a molecule do not change the symmetry of the state. So the one-photon excited state, \\(S_1\\), is a different (lower) state than the two-photon excited state \\(S_1^+\\).",
     "crumbs": [
       "Tutorials",
       "Two-Photon Microscopy"
     ]
   },
   {
-    "objectID": "tutorials/twophoton.html#photon-accesses-a-different-excited-state",
-    "href": "tutorials/twophoton.html#photon-accesses-a-different-excited-state",
+    "objectID": "tutorials/two_photon_microscopy.html#photon-accesses-a-different-excited-state",
+    "href": "tutorials/two_photon_microscopy.html#photon-accesses-a-different-excited-state",
     "title": "Two-Photon Microscopy",
     "section": "2-Photon accesses a different excited state",
-    "text": "2-Photon accesses a different excited state\nThe two-photon process for Alexa 647 is accessing an excited state, \\(S_1^+\\), that is slightly higher in energy than the \\(S_1\\) state. The shorter wavelength, \\(800 \\text{ nm}\\), means each photon carries more energy. The two-photon process does not access the same electronic state as the one-photon process. I think that the fact that many Alexa fluorophores can be efficiently excited around \\(800 \\text{ nm}\\) is because these dyes, despite their varying \\(S_0 \\rightarrow S_1\\) energy gaps, have a common higher-lying electronic state that is strongly 2P-allowed and accessible with the combined energy of two \\(\\approx 800 \\text{ nm}\\) photons. This isn’t entirely surprising, as the Alexa dyes are based on related rhodamine or cyanine core structures, which could possess similar higher-energy manifolds of electronic states. The presence of multiple 2P excitation peaks for Alexa 647 (around \\(800 \\text{ nm}\\) and \\(1200 \\text{ nm}\\)) indicates that there are at least two different electronic states (or distinct vibronic progressions to different states) that can be efficiently accessed via 2PA. The \\(\\approx 1200 \\text{ nm}\\) peak is closer to the “doubled” 1P wavelength, suggesting it might access a 2P-allowed state energetically nearer to the \\(S_1\\) state, while the \\(\\approx 800 \\text{ nm}\\) peak accesses a much higher energy state.\nAfter two-photon excitation, the higher state \\(S_+\\) falls back to a state like \\(S_1\\) (typically via internal conversion and vibrational relaxation to the lowest vibrational level of the lowest excited singlet state), which then falls back to the ground state \\(S_0\\). That final transition gives you the normal emission that you expect from a fluorophore. There is often a small but systematic red-shift of that final emission. Understanding where that red-shift comes from is left as an exercise to the reader.",
+    "text": "2-Photon accesses a different excited state\nThe two-photon process does not access the same electronic state as the one-photon process. Consider exciting Alexa-647 with 800 nm instead of the prescribed 1294 nm.The shorter wavelength, 800 nm, means each photon carries more energy. The two-photon process for Alexa 647 is accessing an excited state, \\(S_1^+\\), that is higher in energy than the \\(S_1\\) state. I think that the fact that many Alexa fluorophores can be efficiently excited around 800 nm is because these dyes, despite their varying \\(S_0 \\rightarrow S_1\\) energy gaps, have a common higher-lying electronic state that is strongly accessible with the combined energy of two 800 nm photons. The Alexa dyes are based on related rhodamine or cyanine core structures, with slight modifications to create their normal spectra, but the core structures probably possess similar higher-energy manifolds of electronic states. The presence of multiple two-photon excitation peaks for Alexa 647 at both 800 nm and 1200 nm indicates that there are at least two different electronic states that can be efficiently accessed. The 1200 nm peak is closer to the doubled wavelength, suggesting it might access a state energetically nearer to the one-photon state, while the 800 nm peak accesses a higher energy state.\nAfter two-photon excitation, the higher state \\(S_+\\) falls back to the one-photon excited state \\(S_1\\), which then falls back to the ground state \\(S_0\\). That final transition gives you the normal emission that you expect from a fluorophore. There is often a small but systematic red-shift of that final emission. Understanding where that red-shift comes from is left as an exercise to the reader.\n\n\nVibrational States\nEach electronic state (\\(S_0\\), \\(S_1\\)) has many closely spaced vibrational energy levels. A molecule in the \\(S_N\\) electronic state can be in vibrational levels (\\(v=0, v=1, ...\\)).\nWhen a photon is absorbed, the molecule transitions from \\(S_0, v=0\\) to one of the many vibrational levels in \\(S_1\\). The energy of the absorbed photon matches the energy difference between the initial vibronic state (electronic + vibrational) and the final vibronic state. Because there are many possible vibrational levels in \\(S_1\\) that the molecule can transition to, there’s a range of photon wavelengths that can cause excitation, this results in the absorption spectrum rather than just a few precise wavelengths that work. .",
     "crumbs": [
       "Tutorials",
       "Two-Photon Microscopy"
     ]
   },
   {
-    "objectID": "tutorials/twophoton.html#vibrational-states",
-    "href": "tutorials/twophoton.html#vibrational-states",
-    "title": "Two-Photon Microscopy",
-    "section": "Vibrational States",
-    "text": "Vibrational States\nJust to be clear on why you get a whole spectra of excitations for a fluorphore rather than just a few precise wavelengths that work.\nEach electronic state (\\(S_0\\), \\(S_1\\)) has many closely spaced vibrational energy levels. A molecule in the \\(S_N\\) electronic state can be in vibrational levels (\\(v=0, v=1, ...\\)).\nWhen a photon is absorbed, the molecule transitions from \\(S_0, v=0\\) to one of the many vibrational levels in \\(S_1\\). The energy of the absorbed photon matches the energy difference between the initial vibronic state (electronic + vibrational) and the final vibronic state. Because there are many possible vibrational levels in \\(S_1\\) that the molecule can transition to, there’s a range of photon wavelengths that can cause excitation, this results in the absorption spectrum.",
-    "crumbs": [
-      "Tutorials",
-      "Two-Photon Microscopy"
-    ]
-  },
-  {
-    "objectID": "tutorials/twophoton.html#how-do-you-explain-2p-in-a-way-that-offers-predictive-power",
-    "href": "tutorials/twophoton.html#how-do-you-explain-2p-in-a-way-that-offers-predictive-power",
+    "objectID": "tutorials/two_photon_microscopy.html#how-do-you-explain-2p-in-a-way-that-offers-predictive-power",
+    "href": "tutorials/two_photon_microscopy.html#how-do-you-explain-2p-in-a-way-that-offers-predictive-power",
     "title": "Two-Photon Microscopy",
     "section": "How do you explain 2P in a way that offers predictive power?",
     "text": "How do you explain 2P in a way that offers predictive power?\nI’ve been thinking about this for years. I used to offer two explanations of two-photon, one classical, one quantum. But the right way to explain this is from quantum field theory. The question is, how can you present a quantum field theory explanation of the two-photon excitation of a molecule that provides a microscopist with any experimental intuition at all?",
@@ -66,19 +55,19 @@
     ]
   },
   {
-    "objectID": "tutorials/twophoton.html#where-are-the-models-of-2p-spectra",
-    "href": "tutorials/twophoton.html#where-are-the-models-of-2p-spectra",
+    "objectID": "tutorials/two_photon_microscopy.html#where-are-the-models-of-2p-spectra",
+    "href": "tutorials/two_photon_microscopy.html#where-are-the-models-of-2p-spectra",
     "title": "Two-Photon Microscopy",
     "section": "Where are the models of 2P spectra?",
-    "text": "Where are the models of 2P spectra?\nThere is very little experimental excitation spectra of 2P (despite the great efforts of some scientists!). There just isn’t any reward for that kind of work, and the people who build the fluorophores don’t quantify them via 2P before selling them. It does seem however for small molecules like the Janellia Fluorophores and the Alexa Fluorophores that one can model the excitation spectra using some quantum chemistry simulations. Where is it? Some undergraduate physics student should do this and contact me.",
+    "text": "Where are the models of 2P spectra?\nThere is very little experimental excitation spectra of 2P (despite the great efforts of some scientists!). There just isn’t any reward for that kind of work, and the people who build the fluorophores don’t quantify them via 2P before selling them. It does seem however for small molecules like the Janellia Fluorophores and the Alexa Fluorophores that one can model the excitation spectra using some quantum chemistry simulations. Where is it? Some enterprising physics student should do this and contact me.",
     "crumbs": [
       "Tutorials",
       "Two-Photon Microscopy"
     ]
   },
   {
-    "objectID": "tutorials/twophoton.html#can-you-make-a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-2p-wavelength",
-    "href": "tutorials/twophoton.html#can-you-make-a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-2p-wavelength",
+    "objectID": "tutorials/two_photon_microscopy.html#can-you-make-a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-2p-wavelength",
+    "href": "tutorials/two_photon_microscopy.html#can-you-make-a-suite-of-fluorophores-that-excel-at-exciting-at-the-same-2p-wavelength",
     "title": "Two-Photon Microscopy",
     "section": "Can you make a suite of fluorophores that excel at exciting at the same 2P wavelength?",
     "text": "Can you make a suite of fluorophores that excel at exciting at the same 2P wavelength?\nIt would be very nice to have a single laser, and get a ton of emission that you simply seperate by wavelength. This sort of happens by accident for many small molecule fluorophores, but can you do it on purpose? Can you do it on purpose with proteins as well? Can you intentionally not do it so that I can seperate out everything?",
@@ -88,55 +77,48 @@
     ]
   },
   {
-    "objectID": "protocols/cryoslicing.html",
-    "href": "protocols/cryoslicing.html",
-    "title": "Cryo-Embedding and Slicing",
+    "objectID": "tutorials/install_julia.html",
+    "href": "tutorials/install_julia.html",
+    "title": "Julia Quick Start",
     "section": "",
-    "text": "Reference: Plasticity in airway smooth muscle differentiation during mouse lung development, Goodwin, Katharine et al. Developmental Cell, Volume 58, Issue 5, 338 - 347.e4",
+    "text": "Download Julia here: https://julialang.org/downloads/\nOpen the Julia application. You should see a startup banner similar to this:\nTry typing in 2+2 and hitting enter. If you know LaTeX, Julia is happy to think about LaTeX commands, so try typing in whcih turns into π and hitting enter",
     "crumbs": [
-      "Protocols",
-      "Cryo-Embedding and Slicing"
+      "Tutorials",
+      "Julia Quick Start"
     ]
   },
   {
-    "objectID": "protocols/cryoslicing.html#preparing-for-frozen-embedding",
-    "href": "protocols/cryoslicing.html#preparing-for-frozen-embedding",
-    "title": "Cryo-Embedding and Slicing",
-    "section": "Preparing for Frozen Embedding",
-    "text": "Preparing for Frozen Embedding\n\nFix in 4% PFA at 4 degrees (time depends on sample, at least 30 min).\nRinse in PBS or wash in PBS overnight, depending on sample.\nWash 1 hr on shaker at room temperature in 20% sucrose (=2 g of sucrose in a 15 ml tube filled up to 10 ml with preferably sterile 1X PBS, store at 4C).\nWash 1 hr on shaker at room temperature in 30% sucrose (=3 g of sucrose in a 15 ml tube filled up to 10 ml with preferably sterile 1X PBS, store at 4C).\nWash 1 hr on shaker at room temperature in 1:1 OCT:30% sucrose (store at 4C).\nWash overnight on shaker at 4 degrees in 1:1 OCT:30% sucrose.",
+    "objectID": "tutorials/install_julia.html#install-visual-studio-code-vs-code",
+    "href": "tutorials/install_julia.html#install-visual-studio-code-vs-code",
+    "title": "Julia Quick Start",
+    "section": "Install Visual Studio Code (VS Code)",
+    "text": "Install Visual Studio Code (VS Code)\nAfter confirming Julia runs, download and install VS Code: https://code.visualstudio.com/\n\nOpen VS Code.\nClick on the Extensions icon in the Activity Bar on the side of the window. It looks like four squares forming a larger square, with the top-right square slightly detached.\nSearch for “Julia” in the search bar.\nFind the extension named Julia published by julialang and click Install.",
     "crumbs": [
-      "Protocols",
-      "Cryo-Embedding and Slicing"
+      "Tutorials",
+      "Julia Quick Start"
     ]
   },
   {
-    "objectID": "protocols/cryoslicing.html#embedding-and-freezing",
-    "href": "protocols/cryoslicing.html#embedding-and-freezing",
-    "title": "Cryo-Embedding and Slicing",
-    "section": "Embedding and Freezing",
-    "text": "Embedding and Freezing\n\nMaterials Needed\n\nDry Ice or similar freezing agent.\nCube plastic inserts.\nOCT (Optimal Cutting Temperature compound).\nForceps.\nSharpie.\n\n\n\nProcedure\n\nAdd a drop of OCT from the squeeze bottle to each insert, enough to cover the bottom of the insert well, and label each insert using a sharpie.\nUsing forceps, transfer lungs over to the inserts. Depending on tissue size, you might be able to move the sample in a little bubble of OCT suspended between the tips of the forceps.\nPipette away solution from around the lung to remove sucrose.\nRemove one piece of dry ice, maybe 1-2 inches long, and place on bench to sublimate until it has a flat surface.\nFlip the dry ice piece over and place a plastic cube insert onto the flat surface. After a few moments the OCT will turn white as it freezes.\nAfter freezing, add more OCT on top to fill the insert.\nKeep holding the insert on the dry ice until the OCT block has frozen through.\nStore at -80°C until ready to cryo-slice.",
+    "objectID": "tutorials/install_julia.html#create-and-run-your-first-julia-file",
+    "href": "tutorials/install_julia.html#create-and-run-your-first-julia-file",
+    "title": "Julia Quick Start",
+    "section": "Create and Run Your First Julia File",
+    "text": "Create and Run Your First Julia File\n\nCreate a new file named HelloJulia.jl.\nOpen this file in VS Code.\nPaste the following code into the file:\n\nprintln(\"The first digits of pi are: \", pi)\n\nRun the code by clicking the Run button (a trinagluar play icon) in the top-right corner of the editor.",
     "crumbs": [
-      "Protocols",
-      "Cryo-Embedding and Slicing"
+      "Tutorials",
+      "Julia Quick Start"
     ]
   },
   {
-    "objectID": "protocols/cryoslicing.html#slicing-and-mounting",
-    "href": "protocols/cryoslicing.html#slicing-and-mounting",
-    "title": "Cryo-Embedding and Slicing",
-    "section": "Slicing and Mounting",
-    "text": "Slicing and Mounting",
+    "objectID": "tutorials/install_julia.html#graph-some-data",
+    "href": "tutorials/install_julia.html#graph-some-data",
+    "title": "Julia Quick Start",
+    "section": "Graph some data",
+    "text": "Graph some data\nNow you can modify your HelloJulia.jl script (or create a new one) to use these packages. Here’s an example that creates a simple plot using Makie and saves it as a PDF:\n\nusing GLMakie, DataFrames # CairoMakie\n\n# Create some sample data\nx = 0:0.1:2pi\ny_sin = sin.(x)\ny_cos = cos.(x)\n\n# Create a DataFrame (optional, but useful to show now rather that later)\ndf = DataFrame(X=x, SinY=y_sin, CosY=y_cos)\n\n# Create the plot figure and axis\nfig = Figure(size = (400, 400))\nax = Axis(fig[1, 1], xlabel = \"X [um]\", ylabel = \"Y [Pa]\")\n\n# Plot the lines\nlines!(ax, df.X, df.SinY, label = \"sin(x)\", color = :blue, linewidth = 2)\nlines!(ax, df.X, df.CosY, label = \"cos(x)\", color = :red, linewidth = 2)\n\naxislegend(ax) # Add a legend\n\n# Show the plot in an interactive window\n#GLMakie.activate!() \nfig #or display(fig)\n\n\n# Save the plot as a PDF\n#CairoMakie.activate!()\n#save(\"plot.pdf\", fig)",
     "crumbs": [
-      "Protocols",
-      "Cryo-Embedding and Slicing"
+      "Tutorials",
+      "Julia Quick Start"
     ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Bezia Lemma",
-    "section": "",
-    "text": "From multiscale physics to physiology\n  \n\n\n\n\n\n\n\n\nActive microphase separation in mixtures of microtubules and tip-accumulating molecular motors\n2022\n\n\n\n\n\n\n\nSpatial patterning of energy metabolism during tissue morphogenesis\n2023\n\n\n\n\n\n\n\nStructure and dynamics of motor-driven microtubule bundles\n2024"
   },
   {
     "objectID": "protocols/immunostaining.html",
@@ -183,47 +165,208 @@
     ]
   },
   {
-    "objectID": "tutorials/install_julia.html",
-    "href": "tutorials/install_julia.html",
-    "title": "Julia Quick Start",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bezia Lemma",
     "section": "",
-    "text": "Download Julia here: https://julialang.org/downloads/\nOpen the Julia application. You should see a startup banner similar to this:\nTry typing in 2+2 and hitting enter. If you know LaTeX, Julia is happy to think about LaTeX commands, so try typing in whcih turns into π and hitting enter",
+    "text": "From multiscale physics to physiology\n    \n      Google Scholar\n       | \n      Bluesky\n    \n  \n\n\n\n\n\n\n\n\n\nStructure and dynamics of motor-driven microtubule bundles\n2024\n\n\n\n\n\n\n\nSpatial patterning of energy metabolism during tissue morphogenesis\n2023\n\n\n\n\n\n\n\nActive microphase separation in mixtures of microtubules and tip-accumulating molecular motors\n2022\n\n\n\n\n\n\n\nHierarchical phases of filamentary active matter\n2021"
+  },
+  {
+    "objectID": "protocols/cryoslicing.html",
+    "href": "protocols/cryoslicing.html",
+    "title": "Cryo-Embedding and Slicing",
+    "section": "",
+    "text": "Reference: Plasticity in airway smooth muscle differentiation during mouse lung development, Goodwin, Katharine et al. Developmental Cell, Volume 58, Issue 5, 338 - 347.e4",
     "crumbs": [
-      "Tutorials",
-      "Julia Quick Start"
+      "Protocols",
+      "Cryo-Embedding and Slicing"
     ]
   },
   {
-    "objectID": "tutorials/install_julia.html#install-visual-studio-code-vs-code",
-    "href": "tutorials/install_julia.html#install-visual-studio-code-vs-code",
-    "title": "Julia Quick Start",
-    "section": "Install Visual Studio Code (VS Code)",
-    "text": "Install Visual Studio Code (VS Code)\nAfter confirming Julia runs, download and install VS Code: https://code.visualstudio.com/\n\nOpen VS Code.\nClick on the Extensions icon in the Activity Bar on the side of the window. It looks like four squares forming a larger square, with the top-right square slightly detached.\nSearch for “Julia” in the search bar.\nFind the extension named Julia published by julialang and click Install.",
+    "objectID": "protocols/cryoslicing.html#preparing-for-frozen-embedding",
+    "href": "protocols/cryoslicing.html#preparing-for-frozen-embedding",
+    "title": "Cryo-Embedding and Slicing",
+    "section": "Preparing for Frozen Embedding",
+    "text": "Preparing for Frozen Embedding\n\nFix in 4% PFA at 4 degrees (time depends on sample, at least 30 min).\nRinse in PBS or wash in PBS overnight, depending on sample.\nWash 1 hr on shaker at room temperature in 20% sucrose (=2 g of sucrose in a 15 ml tube filled up to 10 ml with preferably sterile 1X PBS, store at 4C).\nWash 1 hr on shaker at room temperature in 30% sucrose (=3 g of sucrose in a 15 ml tube filled up to 10 ml with preferably sterile 1X PBS, store at 4C).\nWash 1 hr on shaker at room temperature in 1:1 OCT:30% sucrose (store at 4C).\nWash overnight on shaker at 4 degrees in 1:1 OCT:30% sucrose.",
     "crumbs": [
-      "Tutorials",
-      "Julia Quick Start"
+      "Protocols",
+      "Cryo-Embedding and Slicing"
     ]
   },
   {
-    "objectID": "tutorials/install_julia.html#create-and-run-your-first-julia-file",
-    "href": "tutorials/install_julia.html#create-and-run-your-first-julia-file",
-    "title": "Julia Quick Start",
-    "section": "Create and Run Your First Julia File",
-    "text": "Create and Run Your First Julia File\n\nCreate a new file named HelloJulia.jl.\nOpen this file in VS Code.\nPaste the following code into the file:\n\nprintln(\"The first digits of pi are: \", pi)\n\nRun the code by clicking the Run button (a trinagluar play icon) in the top-right corner of the editor.",
+    "objectID": "protocols/cryoslicing.html#embedding-and-freezing",
+    "href": "protocols/cryoslicing.html#embedding-and-freezing",
+    "title": "Cryo-Embedding and Slicing",
+    "section": "Embedding and Freezing",
+    "text": "Embedding and Freezing\n\nMaterials Needed\n\nDry Ice or similar freezing agent.\nCube plastic inserts.\nOCT (Optimal Cutting Temperature compound).\nForceps.\nSharpie.\n\n\n\nProcedure\n\nAdd a drop of OCT from the squeeze bottle to each insert, enough to cover the bottom of the insert well, and label each insert using a sharpie.\nUsing forceps, transfer lungs over to the inserts. Depending on tissue size, you might be able to move the sample in a little bubble of OCT suspended between the tips of the forceps.\nPipette away solution from around the lung to remove sucrose.\nRemove one piece of dry ice, maybe 1-2 inches long, and place on bench to sublimate until it has a flat surface.\nFlip the dry ice piece over and place a plastic cube insert onto the flat surface. After a few moments the OCT will turn white as it freezes.\nAfter freezing, add more OCT on top to fill the insert.\nKeep holding the insert on the dry ice until the OCT block has frozen through.\nStore at -80°C until ready to cryo-slice.",
     "crumbs": [
-      "Tutorials",
-      "Julia Quick Start"
+      "Protocols",
+      "Cryo-Embedding and Slicing"
     ]
   },
   {
-    "objectID": "tutorials/install_julia.html#graph-some-data",
-    "href": "tutorials/install_julia.html#graph-some-data",
-    "title": "Julia Quick Start",
-    "section": "Graph some data",
-    "text": "Graph some data\nNow you can modify your HelloJulia.jl script (or create a new one) to use these packages. Here’s an example that creates a simple plot using Makie and saves it as a PDF:\n\nusing GLMakie, DataFrames # CairoMakie\n\n# Create some sample data\nx = 0:0.1:2pi\ny_sin = sin.(x)\ny_cos = cos.(x)\n\n# Create a DataFrame (optional, but useful to show now rather that later)\ndf = DataFrame(X=x, SinY=y_sin, CosY=y_cos)\n\n# Create the plot figure and axis\nfig = Figure(size = (400, 400))\nax = Axis(fig[1, 1], xlabel = \"X [um]\", ylabel = \"Y [Pa]\")\n\n# Plot the lines\nlines!(ax, df.X, df.SinY, label = \"sin(x)\", color = :blue, linewidth = 2)\nlines!(ax, df.X, df.CosY, label = \"cos(x)\", color = :red, linewidth = 2)\n\naxislegend(ax) # Add a legend\n\n# Show the plot in an interactive window\n#GLMakie.activate!() \nfig #or display(fig)\n\n\n# Save the plot as a PDF\n#CairoMakie.activate!()\n#save(\"plot.pdf\", fig)",
+    "objectID": "protocols/cryoslicing.html#slicing-and-mounting",
+    "href": "protocols/cryoslicing.html#slicing-and-mounting",
+    "title": "Cryo-Embedding and Slicing",
+    "section": "Slicing and Mounting",
+    "text": "Slicing and Mounting",
+    "crumbs": [
+      "Protocols",
+      "Cryo-Embedding and Slicing"
+    ]
+  },
+  {
+    "objectID": "tutorials/microscopy_training_checklist.html",
+    "href": "tutorials/microscopy_training_checklist.html",
+    "title": "Microscopy Training Checklist",
+    "section": "",
+    "text": "Note: I’ve been teaching microscopy to experimental scientists since 2017. The training is not about the theory of how a microscope works, instead it is focused on good stewardship of the microscopes to prevent people from misusing them and breaking them. The following is a generalized version of items to discuss and demonstrate that I go through when training people. I usually hand this to the trainee the day before training.",
     "crumbs": [
       "Tutorials",
-      "Julia Quick Start"
+      "Microscopy Training Checklist"
+    ]
+  },
+  {
+    "objectID": "tutorials/microscopy_training_checklist.html#calendar-best-practices",
+    "href": "tutorials/microscopy_training_checklist.html#calendar-best-practices",
+    "title": "Microscopy Training Checklist",
+    "section": "Calendar best practices",
+    "text": "Calendar best practices\n\nBookings list the names of users and any limited equipment such as a special objective.\nFor digital multi-day calendar bookings, make each day a separate booking to prevent it from being made a small “all-day” booking, or people may not notice your booking.\nIf the calendars are heavily booked (little free time that week):\n\nBe in the lab by the time of your reservations.\nEmail/slack the lab if you cancel or are booking for over 72 hours\nMake a special effort to communicate needs during these heavy use periods.\nDo not book multiple microscopes at once\nDo not book more than an agreed upon number of weeks out (usually 2)",
+    "crumbs": [
+      "Tutorials",
+      "Microscopy Training Checklist"
+    ]
+  },
+  {
+    "objectID": "tutorials/microscopy_training_checklist.html#create-shared-digital-resources",
+    "href": "tutorials/microscopy_training_checklist.html#create-shared-digital-resources",
+    "title": "Microscopy Training Checklist",
+    "section": "Create shared digital resources",
+    "text": "Create shared digital resources\n\nyou want to have a place listing each microscope, the equipment on it, and details for that equipment such as camera pixel size.\ncertain concepts, such as using perfect focus, or a scanslide feature can be confusing, create walkthroughs for specific softwares and tasks. Some examples are at the bottom of this page.",
+    "crumbs": [
+      "Tutorials",
+      "Microscopy Training Checklist"
+    ]
+  },
+  {
+    "objectID": "tutorials/microscopy_training_checklist.html#gloves-or-no-gloves",
+    "href": "tutorials/microscopy_training_checklist.html#gloves-or-no-gloves",
+    "title": "Microscopy Training Checklist",
+    "section": "Gloves or no gloves?",
+    "text": "Gloves or no gloves?\n\nYour lab probably has a rule that you always need to be wearing gloves while using a microscope, or you cannot be wearing gloves while using a microscope. Essentially either you expect bad chemicals to be on all the surfaces, or you expect no bad chemicals to be on any surface. That’s going to change a lot of the way you work, so find out what the rules are in your lab. If you have no rules, make some, you don’t want some people to be working with leaky BA:BB samples and gloves, and other users to be walking up and handling the same knobs without gloves.",
+    "crumbs": [
+      "Tutorials",
+      "Microscopy Training Checklist"
+    ]
+  },
+  {
+    "objectID": "tutorials/microscopy_training_checklist.html#setting-up-the-microscope-and-computer",
+    "href": "tutorials/microscopy_training_checklist.html#setting-up-the-microscope-and-computer",
+    "title": "Microscopy Training Checklist",
+    "section": "Setting up the microscope and computer",
+    "text": "Setting up the microscope and computer\n\nLight Source, Microscope, and Stage\nLook for the relevant power strips and turn them on. Ask for help if using an unfamiliar microscope. Keep the power strips off the ground in case of flooding / water damage.\n\n\nCamera\nLook at the camera and verify that it is fully on. You should hear/feel a fan blowing and\n\n\nPC on, Start Software, Start Live View\nYou can use VisiView/uManager/MetaMorph to operate the microscope. Opening this software is the point at which most errors will occur. Usually these errors either require waiting longer for hardware to fully turn on, or a reboot of the computer and microscopy system.\n\n\nSet the objective\nObjectives are physically set in a turret, when changing objectives move the turret all the way down (Z-Escape) before spinning it. This will prevent long objective barrels from smashing into the stage. Open and close caps slightly above a table, so that if you drop the objective it doesn’t go far.\n\n\nInstalling a sample\nAfter setting your objective, choose your sample holder and install your sample.\n\n\nChanging the optical path\nMicroscopes can switch between using various ports that bring emission light towards a camera, or the eye piece. Always think about the possible hazards of using the eyepiece optical path on a microscope with lasers.\n\n\n1.5x Knob\nOn the front of some microscopes is a 1.5x magnification switch. Set this to 1x before and/or after imaging.\n\n\nMoving the stage and objective height (focus)\nWe will cover how to move the stage and focus. We will go over the hazards associated with operating these at their extremities such as hitting objectives on the stage/sample or threading manual components. We will go over some reasons why the sample might drift to a different focus.",
+    "crumbs": [
+      "Tutorials",
+      "Microscopy Training Checklist"
+    ]
+  },
+  {
+    "objectID": "tutorials/microscopy_training_checklist.html#cameras",
+    "href": "tutorials/microscopy_training_checklist.html#cameras",
+    "title": "Microscopy Training Checklist",
+    "section": "Cameras",
+    "text": "Cameras\nYour microscope either uses a camera, or is a point-scanning microscope that uses a photodetector. This information is relavent for the former.\n\nLooking up a camera\nAlways look up the specifications of the camera you are using, and make a note of it. The specifications of the camera will be necessary for analyzing your data later.\n\n\nCamera Spec: microns per pixel\nThe camera converts physical real-world length scales to pixels. The EMCCD is 16 um/pixel. The Orca Fusions are 6.5 um/pixel. The MAICO is 6.25 um/pixel.\n\n\nBinning\nBinning by N will increase the microns per pixel by a factor of N, but will decrease the pixels and file size by N^2. It will increase the photosensitivity of the camera by roughly a factor of 2N.\n\n\nExposure time\nExposure time is how long the camera is exposed to light. The longer the exposure, the better the signal to noise ratio, but the more blurred your sample becomes. Too short and you will only get noise, too long and you might saturate your detector or create a non-linear signal. The maximum and minimum exposure times of a camera are listed by its seller.\n\n\nBit depth\nBit Depth is how many bits are assigned to each pixel, and control the total range of brightness each pixel can have. Unless you are taking large data sets, you do not need to worry about Bit Depth and can keep it on the default.\n\n\nSpotting dust on a camera\nIf dark spots do not rotate when the camera is rotated, those dark spots are on the CMOS/CCD itself. Some spots are inevitable, but once it becomes bad the camera needs to be cleaned. To clean dust spots off a camera, find someone more comfortable using the microscope than you (if that person doesn’t exist, it’s your time to shine). Get a small air pump, not compressed air, and try to gently blow away dust. If that doesn’t work, proceed to use solvents and cotton-tipped applicators like you would for an objective.\n\n\nStoring a camera\nCameras and optical ports have corresponding covers. If you cannot find a cover, quickly fashion one out of lab tape so that dust does not get into the camera or microscope.",
+    "crumbs": [
+      "Tutorials",
+      "Microscopy Training Checklist"
+    ]
+  },
+  {
+    "objectID": "tutorials/microscopy_training_checklist.html#objectives",
+    "href": "tutorials/microscopy_training_checklist.html#objectives",
+    "title": "Microscopy Training Checklist",
+    "section": "Objectives",
+    "text": "Objectives\n\nUseful reading:\n\nNumerical Aperture (NA) and Resolution\nQ: If microns/pixel is smaller than NA limited resolution, what happens?\nField of View\nDepth of Field\nSpecialized Objectives\nQ: Objective quiz! Try to decode the symbols on a random objective.\n\n\n\nInspecting an objective\nIf a lens seems dirty, inspect it using a dissecting microscope. Take pictures if you can.\n\n\nInstalling an objective\nLearn to install and remove an objective. Remember, tighten with just two fingers! When removing an objective, place them upside down so that oil/water falls out over time.\n\n\nBreaking an objective\n-Avoid slamming an objective into the stage or your sample -Avoid rotating the objectives without z-escaping.\n\n\nWorking with Immersion Lenses\nRead about water immersion. Use a pipette/dropper to place a one drop of liquid on the lens. If possible it’s good to train at this point on how to spot and remove small air bubbles, and how to spot and address lack of immersion contact with the sample. If your sample has a mysterious dark patch float across it, that was a bubble floating by the optical path. A persistant dark patch might be a bubble just sitting there, so try to spot them in brightfield before imaging! They are very common. If you switch between oil and water, it will be bubbles on bubbles.\n\n\nCorrective collars and variable NA Irises\nRead about specialized microscope objectives, some objectives have Corrective Collars or Variable NA Irises. You rotate these to change the working distance or NA of an objective.\n\n\nCleaning a Lens\nClean oil and water off immersion lenses before storing by gently wiping them with folded lens paper. You can use lens paper wetted with objective cleaning solvent before or after use for a better clean.\n\n\nCommon contaminants\nCommon problems with lenses include UV glue, nail polish, or other curing agents getting stuck on the lens. Additionally, you will see scratches due to the objective hitting the stage and the sample. If necessary you can use Helmanex to dissolve oil residue or Methylene Chloride to remove cured UV glue.\n\n\nReporting problems\nPlease email/slack the lab if you suspect there is a problem with a lens or if you have broken a lens. It can be surprisingly difficult to tell when a 60x or 100x lens is broken, as it can often seem like your sample is simply bad.",
+    "crumbs": [
+      "Tutorials",
+      "Microscopy Training Checklist"
+    ]
+  },
+  {
+    "objectID": "tutorials/microscopy_training_checklist.html#light-sources",
+    "href": "tutorials/microscopy_training_checklist.html#light-sources",
+    "title": "Microscopy Training Checklist",
+    "section": "Light sources",
+    "text": "Light sources\nEvery microscope has at least one light source, often several. Locate the light source, make sure it is on, and trace its optical path. Always treat the optical cables with care, as many of them are liquid guides. Figure out the optical path, sometimes microscopes have both diascopic (transmission) and episcopic (reflective) light paths.\n\nLiquid light guide\nThe liquid guide optical cable is a cable filled with actual liquid. Avoid sharp bends in these cables, as air bubbles can form, like in a glow-stick, that will ruin the optical signal.\n\n\nCentering a light source\nCheck that your illumination is as uniform as possible, and centered in the middle of your camera. Take images of the illumination so that you can account for any eccentricity of the illumination at another time.\n\n\nTaking Blanks, Flats, or Darks\nTo account for a non-uniform illumination via software, you can take one “flat field” image when you start imaging with a particular optical setup. This will allow you to subtract off intensity gradients caused by the optical path.\n\n\nExternal Light\nAlways be conscious of the effect of external light on your sample and the samples of others. Keep light to a minimum during your own experiments, and totally off when others are running experiments in the room. Consider using a microscope hood for extremely light-sensitive experiments.\n\n\nColor\nAlways double-check the wavelength coming from the light source, and if it can be changed make sure you know how to change it to see if others have changed the light source properties.\n\n\nIntensity\nThink carefully about the pros and cons of using a large amount of light for your sample. As a general rule, your signal should be ~5x greater than your noise. Excess light beyond that may create a nicer image, but may also kill a living sample. If you can, increase exposure time instead of increasing light intensity.",
+    "crumbs": [
+      "Tutorials",
+      "Microscopy Training Checklist"
+    ]
+  },
+  {
+    "objectID": "tutorials/microscopy_training_checklist.html#filters-and-fluorophores",
+    "href": "tutorials/microscopy_training_checklist.html#filters-and-fluorophores",
+    "title": "Microscopy Training Checklist",
+    "section": "Filters and Fluorophores",
+    "text": "Filters and Fluorophores\n\nFilter Wheels\nMost microscopes have a set of excitation or emission filters. A wheel rotates these in and out. -Take images in an order that requires the least amount of motion of the filters. -If you are taking images quickly, changing filter wheel position takes time. -Moving the filter wheel quickly for long times generates heat which can degrade the filter wheel. This is the single most common reason filter wheels break.\n\n\nFilter Cubes\nFilter turret set ups use filter cubes with combined excitation/emission and dichroic filters. If you are using filter cubes, you should how to inspect them, how to clean them, and how to move them. Filter cubes are fingerprinting machines, so even in a no-glove lab consider handling them with clean gloves.\n\n\nFluorophore Separation\nMake sure that your fluorophores are well separated. You can use the fpbase to see spectra of molecular labels and how particular filters will act on them: https://www.fpbase.org/spectra/ . This is the single most useful link on this page.",
+    "crumbs": [
+      "Tutorials",
+      "Microscopy Training Checklist"
+    ]
+  },
+  {
+    "objectID": "tutorials/microscopy_training_checklist.html#incubators",
+    "href": "tutorials/microscopy_training_checklist.html#incubators",
+    "title": "Microscopy Training Checklist",
+    "section": "Incubators",
+    "text": "Incubators\nIf you are taking live data, you should learn about incubators.\n\nHow to install/uninstall the incubator\nLearn how to install and uninstall the incubator. You’ll need to take it off at the end of each run for the other users. Big box incubators need some time to warm up, so build that into your schedule.\n\n\nCommon incubator errors\n-Make sure the CO2 is ON when you start, and OFF when you finish. It is shocking how often this is forgotten. -Make sure there is a real source of water to keep humdity up so that your sample doesn’t begin to evaporate. -Change out the water daily to prevent contamination, and empty it when you are done -Check on the CO2 and temperature levels periodically to spot problems -The incubator brings the whole microscope up in temperature and causes significant z-drift initially. -Air objectives that are not brought up to temperature require a objective heating collar to prevent condensation. -Water objectives will have their water evaporate. A good way to prevent this is to use a special oil with the refractive index of water as a substitute for water.",
+    "crumbs": [
+      "Tutorials",
+      "Microscopy Training Checklist"
+    ]
+  },
+  {
+    "objectID": "tutorials/microscopy_training_checklist.html#condensers",
+    "href": "tutorials/microscopy_training_checklist.html#condensers",
+    "title": "Microscopy Training Checklist",
+    "section": "Condensers",
+    "text": "Condensers\nIf you are taking data using overhead light, you should learn about condensers.\n\nInstall and removal\nLearn how condensers come on and off and how to clean them. Condensors get dirty very quickly!\n\n\nKoehler Illumination\nMicroscopists really like to teach koehler illumination. If you know how to do this, microscopists will consider you one of the fold. Learn how to collimate light from the condenser at a given sample distance with a given objective. Read the following to get a sense of the quest: https://www.olympus-lifescience.com/en/microscope-resource/primer/anatomy/kohler/\n\n\nDarkfield and Brightfield\nLearn brightfield microscopy and darkfield microscopy. The latter is much more interesting, and commonly done wrong.\n\n\nPolarizers\nIntroduce a manual polarizer into the light path and briefly learn about Polarized Light Microscopy. This is some of the most beautiful microscopy you can do, and a rare treat.",
+    "crumbs": [
+      "Tutorials",
+      "Microscopy Training Checklist"
+    ]
+  },
+  {
+    "objectID": "tutorials/microscopy_training_checklist.html#software",
+    "href": "tutorials/microscopy_training_checklist.html#software",
+    "title": "Microscopy Training Checklist",
+    "section": "Software",
+    "text": "Software\nMicroscopy software is terrible. Whether it’s Nikon Elements, Zeiss Zen, uManager, MetaMorph/VisiView or a custom interface smashed together by Matlab and LabView, it’s all awful. In the same way that science is rate-limited by ImageJ, science is also squashed by microscopy software. Of interesting note, Leica software is not good, but it isn’t terrible like the other options.\n\nMulti-Dimensional Acquisition\nGo through each part of Multi-Dimensional Acquisition and take some images in multiple colors, z planes, positions, and timepoints.\n\n\nChoosing an acceptable timelapse rate\nWhen choosing frame rates, consider exposure, filter wheel, and stage limitations, as well as data size and analysis considerations. If a single image takes 30 second to take, then you cannot set your timelapse rate to every 10 seconds.\n\n\nSetting positions\nGo through the process of setting multiple positions, or an array of positions for multiple samples and for stitching.\n\n\nCreating Z-Stacks\nGo through the process of acquiring Z-stacked images.\n\n\nColoring\nWhen acquiring data, use grayscale for a single color. For two colors, pick colors that add up to white (like Cyan [0 1 1] and Red [1 0 0]). For 3 or more colors, just have the color represent the wavelength.\n\n\nHistograms and brightness curves\nGet used to reading the histogram which shows the number of counts over the range of the bit depth of your detector. Remember when picking illumination power and exposure times to never let the histogram get saturated. A good rule of thumb is you are trying to fill the bottom 50% of the histogram. Try adjusting the brightness curves for a sample 2 color image to get a sense of what the data looks like and what the dynamic range is.",
+    "crumbs": [
+      "Tutorials",
+      "Microscopy Training Checklist"
+    ]
+  },
+  {
+    "objectID": "tutorials/microscopy_training_checklist.html#saving-data",
+    "href": "tutorials/microscopy_training_checklist.html#saving-data",
+    "title": "Microscopy Training Checklist",
+    "section": "Saving data",
+    "text": "Saving data\nLearn about RAM usage, and get used to using the Task Manager to monitor RAM.\n\nSuggested data structure:\nSave your data in a structure in case metadata is lost. i.e. /YYYY-MM-DD/Exp#Description##x_##s_#bin_CAMERANAME_AdditionalInfo\n\n\nWhere to save data\nThe microscopy computer should have a fast data drive that you acquire to. Move your data off this immediatly after acquisition. To a slower local drive, or to a cloud drive or server system. You generally want your data backed up to at least two robust systems. I use google drive, and a home server system based on Synology.\n\n\nHardware management\nIf you really want to do good microscopy though, you have to learn how to dig into the software. Good luck. Make backups of configurations often, but be aware, many softwares store some of their settings in difficult to find nooks and crannies. An early thing to learn how to do, is adding and removing and modifying hardware.\n\n\nModifying Presets\nLearn how to create and modify presets.\n\n\nHardware Manager, COM ports, and drivers\nLearn about the Windows Hardware Manager, and learn how to inspect a devices COM port. Here is a brief presentation I gave about debugging COM port errors.",
+    "crumbs": [
+      "Tutorials",
+      "Microscopy Training Checklist"
+    ]
+  },
+  {
+    "objectID": "tutorials/microscopy_training_checklist.html#shutdown",
+    "href": "tutorials/microscopy_training_checklist.html#shutdown",
+    "title": "Microscopy Training Checklist",
+    "section": "Shutdown",
+    "text": "Shutdown\nFor good stewardship of a microscope, going through a careful shutdown is as important as everything else combined.\n-Turn off software -Turn off laser or mercury lamp(if applicable) – These light sources only have a certain amount of time (1000-10000 hr) before they stop working, so this is important! -Turn off power strips -Turn off incubator, empty water, turn off CO2 (if applicable) -Remove all non-standard imaging equipment out of imaging path (condensers, polarizers, incubators) -Remove all high-NA objectives and put in caps to objective slots -COGS: Clean - Are there any oils or chemicals (BA:BB) or gloves? Objectives - Are all objectives you used free of oil/residue? Gas - Is the CO2 off? Samples - Are you samples collected and out of the room?",
+    "crumbs": [
+      "Tutorials",
+      "Microscopy Training Checklist"
     ]
   }
 ]

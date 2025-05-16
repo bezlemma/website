@@ -1,0 +1,269 @@
+---
+title: "Microscopy Training Checklist"
+format:
+  html:
+    toc: false
+---
+
+
+> **Note:** I've been teaching microscopy to experimental scientists since 2017. The training is not about the theory of how a microscope works, instead it is focused on good stewardship of the microscopes to prevent people from misusing them and breaking them. The following is a generalized version of items to discuss and demonstrate that I go through when training people. I usually hand this to the trainee the day before training.
+
+
+# Computer best practices
+* Hard drives on microscopy computers fill up fast, some users can take an entire TB of data in a day. If the hard drive fills up, they cannot continue their experiments. Remove your data from the hard drives in a timely manner!
+* DO NOT delete the data of others if they are taking up too much space. Do not log someone else out or move their sample if they are taking data, even if they don’t have a reservation. Contact the person, or email the lab.
+* Before taking overnight data, make sure there is no pending updates, and make a conscious decision to have the computer on/off the internet and accessible/inaccessible via remote desktop.
+* microscopes need calendars, either physical or digital
+
+## Calendar best practices
+* Bookings list the names of users and any limited equipment such as a special objective. 
+* For digital multi-day calendar bookings, make each day a separate booking to prevent it from being made a small "all-day" booking, or people may not notice your booking.
+* If the calendars are heavily booked (little free time that week): 
+    * Be in the lab by the time of your reservations.
+    * Email/slack the lab if you cancel or are booking for over 72 hours
+	* Make a special effort to communicate needs during these heavy use periods.
+	* Do not book multiple microscopes at once
+	* Do not book more than an agreed upon number of weeks out (usually 2)
+
+## Create shared digital resources
+* you want to have a place listing each microscope, the equipment on it, and details for that equipment such as camera pixel size.
+* certain concepts, such as using perfect focus, or a scanslide feature can be confusing, create walkthroughs for specific softwares and tasks. Some examples are at the bottom of this page.
+
+## Gloves or no gloves?
+* Your lab probably has a rule that you always need to be wearing gloves while using a microscope, or you cannot be wearing gloves while using a microscope. Essentially either you expect bad chemicals to be on all the surfaces, or you expect no bad chemicals to be on any surface. That's going to change a lot of the way you work, so find out what the rules are in your lab. If you have no rules, make some, you don't want some people to be working with leaky BA:BB samples and gloves, and other users to be walking up and handling the same knobs without gloves.
+
+# Training
+
+Bring your own sample for a more practical training session! 
+
+## Setting up the microscope and computer
+
+### Light Source, Microscope, and Stage
+Look for the relevant power strips and turn them on. Ask for help if using an unfamiliar microscope. Keep the power strips off the ground in case of flooding / water damage.
+
+### Camera 
+Look at the camera and verify that it is fully on. You should hear/feel a fan blowing and 
+
+### PC on, Start Software, Start Live View
+You can use VisiView/uManager/MetaMorph to operate the microscope. Opening this software is the point at which most errors will occur. Usually these errors either require waiting longer for hardware to fully turn on, or a reboot of the computer and microscopy system.
+
+### Set the objective
+Objectives are physically set in a turret, when changing objectives move the turret all the way down (Z-Escape) before spinning it. This will prevent long objective barrels from smashing into the stage. Open and close caps slightly above a table, so that if you drop the objective it doesn’t go far.
+
+### Installing a sample
+After setting your objective, choose your sample holder and install your sample.
+
+### Changing the optical path
+Microscopes can switch between using various ports that bring emission light towards a camera, or the eye piece. Always think about the possible hazards of using the eyepiece optical path on a microscope with lasers. 
+
+### 1.5x Knob
+On the front of some microscopes is a 1.5x magnification switch. Set this to 1x before and/or after imaging.
+
+### Moving the stage and objective height (focus)
+We will cover how to move the stage and focus. We will go over the hazards associated with operating these at their extremities such as hitting objectives on the stage/sample or threading manual components. We will go over some reasons why the sample might drift to a different focus.
+
+## Cameras
+
+Your microscope either uses a camera, or is a point-scanning microscope that uses a photodetector. This information is relavent for the former.
+
+### Looking up a camera
+Always look up the specifications of the camera you are using, and make a note of it. The specifications of the camera will be necessary for analyzing your data later.
+
+### Camera Spec: microns per pixel
+The camera converts physical real-world length scales to pixels. The EMCCD is 16 um/pixel. The Orca Fusions are 6.5 um/pixel. The MAICO is 6.25 um/pixel. 
+
+### Binning
+Binning by N will increase the microns per pixel by a factor of N, but will decrease the pixels and file size by N^2. It will increase the photosensitivity of the camera by roughly a factor of 2N.
+
+### Exposure time
+Exposure time is how long the camera is exposed to light. The longer the exposure, the better the signal to noise ratio, but the more blurred your sample becomes. Too short and you will only get noise, too long and you might saturate your detector or create a non-linear signal. The maximum and minimum exposure times of a camera are listed by its seller. 
+
+### Bit depth
+Bit Depth is how many bits are assigned to each pixel, and control the total range of brightness each pixel can have. Unless you are taking large data sets, you do not need to worry about Bit Depth and can keep it on the default.
+
+### Spotting dust on a camera
+If dark spots do not rotate when the camera is rotated, those dark spots are on the CMOS/CCD itself. Some spots are inevitable, but once it becomes bad the camera needs to be cleaned.
+To clean dust spots off a camera, find someone more comfortable using the microscope than you (if that person doesn't exist, it's your time to shine). Get a [small air pump](https://www.bhphotovideo.com/c/product/259157-REG/Giottos_AA1900_Rocket_Air_Blower.html), not compressed air, and try to gently blow away dust. If that doesn't work, proceed to use [solvents and cotton-tipped applicators](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=330) like you would for an objective.
+
+### Storing a camera
+Cameras and optical ports have corresponding covers. If you cannot find a cover, quickly fashion one out of lab tape so that dust does not get into the camera or microscope. 
+
+
+## Objectives
+### Useful reading:
+* [Numerical Aperture (NA) and Resolution](microscopyu.com/microscopy-basics/resolution)  
+		Q: If microns/pixel is smaller than NA limited resolution, what happens?
+* [Field of View](microscopyu.com/microscopy-basics/field-of-view)
+* [Depth of Field](microscopyu.com/microscopy-basics/depth-of-field-and-depth-of-focus)
+* [Specialized Objectives](microscopyu.com/microscopy-basics/specialized-microscope-objectives)  
+		Q: Objective quiz! Try to decode the symbols on a random objective.
+
+### Inspecting an objective
+If a lens seems dirty, inspect it using a dissecting microscope. Take pictures if you can.
+
+### Installing an objective
+Learn to install and remove an objective. Remember, tighten with just two fingers! When removing an objective, place them upside down so that oil/water falls out over time.
+
+### Breaking an objective
+-Avoid slamming an objective into the stage or your sample
+-Avoid rotating the objectives without z-escaping. 
+
+### Working with Immersion Lenses 
+Read about water immersion. Use a pipette/dropper to place a one drop of liquid on the lens. If possible it's good to train at this point on how to spot and remove small air bubbles, and how to spot and address lack of immersion contact with the sample. If your sample has a mysterious dark patch float across it, that was a bubble floating by the optical path. A persistant dark patch might be a bubble just sitting there, so try to spot them in brightfield before imaging! They are very common. If you switch between oil and water, it will be bubbles on bubbles. 
+
+### Corrective collars and variable NA Irises
+Read about specialized microscope objectives, some objectives have Corrective Collars or Variable NA Irises. You rotate these to change the working distance or NA of an objective.
+
+### Cleaning a Lens 
+Clean oil and water off immersion lenses before storing by gently wiping them with folded lens paper. You can use lens paper wetted with objective cleaning solvent before or after use for a better clean.
+
+### Common contaminants
+Common problems with lenses include UV glue, nail polish, or other curing agents getting stuck on the lens. Additionally, you will see scratches due to the objective hitting the stage and the sample. If necessary you can use Helmanex to dissolve oil residue or Methylene Chloride to remove cured UV glue. 
+
+### Reporting problems
+Please email/slack the lab if you suspect there is a problem with a lens or if you have broken a lens. It can be surprisingly difficult to tell when a 60x or 100x lens is broken, as it can often seem like your sample is simply bad.
+		
+## Light sources
+
+Every microscope has at least one light source, often several. Locate the light source, make sure it is on, and trace its optical path. Always treat the optical cables with care, as many of them are liquid guides. Figure out the optical path, sometimes microscopes have both diascopic (transmission) and episcopic (reflective) light paths.
+
+### Liquid light guide
+The liquid guide optical cable is a cable filled with actual liquid. Avoid sharp bends in these cables, as air bubbles can form, like in a glow-stick, that will ruin the optical signal.
+
+### Centering a light source
+Check that your illumination is as uniform as possible, and centered in the middle of your camera. Take images of the illumination so that you can account for any eccentricity of the illumination at another time.
+
+### Taking Blanks, Flats, or Darks
+To account for a non-uniform illumination via software, you can take one “flat field” image when you start imaging with a particular optical setup. This will allow you to subtract off intensity gradients caused by the optical path.  
+
+### External Light
+Always be conscious of the effect of external light on your sample and the samples of others. Keep light to a minimum during your own experiments, and totally off when others are running experiments in the room. Consider using a microscope hood for extremely light-sensitive experiments.
+
+### Color
+Always double-check the wavelength coming from the light source, and if it can be changed make sure you know how to change it to see if others have changed the light source properties.
+
+### Intensity
+Think carefully about the pros and cons of using a large amount of light for your sample. As a general rule, your signal should be ~5x greater than your noise. Excess light beyond that may create a nicer image, but may also kill a living sample. If you can, increase exposure time instead of increasing light intensity. 
+
+
+## Filters and Fluorophores
+### Filter Wheels
+Most microscopes have a set of excitation or emission filters. A wheel rotates these in and out.
+-Take images in an order that requires the least amount of motion of the filters. 
+-If you are taking images quickly, changing filter wheel position takes time. 
+-Moving the filter wheel quickly for long times generates heat which can degrade the filter wheel. This is the single most common reason filter wheels break.
+
+### Filter Cubes
+Filter turret set ups use filter cubes with combined excitation/emission and dichroic filters. If you are using filter cubes, you should how to inspect them, how to clean them, and how to move them. Filter cubes are fingerprinting machines, so even in a no-glove lab consider handling them with clean gloves. 
+
+### Fluorophore Separation
+Make sure that your fluorophores are well separated. You can use the fpbase to see spectra of molecular labels and how particular filters will act on them: https://www.fpbase.org/spectra/ . This is the single most useful link on this page.
+
+## Incubators
+If you are taking live data, you should learn about incubators.
+
+### How to install/uninstall the incubator
+Learn how to install and uninstall the incubator. You'll need to take it off at the end of each run for the other users. Big box incubators need some time to warm up, so build that into your schedule.
+
+### Common incubator errors
+-Make sure the CO2 is ON when you start, and OFF when you finish. It is shocking how often this is forgotten. 
+-Make sure there is a real source of water to keep humdity up so that your sample doesn't begin to evaporate.
+-Change out the water daily to prevent contamination, and empty it when you are done
+-Check on the CO2 and temperature levels periodically to spot problems
+-The incubator brings the whole microscope up in temperature and causes significant z-drift initially.
+-Air objectives that are not brought up to temperature require a objective heating collar to prevent condensation.
+-Water objectives will have their water evaporate. A good way to prevent this is to use a special oil with the refractive index of water as a substitute for water.
+
+
+## Condensers
+If you are taking data using overhead light, you should learn about condensers. 
+
+### Install and removal
+Learn how condensers come on and off and how to clean them. Condensors get dirty very quickly!
+
+### Koehler Illumination
+Microscopists really like to teach koehler illumination. If you know how to do this, microscopists will consider you one of the fold. Learn how to collimate light from the condenser at a given sample distance with a given objective. Read the following to get a sense of the quest: https://www.olympus-lifescience.com/en/microscope-resource/primer/anatomy/kohler/
+
+### Darkfield and Brightfield
+Learn brightfield microscopy and darkfield microscopy. The latter is much more interesting, and commonly done wrong.
+
+### Polarizers
+Introduce a manual polarizer into the light path and briefly learn about Polarized Light Microscopy. This is some of the most beautiful microscopy you can do, and a rare treat.
+
+
+## Software
+
+Microscopy software is terrible. Whether it's Nikon Elements, Zeiss Zen, uManager, MetaMorph/VisiView or a custom interface smashed together by Matlab and LabView, it's all awful. In the same way that science is rate-limited by ImageJ, science is also squashed by microscopy software. Of interesting note, Leica software is _not good_, but it isn't terrible like the other options.
+
+### Multi-Dimensional Acquisition
+Go through each part of Multi-Dimensional Acquisition and take some images in multiple colors, z planes, positions, and timepoints.
+
+### Choosing an acceptable timelapse rate
+When choosing frame rates, consider exposure, filter wheel, and stage limitations, as well as data size and analysis considerations. If a single image takes 30 second to take, then you cannot set your timelapse rate to every 10 seconds.
+
+### Setting positions
+Go through the process of setting multiple positions, or an array of positions for multiple samples and for stitching. 
+
+### Creating Z-Stacks
+Go through the process of acquiring Z-stacked images.
+
+### Coloring
+When acquiring data, use grayscale for a single color. For two colors, pick colors that add up to white (like Cyan [0 1 1] and Red [1 0 0]). For 3 or more colors, just have the color represent the wavelength.
+
+### Histograms and brightness curves
+Get used to reading the histogram which shows the number of counts over the range of the bit depth of your detector. Remember when picking illumination power and exposure times to never let the histogram get saturated. A good rule of thumb is you are trying to fill the bottom 50% of the histogram. Try adjusting the brightness curves for a sample 2 color image to get a sense of what the data looks like and what the dynamic range is.
+
+## Saving data
+Learn about RAM usage, and get used to using the Task Manager to monitor RAM.
+
+### Suggested data structure:
+Save your data in a structure in case metadata is lost. i.e.
+/YYYY-MM-DD/Exp#_Description_##x_##s_#bin_CAMERANAME_AdditionalInfo
+
+### Where to save data
+The microscopy computer should have a fast data drive that you acquire to. Move your data off this immediatly after acquisition. To a slower local drive, or to a cloud drive or server system. You generally want your data backed up to at least two robust systems. I use google drive, and a home server system based on Synology.
+
+### Hardware management
+If you really want to do good microscopy though, you have to learn how to dig into the software. Good luck. Make backups of configurations often, but be aware, many softwares store some of their settings in difficult to find nooks and crannies.
+An early thing to learn how to do, is adding and removing and modifying hardware. 
+
+### Modifying Presets
+Learn how to create and modify presets.
+
+### Hardware Manager, COM ports, and drivers
+Learn about the Windows Hardware Manager, and learn how to inspect a devices COM port. [Here is a brief presentation I gave about debugging COM port errors.](https://docs.google.com/presentation/d/1QJsoQM164FQTXmT5fvicDs-MafwX6Y63Hv_FkPvW66w/edit?usp=sharing)
+
+
+## Shutdown
+
+For good stewardship of a microscope, going through a careful shutdown is as important as everything else combined. 
+
+-Turn off software
+-Turn off laser or mercury lamp(if applicable)
+	-- These light sources only have a certain amount of time (1000-10000 hr) before they stop working, so this is important!
+-Turn off power strips
+-Turn off incubator, empty water, turn off CO2 (if applicable)
+-Remove all non-standard imaging equipment out of imaging path (condensers, polarizers, incubators)
+-Remove all high-NA objectives and put in caps to objective slots
+-COGS:
+	Clean - Are there any oils or chemicals (BA:BB) or gloves?
+	Objectives - Are all objectives you used free of oil/residue?
+	Gas - Is the CO2 off?
+	Samples - Are you samples collected and out of the room?
+
+
+# Some beautiful resources:
+
+[Che-Hang Yu and Spencer Smith have a wonderful tutorial about how a point scanning confocal microscope works](https://www.youtube.com/watch?v=JSnh-btk22U) (they say 2-photon, but ignore that). Che-Hang Yu taught me how point scanning confocal microscopy works when I started graduate school.
+
+[Nikon MicroscopyU](https://www.microscopyu.com/)
+
+
+
+# Specific finicky microscope things:
+
+[Using Nikon Perfect Focus (PFS)](https://docs.google.com/presentation/d/12Irml2GX8GsepsdtJIC4DqyCCQRlKtz_9w6VfsyQqNI/edit?usp=sharing)
+
+[Using the VisiView ScanSlide feature](https://docs.google.com/presentation/d/1kdUirMZedEJu75CYtsWseWRKursWAzWXEEhraZCvQ6Q/edit?usp=sharing)
+
+[Turning on the Hamamatsu MAICO resonant point scanner](https://docs.google.com/presentation/d/1ngcxcK_gt_4QWDavImMEPzjicUrlpaWhvkObt2ED5Po/edit?usp=sharing)

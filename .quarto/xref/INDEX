@@ -34,5 +34,14 @@
   },
   "tutorials/twophoton.qmd": {
     "twophoton.html": "7f9da0ec"
+  },
+  "tutorials/microscopy.qmd": {
+    "microscopy.html": "2ddfcfcf"
+  },
+  "tutorials/two_photon_microscopy.qmd": {
+    "two_photon_microscopy.html": "9e728fb2"
+  },
+  "tutorials/microscopy_training_checklist.qmd": {
+    "microscopy_training_checklist.html": "97eed1ad"
   }
 }
