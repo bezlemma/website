@@ -61,35 +61,42 @@ Then wait for installation, this can take awhile.
 
 ## Graph some data
 
-Now you can modify your `HelloJulia.jl` script (or create a new one) to use these packages. Here's an example that creates a simple plot using Makie and saves it as a PDF:
+Now you can modify your `HelloJulia.jl` script (or create a new one) to use these packages. Here's an example that calculates the derivative of some data (a sine wave), then creates a simple plot using Makie and saves it as a PDF:
 
 ```{julia}
-using GLMakie, DataFrames # CairoMakie
+using GLMakie, CairoMakie
 
-# Create some sample data
-x = 0:0.1:2pi
-y_sin = sin.(x)
-y_cos = cos.(x)
-
-# Create a DataFrame (optional, but useful to show now rather that later)
-df = DataFrame(X=x, SinY=y_sin, CosY=y_cos)
+x = 0:0.1:2pi #create an x-range
+y = sin.(x) #create some y-data, a sin wave.
+∂y∂x = diff(y) ./ diff(x) #Calculate the derivative, cos!
 
 # Create the plot figure and axis
 fig = Figure(size = (400, 400))
 ax = Axis(fig[1, 1], xlabel = "X [um]", ylabel = "Y [Pa]")
 
 # Plot the lines
-lines!(ax, df.X, df.SinY, label = "sin(x)", color = :blue, linewidth = 2)
-lines!(ax, df.X, df.CosY, label = "cos(x)", color = :red, linewidth = 2)
+lines!(ax, x, y, label = "y=sin(x)", color = :blue, linewidth = 2)
+lines!(ax, x[1:end-1], ∂y∂x, label = "∂y/∂x", color = :red, linewidth = 2)
 
 axislegend(ax) # Add a legend
 
 # Show the plot in an interactive window
-#GLMakie.activate!() 
+GLMakie.activate!() 
 fig #or display(fig)
-
 
 # Save the plot as a PDF
 #CairoMakie.activate!()
 #save("plot.pdf", fig)
 ```
+
+## Some resources
+
+MIT has a [Julia Course](https://computationalthinking.mit.edu/Fall24/), with a terrific [YouTube series](https://www.youtube.com/playlist?list=PLP8iPy9hna6Q2Kr16aWPOKE0dz9OnsnIJ) that teaches both Julia and some great foundations of programming for image analysis.
+
+Julia has a dedicated [YouTube Channel](https://www.youtube.com/@TheJuliaLanguage) where you can see what people in the community are up to at various Julia conferences.
+
+For interactive and advanced plotting, check out the [Makie Tutorials](https://docs.makie.org/v0.22/)
+For beautiful plotting, check out [Beautiful Makie](https://beautiful.makie.org/dev/)
+For Finite Element Simulations, check out [Ferrite](https://ferrite-fem.github.io/Ferrite.jl/stable/)
+For working with big spreadsheets of data, check out [DataFrames](https://dataframes.juliadata.org/stable/man/getting_started/)
+If you like interactive notebooks, check out [Pluto](https://plutojl.org/)
