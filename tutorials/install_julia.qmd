@@ -59,7 +59,7 @@ add GLMakie CairoMakie DataFrames
 Then wait for installation, this can take awhile.
 
 
-## Graph some data
+## Differentiate and graph data
 
 Now you can modify your `HelloJulia.jl` script (or create a new one) to use these packages. Here's an example that calculates the derivative of some data (a sine wave), then creates a simple plot using Makie and saves it as a PDF:
 
@@ -95,8 +95,9 @@ MIT has a [Julia Course](https://computationalthinking.mit.edu/Fall24/), with a 
 
 Julia has a dedicated [YouTube Channel](https://www.youtube.com/@TheJuliaLanguage) where you can see what people in the community are up to at various Julia conferences.
 
-For interactive and advanced plotting, check out the [Makie Tutorials](https://docs.makie.org/v0.22/)
-For beautiful plotting, check out [Beautiful Makie](https://beautiful.makie.org/dev/)
-For Finite Element Simulations, check out [Ferrite](https://ferrite-fem.github.io/Ferrite.jl/stable/)
-For working with big spreadsheets of data, check out [DataFrames](https://dataframes.juliadata.org/stable/man/getting_started/)
-If you like interactive notebooks, check out [Pluto](https://plutojl.org/)
+* Interactive and advanced plotting, check out the [Makie Tutorials](https://docs.makie.org/v0.22/)
+* Beautiful plotting, check out [Beautiful Makie](https://beautiful.makie.org/dev/)
+* Finite Element Simulations, check out [Ferrite](https://ferrite-fem.github.io/Ferrite.jl/stable/)
+* Big spreadsheets of data, check out [DataFrames](https://dataframes.juliadata.org/stable/man/getting_started/)
+* Interactive notebooks, check out [Pluto](https://plutojl.org/)
+* You can look at what I'm doing in Julia on [my GitHub](https://github.com/bezlemma?tab=repositories&q=&type=&language=julia)

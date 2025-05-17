@@ -110,11 +110,22 @@
     ]
   },
   {
-    "objectID": "tutorials/install_julia.html#graph-some-data",
-    "href": "tutorials/install_julia.html#graph-some-data",
+    "objectID": "tutorials/install_julia.html#differentiate-and-graph-data",
+    "href": "tutorials/install_julia.html#differentiate-and-graph-data",
     "title": "Julia Quick Start",
-    "section": "Graph some data",
-    "text": "Graph some data\nNow you can modify your HelloJulia.jl script (or create a new one) to use these packages. Here’s an example that creates a simple plot using Makie and saves it as a PDF:\n\nusing GLMakie, DataFrames # CairoMakie\n\n# Create some sample data\nx = 0:0.1:2pi\ny_sin = sin.(x)\ny_cos = cos.(x)\n\n# Create a DataFrame (optional, but useful to show now rather that later)\ndf = DataFrame(X=x, SinY=y_sin, CosY=y_cos)\n\n# Create the plot figure and axis\nfig = Figure(size = (400, 400))\nax = Axis(fig[1, 1], xlabel = \"X [um]\", ylabel = \"Y [Pa]\")\n\n# Plot the lines\nlines!(ax, df.X, df.SinY, label = \"sin(x)\", color = :blue, linewidth = 2)\nlines!(ax, df.X, df.CosY, label = \"cos(x)\", color = :red, linewidth = 2)\n\naxislegend(ax) # Add a legend\n\n# Show the plot in an interactive window\n#GLMakie.activate!() \nfig #or display(fig)\n\n\n# Save the plot as a PDF\n#CairoMakie.activate!()\n#save(\"plot.pdf\", fig)",
+    "section": "Differentiate and graph data",
+    "text": "Differentiate and graph data\nNow you can modify your HelloJulia.jl script (or create a new one) to use these packages. Here’s an example that calculates the derivative of some data (a sine wave), then creates a simple plot using Makie and saves it as a PDF:\n\nusing GLMakie, CairoMakie\n\nx = 0:0.1:2pi #create an x-range\ny = sin.(x) #create some y-data, a sin wave.\n∂y∂x = diff(y) ./ diff(x) #Calculate the derivative, cos!\n\n# Create the plot figure and axis\nfig = Figure(size = (400, 400))\nax = Axis(fig[1, 1], xlabel = \"X [um]\", ylabel = \"Y [Pa]\")\n\n# Plot the lines\nlines!(ax, x, y, label = \"y=sin(x)\", color = :blue, linewidth = 2)\nlines!(ax, x[1:end-1], ∂y∂x, label = \"∂y/∂x\", color = :red, linewidth = 2)\n\naxislegend(ax) # Add a legend\n\n# Show the plot in an interactive window\nGLMakie.activate!() \nfig #or display(fig)\n\n# Save the plot as a PDF\n#CairoMakie.activate!()\n#save(\"plot.pdf\", fig)",
+    "crumbs": [
+      "Tutorials",
+      "Julia Quick Start"
+    ]
+  },
+  {
+    "objectID": "tutorials/install_julia.html#some-resources",
+    "href": "tutorials/install_julia.html#some-resources",
+    "title": "Julia Quick Start",
+    "section": "Some resources",
+    "text": "Some resources\nMIT has a Julia Course, with a terrific YouTube series that teaches both Julia and some great foundations of programming for image analysis.\nJulia has a dedicated YouTube Channel where you can see what people in the community are up to at various Julia conferences.\n\nInteractive and advanced plotting, check out the Makie Tutorials\nBeautiful plotting, check out Beautiful Makie\nFinite Element Simulations, check out Ferrite\nBig spreadsheets of data, check out DataFrames\nInteractive notebooks, check out Pluto\nYou can look at what I’m doing in Julia on my GitHub",
     "crumbs": [
       "Tutorials",
       "Julia Quick Start"
