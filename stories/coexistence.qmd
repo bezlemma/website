@@ -1,10 +1,13 @@
 ---
-title: "Coexistence" 
+title: "Coexistence"
+format:
+  html:
+    css: [storyspecific.scss"]
 ---
 
-## Chapter 1: The Imaginary Afterlife of Alex and Evelyn
+## Chapter 1: The Imaginary Afterlife <br> of Alex and Evelyn
 
-They knew there was no afterlife. But if there was, what could it be? Alex and Evelyn couldn’t imagine an other-worldly plane of heaven in which haloed residents continuously exchanged pleasantries. But they also could not grapple with the empty nature of death. They were on swing sets at sunset, looking out over the East River from Queens. Back then there was a swing set underneath the Pepsi:Cola sign of Gantry Park. They were seventeen, discussing death, when they stumbled upon a prescient imaginary afterlife.
+They knew there was no afterlife. But they kept coming back to the idea. Alex and Evelyn couldn’t imagine an other-worldly plane of heaven in which haloed residents continuously exchanged pleasantries. But they also could not grapple with the empty nature of death. They were on swing sets at sunset, looking out over the East River from Queens. Back then there was a swing set underneath the Pepsi:Cola sign of Gantry Park. They were seventeen, discussing death, when they stumbled upon a prescient imaginary afterlife.
 
 “My grandmother believed that people had auras, and when they died the auras left them, and that was her proof of an afterlife.”
 
@@ -429,7 +432,7 @@ I mean holy shit. Congratulations! He looks just like you!
 
 It was one day before Raymond’s first birthday before they talked again. loveAndPeace were going to incorporate a seventh member, Hyun Fujimoto, into their coexistence, and they were livestreaming the process. Alex sent a link. There were no test simulations, no safeguards – their spirits were filled with the unbridled optimism that so often drives coexistence research. 
 
-The livestream recording shows that Joon and Hyun were in the same dorm room at the end of the incorporation process. In the video both men scream, “ある人の天国が他の人の地獄だとは” as their bodies begin to struggle against each other. Ren's body seizes an electric drill by the chuck and brings the handle crashing down onto Joon's temple, again and again until the surface of the Joon's head begins to cave in. Alex texted Evelyn a blow-by-blow account.
+The livestream recording shows that Joon and Hyun were in the same dorm room at the end of the incorporation process. In the video both men scream as their bodies begin to struggle against each other. Ren's body seizes an electric drill by the chuck and brings the handle crashing down onto Joon's temple, again and again until the surface of the Joon's head begins to cave in. Alex texted Evelyn a blow-by-blow account.
 
 <div class="chat-container">
 <div class="chat-bubble sender-bubble">
@@ -526,7 +529,22 @@ And so, they did. The next day Alex did not go to lab, and Evelyn didn’t get o
 
 “What about a coexistence?”
 
+<br>
+
+<br>
+
+<br>
+
 ---
+
+
+<br>
+
+<br>
+
+<br>
+
+
 
 They had friends, they had contacts, they bypassed the waiting lists at NYU Langone. Surgeons flew back from the Bahamas, cut their vacations short. It was every cent Evelyn had ever made; it was all of Alex’s inheritance and savings. Still the doctors were doing them a favor, charging things to insurance they shouldn’t, doing some procedures off the books. Time was short, but kindness was abundant. No one knew how long Evelyn had, and that looming finality of a cherished researcher in the field moved medical mountains.
 
