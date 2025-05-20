@@ -19,6 +19,7 @@ website:
         contents:
           - "stories/annapurnacrescent.qmd"
           - "stories/coexistence.qmd"
+          - "stories/first.qmd"
     search: false
 format:
   html:
