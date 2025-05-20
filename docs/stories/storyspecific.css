@@ -1,0 +1,42 @@
+body {
+    font-family: 'Georgia', serif;   margin: 0;
+    line-height: 1.5; 
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    /* border: 10px solid lime !important; Temporary diagnostic style removed */
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+
+/* Styles for chat messages */
+.chat-bubble {
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    max-width: 70%;
+    clear: both; /* Ensures bubbles don't overlap incorrectly */
+}
+
+.sender-bubble {
+    background-color: #e0e0e0; /* Gray for sender (Alex) */
+    float: right;
+    margin-left: auto; /* Aligns to the right */
+}
+
+.receiver-bubble {
+    background-color: #add8e6; /* Light blue for receiver (Evelyn) */
+    float: left;
+    margin-right: auto; /* Aligns to the left */
+}
+
+/* Clearfix for container of chat bubbles if needed */
+.chat-container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+

@@ -2,7 +2,7 @@
 title: "First!"
 format:
   html:
-    css: [../stories/storyspecific.scss"]
+    css: [../stories/storyspecific.css"]
 ---
  
 The premise of FutureCore was simple: we were going to discover everything first. We would discover every cancer treatment, every law of physics, every sociological phenomenon before anyone else. 
