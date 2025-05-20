@@ -199,3 +199,13 @@ body {
     clear: both;
     display: table;
 }
+
+.story-page h1, 
+.story-page h2 {
+  text-align: center;
+}
+
+.story-page {
+  font-family: 'Georgia', serif;
+  line-height: 3; 
+}
