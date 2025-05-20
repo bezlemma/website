@@ -2,7 +2,7 @@
 title: "Annapurna Crescent" 
 format:
   html:
-    css: [storyspecific.scss"]
+    css: [../stories/storyspecific.css"]
 ---
 
 ## Prologue: Get Out Of New York City.

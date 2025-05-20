@@ -21,10 +21,10 @@ format:
 ## Materials Needed
 
 ### Room Temperature
-- **TBS:** TBS with 7.35 mg/L CaCl2 (can make 10x initially for easier measurement)
-- **TBST:** TBS and 0.5% Triton (if calcium added to TBS, no need to add extra calcium here)
+- **TBS:** TBS with 7.35 mg/L $CaCl_2$
+- **TBST:** TBS and 0.5% Triton
 
-### On Ice (or 4°C)
+### On Ice or 4°C
 - **PFA:** 4% PFA with 0.25% Glutaraldehyde diluted into PBS
 - **Donkey Block:** 10% Donkey Serum with TBST
 - **Primaries** Primary Antibodies for Day 1
@@ -47,61 +47,56 @@ format:
 2.  **Incubation (Cold):** Place on a cold shaker (4°C) for 30 minutes.
     *   PFA diffusion into the lung at 4°C takes ~30 minutes for 400 µm.
 3.  **Crosslinking:** Bring the sample back to room temperature (RT) to allow PFA to cross-link for 15 minutes.
-    *   PFA crosslinking is endothermic and requires heat.
-    *   **Caution:** Over-crosslinking blocks target antigen sites!
-4.  **Wash 1:** Transfer from PFA to TBS, leave for 15 minutes at RT on a shaker. Minimum volume: 500 µL.
-5.  **Wash 2 (Permeabilization):** Wash 3 times with 0.5% TBST for 15 minutes each at RT on a shaker. Minimum volume: 500 µL.
-    *   Use 0.1% TBST for weaker stains like αSMA.
+    *   PFA crosslinking is endothermic and requires heat, hence the room temperature.
+    *   Over-crosslinking blocks target antigen sites!
+4.  **Wash and Permeabilization** Transfer from PFA to 500 µL TBS, leave for 15 minutes at RT on a shaker. 
+5.  *   Wash 3 times with 500 µL TBS 0.5% TBST for 15 minutes each at RT on a shaker.
+    *   Use 0.1% TBST for some weaker-bound antibodies like αSMA.
     *   TBST washes help clear the sample.
-6.  **Blocking:** Block for 1 hour at RT on a shaker. Minimum volume: 500 µL.
-    *   Use 10% Donkey Serum in TBST.
-7.  **Primary Antibody Incubation (Setup):** Combine primary antibodies with fresh blocking solution (500 µL). Pipette gently to mix.
+6.  **Blocking:** Block for 1 hour at RT on a shaker.
+    *   Use 500 µL 10% Donkey Serum in TBST.
+7.  **Primary Antibody Incubation:** Combine primary antibodies with blocking solution. Pipette gently to mix.
     *   Note any volume alterations.
-    *   **Do not vortex!** Vortexing introduces air bubbles.
-    *   Standard primaries used:
-        *   ECad Mouse 1:500
-        *   Tom20 Rabbit 1:100
-8.  **Primary Antibody Incubation (Execution):** Add samples to the primary antibody cocktail and incubate for 48 hours at 4°C on a shaker.
+    *   **Do not vortex!** Vortexing oxyginates the liquid.
+    *   Add samples to the primary antibody cocktail and incubate for 48 hours at 4°C on a shaker.
     *   Primary antibodies can be refrozen.
-    *   Large samples may need 3 days of incubation.
+    *   Large samples may need 3 days of incubation, while small samples might be fine with just 1.
 
 ### Day 3
 
-9.  **Wash 3:** Wash 4 times with TBST for 15 minutes each at RT on a shaker. Minimum volume: 500 µL.
-10. **Blocking:** Block for 1 hour at RT on a shaker. Minimum volume: 500 µL.
-11. **Secondary Antibody Incubation (Setup):** Combine secondary antibodies with fresh blocking solution (500 µL). Pipette gently to mix. Protect from light (wrap in foil).
+9.  **Wash:** Wash 4 times with 500 µL TBST for 15 minutes each at RT on a shaker.
+10. **Blocking:** Block with 500 µL for 1 hour at RT on a shaker. 
+11. **Secondary Antibody Incubation:** Combine secondary antibodies with 500 µL blocking solution. Pipette gently to mix. 
     *   Note any volume alterations.
     *   **Do not vortex!**
-    *   Add non-antibody dyes (e.g., DAPI, Phalloidin) at this step.
+    *   Add non-antibody dyes such as DAPI and Phalloidin at this step.
+    *   If using a sensative dye such as DAPI, protect from light.
     *   Centrifuge secondary antibodies (20 minutes at max speed) before adding to remove aggregates.
-    *   Standard secondaries/dyes used:
-        *   1:2000 DAPI (Concentrations >1:1000 can cause precipitation)
-        *   1:200 Phalloidin 488 (**Caution:** Methanol contamination after this step destroys Phalloidin signal!)
-        *   1:500 Alexa 555 (Donkey Anti-Rabbit)
-        *   1:500 Alexa 680 (Donkey Anti-Mouse)
-12. **Secondary Antibody Incubation (Execution):** Incubate samples in the secondary antibody cocktail for 24 hours at 4°C on a shaker.
+    *   Incubate samples in the secondary antibody cocktail for 24 hours at 4°C on a shaker.
     *   Secondaries can be frozen once but not freeze-thawed repeatedly.
     *   Large samples may need 2-3 days of incubation.
 
 ### Day 4 - Washing & Clearing
 
-13. **Wash 4:** Perform 3 washes with TBST for 15 minutes each at RT.
-    *   To exchange media, use a narrow pipette tip (≤200 µL) kept above the sample, or use a cut tip carefully.
-14. **Wash 5:** Transfer to PBS for 15 minutes to wash off TBST.
-15. **Dehydration/Clearing (Isopropanol):** Titrate through Isopropanol series: 25%, 50%, 75%, 100% (15 minutes each step).
+13. **Wash** Perform 3 washes with TBST for 15 minutes each at RT.
+    * Transfer to PBS for 15 minutes to wash off TBST.
+14. **Dehydration/Clearing (Isopropanol or Methanol):** Titrate through Isopropanol series: 25%, 50%, 75%, 100% (15 minutes each step).
     *   This titration significantly contributes to clearing; do not shorten the times.
     *   Use this time to prepare the imaging chamber.
-16. **Imaging Chamber Preparation:**
+    *   Methanol clearing is much more effective, but doesn't work for Phalloidin.
+15. **Imaging Chamber Preparation:**
     *   Attach a nylon washer to a coverslip using vacuum grease.
-    *   Press firmly on the washer with tweezers (not a flexible tool) to squeeze out excess grease.
+    *   Press firmly on the washer with a rod to squeeze out excess grease.
     *   Seal the perimeter of the washer with nail polish. Wait 15 minutes. Apply a second coat of nail polish.
     *   After curing, use tweezers to remove any stray grease or polish from the inner diameter of the washer.
-    *   **Pre-use Check:** Add 1:1 Isopropanol:BABB (iso:BABB) to the washer to check for leaks and flush contaminants. Repeat if the liquid turns opaque.
-17. **Clearing (iso:BABB):** Place samples in the final container, add 1:1 iso:BABB. Position the samples if possible. Wait 5 minutes.
-    *   **Caution:** Handle BABB carefully (contains Benzyl Alcohol and Benzyl Benzoate).
-18. **Clearing (BABB):** Remove iso:BABB with a thin-tip pipette. Add 100% BABB. Position samples if visible.
-19. **Mounting:** Seal the container (e.g., coverslip onto the washer), minimizing air bubbles. Tapping the coverslip helps create a good seal. A small amount of extra BABB can be added during sealing to prevent a large bubble.
-20. **Imaging:** Image as soon as possible after clearing (ideally the same day). DAPI signal fades over time, and bubbles can form in the sample holder.
+    *   **Pre-use Check:** Add 1:1 Isopropanol:BABB (iso:BABB) to the washer to check for leaks and flush contaminants. Repeat if the liquid turns opaque or looks contaminated.
+        *   **Caution:** Handle BABB with gloves, and take care not to get it all over surfaces in the lab.
+16. **Clearing (iso:BABB):** Place samples in the final container, add 1:1 iso:BABB. Position the samples if possible. Wait 5 minutes.
+17. **Clearing (BABB):** Remove iso:BABB with a thin-tip pipette. Add 100% BABB. Position samples if visible.
+18. **Mounting:** Seal the coverslip onto the washer, this is the trickiest bit.
+    * One strategy is to drop the entire coverslip perfectly onto the washer from above.
+    * Another strategy is to slide it in on the side, while similtaniously adding more BABB with a pipette wherever air bubbles are forming.
+19. **Imaging:** Image as soon as possible after clearing. DAPI signal fades over time, and bubbles can form in the sample holder.
 
 ## Open Questions
 
@@ -109,4 +104,4 @@ format:
 *   Can TBS be replaced with PBS? What are the effects?
 *   How sensitive is this protocol to CaCl2 concentration, and at which steps is it critical?
 *   Does TCA fixation work better? (Suggested by Raj Ladher for pMLC staining; **Note:** Not compatible with Actin staining).
-*   Does a gradual increase in PFA concentration (e.g., 1% stepped up to 4%) work better? (Suggested by Raj Ladher).
+*   Does a gradual increase in PFA concentration  work better? (Suggested by Raj Ladher).

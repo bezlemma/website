@@ -2,7 +2,7 @@
 title: "Coexistence"
 format:
   html:
-    css: [storyspecific.scss"]
+    css: [../stories/storyspecific.css"]
 ---
 
 ## Chapter 1: The Imaginary Afterlife <br> of Alex and Evelyn
