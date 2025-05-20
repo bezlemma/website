@@ -42,9 +42,9 @@ $$ \Delta E \Delta t \ge \frac{\hbar}{2} $$
 Where $\hbar=h/2\pi$. $\Delta t$ is the timescale, and $\Delta E$ is the relevant energy. In the case of two-photon, the relevant energy is similar to the mismatch between the photon energy and the energy needed to excite the molecule.
 
 ::: {.column-margin}
-If you have an 800 nm photon, it has an energy of approximately $2.5 \times 10^-19 J$. If you need an energy of approximately $5 \times 10^-19 J$, then:
+If you have an 800 nm photon, it has an energy of approximately $2.5 \times 10^{-19} J$. If you need an energy of approximately $5 \times 10^{-19} J$, then:
 $$ \Delta t \approx \frac{\hbar}{2 \Delta E}$$
-$$ \approx \frac{10^-34 \text{ J} \cdot \text{s}}{2\times2.5\times10^-19 \text{ J}} $$
+$$ \approx \frac{10^{-34} \text{ J} \cdot \text{s}}{2 \times 2.5 \times 10^{-19} \text{ J}} $$
 $$ \approx 2 \times 10^{-16} \text{ s}, $$
 roughly a femtosecond.
 :::
