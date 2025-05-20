@@ -1,0 +1,211 @@
+/* css styles */
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    /* border: 10px solid lime !important; Temporary diagnostic style removed */
+}
+
+.hero {
+    background-color: #4b4b4b; /* Light gray background */
+    position: relative; /* Needed for z-indexing if using pseudo-elements for opacity */
+    padding: 40px 20px; /* Adjusted padding */
+    text-align: center;
+    overflow: hidden; /* Ensures pseudo-elements don't overflow */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('assets/Banner4.gif');
+    background-size: cover; /* Or 'contain', 'auto', etc. based on preference */
+    background-position: center;
+    background-repeat: no-repeat; /* Or 'repeat' if desired */
+    opacity: 0.8; /* 50% transparency for the background image */
+    z-index: 1; /* Ensure it's behind the content */
+}
+
+.hero-content {
+    position: relative; /* Ensure content is above the pseudo-element */
+    z-index: 2; /* Higher z-index than the ::before pseudo-element */
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically by default */
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Space between image and text */
+}
+
+.hero-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border: 4px solid #ade8f4; /* A light border, matching subtitle color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Subtle shadow for depth */
+}
+
+/* Responsive adjustments for hero section */
+@media (min-width: 768px) {
+    .hero-content {
+        flex-direction: row; /* Image and text side-by-side on larger screens */
+        gap: 30px; /* Increased gap for wider layout */
+    }
+
+    .hero-image {
+        width: 180px; /* Slightly larger image on wider screens */
+        height: 180px;
+    }
+
+    .hero-text h2 {
+        font-size: 2em; /* Larger text on wider screens */
+        text-align: left; /* Align text to the left when side-by-side */
+    }
+}
+
+
+.hero h1 { /* This style was for a potential main name heading, can be kept or removed */
+    margin: 0;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+/* Keep existing .hero h2 if it was meant for a different element or as a fallback */
+/* The .hero-text h2 is now more specific for the tagline */
+.hero h2 { /* General h2 in hero, if not in hero-text */
+    margin: 10px 0 0;
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #ade8f4; 
+    text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.9); /
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.page-container h2 {
+    text-align: center;
+    color: #003459; /* Dark blue for section titles */
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+.papers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid */
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.paper-box {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex; /* Use flexbox for internal layout */
+    align-items: center; /* Vertically align items in the center */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paper-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.paper-image {
+    flex: 0 0 120px; /* Fixed width for the image container */
+    margin-right: 20px;
+}
+
+.paper-image img {
+    border-radius: 4px;
+    display: block; /* Remove extra space below image */
+    max-width: 100%;
+    height: auto;
+}
+
+.paper-details {
+    flex: 1; /* Allow text details to take remaining space */
+}
+
+.paper-details h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.1em;
+    color: #0077b6; /* Link-like color for paper titles */
+}
+
+.paper-details h4 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.paper-details h4 a:hover {
+    text-decoration: underline;
+}
+
+.paper-year {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0;
+}
+
+/* Different background colors for paper boxes */
+.paper-box.color1 {
+    border-left: 5px solid #94d2bd; /* Light seafoam green */
+}
+
+.paper-box.color2 {
+    border-left: 5px solid #ee9b00; /* Orange */
+}
+
+.paper-box.color3 {
+    border-left: 5px solid #ae2012; /* Dark red */
+}
+
+/* Styles for chat messages */
+.chat-bubble {
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    max-width: 70%;
+    clear: both; /* Ensures bubbles don't overlap incorrectly */
+}
+
+.sender-bubble {
+    background-color: #e0e0e0; /* Gray for sender (Alex) */
+    float: right;
+    margin-left: auto; /* Aligns to the right */
+}
+
+.receiver-bubble {
+    background-color: #add8e6; /* Light blue for receiver (Evelyn) */
+    float: left;
+    margin-right: auto; /* Aligns to the left */
+}
+
+/* Clearfix for container of chat bubbles if needed */
+.chat-container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.story-page h1, 
+.story-page h2 {
+  text-align: center;
+}
+
+.story-page {
+  font-family: 'Georgia', serif;
+  line-height: 3; 
+}
