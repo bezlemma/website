@@ -2,39 +2,131 @@
 title: "Cryo-Embedding and Slicing"
 format:
   html:
-    toc: false
+    toc: true
 ---
 
-> **Reference:** Plasticity in airway smooth muscle differentiation during mouse lung development, Goodwin, Katharine et al. Developmental Cell, Volume 58, Issue 5, 338 - 347.e4
+> **Reference:** Goodwin, Katharine et al. "Plasticity in airway smooth muscle differentiation during mouse lung development." *Developmental Cell*, Volume 58, Issue 5, 2024, pp. 338-347.e4.
 
-## Preparing for Frozen Embedding
+## You'll need
 
-1.  Fix in 4% PFA at 4 degrees (time depends on sample, at least 30 min).
-2.  Rinse in PBS or wash in PBS overnight, depending on sample.
-3.  Wash 1 hr on shaker at room temperature in 20% sucrose (=2 g of sucrose in a 15 ml tube filled up to 10 ml with preferably sterile 1X PBS, store at 4C).
-4.  Wash 1 hr on shaker at room temperature in 30% sucrose (=3 g of sucrose in a 15 ml tube filled up to 10 ml with preferably sterile 1X PBS, store at 4C).
-5.  Wash 1 hr on shaker at room temperature in 1:1 OCT:30% sucrose (store at 4C).
-6.  Wash overnight on shaker at 4 degrees in 1:1 OCT:30% sucrose.
+* 4% Paraformaldehyde (PFA)
+* Phosphate Buffered Saline (PBS)
+* Tris Buffered Saline (TBS)
+* OCT Compound
+* 20% Sucrose in 1X PBS: (2g to 10 mL). Store at 4°C.
+* 30% Sucrose in 1X PBS
+* 1:1 OCT:30% Sucrose Solution. Store at 4°C.
+* Embedding Molds
+* Dry Ice
+* Microtome Blades
+* Fine Paintbrush (teeny tiny, like for fly work or painting minatures)
+* [Frosted glass Coverslips](https://www.fishersci.com/shop/products/fisherbrand-superfrost-plus-microscope-slides-2/1255015)
+* Paper Towels
+* Triton X-100
+* Wash Buffer (TBST): TBS + 0.1% Triton X-100
+* Blocking Buffer: 5% Normal Donkey Serum (NDS) in TBST.
+* Fluoromount-G
 
-## Embedding and Freezing
+---
 
-### Materials Needed
-- Dry Ice or similar freezing agent.
-- Cube plastic inserts.
-- OCT (Optimal Cutting Temperature compound).
-- Forceps.
-- Sharpie.
+## Tissue Fixation and Cryoprotection
 
-### Procedure
+**Procedure:**
 
-1.  Add a drop of OCT from the squeeze bottle to each insert, enough to cover the bottom of the insert well, and label each insert using a sharpie.
-2.  Using forceps, transfer lungs over to the inserts. Depending on tissue size, you might be able to move the sample in a little bubble of OCT suspended between the tips of the forceps.
-3.  Pipette away solution from around the lung to remove sucrose.
-4.  Remove one piece of dry ice, maybe 1-2 inches long, and place on bench to sublimate until it has a flat surface.
-5.  Flip the dry ice piece over and place a plastic cube insert onto the flat surface. After a few moments the OCT will turn white as it freezes.
-6.  After freezing, add more OCT on top to fill the insert.
-7.  Keep holding the insert on the dry ice until the OCT block has frozen through.
-8.  Store at -80°C until ready to cryo-slice.
+1.  **Fixation:**
+    * Immerse tissue in 4% PFA at 4°C. Fixation time is sample-dependent (see immunostaining protocol)*
+2.  **Rinsing:**
+    * Remove PFA and rinse with 1X PBS. 
+3.  **Cryoprotection:**
+    * Transfer samples to 20% sucrose/PBS solution.
+    * Incubate on a shaker at room temperature for at least 1 hour. *Tissue sinking indicates adequate sucrose infiltration.*
+    * Transfer samples to 30% sucrose/PBS solution.
+    * Incubate on a shaker at room temperature for at least 1 hour. For denser or larger tissues, this step can be overnight.
+4.  **OCT Infiltration:**
+    * Transfer samples to the 1:1 OCT:30% sucrose solution.
+    * Incubate on a shaker at room temperature for 1 hr.
+    * Transfer samples to fresh 1:1 OCT:30% sucrose solution.
+    * Incubate on a shaker at 4°C overnight. This ensures complete infiltration with the embedding medium.
 
-## Slicing and Mounting
+---
 
+## Tissue Embedding and Freezing
+
+This process involves orienting the cryoprotected tissue in OCT within a mold and rapidly freezing it.
+
+**Procedure:**
+
+1.  **Prepare Molds and Workspace:**
+    * Label molds clearly with the permanent marker.
+    * Place a small amount of OCT in a layer at the bottom of each mold.
+2.  **Transfer and Orient Tissue:**
+    * Transfer the tissue into the OCT-lined mold.
+    * Gently orient the tissue to the desired cutting plane. This is a critical step for getting nice sections.
+          * If the tissue is small, you can transfer it with a small bubble of the OCT/sucrose solution.
+    * Carefully pipette or wick away any excess 1:1 OCT:30% sucrose solution from around the tissue within the mold.
+3.  **Add OCT and Initial Freeze:**
+    * Remove one piece of dry ice, maybe 1-2 inches long, and place on bench to sublimate until it has a flat surface.
+    * Flip the dry ice piece over and place a plastic cube insert onto the flat surface. After a few moments the OCT will turn white as it freezes.
+4.  **Complete Embedding and Freezing:**
+    * Once the base layer with the tissue is partially frozen and stable, add OCT to cover the tissue and fill the mold. Avoid air bubbles.
+    * Hold the mold on the dry ice until the entire OCT block is opaque white and frozen solid. This may take several minutes depending on the block size.
+    * Store in -80.
+
+---
+
+## Slicing
+
+```{=html}
+<video autoplay loop muted playsinline width="600" style="max-width: 100%;">
+  <source src="../assets/CryoSlice.mp4" type="video/mp4">
+</video>
+```
+
+**Cryostat Preparation:**
+
+* Ensure the cryostat chamber is at -21°C. *If the cryostat is warm, it may be someone is intentionally deforsting it*
+
+**Slicing Procedure:**
+
+1.  **Prepare Workspace and Mount Block:**
+    * Place paper towels or absorbent paper in the cryostat chamber below the blade holder to catch trimmings.
+    * Securely install a razor blade into the blade holder.
+    * Use the OCT like glue at this temperature. Apply a thin layer of fresh OCT to the surface of a pre-cooled specimen chuck.
+    * Quickly press your frozen OCT block onto the OCT on the chuck. Allow it to freeze firmly in place for a few minutes.
+2.  **Mount Chuck and Align Block:**
+    * Mount the chuck with the sample block into the cryostat's specimen holder.
+    * Coarsely trim the block using the cryostat's advance mechanism until the blade is near the ice.
+    * Adjust the orientation of the block relative to the blade to ensure the cutting face is parallel to the blade edge.
+    * Try a test slice, the blade will hit one corner first, re-adjust the orientation and repeat until hitting all four corners of the sample block.
+    * Coarse cut until you reach your sample
+    * Set the desired section thickness (typically ~10 µm).
+4.  **Sectioning and Collection:**
+    * **Collecting Sections:**
+        * **With Plate:** If using a plate, adjust it to be parallel and very close to the blade edge. As the section is cut, it should slide between the blade and the plate.
+        * **With a Paintbrush:**
+            * As the section begins to come off the blade, use a thin paintbrush held at a low angle to gently guide the leading edge of the section and prevent it from curling.
+    * **Transferring to Slide:**
+        * Carefully bring a room-temperature glass slide towards the section.
+        * Align the section with the slide and gently touch the slide to the section. The section will adhere to the slide.
+5.  **Drying and Storage of Slides:**
+    * Allow sections to air-dry briefly at room temperature 
+
+
+---
+
+## Staining
+
+1. Incubate with TBS + 0.1% triton (TBST) for 15 minutes to remove OCT3.
+2. Wash with TBST 5 minutes x 3 times at room temperature
+3. Incubate samples w/ blocking buffer for 1 hour at RT
+   * Block Buffer: 5% donkey serum
+4. Spin primary antibody for 1hr at max speed while sample is blocking
+   * Prepare primary antibody in blocking buffer
+5. Add primary antibody and incubate overnight at 4 C followed by 1 hr at RT (or at least 1 hr RT)
+   * You can store samples in an old pipetting box, with wet paper towels underneath to help evaporation.
+6. Wash in TBST for 5 minutes x 3 times at room temperature
+7. Prepare secondary antibody solutions in blocking buffer
+   * Spin diluted secondary antibody for 1 hr at max speed
+10. Add secondary antibody solution and incubate samples overnight at 4C followed by 1hr at RT
+11. Wash samples in TBST for 5 minutes x 3 times at RT
+12. Mount samples in Flouromount G

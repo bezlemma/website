@@ -224,7 +224,7 @@
     "href": "protocols/cryoslicing.html",
     "title": "Cryo-Embedding and Slicing",
     "section": "",
-    "text": "Reference: Plasticity in airway smooth muscle differentiation during mouse lung development, Goodwin, Katharine et al. Developmental Cell, Volume 58, Issue 5, 338 - 347.e4",
+    "text": "Reference: Goodwin, Katharine et al. “Plasticity in airway smooth muscle differentiation during mouse lung development.” Developmental Cell, Volume 58, Issue 5, 2024, pp. 338-347.e4.",
     "crumbs": [
       "Protocols",
       "Cryo-Embedding and Slicing"
@@ -257,7 +257,7 @@
     "href": "protocols/cryoslicing.html#slicing-and-mounting",
     "title": "Cryo-Embedding and Slicing",
     "section": "Slicing and Mounting",
-    "text": "Slicing and Mounting",
+    "text": "Slicing and Mounting\nCrypstat should be set at -21 C before operating. If it is not cold, something is off (likely someone is performing a thaw.)\nYou’ll want to bring your own razor blades, and frosted glass.\n\nPlace a paper towel underneath the section in front of square mount to catch any cuttings. Generally decorate with paper towels before installing razor blade.\nSlide razor blade into square mount at front, tighten with handle to the right of square mount.\nUse Cryo-Glue to mount sample to holder. As it freezes it turns white.\nMount sample, level out holder and approach the sample\nMake some slow test cuts, the sample will hit one corner preferentially, which means you need to adjust youru alignment. Continue adjusting alignment until you get a smooth cut.\n\n\n\n\n\nOnce slicing, you can either\n\n\ncollect slices with the auto-seperator in place, moving slowly or smoothly.\nor with the front of a very narrow paintbrush, grab the end as it’s cutting and pull it out while rotating.\n\n\nBring the glass slide in contact with sample and it will adhere.",
     "crumbs": [
       "Protocols",
       "Cryo-Embedding and Slicing"
@@ -521,6 +521,72 @@
     "crumbs": [
       "Tutorials",
       "Microscopy Training Checklist"
+    ]
+  },
+  {
+    "objectID": "protocols/cryoslicing.html#slice-staining",
+    "href": "protocols/cryoslicing.html#slice-staining",
+    "title": "Cryo-Embedding and Slicing",
+    "section": "Slice Staining",
+    "text": "Slice Staining\n1. Incubate with TBS + 0.1% triton (TBST) for 15 minutes to remove OCT3.    \n2. Wash with TBST 5 minutes x 3 times at room temperature\n3. Incubate samples w/ blocking buffer for 1 hour at RT \n    a. Block Buffer: 5% donkey serum\n4. Spin primary antibody for 1hr at max speed while sample is blocking\n    a. Prepare primary antibody in blocking buffer\n5. Add primary antibody and incubate overnight at 4 C followed by 1 hr at RT (or at least 1 hr RT)\na. You can store samples in an old pipetting box, with wet paper towels underneath to help evaporation.\n6. Wash in TBST for 5 minutes x 3 times at room temperature\n7. Prepare secondary antibody solutions in blocking buffer\n  a.    Spin diluted secondary antibody for 1 hr at max speed \n\nAdd secondary antibody solution and incubate samples overnight at 4C followed by 1hr at RT\nWash samples in TBST for 5 minutes x 3 times at RT\nMount samples in Flouromount G",
+    "crumbs": [
+      "Protocols",
+      "Cryo-Embedding and Slicing"
+    ]
+  },
+  {
+    "objectID": "protocols/cryoslicing.html#youll-need",
+    "href": "protocols/cryoslicing.html#youll-need",
+    "title": "Cryo-Embedding and Slicing",
+    "section": "You’ll need",
+    "text": "You’ll need\n\n4% Paraformaldehyde (PFA)\nPhosphate Buffered Saline (PBS)\nTris Buffered Saline (TBS)\nOCT Compound\n20% Sucrose in 1X PBS: (2g to 10 mL). Store at 4°C.\n30% Sucrose in 1X PBS\n1:1 OCT:30% Sucrose Solution. Store at 4°C.\nEmbedding Molds\nDry Ice\nMicrotome Blades\nFine Paintbrush (teeny tiny, like for fly work or painting minatures)\nFrosted glass Coverslips\nPaper Towels\nTriton X-100\nWash Buffer (TBST): TBS + 0.1% Triton X-100\nBlocking Buffer: 5% Normal Donkey Serum (NDS) in TBST.\nFluoromount-G",
+    "crumbs": [
+      "Protocols",
+      "Cryo-Embedding and Slicing"
+    ]
+  },
+  {
+    "objectID": "protocols/cryoslicing.html#tissue-fixation-and-cryoprotection",
+    "href": "protocols/cryoslicing.html#tissue-fixation-and-cryoprotection",
+    "title": "Cryo-Embedding and Slicing",
+    "section": "Tissue Fixation and Cryoprotection",
+    "text": "Tissue Fixation and Cryoprotection\nProcedure:\n\nFixation:\n\nImmerse tissue in 4% PFA at 4°C. Fixation time is sample-dependent (see immunostaining protocol)*\n\nRinsing:\n\nRemove PFA and rinse with 1X PBS.\n\nCryoprotection - Step 1 (20% Sucrose):\n\nTransfer samples to 20% sucrose/PBS solution.\nIncubate on a shaker at room temperature for at least 1 hour, or until the tissue sinks. Tissue sinking indicates adequate sucrose infiltration.\n\nCryoprotection - Step 2 (30% Sucrose):\n\nTransfer samples to 30% sucrose/PBS solution.\nIncubate on a shaker at room temperature for at least 1 hour, or until the tissue sinks. For denser or larger tissues, this step can be extended (e.g., overnight at 4°C).\n\nPre-embedding Infiltration (1:1 OCT:30% Sucrose - Short Incubation):\n\nTransfer samples to the 1:1 OCT:30% sucrose solution.\nIncubate on a shaker at room temperature for 1 hour. This helps acclimate the tissue to the OCT.\n\nFinal Infiltration (1:1 OCT:30% Sucrose - Long Incubation):\n\nTransfer samples to fresh 1:1 OCT:30% sucrose solution.\nIncubate on a shaker at 4°C overnight. This ensures complete infiltration with the embedding medium.",
+    "crumbs": [
+      "Protocols",
+      "Cryo-Embedding and Slicing"
+    ]
+  },
+  {
+    "objectID": "protocols/cryoslicing.html#tissue-embedding-and-freezing",
+    "href": "protocols/cryoslicing.html#tissue-embedding-and-freezing",
+    "title": "Cryo-Embedding and Slicing",
+    "section": "Tissue Embedding and Freezing",
+    "text": "Tissue Embedding and Freezing\nThis process involves orienting the cryoprotected tissue in OCT within a mold and rapidly freezing it.\nProcedure:\n\nPrepare Molds and Workspace:\n\nLabel molds clearly with the permanent marker.\nPlace a small amount of OCT in the bottom of each mold to create a base layer.\n\nTransfer and Orient Tissue:\n\nUsing forceps, carefully transfer the infiltrated tissue from the 1:1 OCT:30% sucrose solution into the OCT-lined mold.\nGently orient the tissue to the desired cutting plane. This is a critical step for getting nice sections. * If the tissue is small, you can transfer it with a small “bubble” of the OCT/sucrose solution using the forceps to minimize direct handling.\n\nRemove Excess Sucrose Solution:\n\nCarefully pipette or wick away any excess 1:1 OCT:30% sucrose solution from around the tissue within the mold.\n\nAdd OCT and Initial Freeze:\n\nRemove one piece of dry ice, maybe 1-2 inches long, and place on bench to sublimate until it has a flat surface.\nFlip the dry ice piece over and place a plastic cube insert onto the flat surface. After a few moments the OCT will turn white as it freezes.\nPlace the mold onto the flat surface of the dry ice. The OCT at the bottom will begin to turn white as it freezes.\n\nComplete Embedding and Freezing:\n\nOnce the base layer with the tissue is partially frozen and stable, gently add more OCT to completely cover the tissue and fill the mold. Avoid trapping air bubbles.\nContinue to hold the mold on the dry ice until the entire OCT block is opaque white and frozen solid. This may take several minutes depending on the block size.\nStore in -80.",
+    "crumbs": [
+      "Protocols",
+      "Cryo-Embedding and Slicing"
+    ]
+  },
+  {
+    "objectID": "protocols/cryoslicing.html#slicing",
+    "href": "protocols/cryoslicing.html#slicing",
+    "title": "Cryo-Embedding and Slicing",
+    "section": "Slicing",
+    "text": "Slicing\n\n  \n\nCryostat Preparation:\n\nEnsure the cryostat chamber is at -21°C. If the cryostat is warm, it may be someone is intentionally deforsting it\n\nSlicing Procedure:\n\nPrepare Workspace and Mount Block:\n\nPlace paper towels or absorbent paper in the cryostat chamber below the blade holder to catch trimmings.\nSecurely install a new, sharp razor blade into the blade holder.\nUse the OCT like glue at this temperature. Apply a thin layer of fresh OCT to the surface of a pre-cooled specimen chuck.\nQuickly press your frozen OCT block onto the OCT on the chuck. Allow it to freeze firmly in place for a few minutes.\n\nMount Chuck and Align Block:\n\nMount the chuck with the sample block into the cryostat’s specimen holder.\nCoarsely trim the block using the cryostat’s advance mechanism until the blade is near the ice.\nAdjust the orientation of the block relative to the blade to ensure the cutting face is parallel to the blade edge.\nTry a test slice, the blade will hit one corner first, re-adjust the orientation and repeat until hitting all four corners of the sample block.\nCoarse cut until you reach your sample\nSet the desired section thickness (typically ~10 µm).\n\nSectioning and Collection:\n\nCollecting Sections:\n\nWith Plate: If using a plate, adjust it to be parallel and very close to the blade edge. As the section is cut, it should slide between the blade and the plate, remaining flat.\nWith a Paintbrush:\n\nAs the section begins to come off the blade, use a tihn paintbrush held at a low angle to gently guide the leading edge of the section and prevent it from curling.\nWith a smooth, continuous cutting motion, guide the section flat onto the blade or allow it to hang slightly.\n\n\nTransferring to Slide:\n\nCarefully bring a room-temperature glass slide towards the flat section.\nAlign the section with the slide and gently touch the slide to the section. The temperature difference will cause the section to adhere to the slide.\n\n\nDrying and Storage of Slides:\n\nAllow sections to air-dry briefly at room temperature\nSlides can be stored in a slide box at -20°C or -80°C (ensure they are completely dry before freezing to prevent ice crystal artifacts).",
+    "crumbs": [
+      "Protocols",
+      "Cryo-Embedding and Slicing"
+    ]
+  },
+  {
+    "objectID": "protocols/cryoslicing.html#staining",
+    "href": "protocols/cryoslicing.html#staining",
+    "title": "Cryo-Embedding and Slicing",
+    "section": "Staining",
+    "text": "Staining\n\nIncubate with TBS + 0.1% triton (TBST) for 15 minutes to remove OCT3.\nWash with TBST 5 minutes x 3 times at room temperature\nIncubate samples w/ blocking buffer for 1 hour at RT   * Block Buffer: 5% donkey serum\nSpin primary antibody for 1hr at max speed while sample is blocking    * Prepare primary antibody in blocking buffer\nAdd primary antibody and incubate overnight at 4 C followed by 1 hr at RT (or at least 1 hr RT)   * You can store samples in an old pipetting box, with wet paper towels underneath to help evaporation.\nWash in TBST for 5 minutes x 3 times at room temperature\nPrepare secondary antibody solutions in blocking buffer    * Spin diluted secondary antibody for 1 hr at max speed\nAdd secondary antibody solution and incubate samples overnight at 4C followed by 1hr at RT\nWash samples in TBST for 5 minutes x 3 times at RT\nMount samples in Flouromount G",
+    "crumbs": [
+      "Protocols",
+      "Cryo-Embedding and Slicing"
     ]
   }
 ]
