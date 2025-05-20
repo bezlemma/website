@@ -68,9 +68,9 @@ After two-photon excitation, the higher state $S_+$ falls back to the one-photon
 ::: {.column-margin}
 **Vibrational States**
 
-Each electronic state ($S_0$, $S_1$) has many closely spaced vibrational energy levels. A molecule in the $S_N$ electronic state can be in vibrational levels ($v=0, v=1, ...$).
+Each electronic state ($S_0$, $S_1$) has many closely spaced vibrational energy levels. A molecule in the $S_N$ electronic state can be in vibrational levels $v$.
 
-When a photon is absorbed, the molecule transitions from $S_0, v=0$ to one of the many vibrational levels in $S_1$. The energy of the absorbed photon matches the energy difference between the initial vibronic state (electronic + vibrational) and the final vibronic state. Because there are many possible vibrational levels in $S_1$ that the molecule can transition to, there's a range of photon wavelengths that can cause excitation, this results in the absorption spectrum rather than just a few precise wavelengths that work. .
+When a photon is absorbed, the molecule transitions from $S_0, v=0$ to $S_1, v$ . The energy of the absorbed photon matches the energy difference between the initial vibronic state (electronic + vibrational) and the final vibronic state. Because there are many possible vibrational levels $v$ in $S_1$ that the molecule can transition to, there's a range of photon wavelengths that can cause excitation, this results in the absorption spectrum rather than just a few precise wavelengths that work. .
 :::
 
 # My 2-Photon Excitations

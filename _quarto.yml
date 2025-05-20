@@ -10,6 +10,7 @@ website:
         contents:
           - "protocols/cryoslicing.qmd"
           - "protocols/immunostaining.qmd"
+          - "protocols/lung_culture.qmd"
       - section: "Tutorials"
         contents:
           - "tutorials/install_julia.qmd"
