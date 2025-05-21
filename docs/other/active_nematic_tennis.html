@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.30">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Active Nematic Tennis – Bezia Lemma</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../other/active_nematic_tennis.html">Other</a></li><li class="breadcrumb-item"><a href="../other/active_nematic_tennis.html">Active Nematic Tennis</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Bezia Lemma</a> 
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Protocols</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../protocols/cryoslicing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cryo-Embedding and Slicing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../protocols/immunostaining.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Crystal Immunostaining</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../protocols/lung_culture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lung Culture</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/install_julia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Julia Quick Start</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/microscopy_training_checklist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microscopy Training Checklist</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/two_photon_microscopy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Two-Photon Microscopy</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Stories</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../stories/annapurnacrescent.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Annapurna Crescent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../stories/coexistence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Coexistence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../stories/first.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First!</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Other</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../other/active_nematic_tennis.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Active Nematic Tennis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../other/active_nematic_tennis.html">Other</a></li><li class="breadcrumb-item"><a href="../other/active_nematic_tennis.html">Active Nematic Tennis</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Active Nematic Tennis</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .game-container {
+    text-align: center;
+    border: 2px solid #4a4a6a;
+    padding: 10px;
+    background-color: rgba(20, 20, 40, 0.85); 
+    box-shadow: 0 0 25px rgba(70, 70, 150, 0.6); 
+    margin-bottom: 15px;
+    border-radius: 8px;
+  }
+  canvas {
+    border: 1px solid #6a6a8a; 
+    display: block;
+    margin: 0 auto;
+  }
+  .simulation-parameters {
+    border: 1px solid #3a3a5a;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    background-color: rgba(30, 30, 50, 0.8); 
+    border-radius: 8px;
+    width: 750px;
+    max-width: 800px;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px rgba(50, 50, 100, 0.5);
+  }
+  .simulation-parameters h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #c0c0ff;s
+  }
+  .simulation-parameters div {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .simulation-parameters label {
+    flex-basis: 45%;
+    font-size: 0.9em;
+    color: #b0b0d0;
+  }
+  .simulation-parameters input[type="range"] {
+    flex-basis: 55%;
+    cursor: pointer;
+  }
+  .controls-info {
+    margin-top: 0;
+    font-size: 0.9em;
+    color: #ababcd;
+    max-width: 800px;
+    text-align: center;
+    background-color: rgba(30, 30, 50, 0.7);
+    padding: 8px;
+    border-radius: 5px;
+  }
+  .controls-info p { margin: 5px 0; }
+  .controls-info strong { color: #dadaff; } 
+  .warning { color: orange; font-weight: bold; }
+  #scoreDisplay {
+      font-size: 32px; 
+      margin-top:10px;
+      margin-bottom: 5px;
+      color: #f0f0ff; 
+      text-shadow: 0 0 8px #ffffff, 0 0 12px #aaaaff; 
+  }
+  #gameMessage {
+      font-size: 1.1em;
+      color: #ffddaa;
+      min-height: 1.5em;
+  }
+</style>
+
+
+
+  <div class="game-container">
+    <h2 style="margin-top:0; color: #d0d0ff; text-shadow: 0 0 10px #aaaaff;" class="anchored">Active Nematic Tennis</h2>
+    <canvas id="gameCanvas"></canvas>
+    <div id="scoreDisplay">0 - 0</div>
+    <div id="gameMessage" style="font-size: 1em; color: #ffcc88; min-height: 1.2em;">Press D/Space or J/Enter to Serve</div>
+  </div>
+
+  <div class="simulation-parameters">
+    <h3 class="anchored">Simulation Parameters</h3>
+    <div>
+      <label for="activitySlider">Activity (<span id="activityValue">1.0</span>):</label>
+      <input type="range" id="activitySlider" min="0" max="10" step="0.05" value="1.0">
+    </div>
+    <div>
+      <label for="viscositySlider">Viscosity (log, <span id="viscosityValue">0.0100</span>):</label>
+      <input type="range" id="viscositySlider" min="20" max="100" step="1" value="50">
+    </div>
+    <div>
+      <label for="elasticitySlider">Elasticity K (log, <span id="elasticityValue">0.0100</span>):</label>
+      <input type="range" id="elasticitySlider" min="1" max="100" step="1" value="50">
+    </div>
+  </div>
+
+  <div class="controls-info">
+    <p><strong>Player 1 (Left):</strong> Move: <strong>W</strong>(up)/<strong>S</strong>(down). Push Jet: <strong>D</strong>/<strong>Space</strong>. Pull: <strong>A</strong>.</p>
+    <p><strong>Player 2 (Right):</strong> Move: <strong>I</strong>/<strong>K</strong>. Push Jet: <strong>J</strong>/<strong>Enter</strong>. Pull: <strong>L</strong> .</p>
+  </div>
+
+<script>
+
+// --- Pong Game Constants ---
+const PADDLE_SPEED = 7;
+const INITIAL_BALL_SPEED = 5;
+const BALL_SPEED_INCREASE = 0.3;
+const PADDLE_HEIGHT = 100;
+const PADDLE_WIDTH = 15;
+const BALL_RADIUS = 10;
+const COURT_WIDTH = 700;
+const COURT_HEIGHT = 600;
+
+// --- Fluid Simulation Constants ---
+const NX = 240;
+const NY = 180;
+const FLUID_DT = 0.00010;
+const SOLVER_ITER = 20;
+const MAX_FLUID_STEPS_PER_FRAME = 2;
+
+const FLUID_DX = COURT_WIDTH / NX;
+const FLUID_DY = COURT_HEIGHT / NY;
+const FLUID_INV_DX = 1.0 / FLUID_DX;
+const FLUID_INV_DY = 1.0 / FLUID_DY;
+const FLUID_INV_DX2 = FLUID_INV_DX * FLUID_INV_DX;
+const FLUID_INV_DY2 = FLUID_INV_DY * FLUID_INV_DY;
+
+// --- Nematic & Fluid Parameters ---
+let MU_VISCOSITY = 0.01;
+const MU_VISCOSITY_MIN_LOG = 0.0015;
+const MU_VISCOSITY_MAX_LOG = 0.05;
+
+const ZETA_FRICTION = 0.00000001;
+const LAMBDA_ALIGN = 0.7;
+const GAMMA_ROT_VISC = 1.0;
+let ALPHA_ACTIVITY = 4.0;
+
+const NEMATIC_A = 1.0;
+const NEMATIC_C = 1.0;
+
+let NEMATIC_K_ELASTIC = 0.01;
+const NEMATIC_K_ELASTIC_MIN_LOG = 0.0001;
+const NEMATIC_K_ELASTIC_MAX_LOG = 100.00;
+
+// --- Paddle Jet & Pull Constants ---
+const PADDLE_JET_FORCE_STRENGTH = 9.0;
+const PADDLE_PULL_FORCE_STRENGTH = 7.0;
+const TARGET_JET_S0 = 0.0;
+const JET_CONE_LENGTH_CELLS = 12;
+const JET_MAX_WIDTH_FRAC = 0.6;
+const PUSH_DYE_STRENGTH = 100.5; 
+const PULL_DYE_STRENGTH = 1.2; 
+
+
+// --- Ball/Fluid Interaction ---
+const BALL_DRAG_COEFF = 0.1;
+const VEL_SCALE = 0.00001;
+
+// --- Director Visualization Constants ---
+const ARROW_SUBSAMPLE = 1;
+const ARROW_LENGTH = 11;   
+const ARROW_COLOR = 'rgba(255, 255, 255, 0.9)'; 
+const ARROW_LINE_WIDTH = 1.0;
+const DIRECTOR_EPSILON = 1e-7;
+
+// --- Visual Enhancement Constants ---
+const PADDLE_COLOR = 'rgba(0, 220, 255, 1)';
+const PADDLE_GLOW_COLOR = 'rgba(0, 220, 255, 0.7)';
+const PADDLE_SHADOW_BLUR = 15;
+const BALL_COLOR = 'rgba(255, 255, 0, 1)';
+const BALL_GLOW_COLOR = 'rgba(255, 255, 100, 0.8)';
+const BALL_SHADOW_BLUR_NORMAL = 20;
+const BALL_SHADOW_BLUR_HIT = 35;
+const BALL_HIT_GLOW_FRAMES = 6;
+
+
+// --- Global Fluid Arrays ---
+const FLUID_GRID_SIZE = (NX + 2) * (NY + 2);
+let fluid_vx = new Float32Array(FLUID_GRID_SIZE);
+let fluid_vy = new Float32Array(FLUID_GRID_SIZE);
+let fluid_vx0 = new Float32Array(FLUID_GRID_SIZE);
+let fluid_vy0 = new Float32Array(FLUID_GRID_SIZE);
+let fluid_vx_prev_step = new Float32Array(FLUID_GRID_SIZE);
+let fluid_vy_prev_step = new Float32Array(FLUID_GRID_SIZE);
+
+let fluid_p = new Float32Array(FLUID_GRID_SIZE);
+let fluid_div = new Float32Array(FLUID_GRID_SIZE);
+
+let fluid_Qxx = new Float32Array(FLUID_GRID_SIZE);
+let fluid_Qxy = new Float32Array(FLUID_GRID_SIZE);
+let fluid_Qxx0 = new Float32Array(FLUID_GRID_SIZE);
+let fluid_Qxy0 = new Float32Array(FLUID_GRID_SIZE);
+
+let fluid_Hxx = new Float32Array(FLUID_GRID_SIZE);
+let fluid_Hxy = new Float32Array(FLUID_GRID_SIZE);
+
+let fluid_div_sigma_active_x = new Float32Array(FLUID_GRID_SIZE);
+let fluid_div_sigma_active_y = new Float32Array(FLUID_GRID_SIZE);
+let fluid_div_sigma_elastic_x = new Float32Array(FLUID_GRID_SIZE);
+let fluid_div_sigma_elastic_y = new Float32Array(FLUID_GRID_SIZE);
+
+let Sxx_flow_temp = new Float32Array(FLUID_GRID_SIZE);
+let Sxy_flow_temp = new Float32Array(FLUID_GRID_SIZE);
+
+let sigma_el_xx_temp = new Float32Array(FLUID_GRID_SIZE);
+let sigma_el_xy_temp = new Float32Array(FLUID_GRID_SIZE);
+let sigma_el_yy_temp = new Float32Array(FLUID_GRID_SIZE);
+
+let p_old_iter = new Float32Array(FLUID_GRID_SIZE);
+let x_prev_iter = new Float32Array(FLUID_GRID_SIZE);
+
+// Dye concentrations
+let fluid_dye_R = new Float32Array(FLUID_GRID_SIZE);
+let fluid_dye_G = new Float32Array(FLUID_GRID_SIZE);
+let fluid_dye_B = new Float32Array(FLUID_GRID_SIZE);
+let fluid_dye_R0 = new Float32Array(FLUID_GRID_SIZE);
+let fluid_dye_G0 = new Float32Array(FLUID_GRID_SIZE);
+let fluid_dye_B0 = new Float32Array(FLUID_GRID_SIZE);
+
+let fluid_time_accumulator = 0.0;
+
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = COURT_WIDTH;
+canvas.height = COURT_HEIGHT;
+
+let offscreenFluidCanvas;
+let offscreenFluidCtx;
+let fluidCellImageData;
+
+function setupFluidRenderingInfrastructure() {
+    offscreenFluidCanvas = document.createElement('canvas');
+    offscreenFluidCanvas.width = NX;
+    offscreenFluidCanvas.height = NY;
+    offscreenFluidCtx = offscreenFluidCanvas.getContext('2d');
+    fluidCellImageData = offscreenFluidCtx.createImageData(NX, NY);
+}
+
+const scoreDisplay = document.getElementById('scoreDisplay');
+const gameMessage = document.getElementById('gameMessage');
+
+let paddleLeftY = COURT_HEIGHT / 2 - PADDLE_HEIGHT / 2;
+let paddleRightY = COURT_HEIGHT / 2 - PADDLE_HEIGHT / 2;
+let ball = {
+    x: COURT_WIDTH / 2, y: COURT_HEIGHT / 2,
+    dx: 0, dy: 0, speed: INITIAL_BALL_SPEED * 60,
+    currentShadowBlur: BALL_SHADOW_BLUR_NORMAL,
+    hitGlowTimer: 0
+};
+let scoreLeft = 0;
+let scoreRight = 0;
+let gameActive = true;
+let serveState = 'p1_serve';
+let servedBy = 'p1';
+const keysPressed = {};
+let lastFrameTime = performance.now();
+
+const activitySlider = document.getElementById('activitySlider');
+const activityValueDisplay = document.getElementById('activityValue');
+const viscositySlider = document.getElementById('viscositySlider');
+const viscosityValueDisplay = document.getElementById('viscosityValue');
+const elasticitySlider = document.getElementById('elasticitySlider');
+const elasticityValueDisplay = document.getElementById('elasticityValue');
+
+function setupLogSlider(sliderElement, valueDisplayElement, parameterStore, pMin, pMax, initialValue, precision) {
+    const logMin = Math.log(pMin);
+    const logMax = Math.log(pMax);
+    function updateParameter(sliderValue) {
+        const s = parseFloat(sliderValue);
+        const value = pMin * Math.pow(pMax / pMin, s / 100.0);
+        parameterStore.value = value;
+        valueDisplayElement.textContent = value.toFixed(precision);
+    }
+    let initialSliderPos = 50;
+    if (initialValue > 0 && pMin > 0 && pMax/pMin > 0 && Math.log(pMax / pMin) !== 0) {
+      initialSliderPos = 100 * (Math.log(initialValue / pMin) / Math.log(pMax / pMin));
+      initialSliderPos = Math.max(0, Math.min(100, initialSliderPos));
+    }
+    sliderElement.value = initialSliderPos;
+    updateParameter(initialSliderPos);
+    sliderElement.oninput = function() { updateParameter(this.value); };
+}
+
+activityValueDisplay.textContent = ALPHA_ACTIVITY.toFixed(2);
+activitySlider.value = ALPHA_ACTIVITY * (10 / 10);
+activitySlider.oninput = function() {
+    ALPHA_ACTIVITY = parseFloat(this.value);
+    activityValueDisplay.textContent = ALPHA_ACTIVITY.toFixed(2);
+}
+
+let muViscosityStore = { value: MU_VISCOSITY };
+setupLogSlider(viscositySlider, viscosityValueDisplay, muViscosityStore, MU_VISCOSITY_MIN_LOG, MU_VISCOSITY_MAX_LOG, MU_VISCOSITY, 4);
+Object.defineProperty(window, 'MU_VISCOSITY', { get: () => muViscosityStore.value });
+
+let nematicKElasticStore = { value: NEMATIC_K_ELASTIC };
+setupLogSlider(elasticitySlider, elasticityValueDisplay, nematicKElasticStore, NEMATIC_K_ELASTIC_MIN_LOG, NEMATIC_K_ELASTIC_MAX_LOG, NEMATIC_K_ELASTIC, 4);
+Object.defineProperty(window, 'NEMATIC_K_ELASTIC', { get: () => nematicKElasticStore.value });
+
+
+function IX_fluid(i, j) { const ci=Math.max(0,Math.min(i,NX+1)); const cj=Math.max(0,Math.min(j,NY+1)); return ci+cj*(NX+2); }
+function set_boundary_scalar(x_arr) { for(let i=1;i<=NX;i++){x_arr[IX_fluid(i,0)]=x_arr[IX_fluid(i,1)];x_arr[IX_fluid(i,NY+1)]=x_arr[IX_fluid(i,NY)];} for(let j=1;j<=NY;j++){x_arr[IX_fluid(0,j)]=x_arr[IX_fluid(1,j)];x_arr[IX_fluid(NX+1,j)]=x_arr[IX_fluid(NX,j)];} x_arr[IX_fluid(0,0)]=0.5*(x_arr[IX_fluid(1,0)]+x_arr[IX_fluid(0,1)]); x_arr[IX_fluid(NX+1,0)]=0.5*(x_arr[IX_fluid(NX,0)]+x_arr[IX_fluid(NX+1,1)]); x_arr[IX_fluid(0,NY+1)]=0.5*(x_arr[IX_fluid(1,NY+1)]+x_arr[IX_fluid(0,NY)]); x_arr[IX_fluid(NX+1,NY+1)]=0.5*(x_arr[IX_fluid(NX,NY+1)]+x_arr[IX_fluid(NX+1,NY)]); }
+function set_boundary_velocity(b_type,x_arr){for(let i=0;i<=NX+1;i++){x_arr[IX_fluid(i,0)]=(b_type===2)?0.0:-x_arr[IX_fluid(i,1)];x_arr[IX_fluid(i,NY+1)]=(b_type===2)?0.0:-x_arr[IX_fluid(i,NY)];} for(let j=0;j<=NY+1;j++){x_arr[IX_fluid(0,j)]=(b_type===1)?0.0:-x_arr[IX_fluid(1,j)];x_arr[IX_fluid(NX+1,j)]=(b_type===1)?0.0:-x_arr[IX_fluid(NX,j)];} x_arr[IX_fluid(0,0)]=0.0; x_arr[IX_fluid(NX+1,0)]=0.0; x_arr[IX_fluid(0,NY+1)]=0.0; x_arr[IX_fluid(NX+1,NY+1)]=0.0;}
+function laplacian_scalar(f_arr,i,j){const vc=f_arr[IX_fluid(i,j)];return(f_arr[IX_fluid(i+1,j)]-2*vc+f_arr[IX_fluid(i-1,j)])*FLUID_INV_DX2+(f_arr[IX_fluid(i,j+1)]-2*vc+f_arr[IX_fluid(i,j-1)])*FLUID_INV_DY2;}
+function grad_x_centered(f_arr,i,j){return(f_arr[IX_fluid(i+1,j)]-f_arr[IX_fluid(i-1,j)])*0.5*FLUID_INV_DX;}
+function grad_y_centered(f_arr,i,j){return(f_arr[IX_fluid(i,j+1)]-f_arr[IX_fluid(i,j-1)])*0.5*FLUID_INV_DY;}
+function advect(b_type,d_out,d_in,velX,velY,dt_local){for(let j=1;j<=NY;j++){for(let i=1;i<=NX;i++){const idx=IX_fluid(i,j);let x=i-velX[idx]*dt_local*FLUID_INV_DX;let y=j-velY[idx]*dt_local*FLUID_INV_DY;x=Math.max(0.5,Math.min(x,NX+0.5));y=Math.max(0.5,Math.min(y,NY+0.5));const i0=Math.floor(x);const i1=i0+1;const j0=Math.floor(y);const j1=j0+1;const s1=x-i0;const s0=1-s1;const t1=y-j0;const t0=1-t1;d_out[idx]=s0*(t0*d_in[IX_fluid(i0,j0)]+t1*d_in[IX_fluid(i0,j1)])+s1*(t0*d_in[IX_fluid(i1,j0)]+t1*d_in[IX_fluid(i1,j1)]);}} if(b_type===0)set_boundary_scalar(d_out);else set_boundary_velocity(b_type,d_out);}
+function calculate_H(Hxx_out,Hxy_out,Qxx_in,Qxy_in,K_elastic_param,A_coeff,C_coeff){for(let j=1;j<=NY;j++){for(let i=1;i<=NX;i++){const idx=IX_fluid(i,j);const qxx=Qxx_in[idx];const qxy=Qxy_in[idx];const lap_qxx=laplacian_scalar(Qxx_in,i,j);const lap_qxy=laplacian_scalar(Qxy_in,i,j);const trQ2=2*(qxx*qxx+qxy*qxy);Hxx_out[idx]=-(A_coeff*qxx+2*C_coeff*trQ2*qxx-K_elastic_param*lap_qxx);Hxy_out[idx]=-(A_coeff*qxy+2*C_coeff*trQ2*qxy-K_elastic_param*lap_qxy);}}set_boundary_scalar(Hxx_out);set_boundary_scalar(Hxy_out);}
+function calculate_S_flow_term(Sxx_out,Sxy_out,Qxx_in,Qxy_in,vx,vy,lambda_align_param){for(let j=1;j<=NY;j++){for(let i=1;i<=NX;i++){const idx=IX_fluid(i,j);const qxx=Qxx_in[idx];const qxy=Qxy_in[idx];const dvx_dx=grad_x_centered(vx,i,j);const dvx_dy=grad_y_centered(vx,i,j);const dvy_dx=grad_x_centered(vy,i,j);const dvy_dy=grad_y_centered(vy,i,j);const Dxx=dvx_dx;const Dxy=0.5*(dvx_dy+dvy_dx);const omega_xy=0.5*(dvy_dx-dvx_dy);const comm_Omega_Q_xx=2*omega_xy*qxy;const comm_Omega_Q_xy=-2*omega_xy*qxx;Sxx_out[idx]=lambda_align_param*Dxx-comm_Omega_Q_xx;Sxy_out[idx]=lambda_align_param*Dxy-comm_Omega_Q_xy;}}}
+function calculate_div_active_stress(div_sx,div_sy,Qxx_in,Qxy_in,alpha_activity_param){for(let j=1;j<=NY;j++){for(let i=1;i<=NX;i++){const idx=IX_fluid(i,j);const dQxx_dx=grad_x_centered(Qxx_in,i,j);const dQxx_dy=grad_y_centered(Qxx_in,i,j);const dQxy_dx=grad_x_centered(Qxy_in,i,j);const dQxy_dy=grad_y_centered(Qxy_in,i,j);div_sx[idx]=-alpha_activity_param*(dQxx_dx+dQxy_dy);div_sy[idx]=-alpha_activity_param*(dQxy_dx-dQxx_dy);}}set_boundary_scalar(div_sx);set_boundary_scalar(div_sy);}
+function calculate_div_elastic_stress(div_out_x,div_out_y,Qxx_vec,Qxy_vec,Hxx_vec,Hxy_vec,K_elastic_param,lambda_align_param){for(let j=1;j<=NY;j++){for(let i=1;i<=NX;i++){const idx=IX_fluid(i,j);const q_xx=Qxx_vec[idx];const q_xy=Qxy_vec[idx];const h_xx=Hxx_vec[idx];const h_xy=Hxy_vec[idx];const comm_QH_xx=0;const comm_QH_xy=2*(q_xx*h_xy-q_xy*h_xx);sigma_el_xx_temp[idx]=-lambda_align_param*comm_QH_xx;sigma_el_xy_temp[idx]=-lambda_align_param*comm_QH_xy;sigma_el_yy_temp[idx]=-(-lambda_align_param*comm_QH_xx);}}for(let j=1;j<=NY;j++){for(let i=1;i<=NX;i++){const idx=IX_fluid(i,j);const dqxx_dx=grad_x_centered(Qxx_vec,i,j);const dqxy_dx=grad_x_centered(Qxy_vec,i,j);const dqxx_dy=grad_y_centered(Qxx_vec,i,j);const dqxy_dy=grad_y_centered(Qxy_vec,i,j);const sigK_xx=-K_elastic_param*2*(dqxx_dx*dqxx_dx+dqxy_dx*dqxy_dx);const sigK_xy=-K_elastic_param*2*(dqxx_dx*dqxx_dy+dqxy_dx*dqxy_dy);const sigK_yy=-K_elastic_param*2*(dqxx_dy*dqxx_dy+dqxy_dy*dqxy_dy);sigma_el_xx_temp[idx]+=sigK_xx;sigma_el_xy_temp[idx]+=sigK_xy;sigma_el_yy_temp[idx]+=sigK_yy;}}set_boundary_scalar(sigma_el_xx_temp);set_boundary_scalar(sigma_el_xy_temp);set_boundary_scalar(sigma_el_yy_temp);for(let j=1;j<=NY;j++){for(let i=1;i<=NX;i++){const idx=IX_fluid(i,j);div_out_x[idx]=grad_x_centered(sigma_el_xx_temp,i,j)+grad_y_centered(sigma_el_xy_temp,i,j);div_out_y[idx]=grad_x_centered(sigma_el_xy_temp,i,j)+grad_y_centered(sigma_el_yy_temp,i,j);}}}
+function general_linear_solve(b_type,x_out,x0_rhs,coeff_I,coeff_lap_param,iterations){const cLapDx=coeff_lap_param*FLUID_INV_DX2;const cLapDy=coeff_lap_param*FLUID_INV_DY2;const den_val=coeff_I+2*cLapDx+2*cLapDy;if(Math.abs(den_val)<1e-9){for(let j_loop=1;j_loop<=NY;j_loop++){for(let i_loop=1;i_loop<=NX;i_loop++){x_out[IX_fluid(i_loop,j_loop)]=0;}} if(b_type===0)set_boundary_scalar(x_out);else set_boundary_velocity(b_type,x_out);return;} for(let k_iter=0;k_iter<iterations;k_iter++){x_prev_iter.set(x_out);for(let j_loop=1;j_loop<=NY;j_loop++){for(let i_loop=1;i_loop<=NX;i_loop++){const idx=IX_fluid(i_loop,j_loop);const sum_neigh=cLapDx*(x_prev_iter[IX_fluid(i_loop-1,j_loop)]+x_prev_iter[IX_fluid(i_loop+1,j_loop)])+cLapDy*(x_prev_iter[IX_fluid(i_loop,j_loop-1)]+x_prev_iter[IX_fluid(i_loop,j_loop+1)]);x_out[idx]=(x0_rhs[idx]+sum_neigh)/den_val;}} if(b_type===0)set_boundary_scalar(x_out);else set_boundary_velocity(b_type,x_out);}}
+function project(velX,velY,p_arr,div_arr,iterations){for(let j=1;j<=NY;j++){for(let i=1;i<=NX;i++){const idx=IX_fluid(i,j);div_arr[idx]=grad_x_centered(velX,i,j)+grad_y_centered(velY,i,j);p_arr[idx]=0;}}set_boundary_scalar(div_arr);set_boundary_scalar(p_arr);const den_val=2*(FLUID_INV_DX2+FLUID_INV_DY2); if(Math.abs(den_val)<1e-9){for(let j_loop=1;j_loop<=NY;j_loop++){for(let i_loop=1;i_loop<=NX;i_loop++){velX[IX_fluid(i_loop,j_loop)]=0;velY[IX_fluid(i_loop,j_loop)]=0;}}set_boundary_velocity(1,velX);set_boundary_velocity(2,velY);return;} for(let k_iter=0;k_iter<iterations;k_iter++){p_old_iter.set(p_arr);for(let j_loop=1;j_loop<=NY;j_loop++){for(let i_loop=1;i_loop<=NX;i_loop++){const idx=IX_fluid(i_loop,j_loop);const sum_lap_neigh=(p_old_iter[IX_fluid(i_loop+1,j_loop)]+p_old_iter[IX_fluid(i_loop-1,j_loop)])*FLUID_INV_DX2+(p_old_iter[IX_fluid(i_loop,j_loop+1)]+p_old_iter[IX_fluid(i_loop,j_loop-1)])*FLUID_INV_DY2;p_arr[idx]=(sum_lap_neigh-div_arr[idx])/den_val;}}}set_boundary_scalar(p_arr);for(let j=1;j<=NY;j++){for(let i=1;i<=NX;i++){const idx=IX_fluid(i,j);velX[idx]-=grad_x_centered(p_arr,i,j);velY[idx]-=grad_y_centered(p_arr,i,j);}}set_boundary_velocity(1,velX);set_boundary_velocity(2,velY);}
+
+function _apply_force_in_cone(force_vx_array,paddle_id,paddle_base_y_world,force_strength_value,is_pull){const paddle_center_y_world=paddle_base_y_world+PADDLE_HEIGHT/2.0;const paddle_center_gy_float=(paddle_center_y_world/COURT_HEIGHT)*NY+0.5;const paddle_center_gy_idx=Math.max(1,Math.min(Math.round(paddle_center_gy_float)+1,NY));let force_component;if(is_pull){force_component=(paddle_id===1)?-force_strength_value:force_strength_value;}else{force_component=(paddle_id===1)?force_strength_value:-force_strength_value;} const paddle_height_cells=PADDLE_HEIGHT/FLUID_DY;const max_jet_width_at_tip_cells=Math.max(1,Math.round(paddle_height_cells*JET_MAX_WIDTH_FRAC));const start_x_world_edge=(paddle_id===1)?PADDLE_WIDTH:(COURT_WIDTH-PADDLE_WIDTH);let start_gxi_jet_float;if(paddle_id===1){start_gxi_jet_float=((start_x_world_edge+FLUID_DX*0.5)/COURT_WIDTH)*NX+0.5;}else{start_gxi_jet_float=((start_x_world_edge-FLUID_DX*0.5)/COURT_WIDTH)*NX+0.5;} const start_gxi_jet_idx=Math.max(1,Math.min(Math.round(start_gxi_jet_float)+1,NX));const base_half_width_cells=Math.max(1,Math.round((paddle_height_cells/3.0)/2.0));const tip_half_width_cells=Math.max(1,Math.round(max_jet_width_at_tip_cells/2.0));for(let i_dist_cells=0;i_dist_cells<JET_CONE_LENGTH_CELLS;i_dist_cells++){let current_gxi=(paddle_id===1)?start_gxi_jet_idx+i_dist_cells:start_gxi_jet_idx-i_dist_cells;if(current_gxi<1||current_gxi>NX)continue;const width_frac=JET_CONE_LENGTH_CELLS<=1?1.0:i_dist_cells/Math.max(1.0,JET_CONE_LENGTH_CELLS-1);let current_jet_half_width_cells=Math.round(base_half_width_cells+(tip_half_width_cells-base_half_width_cells)*width_frac);current_jet_half_width_cells=Math.max(1,current_jet_half_width_cells);for(let gy_offset_loop=-(current_jet_half_width_cells-1);gy_offset_loop<current_jet_half_width_cells;gy_offset_loop++){const current_gyi=Math.max(1,Math.min(paddle_center_gy_idx+gy_offset_loop,NY));force_vx_array[IX_fluid(current_gxi,current_gyi)]+=force_component;}}}
+
+function _apply_dye_in_cone(paddle_id, paddle_base_y_world, r_val, g_val, b_val) {
+    const paddle_center_y_world = paddle_base_y_world + PADDLE_HEIGHT / 2.0;
+    const paddle_center_gy_float = (paddle_center_y_world / COURT_HEIGHT) * NY + 0.5;
+    const paddle_center_gy_idx = Math.max(1, Math.min(Math.round(paddle_center_gy_float) + 1, NY));
+    const paddle_height_cells = PADDLE_HEIGHT / FLUID_DY;
+    const max_jet_width_at_tip_cells = Math.max(1, Math.round(paddle_height_cells * JET_MAX_WIDTH_FRAC));
+    const start_x_world_edge = (paddle_id === 1) ? PADDLE_WIDTH : (COURT_WIDTH - PADDLE_WIDTH);
+    let start_gxi_jet_float;
+    if (paddle_id === 1) { start_gxi_jet_float = ((start_x_world_edge + FLUID_DX * 0.5) / COURT_WIDTH) * NX + 0.5; }
+    else { start_gxi_jet_float = ((start_x_world_edge - FLUID_DX * 0.5) / COURT_WIDTH) * NX + 0.5; }
+    const start_gxi_jet_idx = Math.max(1, Math.min(Math.round(start_gxi_jet_float) + 1, NX));
+    const base_half_width_cells = Math.max(1, Math.round((paddle_height_cells / 3.0) / 2.0));
+    const tip_half_width_cells = Math.max(1, Math.round(max_jet_width_at_tip_cells / 2.0));
+
+    for (let i_dist_cells = 0; i_dist_cells < JET_CONE_LENGTH_CELLS; i_dist_cells++) {
+        let current_gxi = (paddle_id === 1) ? start_gxi_jet_idx + i_dist_cells : start_gxi_jet_idx - i_dist_cells;
+        if (current_gxi < 1 || current_gxi > NX) continue;
+        const width_frac = JET_CONE_LENGTH_CELLS <= 1 ? 1.0 : i_dist_cells / Math.max(1.0, JET_CONE_LENGTH_CELLS - 1);
+        let current_jet_half_width_cells = Math.round(base_half_width_cells + (tip_half_width_cells - base_half_width_cells) * width_frac);
+        current_jet_half_width_cells = Math.max(1, current_jet_half_width_cells);
+        for (let gy_offset_loop = -(current_jet_half_width_cells - 1); gy_offset_loop < current_jet_half_width_cells; gy_offset_loop++) {
+            const current_gyi = Math.max(1, Math.min(paddle_center_gy_idx + gy_offset_loop, NY));
+            const idx_cone = IX_fluid(current_gxi, current_gyi);
+            // Additive dye, capped at 1.0. Higher r_val/g_val/b_val means it reaches 1.0 faster.
+            fluid_dye_R[idx_cone] = Math.min(100.0, fluid_dye_R[idx_cone] + r_val);
+            fluid_dye_G[idx_cone] = Math.min(100.0, fluid_dye_G[idx_cone] + g_val);
+            fluid_dye_B[idx_cone] = Math.min(100.0, fluid_dye_B[idx_cone] + b_val);
+        }
+    }
+}
+
+function apply_paddle_jet_q_and_dye(paddle_id, paddle_base_y_world) {
+    // P1: Red, P2: Blue
+    _apply_dye_in_cone(paddle_id, paddle_base_y_world,
+        (paddle_id === 1 ? PUSH_DYE_STRENGTH : 0.0),
+        0.0,
+        (paddle_id === 1 ? 0.0 : PUSH_DYE_STRENGTH)
+    );
+    const paddle_center_y_world = paddle_base_y_world + PADDLE_HEIGHT / 2.0;
+    const paddle_center_gy_float = (paddle_center_y_world / COURT_HEIGHT) * NY + 0.5;
+    const paddle_center_gy_idx = Math.max(1, Math.min(Math.round(paddle_center_gy_float)+1, NY));
+    const director_angle = (paddle_id === 1) ? 0.0 : Math.PI;
+    const paddle_height_cells = PADDLE_HEIGHT / FLUID_DY;
+    const max_jet_width_at_tip_cells = Math.max(1, Math.round(paddle_height_cells * JET_MAX_WIDTH_FRAC));
+    const start_x_world_edge = (paddle_id === 1) ? PADDLE_WIDTH : (COURT_WIDTH - PADDLE_WIDTH);
+    let start_gxi_jet_float; if (paddle_id === 1) { start_gxi_jet_float = ((start_x_world_edge + FLUID_DX*0.5)/COURT_WIDTH)*NX + 0.5; } else { start_gxi_jet_float = ((start_x_world_edge - FLUID_DX*0.5)/COURT_WIDTH)*NX + 0.5; }
+    const start_gxi_jet_idx = Math.max(1, Math.min(Math.round(start_gxi_jet_float)+1, NX));
+    const base_half_width_cells = Math.max(1, Math.round((paddle_height_cells / 3.0)/2.0));
+    const tip_half_width_cells = Math.max(1, Math.round(max_jet_width_at_tip_cells / 2.0));
+    for (let i_dist_cells = 0; i_dist_cells < JET_CONE_LENGTH_CELLS; i_dist_cells++) {
+        let current_gxi = (paddle_id === 1) ? start_gxi_jet_idx + i_dist_cells : start_gxi_jet_idx - i_dist_cells;
+        if (current_gxi < 1 || current_gxi > NX) continue;
+        const width_frac = JET_CONE_LENGTH_CELLS <=1 ? 1.0 : i_dist_cells / Math.max(1.0, JET_CONE_LENGTH_CELLS - 1);
+        let current_jet_half_width_cells = Math.round(base_half_width_cells + (tip_half_width_cells - base_half_width_cells) * width_frac);
+        current_jet_half_width_cells = Math.max(1, current_jet_half_width_cells);
+        for (let gy_offset_loop = -(current_jet_half_width_cells-1); gy_offset_loop < current_jet_half_width_cells; gy_offset_loop++) {
+            const current_gyi = Math.max(1, Math.min(paddle_center_gy_idx + gy_offset_loop, NY));
+            const idx_cone = IX_fluid(current_gxi, current_gyi);
+        }
+    }
+}
+function apply_paddle_pull_dye(paddle_id, paddle_base_y_world) {
+    // P1: Green-ish, P2: Cyan-ish (Green + Blue)
+    _apply_dye_in_cone(paddle_id, paddle_base_y_world,
+        0.0,
+        (paddle_id === 1 ? PULL_DYE_STRENGTH : PULL_DYE_STRENGTH * 0.7), // P1 mostly G, P2 less G
+        (paddle_id === 1 ? PULL_DYE_STRENGTH * 0.3 : PULL_DYE_STRENGTH)  // P1 little B, P2 mostly B
+    );
+}
+
+function fluid_step(p1_is_pushing, p1_y_world, p2_is_pushing, p2_y_world, p1_is_pulling, p2_is_pulling) {
+    const u_old_vx_for_advection = fluid_vx_prev_step;
+    const u_old_vy_for_advection = fluid_vy_prev_step;
+
+    fluid_Qxx0.set(fluid_Qxx); fluid_Qxy0.set(fluid_Qxy);
+    advect(0, fluid_Qxx, fluid_Qxx0, u_old_vx_for_advection, u_old_vy_for_advection, FLUID_DT);
+    advect(0, fluid_Qxy, fluid_Qxy0, u_old_vx_for_advection, u_old_vy_for_advection, FLUID_DT);
+
+    fluid_dye_R0.set(fluid_dye_R); fluid_dye_G0.set(fluid_dye_G); fluid_dye_B0.set(fluid_dye_B);
+    advect(0, fluid_dye_R, fluid_dye_R0, u_old_vx_for_advection, u_old_vy_for_advection, FLUID_DT);
+    advect(0, fluid_dye_G, fluid_dye_G0, u_old_vx_for_advection, u_old_vy_for_advection, FLUID_DT);
+    advect(0, fluid_dye_B, fluid_dye_B0, u_old_vx_for_advection, u_old_vy_for_advection, FLUID_DT);
+
+    calculate_H(fluid_Hxx, fluid_Hxy, fluid_Qxx, fluid_Qxy, NEMATIC_K_ELASTIC, NEMATIC_A, NEMATIC_C);
+    calculate_S_flow_term(Sxx_flow_temp, Sxy_flow_temp, fluid_Qxx, fluid_Qxy, u_old_vx_for_advection, u_old_vy_for_advection, LAMBDA_ALIGN);
+    for(let i=0;i<FLUID_GRID_SIZE;i++){ fluid_Qxx[i]+=FLUID_DT*(Sxx_flow_temp[i]+GAMMA_ROT_VISC*fluid_Hxx[i]); fluid_Qxy[i]+=FLUID_DT*(Sxy_flow_temp[i]+GAMMA_ROT_VISC*fluid_Hxy[i]); }
+    set_boundary_scalar(fluid_Qxx); set_boundary_scalar(fluid_Qxy);
+
+    calculate_H(fluid_Hxx, fluid_Hxy, fluid_Qxx, fluid_Qxy, NEMATIC_K_ELASTIC, NEMATIC_A, NEMATIC_C);
+    calculate_div_active_stress(fluid_div_sigma_active_x, fluid_div_sigma_active_y, fluid_Qxx, fluid_Qxy, ALPHA_ACTIVITY);
+    calculate_div_elastic_stress(fluid_div_sigma_elastic_x, fluid_div_sigma_elastic_y, fluid_Qxx, fluid_Qxy, fluid_Hxx, fluid_Hxy, NEMATIC_K_ELASTIC, LAMBDA_ALIGN);
+
+    for(let i=0;i<FLUID_GRID_SIZE;i++){ fluid_vx0[i]=fluid_div_sigma_active_x[i]+fluid_div_sigma_elastic_x[i]; fluid_vy0[i]=fluid_div_sigma_active_y[i]+fluid_div_sigma_elastic_y[i]; }
+
+    if(p1_is_pushing){ apply_paddle_jet_q_and_dye(1, p1_y_world); _apply_force_in_cone(fluid_vx0,1,p1_y_world,PADDLE_JET_FORCE_STRENGTH,false); }
+    if(p2_is_pushing){ apply_paddle_jet_q_and_dye(2, p2_y_world); _apply_force_in_cone(fluid_vx0,2,p2_y_world,PADDLE_JET_FORCE_STRENGTH,false); }
+    if(p1_is_pulling){ apply_paddle_pull_dye(1, p1_y_world); _apply_force_in_cone(fluid_vx0,1,p1_y_world,PADDLE_PULL_FORCE_STRENGTH,true); }
+    if(p2_is_pulling){ apply_paddle_pull_dye(2, p2_y_world); _apply_force_in_cone(fluid_vx0,2,p2_y_world,PADDLE_PULL_FORCE_STRENGTH,true); }
+
+    general_linear_solve(1,fluid_vx,fluid_vx0,ZETA_FRICTION,MU_VISCOSITY,SOLVER_ITER);
+    general_linear_solve(2,fluid_vy,fluid_vy0,ZETA_FRICTION,MU_VISCOSITY,SOLVER_ITER);
+    project(fluid_vx,fluid_vy,fluid_p,fluid_div,SOLVER_ITER);
+
+    fluid_vx_prev_step.set(fluid_vx);
+    fluid_vy_prev_step.set(fluid_vy);
+}
+
+function get_fluid_velocity_at(pos_x_world,pos_y_world){let gx=(pos_x_world/COURT_WIDTH)*NX-0.5;let gy=(pos_y_world/COURT_HEIGHT)*NY-0.5;gx=Math.max(0,Math.min(gx,NX-1.0001));gy=Math.max(0,Math.min(gy,NY-1.0001));const i0=Math.floor(gx);const i1=i0+1;const j0=Math.floor(gy);const j1=j0+1;const s1=gx-i0;const s0=1-s1;const t1=gy-j0;const t0=1-t1;const vx=s0*(t0*fluid_vx[IX_fluid(i0+1,j0+1)]+t1*fluid_vx[IX_fluid(i0+1,j1+1)])+s1*(t0*fluid_vx[IX_fluid(i1+1,j0+1)]+t1*fluid_vx[IX_fluid(i1+1,j1+1)]);const vy=s0*(t0*fluid_vy[IX_fluid(i0+1,j0+1)]+t1*fluid_vy[IX_fluid(i0+1,j1+1)])+s1*(t0*fluid_vy[IX_fluid(i1+1,j0+1)]+t1*fluid_vy[IX_fluid(i1+1,j1+1)]);return{x:vx*VEL_SCALE,y:vy*VEL_SCALE};}
+
+function resetBall() {
+    ball.speed = INITIAL_BALL_SPEED * 60;
+    ball.dx = 0; ball.dy = 0;
+    let paddleYToFollow;
+    if (servedBy === 'p1') {
+        ball.x = PADDLE_WIDTH + BALL_RADIUS + 10;
+        paddleYToFollow = paddleLeftY;
+        serveState = 'p1_serve';
+        gameMessage.textContent = "Left Player: Press D/Space to Serve";
+    } else {
+        ball.x = COURT_WIDTH - PADDLE_WIDTH - BALL_RADIUS - 10;
+        paddleYToFollow = paddleRightY;
+        serveState = 'p2_serve';
+        gameMessage.textContent = "Right Player: Press Left/Enter to Serve";
+    }
+    ball.y = paddleYToFollow + PADDLE_HEIGHT / 2;
+    ball.y = Math.max(BALL_RADIUS, Math.min(ball.y, COURT_HEIGHT - BALL_RADIUS));
+    ball.currentShadowBlur = BALL_SHADOW_BLUR_NORMAL;
+    ball.hitGlowTimer = 0;
+}
+function movePaddles(){if(keysPressed['w'])paddleLeftY-=PADDLE_SPEED;if(keysPressed['s'])paddleLeftY+=PADDLE_SPEED;paddleLeftY=Math.max(0,Math.min(paddleLeftY,COURT_HEIGHT-PADDLE_HEIGHT));if(keysPressed['i'])paddleRightY-=PADDLE_SPEED;if(keysPressed['k'])paddleRightY+=PADDLE_SPEED;paddleRightY=Math.max(0,Math.min(paddleRightY,COURT_HEIGHT-PADDLE_HEIGHT));if(serveState==='p1_serve')ball.y=paddleLeftY+PADDLE_HEIGHT/2;else if(serveState==='p2_serve')ball.y=paddleRightY+PADDLE_HEIGHT/2;ball.y=Math.max(BALL_RADIUS,Math.min(ball.y,COURT_HEIGHT-BALL_RADIUS));}
+function moveBall(gameDt) {
+    if (serveState !== 'playing') return;
+
+    if (ball.hitGlowTimer > 0) {
+        ball.hitGlowTimer -= gameDt * 60;
+        if (ball.hitGlowTimer <= 0) {
+            ball.currentShadowBlur = BALL_SHADOW_BLUR_NORMAL;
+        }
+    }
+
+    const fluidVelAtBall = get_fluid_velocity_at(ball.x, ball.y);
+    const dragForceX = BALL_DRAG_COEFF * (fluidVelAtBall.x * (FLUID_DX / FLUID_DT) - ball.dx);
+    const dragForceY = BALL_DRAG_COEFF * (fluidVelAtBall.y * (FLUID_DY / FLUID_DT) - ball.dy);
+    ball.dx += dragForceX * gameDt;
+    ball.dy += dragForceY * gameDt;
+    ball.x += ball.dx * gameDt;
+    ball.y += ball.dy * gameDt;
+
+    if (ball.y - BALL_RADIUS < 0) { ball.y = BALL_RADIUS; ball.dy *= -1; }
+    else if (ball.y + BALL_RADIUS > COURT_HEIGHT) { ball.y = COURT_HEIGHT - BALL_RADIUS; ball.dy *= -1; }
+
+    function triggerBallHitEffect() {
+        ball.currentShadowBlur = BALL_SHADOW_BLUR_HIT;
+        ball.hitGlowTimer = BALL_HIT_GLOW_FRAMES;
+    }
+
+    if (ball.dx < 0 && ball.x - BALL_RADIUS < PADDLE_WIDTH && ball.x - BALL_RADIUS > 0 && ball.y + BALL_RADIUS > paddleLeftY && ball.y - BALL_RADIUS < paddleLeftY + PADDLE_HEIGHT) {
+        ball.x = PADDLE_WIDTH + BALL_RADIUS;
+        ball.speed += BALL_SPEED_INCREASE * 60;
+        const hitOffset = (ball.y - (paddleLeftY + PADDLE_HEIGHT / 2)) / (PADDLE_HEIGHT / 2);
+        const bounceAngle = hitOffset * (Math.PI / 3);
+        ball.dx = ball.speed * Math.cos(bounceAngle);
+        ball.dy = ball.speed * Math.sin(bounceAngle);
+        triggerBallHitEffect();
+    } else if (ball.dx > 0 && ball.x + BALL_RADIUS > COURT_WIDTH - PADDLE_WIDTH && ball.x + BALL_RADIUS < COURT_WIDTH && ball.y + BALL_RADIUS > paddleRightY && ball.y - BALL_RADIUS < paddleRightY + PADDLE_HEIGHT) {
+        ball.x = COURT_WIDTH - PADDLE_WIDTH - BALL_RADIUS;
+        ball.speed += BALL_SPEED_INCREASE * 60;
+        const hitOffset = (ball.y - (paddleRightY + PADDLE_HEIGHT / 2)) / (PADDLE_HEIGHT / 2);
+        const bounceAngle = hitOffset * (Math.PI / 3);
+        const worldAngle = Math.PI - bounceAngle;
+        ball.dx = ball.speed * Math.cos(worldAngle);
+        ball.dy = ball.speed * Math.sin(worldAngle);
+        triggerBallHitEffect();
+    }
+
+    if (ball.x + BALL_RADIUS < 0) { scoreRight++; servedBy = 'p1'; checkEndConditions(); }
+    else if (ball.x - BALL_RADIUS > COURT_WIDTH) { scoreLeft++; servedBy = 'p2'; checkEndConditions(); }
+}
+function checkEndConditions(){scoreDisplay.textContent=`${scoreLeft} - ${scoreRight}`;initializeFluidAndGame();resetBall();}
+function handleKeyPress(e){const key=e.key.toLowerCase();let serveTriggered=false;let serverIsP1=false;if(serveState==='p1_serve'&&(key==='d'||key===' ')){serveTriggered=true;serverIsP1=true;} else if(serveState==='p2_serve'&&(key==='arrowleft'||key==='enter')){serveTriggered=true;serverIsP1=false;} if(serveTriggered){const angleOffset=(Math.random()*(Math.PI/3))-(Math.PI/6);let finalAngle=serverIsP1?angleOffset:Math.PI+angleOffset;ball.dx=ball.speed*Math.cos(finalAngle);ball.dy=ball.speed*Math.sin(finalAngle);serveState='playing';gameMessage.textContent="";}}
+
+function initializeFluidAndGame() {
+    const rand_scale=0.01;
+    for(let j=0;j<=NY+1;j++){for(let i=0;i<=NX+1;i++){
+        const idx=IX_fluid(i,j);
+        fluid_vx[idx]=0; fluid_vy[idx]=0;
+        fluid_vx0[idx]=0; fluid_vy0[idx]=0;
+        fluid_vx_prev_step[idx]=0; fluid_vy_prev_step[idx]=0;
+        fluid_p[idx]=0; fluid_div[idx]=0;
+        fluid_Hxx[idx]=0; fluid_Hxy[idx]=0;
+        fluid_div_sigma_active_x[idx]=0; fluid_div_sigma_active_y[idx]=0;
+        fluid_div_sigma_elastic_x[idx]=0; fluid_div_sigma_elastic_y[idx]=0;
+        if(i>=1&&i<=NX&&j>=1&&j<=NY){
+            fluid_Qxx[idx]=(Math.random()-0.5)*2*rand_scale;
+            fluid_Qxy[idx]=(Math.random()-0.5)*2*rand_scale;
+            fluid_dye_R[idx]=0; fluid_dye_G[idx]=0; fluid_dye_B[idx]=0;
+        }else{
+            fluid_Qxx[idx]=0; fluid_Qxy[idx]=0;
+            fluid_dye_R[idx]=0; fluid_dye_G[idx]=0; fluid_dye_B[idx]=0;
+        }
+    }}
+    set_boundary_scalar(fluid_Qxx); set_boundary_scalar(fluid_Qxy);
+    set_boundary_scalar(fluid_dye_R); set_boundary_scalar(fluid_dye_G); set_boundary_scalar(fluid_dye_B);
+    set_boundary_velocity(1,fluid_vx); set_boundary_velocity(2,fluid_vy);
+    set_boundary_velocity(1,fluid_vx_prev_step); set_boundary_velocity(2,fluid_vy_prev_step);
+}
+function resetGame(){scoreLeft=0;scoreRight=0;scoreDisplay.textContent="0 - 0";paddleLeftY=COURT_HEIGHT/2-PADDLE_HEIGHT/2;paddleRightY=COURT_HEIGHT/2-PADDLE_HEIGHT/2;servedBy=(Math.random()<0.5)?'p1':'p2';resetBall();gameActive=true;initializeFluidAndGame();}
+
+function update(gameDt) {
+    movePaddles();
+    if (gameActive) moveBall(gameDt);
+
+    MU_VISCOSITY = muViscosityStore.value;
+    NEMATIC_K_ELASTIC = nematicKElasticStore.value;
+
+    let p1_is_pushing = (keysPressed['d'] || keysPressed[' ']) && (serveState === 'playing' || serveState === 'p1_serve');
+    let p2_is_pushing = (keysPressed['j'] || keysPressed['enter']) && (serveState === 'playing' || serveState === 'p2_serve');
+    let p1_is_pulling = keysPressed['a'] && serveState === 'playing';
+    let p2_is_pulling = keysPressed['l'] && serveState === 'playing';
+
+    fluid_time_accumulator += gameDt;
+    let fluid_steps_taken_this_frame = 0;
+    let p1_push_fluid = p1_is_pushing;
+    let p2_push_fluid = p2_is_pushing;
+    let p1_pull_fluid = p1_is_pulling;
+    let p2_pull_fluid = p2_is_pulling;
+
+    while (fluid_time_accumulator >= FLUID_DT && fluid_steps_taken_this_frame < MAX_FLUID_STEPS_PER_FRAME) {
+        fluid_step(p1_push_fluid, paddleLeftY, p2_push_fluid, paddleRightY, p1_pull_fluid, p2_pull_fluid);
+        fluid_time_accumulator -= FLUID_DT;
+        fluid_steps_taken_this_frame++;
+        p1_push_fluid = false;
+        p2_push_fluid = false;
+        p1_pull_fluid = false;
+        p2_pull_fluid = false;
+    }
+}
+
+// --- Dye Color Generation (No base plasma from s0_val) ---
+// dyeR, dyeG, dyeB are 0-1 floats from fluid_dye arrays
+function getDyeColor(dyeR_val, dyeG_val, dyeB_val) {
+
+    const minBrightness = 10; // Minimum brightness if any dye is present
+    const colorScale = 255 - minBrightness;
+
+    let r = 0, g = 0, b = 0;
+
+    if (dyeR_val > 0 || dyeG_val > 0 || dyeB_val > 0) {
+        r = Math.min(255, minBrightness + dyeR_val * colorScale);
+        g = Math.min(255, minBrightness + dyeG_val * colorScale);
+        b = Math.min(255, minBrightness + dyeB_val * colorScale);
+    }
+
+    return [r, g, b];
+}
+
+
+function render() {
+    ctx.clearRect(0,0,COURT_WIDTH,COURT_HEIGHT);
+
+    const cellData = fluidCellImageData.data;
+
+    for (let j_vis = 0; j_vis < NY; j_vis++) {
+        for (let i_vis = 0; i_vis < NX; i_vis++) {
+            const fluid_idx = IX_fluid(i_vis + 1, j_vis + 1);
+            const dyeR_val = fluid_dye_R[fluid_idx];
+            const dyeG_val = fluid_dye_G[fluid_idx];
+            const dyeB_val = fluid_dye_B[fluid_idx];
+
+            const [r, g, b] = getDyeColor(dyeR_val, dyeG_val, dyeB_val);
+
+            const data_idx = (j_vis * NX + i_vis) * 4;
+            cellData[data_idx]     = r;
+            cellData[data_idx + 1] = g;
+            cellData[data_idx + 2] = b;
+            cellData[data_idx + 3] = 255;
+        }
+    }
+    offscreenFluidCtx.putImageData(fluidCellImageData, 0, 0);
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(offscreenFluidCanvas, 0, 0, COURT_WIDTH, COURT_HEIGHT);
+    ctx.imageSmoothingEnabled = true;
+
+    ctx.strokeStyle = ARROW_COLOR;
+    ctx.lineWidth = ARROW_LINE_WIDTH;
+    ctx.beginPath();
+    for(let j_vis=0;j_vis<NY;j_vis+=ARROW_SUBSAMPLE){for(let i_vis=0;i_vis<NX;i_vis+=ARROW_SUBSAMPLE){const fluid_cell_i=i_vis+1;const fluid_cell_j=j_vis+1;const idx=IX_fluid(fluid_cell_i,fluid_cell_j);const qxx=fluid_Qxx[idx];const qxy=fluid_Qxy[idx];let dir_x=1;let dir_y=0;const s_sq=2*(qxx*qxx+qxy*qxy);const s0_val=Math.sqrt(s_sq);if(s0_val>DIRECTOR_EPSILON){const angle_2phi=Math.atan2(qxy,qxx);const angle_phi=0.5*angle_2phi;dir_x=Math.cos(angle_phi);dir_y=Math.sin(angle_phi);} const centerX=i_vis*FLUID_DX+FLUID_DX/2;const centerY=j_vis*FLUID_DY+FLUID_DY/2;const halfLen=ARROW_LENGTH/2;ctx.moveTo(centerX-dir_x*halfLen,centerY-dir_y*halfLen);ctx.lineTo(centerX+dir_x*halfLen,centerY+dir_y*halfLen);}}
+    ctx.stroke();
+
+    ctx.shadowColor = PADDLE_GLOW_COLOR;
+    ctx.shadowBlur = PADDLE_SHADOW_BLUR;
+    drawRect(0, paddleLeftY, PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_COLOR);
+    drawRect(COURT_WIDTH - PADDLE_WIDTH, paddleRightY, PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_COLOR);
+
+    ctx.shadowColor = BALL_GLOW_COLOR;
+    ctx.shadowBlur = ball.currentShadowBlur;
+    if (gameActive || serveState === 'p1_serve' || serveState === 'p2_serve') {
+        drawCircle(ball.x, ball.y, BALL_RADIUS, BALL_COLOR);
+    }
+    ctx.shadowBlur = 0;
+}
+
+function gameLoop(timestamp) {
+    const gameDt = Math.min((timestamp - lastFrameTime) / 1000, 0.1);
+    lastFrameTime = timestamp;
+    update(gameDt);
+    render();
+    requestAnimationFrame(gameLoop);
+}
+
+window.addEventListener('keydown',(e)=>{keysPressed[e.key.toLowerCase()]=true;handleKeyPress(e);});
+window.addEventListener('keyup',(e)=>{keysPressed[e.key.toLowerCase()]=false;});
+
+setupFluidRenderingInfrastructure();
+initializeFluidAndGame();
+
+if(document.readyState==='loading'){window.addEventListener('DOMContentLoaded',()=>{activitySlider.dispatchEvent(new Event('input'));viscositySlider.dispatchEvent(new Event('input'));elasticitySlider.dispatchEvent(new Event('input'));});}else{activitySlider.dispatchEvent(new Event('input'));viscositySlider.dispatchEvent(new Event('input'));elasticitySlider.dispatchEvent(new Event('input'));}
+
+ball.speed = INITIAL_BALL_SPEED * 60;
+resetBall();
+
+gameLoop(performance.now());
+
+function drawRect(x,y,w,h,color){ctx.fillStyle=color;ctx.fillRect(x,y,w,h);}
+function drawCircle(x,y,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();}
+
+</script>
+
+
+<hr>
+<section id="what-is-this" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-this">What is this?</h2>
+<p>My significant other Linnea Lemma <a href="https://www.proquest.com/docview/2632199059?fromopenview=true&amp;pq-origsite=gscholar&amp;sourcetype=Dissertations%20&amp;%20Theses">studies active nematic liquid crystals</a> from time to time. THis is a game of 2D table tennis, inspired by Steve Taylor’s <a href="https://en.wikipedia.org/wiki/Plasma_Pong">Plasma Pong</a> in which the paddles produce flow with the arrow keys, and the ball is influenced by the active nematic liquid crystal flow.</p>
+<p>I’ve written this in Julia using Makie, and here re-written it in javascript. You can find the Julia code (and also an compressible normal fluid version of the game) <a href="https://github.com/bezlemma/active_nematic_tennis">here on GitHub</a>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
