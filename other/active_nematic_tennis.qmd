@@ -96,7 +96,7 @@ format:
     <h2 style="margin-top:0; color: #d0d0ff; text-shadow: 0 0 10px #aaaaff;">Active Nematic Tennis</h2>
     <canvas id="gameCanvas"></canvas>
     <div id="scoreDisplay">0 - 0</div>
-    <div id="gameMessage" style="font-size: 1em; color: #ffcc88; min-height: 1.2em;">Press D/Space or Left Arrow/Enter to Serve</div>
+    <div id="gameMessage" style="font-size: 1em; color: #ffcc88; min-height: 1.2em;">Press D/Space or J/Enter to Serve</div>
   </div>
 
   <div class="simulation-parameters">
@@ -117,7 +117,7 @@ format:
 
   <div class="controls-info">
     <p><strong>Player 1 (Left):</strong> Move: <strong>W</strong>(up)/<strong>S</strong>(down). Push Jet: <strong>D</strong>/<strong>Space</strong>. Pull: <strong>A</strong>.</p>
-    <p><strong>Player 2 (Right):</strong> Move: <strong>ArrowUp</strong>/<strong>ArrowDown</strong>. Push Jet: <strong>ArrowLeft</strong>/<strong>Enter</strong>. Pull: <strong>ArrowRight</strong> .</p>
+    <p><strong>Player 2 (Right):</strong> Move: <strong>I</strong>/<strong>K</strong>. Push Jet: <strong>J</strong>/<strong>Enter</strong>. Pull: <strong>L</strong> .</p>
   </div>
 
 <script>
@@ -463,7 +463,7 @@ function resetBall() {
     ball.currentShadowBlur = BALL_SHADOW_BLUR_NORMAL;
     ball.hitGlowTimer = 0;
 }
-function movePaddles(){if(keysPressed['w'])paddleLeftY-=PADDLE_SPEED;if(keysPressed['s'])paddleLeftY+=PADDLE_SPEED;paddleLeftY=Math.max(0,Math.min(paddleLeftY,COURT_HEIGHT-PADDLE_HEIGHT));if(keysPressed['arrowup'])paddleRightY-=PADDLE_SPEED;if(keysPressed['arrowdown'])paddleRightY+=PADDLE_SPEED;paddleRightY=Math.max(0,Math.min(paddleRightY,COURT_HEIGHT-PADDLE_HEIGHT));if(serveState==='p1_serve')ball.y=paddleLeftY+PADDLE_HEIGHT/2;else if(serveState==='p2_serve')ball.y=paddleRightY+PADDLE_HEIGHT/2;ball.y=Math.max(BALL_RADIUS,Math.min(ball.y,COURT_HEIGHT-BALL_RADIUS));}
+function movePaddles(){if(keysPressed['w'])paddleLeftY-=PADDLE_SPEED;if(keysPressed['s'])paddleLeftY+=PADDLE_SPEED;paddleLeftY=Math.max(0,Math.min(paddleLeftY,COURT_HEIGHT-PADDLE_HEIGHT));if(keysPressed['i'])paddleRightY-=PADDLE_SPEED;if(keysPressed['k'])paddleRightY+=PADDLE_SPEED;paddleRightY=Math.max(0,Math.min(paddleRightY,COURT_HEIGHT-PADDLE_HEIGHT));if(serveState==='p1_serve')ball.y=paddleLeftY+PADDLE_HEIGHT/2;else if(serveState==='p2_serve')ball.y=paddleRightY+PADDLE_HEIGHT/2;ball.y=Math.max(BALL_RADIUS,Math.min(ball.y,COURT_HEIGHT-BALL_RADIUS));}
 function moveBall(gameDt) {
     if (serveState !== 'playing') return;
 
@@ -550,9 +550,9 @@ function update(gameDt) {
     NEMATIC_K_ELASTIC = nematicKElasticStore.value;
 
     let p1_is_pushing = (keysPressed['d'] || keysPressed[' ']) && (serveState === 'playing' || serveState === 'p1_serve');
-    let p2_is_pushing = (keysPressed['arrowleft'] || keysPressed['enter']) && (serveState === 'playing' || serveState === 'p2_serve');
+    let p2_is_pushing = (keysPressed['j'] || keysPressed['enter']) && (serveState === 'playing' || serveState === 'p2_serve');
     let p1_is_pulling = keysPressed['a'] && serveState === 'playing';
-    let p2_is_pulling = keysPressed['arrowright'] && serveState === 'playing';
+    let p2_is_pulling = keysPressed['l'] && serveState === 'playing';
 
     fluid_time_accumulator += gameDt;
     let fluid_steps_taken_this_frame = 0;

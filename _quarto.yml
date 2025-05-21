@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Bezia Lemma"
+  search: false
   sidebar:
     contents:
       - section: "Protocols"
