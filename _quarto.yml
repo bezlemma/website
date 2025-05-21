@@ -21,7 +21,9 @@ website:
           - "stories/annapurnacrescent.qmd"
           - "stories/coexistence.qmd"
           - "stories/first.qmd"
-    search: false
+      - section: "Other"
+        contents:
+          - "others/active_nematic_tennis.qmd"
 format:
   html:
     theme:
