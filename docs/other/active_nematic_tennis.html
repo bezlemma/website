@@ -310,7 +310,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 style="margin-top:0; color: #d0d0ff; text-shadow: 0 0 10px #aaaaff;" class="anchored">Active Nematic Tennis</h2>
     <canvas id="gameCanvas"></canvas>
     <div id="scoreDisplay">0 - 0</div>
-    <div id="gameMessage" style="font-size: 1em; color: #ffcc88; min-height: 1.2em;">Press D/Space or J/Enter to Serve</div>
+    <div id="gameMessage" style="font-size: 1em; color: #ffcc88; min-height: 1.2em;">Press D or J to Serve</div>
   </div>
 
   <div class="simulation-parameters">
@@ -662,12 +662,12 @@ function resetBall() {
         ball.x = PADDLE_WIDTH + BALL_RADIUS + 10;
         paddleYToFollow = paddleLeftY;
         serveState = 'p1_serve';
-        gameMessage.textContent = "Left Player: Press D/Space to Serve";
+        gameMessage.textContent = "Left Player: Press D to Serve";
     } else {
         ball.x = COURT_WIDTH - PADDLE_WIDTH - BALL_RADIUS - 10;
         paddleYToFollow = paddleRightY;
         serveState = 'p2_serve';
-        gameMessage.textContent = "Right Player: Press Left/Enter to Serve";
+        gameMessage.textContent = "Right Player: Press J to Serve";
     }
     ball.y = paddleYToFollow + PADDLE_HEIGHT / 2;
     ball.y = Math.max(BALL_RADIUS, Math.min(ball.y, COURT_HEIGHT - BALL_RADIUS));
@@ -724,7 +724,7 @@ function moveBall(gameDt) {
     else if (ball.x - BALL_RADIUS > COURT_WIDTH) { scoreLeft++; servedBy = 'p2'; checkEndConditions(); }
 }
 function checkEndConditions(){scoreDisplay.textContent=`${scoreLeft} - ${scoreRight}`;initializeFluidAndGame();resetBall();}
-function handleKeyPress(e){const key=e.key.toLowerCase();let serveTriggered=false;let serverIsP1=false;if(serveState==='p1_serve'&&(key==='d'||key===' ')){serveTriggered=true;serverIsP1=true;} else if(serveState==='p2_serve'&&(key==='arrowleft'||key==='enter')){serveTriggered=true;serverIsP1=false;} if(serveTriggered){const angleOffset=(Math.random()*(Math.PI/3))-(Math.PI/6);let finalAngle=serverIsP1?angleOffset:Math.PI+angleOffset;ball.dx=ball.speed*Math.cos(finalAngle);ball.dy=ball.speed*Math.sin(finalAngle);serveState='playing';gameMessage.textContent="";}}
+function handleKeyPress(e){const key=e.key.toLowerCase();let serveTriggered=false;let serverIsP1=false;if(serveState==='p1_serve'&&(key==='d'||key===' ')){serveTriggered=true;serverIsP1=true;} else if(serveState==='p2_serve'&&(key==='j'||key==='enter')){serveTriggered=true;serverIsP1=false;} if(serveTriggered){const angleOffset=(Math.random()*(Math.PI/3))-(Math.PI/6);let finalAngle=serverIsP1?angleOffset:Math.PI+angleOffset;ball.dx=ball.speed*Math.cos(finalAngle);ball.dy=ball.speed*Math.sin(finalAngle);serveState='playing';gameMessage.textContent="";}}
 
 function initializeFluidAndGame() {
     const rand_scale=0.01;
