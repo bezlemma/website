@@ -7,24 +7,32 @@ format:
 
 ## Whatmann Filter
 
-	Lung media:
-  * (DMEM/F12 HEPES without phenol red)
-	* Add Pen/Strep such that you have 10 U/ml penicillin and 10 µg/ml streptomycin.
+1. Prepare Lung media:
+    - Use DMEM/F12 HEPES
+        - Without phenol red if doing fluoressence imaging.
+	- Add Pen/Strep such that you have 10 U/ml penicillin and 10 µg/ml streptomycin.
 		https://journals.biologists.com/dev/article/144/23/4328/19250
-        * 10 mL for my 1000 mL media.
-	*	Add 5% V/V FBS to an aliquot of HEPES media.
-        *FBS ages, so keep it frozen and do this fresh each time
-        *You can range from 1% to 10% FBS to change the speed of development and how robust the lungs are.
+        - 10 mL for my 1000 mL media.
+	-	Add 5% V/V FBS to an aliquot of HEPES media.
+        - FBS ages, so keep it frozen and do this fresh each time
+        - You can range from 1% to 10% FBS to change the speed of development and how robust the lungs are.
 
-* Add 2 mL Lung media to a well in a 12 well plate.
 
-* Add a Whatman Filter membrane, shiny side (hydrophillic side) down onto the media. 
-* Place the lung onto the media with a pipette.
-      *Don't let the lung or filter drown under the liquid.
 
-* Keep minimally exposed to light during culture. 
+2. Load culture system
 
-* If imaging on an inverted scope, remove all but 200 uL media right before imaging.
+    - Add 2 mL Lung media to a well in a 12 well plate.
+    - Add a Whatman Filter membrane, shiny side (hydrophillic side) down onto the media. 
+    - Place the lung onto the media with a pipette.
+        - Don't let the lung or filter drown under the liquid.
+
+3. Culture
+
+    - Keep minimally exposed to light during culture. 
+    - If imaging on an inverted scope, remove all but 200 uL media right before imaging.
+    - For long cultures, sterility is important. 
+        -During dissection, sterilize tools before use
+        -During chamber preperation, work in a TC hood
 
 ### Thoughts 
 
@@ -106,14 +114,14 @@ Whatmann Filter's come in many pore sizes. What is the best pore size for imagin
     - Add 1-2 mL 1X PBS to each well to cover gel sandwich.
     - Store plate at 4°C overnight.
 
----
+### Day 3
 
-### **Day 3**
+1. Expose PA Gels
 
     - Remove plate from 4°C.
     - Using forceps, gently lift Gel Slick-coated top coverslip from each PA gel.
 
-Sterilize PA Gels
+2. Sterilize PA Gels
 
     - Aspirate PBS.
     - Add 100% ethanol to cover gel; incubate 5-10 min.
@@ -129,9 +137,17 @@ Sterilize PA Gels
 ![](../assets/SherryChamber.png) 
 
 ### Thoughts 
-Sherry Chambers give terrific imaging, and give a little bit of room for the lung to grow in three dimensions. However they are fairly intensive to make, so throughput is very low.
+This technique was developed by Dr. Sherry Zhang. Sherry Chambers give terrific imaging, and give a little bit of room for the lung to grow in three dimensions. However they are fairly intensive to make, so throughput is very low.
 
 ### Open Questions 
 How does the development (particularly the 3D development) change from Whatmann Filter culture? Is there an easier way to mass produce these chambers?
 
 ## Mackenzie Chamber
+
+On a 12 well petri dish with glass bottoms, just put the lung straight down with a very small amount (~200 uL) of NIH-3T3 media. You can add more media after the lung has adhered.
+
+### Thoughts 
+This technique was developed by Mackenzie Litz. These chambers give the best possible imaging. However attachment can be difficult, and the development is strongly affected by the hard glass surface of the chamber. These are the easiest chambers to make though. This is also the only chamber that allows for a full "drowning" of the lung
+
+### Open Questions 
+Why does NIH-3T3 media allow this? My current hypothesis is that the increased pyruvate in the media makes the oxygen availability less important? But I see several holes in that argument.

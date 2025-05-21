@@ -14,7 +14,7 @@ format:
 
 *October 19, 2023*
 
-> **Note:** This protocol is a modification of a protocl given to me by Katie Goodwin, inspired by Crystal Rogers's suggestion to add CaCl2 and use TBS to accommodate ECad staining in the chicken. It is optimized for simultaneously accommodating staining of Mitochondria (Tom20) / Ecadherin and Actin (through Phalloidin) at the same time. You can achieve better results if you drop one or two of those stains. For instance, Methanol is much better in Murray's clear than Ethanol if you can drop Phalloidin. ECad staining looks much better without Glutaraldehyde if you can drop mito. And Mito staining looks a little bit better using PBS instead of TBS if you can drop ECad.
+> **Note:** This protocol is a modification of a protocol given to me by Katie Goodwin, inspired by Crystal Rogers's suggestion to add CaCl2 and use TBS to accommodate ECad staining in the chicken. It is optimized for simultaneously accommodating staining of Mitochondria (Tom20) / Ecadherin and Actin (through Phalloidin) at the same time. You can achieve better results if you drop one or two of those stains. For instance, Methanol is much better in Murray's clear than Ethanol if you can drop Phalloidin. ECad staining looks much better without Glutaraldehyde if you can drop mito. And Mito staining looks a little bit better using PBS instead of TBS if you can drop ECad.
 
 > **Reference:** Plasticity in airway smooth muscle differentiation during mouse lung development, Goodwin, Katharine et al. Developmental Cell, Volume 58, Issue 5, 338 - 347.e4
 
@@ -64,9 +64,9 @@ format:
 
 ### Day 3
 
-9.  **Wash:** Wash 4 times with 500 µL TBST for 15 minutes each at RT on a shaker.
-10. **Blocking:** Block with 500 µL for 1 hour at RT on a shaker. 
-11. **Secondary Antibody Incubation:** Combine secondary antibodies with 500 µL blocking solution. Pipette gently to mix. 
+1.  **Wash:** Wash 4 times with 500 µL TBST for 15 minutes each at RT on a shaker.
+2. **Blocking:** Block with 500 µL for 1 hour at RT on a shaker. 
+3. **Secondary Antibody Incubation:** Combine secondary antibodies with 500 µL blocking solution. Pipette gently to mix. 
     *   Note any volume alterations.
     *   **Do not vortex!**
     *   Add non-antibody dyes such as DAPI and Phalloidin at this step.
@@ -78,25 +78,25 @@ format:
 
 ### Day 4 - Washing & Clearing
 
-13. **Wash** Perform 3 washes with TBST for 15 minutes each at RT.
+1. **Wash** Perform 3 washes with TBST for 15 minutes each at RT.
     * Transfer to PBS for 15 minutes to wash off TBST.
-14. **Dehydration/Clearing (Isopropanol or Methanol):** Titrate through Isopropanol series: 25%, 50%, 75%, 100% (15 minutes each step).
+2. **Dehydration/Clearing (Isopropanol or Methanol):** Titrate through Isopropanol series: 25%, 50%, 75%, 100% (15 minutes each step).
     *   This titration significantly contributes to clearing; do not shorten the times.
     *   Use this time to prepare the imaging chamber.
     *   Methanol clearing is much more effective, but doesn't work for Phalloidin.
-15. **Imaging Chamber Preparation:**
+3. **Imaging Chamber Preparation:**
     *   Attach a nylon washer to a coverslip using vacuum grease.
     *   Press firmly on the washer with a rod to squeeze out excess grease.
     *   Seal the perimeter of the washer with nail polish. Wait 15 minutes. Apply a second coat of nail polish.
     *   After curing, use tweezers to remove any stray grease or polish from the inner diameter of the washer.
     *   **Pre-use Check:** Add 1:1 Isopropanol:BABB (iso:BABB) to the washer to check for leaks and flush contaminants. Repeat if the liquid turns opaque or looks contaminated.
         *   **Caution:** Handle BABB with gloves, and take care not to get it all over surfaces in the lab.
-16. **Clearing (iso:BABB):** Place samples in the final container, add 1:1 iso:BABB. Position the samples if possible. Wait 5 minutes.
-17. **Clearing (BABB):** Remove iso:BABB with a thin-tip pipette. Add 100% BABB. Position samples if visible.
-18. **Mounting:** Seal the coverslip onto the washer, this is the trickiest bit.
+4. **Clearing (iso:BABB):** Place samples in the final container, add 1:1 iso:BABB. Position the samples if possible. Wait 5 minutes.
+5. **Clearing (BABB):** Remove iso:BABB with a thin-tip pipette. Add 100% BABB. Position samples if visible.
+6. **Mounting:** Seal the coverslip onto the washer, this is the trickiest bit.
     * One strategy is to drop the entire coverslip perfectly onto the washer from above.
     * Another strategy is to slide it in on the side, while similtaniously adding more BABB with a pipette wherever air bubbles are forming.
-19. **Imaging:** Image as soon as possible after clearing. DAPI signal fades over time, and bubbles can form in the sample holder.
+7. **Imaging:** Image as soon as possible after clearing. DAPI signal fades over time, and bubbles can form in the sample holder.
 
 ## Open Questions
 

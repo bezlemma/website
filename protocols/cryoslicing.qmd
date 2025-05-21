@@ -119,14 +119,14 @@ This process involves orienting the cryoprotected tissue in OCT within a mold an
 1. Incubate with TBS + 0.1% triton (TBST) for 15 minutes to remove OCT3.
 2. Wash with TBST 5 minutes x 3 times at room temperature
 3. Incubate samples w/ blocking buffer for 1 hour at RT
-   * Block Buffer: 10% donkey serum
+    * Block Buffer: 10% donkey serum
 4. Spin primary antibody for 1hr at max speed while sample is blocking
-   * Prepare primary antibody in blocking buffer
+    * Prepare primary antibody in blocking buffer
 5. Add primary antibody and incubate overnight at 4 C followed by 1 hr at RT (or at least 1 hr RT)
-   * You can store samples in an old pipetting box, with wet paper towels underneath to help evaporation.
+    * You can store samples in an old pipetting box, with wet paper towels underneath to help evaporation.
 6. Wash in TBST for 5 minutes x 3 times at room temperature
 7. Prepare secondary antibody solutions in blocking buffer
-   * Spin diluted secondary antibody for 1 hr at max speed
+    * Spin diluted secondary antibody for 1 hr at max speed
 10. Add secondary antibody solution and incubate samples overnight at 4C followed by 1hr at RT
 11. Wash samples in TBST for 5 minutes x 3 times at RT
 12. Mount samples in Flouromount G
