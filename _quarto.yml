@@ -6,6 +6,7 @@ website:
   title: "Bezia Lemma"
   search: false
   sidebar:
+    search: false
     contents:
       - section: "Protocols"
         contents:
