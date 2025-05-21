@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.30">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Microscopy Training Checklist – Bezia Lemma</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/install_julia.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/microscopy_training_checklist.html">Microscopy Training Checklist</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Bezia Lemma</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Protocols</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../protocols/cryoslicing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cryo-Embedding and Slicing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../protocols/immunostaining.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Crystal Immunostaining</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../protocols/lung_culture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lung Culture</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/install_julia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Julia Quick Start</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/microscopy_training_checklist.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Microscopy Training Checklist</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/two_photon_microscopy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Two-Photon Microscopy</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Stories</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../stories/annapurnacrescent.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Annapurna Crescent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../stories/coexistence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Coexistence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../stories/first.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First!</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Other</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+ <span class="menu-text">others/active_nematic_tennis.qmd</span>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/install_julia.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/microscopy_training_checklist.html">Microscopy Training Checklist</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Microscopy Training Checklist</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p><strong>Note:</strong> I’ve been teaching microscopy to experimental scientists since 2017. The training is not about the theory of how a microscope works, instead it is focused on good stewardship of the microscopes to prevent people from misusing them and breaking them. The following is a generalized version of items to discuss and demonstrate that I go through when training people. I usually hand this to the trainee the day before training.</p>
+</blockquote>
+<section id="computer-best-practices" class="level1">
+<h1>Computer best practices</h1>
+<ul>
+<li>Hard drives on microscopy computers fill up fast, some users can take an entire TB of data in a day. If the hard drive fills up, they cannot continue their experiments. Remove your data from the hard drives in a timely manner!</li>
+<li>DO NOT delete the data of others if they are taking up too much space. Do not log someone else out or move their sample if they are taking data, even if they don’t have a reservation. Contact the person, or email the lab.</li>
+<li>Before taking overnight data, make sure there is no pending updates, and make a conscious decision to have the computer on/off the internet and accessible/inaccessible via remote desktop.</li>
+<li>microscopes need calendars, either physical or digital</li>
+</ul>
+<section id="calendar-best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="calendar-best-practices">Calendar best practices</h2>
+<ul>
+<li>Bookings list the names of users and any limited equipment such as a special objective.</li>
+<li>For digital multi-day calendar bookings, make each day a separate booking to prevent it from being made a small “all-day” booking, or people may not notice your booking.</li>
+<li>If the calendars are heavily booked (little free time that week):
+<ul>
+<li>Be in the lab by the time of your reservations.</li>
+<li>Email/slack the lab if you cancel or are booking for over 72 hours</li>
+<li>Make a special effort to communicate needs during these heavy use periods.</li>
+<li>Do not book multiple microscopes at once</li>
+<li>Do not book more than an agreed upon number of weeks out (usually 2)</li>
+</ul></li>
+</ul>
+</section>
+<section id="create-shared-digital-resources" class="level2">
+<h2 class="anchored" data-anchor-id="create-shared-digital-resources">Create shared digital resources</h2>
+<ul>
+<li>you want to have a place listing each microscope, the equipment on it, and details for that equipment such as camera pixel size.</li>
+<li>certain concepts, such as using perfect focus, or a scanslide feature can be confusing, create walkthroughs for specific softwares and tasks. Some examples are at the bottom of this page.</li>
+</ul>
+</section>
+<section id="gloves-or-no-gloves" class="level2">
+<h2 class="anchored" data-anchor-id="gloves-or-no-gloves">Gloves or no gloves?</h2>
+<ul>
+<li>Your lab probably has a rule that you always need to be wearing gloves while using a microscope, or you cannot be wearing gloves while using a microscope. Essentially either you expect bad chemicals to be on all the surfaces, or you expect no bad chemicals to be on any surface. That’s going to change a lot of the way you work, so find out what the rules are in your lab. If you have no rules, make some, you don’t want some people to be working with leaky BA:BB samples and gloves, and other users to be walking up and handling the same knobs without gloves.</li>
+</ul>
+</section>
+</section>
+<section id="training" class="level1">
+<h1>Training</h1>
+<p>Bring your own sample for a more practical training session!</p>
+<section id="setting-up-the-microscope-and-computer" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-the-microscope-and-computer">Setting up the microscope and computer</h2>
+<section id="light-source-microscope-and-stage" class="level3">
+<h3 class="anchored" data-anchor-id="light-source-microscope-and-stage">Light Source, Microscope, and Stage</h3>
+<p>Look for the relevant power strips and turn them on. Ask for help if using an unfamiliar microscope. Keep the power strips off the ground in case of flooding / water damage.</p>
+</section>
+<section id="camera" class="level3">
+<h3 class="anchored" data-anchor-id="camera">Camera</h3>
+<p>Look at the camera and verify that it is fully on. You should hear/feel a fan blowing and</p>
+</section>
+<section id="pc-on-start-software-start-live-view" class="level3">
+<h3 class="anchored" data-anchor-id="pc-on-start-software-start-live-view">PC on, Start Software, Start Live View</h3>
+<p>You can use VisiView/uManager/MetaMorph to operate the microscope. Opening this software is the point at which most errors will occur. Usually these errors either require waiting longer for hardware to fully turn on, or a reboot of the computer and microscopy system.</p>
+</section>
+<section id="set-the-objective" class="level3">
+<h3 class="anchored" data-anchor-id="set-the-objective">Set the objective</h3>
+<p>Objectives are physically set in a turret, when changing objectives move the turret all the way down (Z-Escape) before spinning it. This will prevent long objective barrels from smashing into the stage. Open and close caps slightly above a table, so that if you drop the objective it doesn’t go far.</p>
+</section>
+<section id="installing-a-sample" class="level3">
+<h3 class="anchored" data-anchor-id="installing-a-sample">Installing a sample</h3>
+<p>After setting your objective, choose your sample holder and install your sample.</p>
+</section>
+<section id="changing-the-optical-path" class="level3">
+<h3 class="anchored" data-anchor-id="changing-the-optical-path">Changing the optical path</h3>
+<p>Microscopes can switch between using various ports that bring emission light towards a camera, or the eye piece. Always think about the possible hazards of using the eyepiece optical path on a microscope with lasers.</p>
+</section>
+<section id="x-knob" class="level3">
+<h3 class="anchored" data-anchor-id="x-knob">1.5x Knob</h3>
+<p>On the front of some microscopes is a 1.5x magnification switch. Set this to 1x before and/or after imaging.</p>
+</section>
+<section id="moving-the-stage-and-objective-height-focus" class="level3">
+<h3 class="anchored" data-anchor-id="moving-the-stage-and-objective-height-focus">Moving the stage and objective height (focus)</h3>
+<p>We will cover how to move the stage and focus. We will go over the hazards associated with operating these at their extremities such as hitting objectives on the stage/sample or threading manual components. We will go over some reasons why the sample might drift to a different focus.</p>
+</section>
+</section>
+<section id="cameras" class="level2">
+<h2 class="anchored" data-anchor-id="cameras">Cameras</h2>
+<p>Your microscope either uses a camera, or is a point-scanning microscope that uses a photodetector. This information is relavent for the former.</p>
+<section id="looking-up-a-camera" class="level3">
+<h3 class="anchored" data-anchor-id="looking-up-a-camera">Looking up a camera</h3>
+<p>Always look up the specifications of the camera you are using, and make a note of it. The specifications of the camera will be necessary for analyzing your data later.</p>
+</section>
+<section id="camera-spec-microns-per-pixel" class="level3">
+<h3 class="anchored" data-anchor-id="camera-spec-microns-per-pixel">Camera Spec: microns per pixel</h3>
+<p>The camera converts physical real-world length scales to pixels. The EMCCD is 16 um/pixel. The Orca Fusions are 6.5 um/pixel. The MAICO is 6.25 um/pixel.</p>
+</section>
+<section id="binning" class="level3">
+<h3 class="anchored" data-anchor-id="binning">Binning</h3>
+<p>Binning by N will increase the microns per pixel by a factor of N, but will decrease the pixels and file size by N^2. It will increase the photosensitivity of the camera by roughly a factor of 2N.</p>
+</section>
+<section id="exposure-time" class="level3">
+<h3 class="anchored" data-anchor-id="exposure-time">Exposure time</h3>
+<p>Exposure time is how long the camera is exposed to light. The longer the exposure, the better the signal to noise ratio, but the more blurred your sample becomes. Too short and you will only get noise, too long and you might saturate your detector or create a non-linear signal. The maximum and minimum exposure times of a camera are listed by its seller.</p>
+</section>
+<section id="bit-depth" class="level3">
+<h3 class="anchored" data-anchor-id="bit-depth">Bit depth</h3>
+<p>Bit Depth is how many bits are assigned to each pixel, and control the total range of brightness each pixel can have. Unless you are taking large data sets, you do not need to worry about Bit Depth and can keep it on the default.</p>
+</section>
+<section id="spotting-dust-on-a-camera" class="level3">
+<h3 class="anchored" data-anchor-id="spotting-dust-on-a-camera">Spotting dust on a camera</h3>
+<p>If dark spots do not rotate when the camera is rotated, those dark spots are on the CMOS/CCD itself. Some spots are inevitable, but once it becomes bad the camera needs to be cleaned. To clean dust spots off a camera, find someone more comfortable using the microscope than you (if that person doesn’t exist, it’s your time to shine). Get a <a href="https://www.bhphotovideo.com/c/product/259157-REG/Giottos_AA1900_Rocket_Air_Blower.html">small air pump</a>, not compressed air, and try to gently blow away dust. If that doesn’t work, proceed to use <a href="https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=330">solvents and cotton-tipped applicators</a> like you would for an objective.</p>
+</section>
+<section id="storing-a-camera" class="level3">
+<h3 class="anchored" data-anchor-id="storing-a-camera">Storing a camera</h3>
+<p>Cameras and optical ports have corresponding covers. If you cannot find a cover, quickly fashion one out of lab tape so that dust does not get into the camera or microscope.</p>
+</section>
+</section>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
+<section id="useful-reading" class="level3">
+<h3 class="anchored" data-anchor-id="useful-reading">Useful reading:</h3>
+<ul>
+<li><a href="microscopyu.com/microscopy-basics/resolution">Numerical Aperture (NA) and Resolution</a><br>
+Q: If microns/pixel is smaller than NA limited resolution, what happens?</li>
+<li><a href="microscopyu.com/microscopy-basics/field-of-view">Field of View</a></li>
+<li><a href="microscopyu.com/microscopy-basics/depth-of-field-and-depth-of-focus">Depth of Field</a></li>
+<li><a href="microscopyu.com/microscopy-basics/specialized-microscope-objectives">Specialized Objectives</a><br>
+Q: Objective quiz! Try to decode the symbols on a random objective.</li>
+</ul>
+</section>
+<section id="inspecting-an-objective" class="level3">
+<h3 class="anchored" data-anchor-id="inspecting-an-objective">Inspecting an objective</h3>
+<p>If a lens seems dirty, inspect it using a dissecting microscope. Take pictures if you can.</p>
+</section>
+<section id="installing-an-objective" class="level3">
+<h3 class="anchored" data-anchor-id="installing-an-objective">Installing an objective</h3>
+<p>Learn to install and remove an objective. Remember, tighten with just two fingers! When removing an objective, place them upside down so that oil/water falls out over time.</p>
+</section>
+<section id="breaking-an-objective" class="level3">
+<h3 class="anchored" data-anchor-id="breaking-an-objective">Breaking an objective</h3>
+<p>-Avoid slamming an objective into the stage or your sample -Avoid rotating the objectives without z-escaping.</p>
+</section>
+<section id="working-with-immersion-lenses" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-immersion-lenses">Working with Immersion Lenses</h3>
+<p>Read about water immersion. Use a pipette/dropper to place a one drop of liquid on the lens. If possible it’s good to train at this point on how to spot and remove small air bubbles, and how to spot and address lack of immersion contact with the sample. If your sample has a mysterious dark patch float across it, that was a bubble floating by the optical path. A persistant dark patch might be a bubble just sitting there, so try to spot them in brightfield before imaging! They are very common. If you switch between oil and water, it will be bubbles on bubbles.</p>
+</section>
+<section id="corrective-collars-and-variable-na-irises" class="level3">
+<h3 class="anchored" data-anchor-id="corrective-collars-and-variable-na-irises">Corrective collars and variable NA Irises</h3>
+<p>Read about specialized microscope objectives, some objectives have Corrective Collars or Variable NA Irises. You rotate these to change the working distance or NA of an objective.</p>
+</section>
+<section id="cleaning-a-lens" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning-a-lens">Cleaning a Lens</h3>
+<p>Clean oil and water off immersion lenses before storing by gently wiping them with folded lens paper. You can use lens paper wetted with objective cleaning solvent before or after use for a better clean.</p>
+</section>
+<section id="common-contaminants" class="level3">
+<h3 class="anchored" data-anchor-id="common-contaminants">Common contaminants</h3>
+<p>Common problems with lenses include UV glue, nail polish, or other curing agents getting stuck on the lens. Additionally, you will see scratches due to the objective hitting the stage and the sample. If necessary you can use Helmanex to dissolve oil residue or Methylene Chloride to remove cured UV glue.</p>
+</section>
+<section id="reporting-problems" class="level3">
+<h3 class="anchored" data-anchor-id="reporting-problems">Reporting problems</h3>
+<p>Please email/slack the lab if you suspect there is a problem with a lens or if you have broken a lens. It can be surprisingly difficult to tell when a 60x or 100x lens is broken, as it can often seem like your sample is simply bad.</p>
+</section>
+</section>
+<section id="light-sources" class="level2">
+<h2 class="anchored" data-anchor-id="light-sources">Light sources</h2>
+<p>Every microscope has at least one light source, often several. Locate the light source, make sure it is on, and trace its optical path. Always treat the optical cables with care, as many of them are liquid guides. Figure out the optical path, sometimes microscopes have both diascopic (transmission) and episcopic (reflective) light paths.</p>
+<section id="liquid-light-guide" class="level3">
+<h3 class="anchored" data-anchor-id="liquid-light-guide">Liquid light guide</h3>
+<p>The liquid guide optical cable is a cable filled with actual liquid. Avoid sharp bends in these cables, as air bubbles can form, like in a glow-stick, that will ruin the optical signal.</p>
+</section>
+<section id="centering-a-light-source" class="level3">
+<h3 class="anchored" data-anchor-id="centering-a-light-source">Centering a light source</h3>
+<p>Check that your illumination is as uniform as possible, and centered in the middle of your camera. Take images of the illumination so that you can account for any eccentricity of the illumination at another time.</p>
+</section>
+<section id="taking-blanks-flats-or-darks" class="level3">
+<h3 class="anchored" data-anchor-id="taking-blanks-flats-or-darks">Taking Blanks, Flats, or Darks</h3>
+<p>To account for a non-uniform illumination via software, you can take one “flat field” image when you start imaging with a particular optical setup. This will allow you to subtract off intensity gradients caused by the optical path.</p>
+</section>
+<section id="external-light" class="level3">
+<h3 class="anchored" data-anchor-id="external-light">External Light</h3>
+<p>Always be conscious of the effect of external light on your sample and the samples of others. Keep light to a minimum during your own experiments, and totally off when others are running experiments in the room. Consider using a microscope hood for extremely light-sensitive experiments.</p>
+</section>
+<section id="color" class="level3">
+<h3 class="anchored" data-anchor-id="color">Color</h3>
+<p>Always double-check the wavelength coming from the light source, and if it can be changed make sure you know how to change it to see if others have changed the light source properties.</p>
+</section>
+<section id="intensity" class="level3">
+<h3 class="anchored" data-anchor-id="intensity">Intensity</h3>
+<p>Think carefully about the pros and cons of using a large amount of light for your sample. As a general rule, your signal should be ~5x greater than your noise. Excess light beyond that may create a nicer image, but may also kill a living sample. If you can, increase exposure time instead of increasing light intensity.</p>
+</section>
+</section>
+<section id="filters-and-fluorophores" class="level2">
+<h2 class="anchored" data-anchor-id="filters-and-fluorophores">Filters and Fluorophores</h2>
+<section id="filter-wheels" class="level3">
+<h3 class="anchored" data-anchor-id="filter-wheels">Filter Wheels</h3>
+<p>Most microscopes have a set of excitation or emission filters. A wheel rotates these in and out. -Take images in an order that requires the least amount of motion of the filters. -If you are taking images quickly, changing filter wheel position takes time. -Moving the filter wheel quickly for long times generates heat which can degrade the filter wheel. This is the single most common reason filter wheels break.</p>
+</section>
+<section id="filter-cubes" class="level3">
+<h3 class="anchored" data-anchor-id="filter-cubes">Filter Cubes</h3>
+<p>Filter turret set ups use filter cubes with combined excitation/emission and dichroic filters. If you are using filter cubes, you should how to inspect them, how to clean them, and how to move them. Filter cubes are fingerprinting machines, so even in a no-glove lab consider handling them with clean gloves.</p>
+</section>
+<section id="fluorophore-separation" class="level3">
+<h3 class="anchored" data-anchor-id="fluorophore-separation">Fluorophore Separation</h3>
+<p>Make sure that your fluorophores are well separated. You can use the fpbase to see spectra of molecular labels and how particular filters will act on them: https://www.fpbase.org/spectra/ . This is the single most useful link on this page.</p>
+</section>
+</section>
+<section id="incubators" class="level2">
+<h2 class="anchored" data-anchor-id="incubators">Incubators</h2>
+<p>If you are taking live data, you should learn about incubators.</p>
+<section id="how-to-installuninstall-the-incubator" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-installuninstall-the-incubator">How to install/uninstall the incubator</h3>
+<p>Learn how to install and uninstall the incubator. You’ll need to take it off at the end of each run for the other users. Big box incubators need some time to warm up, so build that into your schedule.</p>
+</section>
+<section id="common-incubator-errors" class="level3">
+<h3 class="anchored" data-anchor-id="common-incubator-errors">Common incubator errors</h3>
+<p>-Make sure the CO2 is ON when you start, and OFF when you finish. It is shocking how often this is forgotten. -Make sure there is a real source of water to keep humdity up so that your sample doesn’t begin to evaporate. -Change out the water daily to prevent contamination, and empty it when you are done -Check on the CO2 and temperature levels periodically to spot problems -The incubator brings the whole microscope up in temperature and causes significant z-drift initially. -Air objectives that are not brought up to temperature require a objective heating collar to prevent condensation. -Water objectives will have their water evaporate. A good way to prevent this is to use a special oil with the refractive index of water as a substitute for water.</p>
+</section>
+</section>
+<section id="condensers" class="level2">
+<h2 class="anchored" data-anchor-id="condensers">Condensers</h2>
+<p>If you are taking data using overhead light, you should learn about condensers.</p>
+<section id="install-and-removal" class="level3">
+<h3 class="anchored" data-anchor-id="install-and-removal">Install and removal</h3>
+<p>Learn how condensers come on and off and how to clean them. Condensors get dirty very quickly!</p>
+</section>
+<section id="koehler-illumination" class="level3">
+<h3 class="anchored" data-anchor-id="koehler-illumination">Koehler Illumination</h3>
+<p>Microscopists really like to teach koehler illumination. If you know how to do this, microscopists will consider you one of the fold. Learn how to collimate light from the condenser at a given sample distance with a given objective. Read the following to get a sense of the quest: https://www.olympus-lifescience.com/en/microscope-resource/primer/anatomy/kohler/</p>
+</section>
+<section id="darkfield-and-brightfield" class="level3">
+<h3 class="anchored" data-anchor-id="darkfield-and-brightfield">Darkfield and Brightfield</h3>
+<p>Learn brightfield microscopy and darkfield microscopy. The latter is much more interesting, and commonly done wrong.</p>
+</section>
+<section id="polarizers" class="level3">
+<h3 class="anchored" data-anchor-id="polarizers">Polarizers</h3>
+<p>Introduce a manual polarizer into the light path and briefly learn about Polarized Light Microscopy. This is some of the most beautiful microscopy you can do, and a rare treat.</p>
+</section>
+</section>
+<section id="software" class="level2">
+<h2 class="anchored" data-anchor-id="software">Software</h2>
+<p>Microscopy software is terrible. Whether it’s Nikon Elements, Zeiss Zen, uManager, MetaMorph/VisiView or a custom interface smashed together by Matlab and LabView, it’s all awful. In the same way that science is rate-limited by ImageJ, science is also squashed by microscopy software. Of interesting note, Leica software is <em>not good</em>, but it isn’t terrible like the other options.</p>
+<section id="multi-dimensional-acquisition" class="level3">
+<h3 class="anchored" data-anchor-id="multi-dimensional-acquisition">Multi-Dimensional Acquisition</h3>
+<p>Go through each part of Multi-Dimensional Acquisition and take some images in multiple colors, z planes, positions, and timepoints.</p>
+</section>
+<section id="choosing-an-acceptable-timelapse-rate" class="level3">
+<h3 class="anchored" data-anchor-id="choosing-an-acceptable-timelapse-rate">Choosing an acceptable timelapse rate</h3>
+<p>When choosing frame rates, consider exposure, filter wheel, and stage limitations, as well as data size and analysis considerations. If a single image takes 30 second to take, then you cannot set your timelapse rate to every 10 seconds.</p>
+</section>
+<section id="setting-positions" class="level3">
+<h3 class="anchored" data-anchor-id="setting-positions">Setting positions</h3>
+<p>Go through the process of setting multiple positions, or an array of positions for multiple samples and for stitching.</p>
+</section>
+<section id="creating-z-stacks" class="level3">
+<h3 class="anchored" data-anchor-id="creating-z-stacks">Creating Z-Stacks</h3>
+<p>Go through the process of acquiring Z-stacked images.</p>
+</section>
+<section id="coloring" class="level3">
+<h3 class="anchored" data-anchor-id="coloring">Coloring</h3>
+<p>When acquiring data, use grayscale for a single color. For two colors, pick colors that add up to white (like Cyan [0 1 1] and Red [1 0 0]). For 3 or more colors, just have the color represent the wavelength.</p>
+</section>
+<section id="histograms-and-brightness-curves" class="level3">
+<h3 class="anchored" data-anchor-id="histograms-and-brightness-curves">Histograms and brightness curves</h3>
+<p>Get used to reading the histogram which shows the number of counts over the range of the bit depth of your detector. Remember when picking illumination power and exposure times to never let the histogram get saturated. A good rule of thumb is you are trying to fill the bottom 50% of the histogram. Try adjusting the brightness curves for a sample 2 color image to get a sense of what the data looks like and what the dynamic range is.</p>
+</section>
+</section>
+<section id="saving-data" class="level2">
+<h2 class="anchored" data-anchor-id="saving-data">Saving data</h2>
+<p>Learn about RAM usage, and get used to using the Task Manager to monitor RAM.</p>
+<section id="suggested-data-structure" class="level3">
+<h3 class="anchored" data-anchor-id="suggested-data-structure">Suggested data structure:</h3>
+<p>Save your data in a structure in case metadata is lost. i.e. /YYYY-MM-DD/Exp#<em>Description</em>##x_##s_#bin_CAMERANAME_AdditionalInfo</p>
+</section>
+<section id="where-to-save-data" class="level3">
+<h3 class="anchored" data-anchor-id="where-to-save-data">Where to save data</h3>
+<p>The microscopy computer should have a fast data drive that you acquire to. Move your data off this immediatly after acquisition. To a slower local drive, or to a cloud drive or server system. You generally want your data backed up to at least two robust systems. I use google drive, and a home server system based on Synology.</p>
+</section>
+<section id="hardware-management" class="level3">
+<h3 class="anchored" data-anchor-id="hardware-management">Hardware management</h3>
+<p>If you really want to do good microscopy though, you have to learn how to dig into the software. Good luck. Make backups of configurations often, but be aware, many softwares store some of their settings in difficult to find nooks and crannies. An early thing to learn how to do, is adding and removing and modifying hardware.</p>
+</section>
+<section id="modifying-presets" class="level3">
+<h3 class="anchored" data-anchor-id="modifying-presets">Modifying Presets</h3>
+<p>Learn how to create and modify presets.</p>
+</section>
+<section id="hardware-manager-com-ports-and-drivers" class="level3">
+<h3 class="anchored" data-anchor-id="hardware-manager-com-ports-and-drivers">Hardware Manager, COM ports, and drivers</h3>
+<p>Learn about the Windows Hardware Manager, and learn how to inspect a devices COM port. <a href="https://docs.google.com/presentation/d/1QJsoQM164FQTXmT5fvicDs-MafwX6Y63Hv_FkPvW66w/edit?usp=sharing">Here is a brief presentation I gave about debugging COM port errors.</a></p>
+</section>
+</section>
+<section id="shutdown" class="level2">
+<h2 class="anchored" data-anchor-id="shutdown">Shutdown</h2>
+<p>For good stewardship of a microscope, going through a careful shutdown is as important as everything else combined.</p>
+<p>-Turn off software -Turn off laser or mercury lamp(if applicable) – These light sources only have a certain amount of time (1000-10000 hr) before they stop working, so this is important! -Turn off power strips -Turn off incubator, empty water, turn off CO2 (if applicable) -Remove all non-standard imaging equipment out of imaging path (condensers, polarizers, incubators) -Remove all high-NA objectives and put in caps to objective slots -COGS: Clean - Are there any oils or chemicals (BA:BB) or gloves? Objectives - Are all objectives you used free of oil/residue? Gas - Is the CO2 off? Samples - Are you samples collected and out of the room?</p>
+</section>
+</section>
+<section id="some-beautiful-resources" class="level1">
+<h1>Some beautiful resources:</h1>
+<p><a href="https://www.youtube.com/watch?v=JSnh-btk22U">Che-Hang Yu and Spencer Smith have a wonderful tutorial about how a point scanning confocal microscope works</a> (they say 2-photon, but ignore that). Che-Hang Yu taught me how point scanning confocal microscopy works when I started graduate school.</p>
+<p><a href="https://www.microscopyu.com/">Nikon MicroscopyU</a></p>
+</section>
+<section id="specific-finicky-microscope-things" class="level1">
+<h1>Specific finicky microscope things:</h1>
+<p><a href="https://docs.google.com/presentation/d/12Irml2GX8GsepsdtJIC4DqyCCQRlKtz_9w6VfsyQqNI/edit?usp=sharing">Using Nikon Perfect Focus (PFS)</a></p>
+<p><a href="https://docs.google.com/presentation/d/1kdUirMZedEJu75CYtsWseWRKursWAzWXEEhraZCvQ6Q/edit?usp=sharing">Using the VisiView ScanSlide feature</a></p>
+<p><a href="https://docs.google.com/presentation/d/1ngcxcK_gt_4QWDavImMEPzjicUrlpaWhvkObt2ED5Po/edit?usp=sharing">Turning on the Hamamatsu MAICO resonant point scanner</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
