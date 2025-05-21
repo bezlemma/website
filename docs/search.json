@@ -263,7 +263,11 @@
     "href": "other/active_nematic_tennis.html#what-is-this",
     "title": "Active Nematic Tennis",
     "section": "What is this?",
-    "text": "What is this?\nMy significant other Linnea Lemma studies active nematic liquid crystals from time to time. THis is a game of 2D table tennis, inspired by Steve Taylor’s Plasma Pong in which the paddles produce flow with the arrow keys, and the ball is influenced by the active nematic liquid crystal flow.\nI’ve written this in Julia using Makie, and here re-written it in javascript. You can find the Julia code (and also an compressible normal fluid version of the game) here on GitHub."
+    "text": "What is this?\nMy significant other Linnea Lemma studies active nematic liquid crystals from time to time. THis is a game of 2D table tennis, inspired by Steve Taylor’s Plasma Pong in which the paddles produce flow with the arrow keys, and the ball is influenced by the active nematic liquid crystal flow.\nI’ve written this in Julia using Makie, and here re-written it in javascript. You can find the Julia code (and also an compressible normal fluid version of the game) here on GitHub.",
+    "crumbs": [
+      "Other",
+      "Active Nematic Tennis"
+    ]
   },
   {
     "objectID": "index.html",

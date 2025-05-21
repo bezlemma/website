@@ -23,7 +23,7 @@ website:
           - "stories/first.qmd"
       - section: "Other"
         contents:
-          - "others/active_nematic_tennis.qmd"
+          - "other/active_nematic_tennis.qmd"
 format:
   html:
     theme:
