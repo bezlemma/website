@@ -3,6 +3,13 @@ title: "Active Nematic Tennis"
 format:
   html:
     toc: false
+    include-in-header:
+      - text: |
+          <style>
+            .quarto-title-block {
+              display: none !important;
+            }
+          </style>
 ---
 
 ```{=html}

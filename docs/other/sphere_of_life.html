@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Find the Minima – Bezia Lemma</title>
+<title>Life-Projection Minima – Bezia Lemma</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,7 +35,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -52,6 +52,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -65,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../other/active_nematic_tennis.html">Other</a></li><li class="breadcrumb-item"><a href="../other/sphere_of_life.html">Find the Minima</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../other/active_nematic_tennis.html">Other</a></li><li class="breadcrumb-item"><a href="../other/sphere_of_life.html">Life-Projection Minima</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -193,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../other/sphere_of_life.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Find the Minima</span></a>
+ <span class="menu-text">Life-Projection Minima</span></a>
   </div>
 </li>
       </ul>
@@ -207,9 +236,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../other/active_nematic_tennis.html">Other</a></li><li class="breadcrumb-item"><a href="../other/sphere_of_life.html">Find the Minima</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../other/active_nematic_tennis.html">Other</a></li><li class="breadcrumb-item"><a href="../other/sphere_of_life.html">Life-Projection Minima</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Find the Minima</h1>
+<h1 class="title">Life-Projection Minima</h1>
 </div>
 
 
@@ -228,13 +257,65 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="a-umap-of-life" class="level2">
 <h2 class="anchored" data-anchor-id="a-umap-of-life">A UMAP of Life</h2>
-<p>There are a lot of parameters to life. We might talk about it as highly-dimensional , not in terms of space and time, but in terms of all the parameters our life can move along. Some dimensions might be: How much money we have, our relationship with each loved one, the quality of our memories, the quality of our hopes and asperations, how much muscle we have, how much fat we have, the quality of our health, how important we feel, how moral we feel, how content we feel, the amount we have contributed to society, etc. A lot of those dimensions of life contain dimensions in and of themselves. In such a vast paramter space, it is hard to understand how to optimize the short life you are given to be the best life you can have.</p>
-<p>Genetics also consists of a lot of paramters. You have ~20,000 genes, and each gene can be expressed as RNA at a different density. Again there are sub-dimensions here, in that the RNA expression can vary spatially, but if we smudge that out how can we think about the state of cells through their genetics? An interesting (and by interesteing I tend to mean difficult and dumb) technique that geneticists use is the UMAP. UMAP (Uniform manifold approximation and projection) is a form of nonlinear dimensionality reduction, and it’s the go-to method in genetics to turn many dimensions into a nice plot that fits on a piece of paper, which means two dimensions. The two dimensions are UMAP1 and UMAP2.</p>
+<p>There are a lot of parameters to life. We might talk about it as highly-dimensional, not in terms of space and time, but in terms of all the parameters our life can move along. Some dimensions might be: How much money we have, our relationship with each loved one, the quality of our memories, the quality of our hopes and asperations, how much muscle we have, how much fat we have, the quality of our health, how important we feel, how moral we feel, how content we feel, the amount we have contributed to society, etc. A lot of those dimensions of life contain dimensions in and of themselves. In such a vast paramter space, it is hard to understand how to optimize the short life you are given to be the best life you can have.</p>
+<p>Let’s have a matrix, with some dimensions of life, and some normalized values from 0 to 1:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Bez</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Money</td>
+<td>0.1</td>
+</tr>
+<tr class="even">
+<td>Fame</td>
+<td>0.01</td>
+</tr>
+<tr class="odd">
+<td># of hotdogs eaten</td>
+<td>0.2</td>
+</tr>
+<tr class="even">
+<td>Mean Happiness</td>
+<td>0.4</td>
+</tr>
+<tr class="odd">
+<td>Mean Unhappiness</td>
+<td>0.7</td>
+</tr>
+</tbody>
+</table>
+<p>Some of these parameteres higher numbers might be bad, some of them higher numebers might be good. For <span class="math inline">\(p_i\)</span> parameters, the optimizaiton function of life is <span class="math inline">\(L(p_1, p_2, p_3, ..., p_i)\)</span>. Let’s go by golf rules and say that lower <span class="math inline">\(L\)</span> is better life.</p>
+<p>Genetics also consists of a lot of paramters. You have ~20,000 genes, and each gene can be expressed as RNA at a different density. Again there are sub-dimensions here, in that the RNA expression can vary spatially, but if we smudge that out how can we think about the state of cells through their genetics? An interesting (and by interesteing I tend to mean difficult and dumb) technique that geneticists use is data reduction via the UMAP. UMAP (Uniform manifold approximation and projection) is a form of <a href="https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction">nonlinear dimensionality reduction</a> that you can think of as a nonlinear version of <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">principle componenet analysis</a>. The idea of all these things is to bring down all those dimensions to two arbitrary dimensions that the quality of life vary with, which I will call <span class="math inline">\(Life_1\)</span> and <span class="math inline">\(Life_2\)</span></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Bez</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(Life_1\)</span></td>
+<td>0.6</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Life_2\)</span></td>
+<td>0.4</td>
+</tr>
+</tbody>
+</table>
+<p>All the deicisions in my life move me around in this two-dimensional space and change the values of <span class="math inline">\(Life_1\)</span> and <span class="math inline">\(Life_2\)</span>. We’ve lost a tremendous amount of information by doing this, but now we can represent this life on a computer screen. Let there be a space <span class="math inline">\(L(Life_1, Life_2)\)</span> and say that we have defined these two paramteres <span class="math inline">\(Life_1\)</span> and <span class="math inline">\(Life_2\)</span> such that they are the angular coordinates of a sphere (they wrap back around on each themselves!). The spheroid with radius generated by <span class="math inline">\(L\)</span> represents the life you can have, of course the definition of <span class="math inline">\(L\)</span> evolves over the course of your life in some mysterious way. You want to find the minima, a lower <span class="math inline">\(L\)</span> is a better life. But you might find local minima instead. Or your minima that you found might change over time so that it becomes no longer the ideal minima.</p>
+<p>Here is a sphere of life to move around on. Wht strategies give you the lowest minima? What about the lowest average minima?</p>
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { margin: 0; overflow: hidden; font-family: 'Arial', sans-serif; background-color: #f0f0f0; }
+        body { margin: 0; font-family: 'Arial', sans-serif; background-color: #f0f0f0; }
         #sphereAppContainer {
             max-width: 600px; 
             width: 95%;     
@@ -246,13 +327,13 @@ ul.task-list li input[type="checkbox"] {
             display: flex;
             flex-direction: column;
             align-items: center; 
-            position: relative; /* For positioning overlay elements */
+            position: relative; 
         }
-        #canvasContainer { /* New container for canvas and overlays */
+        #canvasContainer { 
             position: relative;
             width: 100%;
-            max-width: 600px; /* Ensure it doesn't exceed canvas max */
-            aspect-ratio: 1 / 1; /* Maintain square aspect ratio for canvas area */
+            max-width: 600px; 
+            aspect-ratio: 1 / 1; 
             margin-bottom: 10px;
         }
         #renderCanvas {
@@ -269,7 +350,7 @@ ul.task-list li input[type="checkbox"] {
             color: white;
             padding: 5px 10px;
             border-radius: 3px;
-            font-size: 3.0em;
+            font-size: 3.0em; /* User changed this */
             z-index: 10;
         }
         #radiusInfoDisplay {
@@ -294,17 +375,18 @@ ul.task-list li input[type="checkbox"] {
         #radiusInfoDisplay .value {
             color: #007bff;
         }
-        #controls {
+        #controls { /* This div now only contains instructions */
             background-color: #f0f0f0;
             color: #333;
             padding: 10px;
             border-radius: 5px;
-            text-align: left;
+            text-align: center; /* Centered instructions */
             width: calc(100% - 20px); 
             box-sizing: border-box;
             font-size: 0.9em;
+            margin-bottom:10px; /* Added margin for spacing */
         }
-        #controls p { /* Only for the instruction paragraph now */
+        #controls p { 
             margin-top: 0;
         }
         #statsMenu {
@@ -343,10 +425,8 @@ ul.task-list li input[type="checkbox"] {
 
     <div id="sphereAppContainer">
         <div id="controls">
-            <center>
-            <p>Use mouse to rotate. Hold WASD to move the dot. Dot also rolls with gravity.</p>
-            </center>
-            </div>
+            <p>Use mouse or touch to rotate around the origin.</p>
+        </div>
         <div id="canvasContainer">
             <canvas id="renderCanvas"></canvas>
             <div id="runTimePercentDisplay">0%</div>
@@ -404,15 +484,18 @@ ul.task-list li input[type="checkbox"] {
         let simulationRunning = true;
         let animationFrameId;
         let radiusHistory = [];
-        let currentBaseHue = 0.66; // Initial hue (blue-ish)
+        
+        let runCount = 0; 
+        let currentBaseHue = 0.66; 
+        let isUserInteracting = false; 
 
-        const USER_SPEED_RAD_PER_SEC = 0.3;
         const K_GRAVITY = 3.0;
         const FRICTION_FACTOR = 0.95;
         const MIN_VELOCITY_THRESHOLD = 0.0001;
         const GRADIENT_DELTA_ANGLE = 0.01;
+        const DOT_LERP_SPEED = 0.25; 
+        const CAMERA_FOLLOW_LERP_SPEED = 0.08; // Slower LERP for camera auto-rotation
 
-        const keysPressed = {};
         const tempUnitVec = new THREE.Vector3(); 
 
         const MAX_TRAIL_SEGMENTS = 60;
@@ -435,23 +518,33 @@ ul.task-list li input[type="checkbox"] {
             const canvas = document.getElementById('renderCanvas');
             renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
             
-            const ambientLight = new THREE.AmbientLight(0xdddddd, 0.9); // Softer ambient
+            const ambientLight = new THREE.AmbientLight(0xdddddd, 0.9); 
             scene.add(ambientLight);
-            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8); // Slightly softer directional
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8); 
             directionalLight.position.set(1, 1.5, 1).normalize();
             scene.add(directionalLight);
-            const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.4); // Slightly softer
+            const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.4); 
             directionalLight2.position.set(-1, -0.5, -1).normalize();
             scene.add(directionalLight2);
 
             orbitControls = new OrbitControls(camera, renderer.domElement);
             orbitControls.enableDamping = true;
-            orbitControls.dampingFactor = 0.05;
+            orbitControls.dampingFactor = 0.05; 
             orbitControls.minDistance = baseRadius * 0.8;
             orbitControls.maxDistance = baseRadius * 5;
-            orbitControls.target.set(0, 0, 0);
+            orbitControls.target.set(0, 0, 0); 
+            orbitControls.enablePan = false; 
+            orbitControls.rotateSpeed = 0.1; 
 
-            playerDot = createPlayerDot(); // Create dot first to apply initial hue
+            orbitControls.addEventListener('start', () => { 
+                isUserInteracting = true; 
+                // Target remains (0,0,0)
+            });
+            orbitControls.addEventListener('end', () => { 
+                isUserInteracting = false; 
+            });
+
+            playerDot = createPlayerDot(); 
             if (playerDot) scene.add(playerDot);
             
             noisySphere = createNoisySphere(0); 
@@ -459,8 +552,6 @@ ul.task-list li input[type="checkbox"] {
             
             setupNewRun(); 
 
-            document.addEventListener('keydown', onKeyDown);
-            document.addEventListener('keyup', onKeyUp);
             window.addEventListener('resize', onWindowResize, false);
             document.getElementById('resetButton').addEventListener('click', resetSimulation);
             
@@ -475,30 +566,41 @@ ul.task-list li input[type="checkbox"] {
             globalTimeSeconds = 0;
             radiusHistory = [];
             simulationRunning = true;
+            isUserInteracting = false; 
             
-            // Increment and wrap hue for next run
-            currentBaseHue = (currentBaseHue + 0.15) % 1.0; 
+            let dotHue;
+            if (runCount === 0) {
+                currentBaseHue = 0.66; 
+                dotHue = 0.16;         
+            } else {
+                currentBaseHue = (currentBaseHue + 0.25) % 1.0; 
+                dotHue = (currentBaseHue + 0.5) % 1.0;         
+            }
+            runCount++; 
 
-            playerTheta = 0;
-            playerPhi = Math.PI / 2;
+            playerTheta = 0; 
+            playerPhi = Math.PI / 2; 
+
             playerVelTheta = 0.0;
             playerVelPhi = 0.0;
 
-            // Update sphere and dot colors based on new hue
-            if (noisySphere) updateSphereGeometry(0); // Reset sphere visual state to t=0 with new hue
+            if (noisySphere) updateSphereGeometry(0); 
             if (playerDot) {
-                const newDotColor = new THREE.Color().setHSL((currentBaseHue + 0.5) % 1.0, 0.9, 0.55); // Complementary-ish
+                const newDotColor = new THREE.Color().setHSL(dotHue, 0.95, 0.55);
                 playerDot.material.color.copy(newDotColor);
                 if (playerDotLight) playerDotLight.color.copy(newDotColor);
             }
             
             playerR = getHeightAt(playerTheta, playerPhi, 0); 
             lowestRadiusAchieved = playerR; 
-            updateUIDisplays();
+            
+            if(playerDot) playerDot.position.setFromSphericalCoords(playerR, playerPhi, playerTheta);
+            
+            orbitControls.target.set(0,0,0); 
 
+            updateUIDisplays();
             document.getElementById('statsMenu').style.display = 'none';
         }
-
 
         function getNoiseValue(x, y, z, time) {
             let val = 0;
@@ -522,9 +624,8 @@ ul.task-list li input[type="checkbox"] {
 
         function getColorForHeight(normalizedHeight) {
             const color = new THREE.Color();
-            // Use currentBaseHue and vary saturation/lightness more for contrast
-            const saturation = 0.6 + normalizedHeight * 0.4; // Greener/bluer at peaks
-            const lightness = 0.4 + normalizedHeight * 0.3;  // Brighter at peaks
+            const saturation = 0.6 + normalizedHeight * 0.4; 
+            const lightness = 0.4 + normalizedHeight * 0.3;  
             color.setHSL(currentBaseHue, saturation, lightness); 
             return color;
         }
@@ -573,7 +674,7 @@ ul.task-list li input[type="checkbox"] {
                 sphereUpdate_tempVertex.copy(sphereUpdate_unitSpherePos).multiplyScalar(currentRadius); 
                 positions.setXYZ(i, sphereUpdate_tempVertex.x, sphereUpdate_tempVertex.y, sphereUpdate_tempVertex.z);
                 const normalizedHeight = (currentRadius - minRForColor) / (maxRForColor - minRForColor);
-                const vertexColor = getColorForHeight(Math.max(0, Math.min(1, normalizedHeight))); // Uses currentBaseHue
+                const vertexColor = getColorForHeight(Math.max(0, Math.min(1, normalizedHeight))); 
                 colors.setXYZ(i, vertexColor.r, vertexColor.g, vertexColor.b);
             }
             positions.needsUpdate = true;
@@ -583,47 +684,40 @@ ul.task-list li input[type="checkbox"] {
 
         function createPlayerDot() {
             const dotGeometry = new THREE.SphereGeometry(0.12, 16, 8); 
-            // Initial color will be set in setupNewRun
             const dotMaterial = new THREE.MeshBasicMaterial({ color: 0xffaa00 }); 
             const dotMesh = new THREE.Mesh(dotGeometry, dotMaterial);
-
-            playerDotLight = new THREE.PointLight(0xffaa00, 2.5, baseRadius * 0.5); // Slightly reduced intensity/distance
+            playerDotLight = new THREE.PointLight(0xffaa00, 2.5, baseRadius * 0.5); 
             dotMesh.add(playerDotLight); 
             return dotMesh;
         }
 
-        function updatePlayerDotPosition() {
+        function updatePlayerDotPosition() { 
             if (!playerDot) return;
             playerR = getHeightAt(playerTheta, playerPhi, globalTimeSeconds); 
             if (playerR < lowestRadiusAchieved) lowestRadiusAchieved = playerR;
             if (simulationRunning) radiusHistory.push(playerR);
             playerDot.position.setFromSphericalCoords(playerR, playerPhi, playerTheta);
-            updateUIDisplays();
         }
         
         function updateUIDisplays() {
-            // Update Run Time Percentage
             const percentComplete = Math.floor((globalTimeSeconds / RUN_DURATION_SECONDS) * 100);
             document.getElementById('runTimePercentDisplay').textContent = `${Math.min(100, Math.max(0,percentComplete))}%`;
-
-            // Update Radius Info
             document.getElementById('currentRDisplay').textContent = playerR.toFixed(3);
             document.getElementById('lowestRDisplay').textContent = lowestRadiusAchieved === Infinity ? "N/A" : lowestRadiusAchieved.toFixed(3);
         }
 
-
         function applyGravity(deltaTime) {
             if (deltaTime <= 0) return;
-            const h_current = playerR; 
+            const h_current = getHeightAt(playerTheta, playerPhi, globalTimeSeconds); 
             const h_theta_plus = getHeightAt(playerTheta + GRADIENT_DELTA_ANGLE, playerPhi, globalTimeSeconds);
             const h_phi_plus = getHeightAt(playerTheta, playerPhi + GRADIENT_DELTA_ANGLE, globalTimeSeconds);
             let grad_R_dTheta = (h_theta_plus - h_current) / GRADIENT_DELTA_ANGLE;
             let grad_R_dPhi = (h_phi_plus - h_current) / GRADIENT_DELTA_ANGLE;
             let effectiveSinPhi = Math.sin(playerPhi);
             if (Math.abs(effectiveSinPhi) < 0.01) effectiveSinPhi = (effectiveSinPhi >= 0 ? 0.01 : -0.01);
-            let acc_theta = -K_GRAVITY * grad_R_dTheta / (playerR * effectiveSinPhi);
-            let acc_phi   = -K_GRAVITY * grad_R_dPhi / playerR;
-            const max_acc_val = 10.0;
+            let acc_theta = -K_GRAVITY * grad_R_dTheta / (h_current * effectiveSinPhi);
+            let acc_phi   = -K_GRAVITY * grad_R_dPhi / h_current;
+            const max_acc_val = 10.0; 
             acc_theta = Math.max(-max_acc_val, Math.min(max_acc_val, acc_theta));
             acc_phi   = Math.max(-max_acc_val, Math.min(max_acc_val, acc_phi));
             playerVelTheta += acc_theta * deltaTime;
@@ -633,26 +727,10 @@ ul.task-list li input[type="checkbox"] {
             playerVelPhi   *= friction;
             if (Math.abs(playerVelTheta) < MIN_VELOCITY_THRESHOLD) playerVelTheta = 0;
             if (Math.abs(playerVelPhi) < MIN_VELOCITY_THRESHOLD) playerVelPhi = 0;
-            if (Math.abs(playerVelTheta) > 0 || Math.abs(playerVelPhi) > 0) {
-                playerTheta += playerVelTheta * deltaTime;
-                playerPhi   += playerVelPhi * deltaTime;
-                playerPhi = Math.max(0.001, Math.min(Math.PI - 0.001, playerPhi));
-                playerTheta = (playerTheta + 2 * Math.PI * 1000) % (2 * Math.PI); 
-            }
-        }
-
-        function handleContinuousMovement(deltaTime) {
-            let movedByUserInput = false;
-            const userDisplacement = USER_SPEED_RAD_PER_SEC * deltaTime;
-            if (keysPressed['w']) { playerPhi -= userDisplacement; movedByUserInput = true; }
-            if (keysPressed['s']) { playerPhi += userDisplacement; movedByUserInput = true; }
-            if (keysPressed['a']) { playerTheta -= userDisplacement; movedByUserInput = true; }
-            if (keysPressed['d']) { playerTheta += userDisplacement; movedByUserInput = true; }
-            if (movedByUserInput) {
-                playerVelTheta = 0; playerVelPhi = 0;
-                playerPhi = Math.max(0.001, Math.min(Math.PI - 0.001, playerPhi));
-                playerTheta = (playerTheta + 2 * Math.PI * 1000) % (2 * Math.PI);
-            }
+            playerTheta += playerVelTheta * deltaTime;
+            playerPhi   += playerVelPhi * deltaTime;
+            playerPhi = Math.max(0.001, Math.min(Math.PI - 0.001, playerPhi)); 
+            playerTheta = (playerTheta % (2 * Math.PI) + (2 * Math.PI)) % (2 * Math.PI); 
         }
 
         function updateTrail(deltaTime, currentTotalTimeInSeconds) {
@@ -671,10 +749,8 @@ ul.task-list li input[type="checkbox"] {
                 }
             }
             const speed = Math.sqrt(playerVelTheta * playerVelTheta + playerVelPhi * playerVelPhi);
-            const minSpeedForTrail = 0.03; 
-            const isMovingByKey = keysPressed['w'] || keysPressed['s'] || keysPressed['a'] || keysPressed['d'];
-            const isRollingFastEnough = speed > minSpeedForTrail && !isMovingByKey; 
-            if ((isMovingByKey || isRollingFastEnough) && (currentTotalTimeInSeconds * 1000 - lastTrailUpdateTime > TRAIL_UPDATE_INTERVAL * 1000 )) {
+            const minSpeedForTrail = 0.01; 
+            if (speed > minSpeedForTrail && (currentTotalTimeInSeconds * 1000 - lastTrailUpdateTime > TRAIL_UPDATE_INTERVAL * 1000 )) {
                  if (trailSegments.length >= MAX_TRAIL_SEGMENTS) {
                     const oldestSegment = trailSegments.shift(); 
                     scene.remove(oldestSegment.mesh);
@@ -683,7 +759,7 @@ ul.task-list li input[type="checkbox"] {
                 }
                 const trailSegmentGeo = new THREE.SphereGeometry(0.06, 8, 4);
                 const trailSegmentMat = new THREE.MeshBasicMaterial({
-                    color: playerDot.material.color, // Trail matches current dot color
+                    color: playerDot.material.color, 
                     transparent: true, opacity: 0.85 
                 });
                 const trailMesh = new THREE.Mesh(trailSegmentGeo, trailSegmentMat);
@@ -719,30 +795,15 @@ ul.task-list li input[type="checkbox"] {
             setupNewRun(); 
             animationFrameId = requestAnimationFrame(animate); 
         }
-
-        function onKeyDown(event) {
-            const key = event.key.toLowerCase();
-            if (['w', 'a', 's', 'd'].includes(key)) { keysPressed[key] = true; event.preventDefault(); }
-        }
-        function onKeyUp(event) {
-            const key = event.key.toLowerCase();
-            if (['w', 'a', 's', 'd'].includes(key)) { keysPressed[key] = false; event.preventDefault(); }
-        }
         
         function onWindowResize() {
             const canvasContainer = document.getElementById('canvasContainer');
-            const canvas = document.getElementById('renderCanvas');
             const appContainer = document.getElementById('sphereAppContainer');
-            
-            // Calculate width based on appContainer, subtracting its padding
             let availableWidth = appContainer.clientWidth - parseFloat(getComputedStyle(appContainer).paddingLeft) - parseFloat(getComputedStyle(appContainer).paddingRight);
-            availableWidth = Math.min(600, availableWidth); // Cap at 600px or use smaller available width
-            
-            // Set canvasContainer size (which dictates canvas size via 100% width/height)
+            availableWidth = Math.min(600, availableWidth); 
             canvasContainer.style.width = availableWidth + 'px';
-            canvasContainer.style.height = availableWidth + 'px'; // Maintain 1:1 aspect ratio for the container
-
-            camera.aspect = 1; // Canvas is square
+            canvasContainer.style.height = availableWidth + 'px'; 
+            camera.aspect = 1; 
             camera.updateProjectionMatrix();
             renderer.setSize(availableWidth, availableWidth);
         }
@@ -750,6 +811,7 @@ ul.task-list li input[type="checkbox"] {
         function animate(timestamp) {
             if (!simulationRunning) { renderer.render(scene, camera); return; }
             animationFrameId = requestAnimationFrame(animate); 
+            
             const physicsDeltaTime = Math.min(0.1, (timestamp - physicsLastTime) * 0.001);
             physicsLastTime = timestamp;
             globalTimeSeconds = (timestamp - simulationStartTime) * 0.001; 
@@ -757,26 +819,74 @@ ul.task-list li input[type="checkbox"] {
             if (globalTimeSeconds >= RUN_DURATION_SECONDS) {
                 simulationRunning = false;
                 globalTimeSeconds = RUN_DURATION_SECONDS; 
-                updateUIDisplays();
                 updateSphereGeometry(globalTimeSeconds); 
                 updatePlayerDotPosition(); 
+                updateUIDisplays(); 
                 showStatisticsMenu();
+                // For the end screen, ensure camera looks at the final dot position while orbiting origin
+                const endDistance = orbitControls.getDistance();
+                camera.position.setFromSphericalCoords(endDistance, playerPhi, playerTheta);
+                camera.lookAt(orbitControls.target); // Target is (0,0,0)
                 renderer.render(scene, camera);
                 return; 
             }
             
-            updateSphereGeometry(globalTimeSeconds);
-            if (physicsDeltaTime > 0) {
-                handleContinuousMovement(physicsDeltaTime); 
-                applyGravity(physicsDeltaTime);             
-                updateTrail(physicsDeltaTime, timestamp * 0.001); 
+            orbitControls.update(); // Process user input and damping
+
+            if (isUserInteracting) {
+                // User is controlling the camera. Dot LERPs to view center.
+                let targetPlayerTheta = (orbitControls.getAzimuthalAngle() % (2 * Math.PI) + (2 * Math.PI)) % (2 * Math.PI);
+                let targetPlayerPhi = orbitControls.getPolarAngle();
+                targetPlayerPhi = Math.max(0.001, Math.min(Math.PI - 0.001, targetPlayerPhi));
+
+                let deltaTheta = targetPlayerTheta - playerTheta;
+                if (deltaTheta > Math.PI) deltaTheta -= 2 * Math.PI;
+                if (deltaTheta < -Math.PI) deltaTheta += 2 * Math.PI;
+                playerTheta += deltaTheta * DOT_LERP_SPEED;
+                playerTheta = (playerTheta % (2 * Math.PI) + (2 * Math.PI)) % (2 * Math.PI);
+                playerPhi += (targetPlayerPhi - playerPhi) * DOT_LERP_SPEED;
+                
+                playerVelTheta = 0; 
+                playerVelPhi = 0;
+            } else {
+                // User is idle. Apply physics.
+                if (physicsDeltaTime > 0) {
+                    applyGravity(physicsDeltaTime); // This updates playerTheta, playerPhi due to roll
+                }
+                // Camera auto-rotates to follow the new playerTheta, playerPhi
+                const currentDistance = orbitControls.getDistance();
+                const currentCamTheta = (orbitControls.getAzimuthalAngle() % (2 * Math.PI) + (2 * Math.PI)) % (2 * Math.PI);
+                const currentCamPhi = orbitControls.getPolarAngle();
+
+                let targetCamTheta = playerTheta; // Camera should aim where the dot is
+                let targetCamPhi = playerPhi;
+
+                let deltaTheta = targetCamTheta - currentCamTheta;
+                if (deltaTheta > Math.PI) deltaTheta -= 2 * Math.PI;
+                if (deltaTheta < -Math.PI) deltaTheta += 2 * Math.PI;
+                
+                let newCamTheta = currentCamTheta + deltaTheta * CAMERA_FOLLOW_LERP_SPEED;
+                newCamTheta = (newCamTheta % (2 * Math.PI) + (2 * Math.PI)) % (2 * Math.PI);
+                let newCamPhi = currentCamPhi + (targetCamPhi - currentCamPhi) * CAMERA_FOLLOW_LERP_SPEED;
+                newCamPhi = Math.max(0.001, Math.min(Math.PI - 0.001, newCamPhi));
+
+                camera.position.setFromSphericalCoords(currentDistance, newCamPhi, newCamTheta);
+                camera.lookAt(orbitControls.target); // Target is always (0,0,0)
             }
-            updatePlayerDotPosition(); // This also calls updateUIDisplays
-            orbitControls.update();
+            
+            updateSphereGeometry(globalTimeSeconds);
+            updatePlayerDotPosition(); // Update dot mesh to its final (aimed or rolled) position
+
+            if (physicsDeltaTime > 0) { // Trail is based on rolling velocity
+                 updateTrail(physicsDeltaTime, timestamp * 0.001); 
+            }
+            
+            updateUIDisplays(); 
             renderer.render(scene, camera);
         }
         init();
     </script>
+
 
 
 
