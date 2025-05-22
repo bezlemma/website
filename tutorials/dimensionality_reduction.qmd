@@ -75,105 +75,16 @@ fig
 
 More cells, mean more points. But another protein, is a whole new dimension. 
 
+TODO: Put a javascript 3D interactable graph here with a slider that goes from N= 3 to 20 draws more points. Then have a small table that has three protein density rows, and N columnes which are added or disappear as you move the slider.
+
 ```{=html}
-<html>
-<div id="plotContainer" style="width:500px; height:400px;"></div>
-<div>
-  <label for="numPointsSlider">Number of Cells (N): </label>
-  <input type="range" id="numPointsSlider" min="3" max="20" value="10">
-  <span id="numPointsValue">10</span>
-</div>
-
-<script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.getElementById('numPointsSlider');
-    const numPointsValueDisplay = document.getElementById('numPointsValue');
-    const plotDiv = 'plotContainer';
-
-    function generateData(numPoints) {
-        const data = {
-            x_protein1: [],
-            y_protein2: [],
-            z_protein3: [],
-            text: [] // For cell labels
-        };
-        for (let i = 0; i < numPoints; i++) {
-            data.x_protein1.push(Math.random() * 10); // Random value for Protein 1
-            data.y_protein2.push(Math.random() * 10); // Random value for Protein 2
-            data.z_protein3.push(Math.random() * 10); // Random value for Protein 3
-            data.text.push(`Cell ${i+1}`);
-        }
-        return data;
-    }
-
-    function updatePlot(numPoints) {
-        const traces = [];
-        // For this example, we'll imagine two clusters even in 3D
-        // Cluster 1
-        const cluster1_x = Array.from({length: numPoints}, () => Math.random() * 5 + 5); // Values 5-10
-        const cluster1_y = Array.from({length: numPoints}, () => Math.random() * 5 + 5);
-        const cluster1_z = Array.from({length: numPoints}, () => Math.random() * 5 + 5);
-        const cluster1_text = Array.from({length: numPoints}, (_, i) => `Cell C1-${i+1}`);
-
-        traces.push({
-            x: cluster1_x,
-            y: cluster1_y,
-            z: cluster1_z,
-            mode: 'markers',
-            type: 'scatter3d',
-            name: 'Cluster A',
-            text: cluster1_text,
-            marker: { size: 5, color: 'blue' }
-        });
-
-        // Cluster 2
-        const cluster2_x = Array.from({length: numPoints}, () => Math.random() * 5); // Values 0-5
-        const cluster2_y = Array.from({length: numPoints}, () => Math.random() * 5);
-        const cluster2_z = Array.from({length: numPoints}, () => Math.random() * 5);
-        const cluster2_text = Array.from({length: numPoints}, (_, i) => `Cell C2-${i+1}`);
-
-        traces.push({
-            x: cluster2_x,
-            y: cluster2_y,
-            z: cluster2_z,
-            mode: 'markers',
-            type: 'scatter3d',
-            name: 'Cluster B',
-            text: cluster2_text,
-            marker: { size: 5, color: 'red' }
-        });
 
 
-        const layout = {
-            title: '3D Protein Expression',
-            scene: {
-                xaxis: { title: 'Protein 1 Density' },
-                yaxis: { title: 'Protein 2 Density' },
-                zaxis: { title: 'Protein 3 Density' }
-            },
-            margin: { l: 0, r: 0, b: 0, t: 40 } // Adjust margins to fit title
-        };
-
-        Plotly.newPlot(plotDiv, traces, layout);
-    }
-
-    slider.addEventListener('input', function() {
-        const numPoints = parseInt(this.value);
-        numPointsValueDisplay.textContent = numPoints;
-        updatePlot(numPoints); // Re-generate and plot data for all traces
-    });
-
-    // Initial plot
-    updatePlot(parseInt(slider.value));
-});
-</script>
-</html>
 ```
 
-So a matrix $M_{ij}$ can be thought of as $i$ dimensions with $j$ data points. There are other ways to think about this. A higher rank tensor $M_ijk$ is a whole different thing, and takes a lot more work to think about.
+A matrix $M_{ij}$ can be thought of as $i$ dimensions with $j$ data points. There are other ways to think about this. A higher rank tensor $M_ijk$ is a whole different thing, and takes a lot more work to think about.
 
-A common thing a biologist wants to do is look at millions of cells, across all the genes. There are ~20,000 genes in the human genome, so that is a 20,000 dimensional space. There is no good way to plot that. So we want to bring the number of dimensions down.
+A common thing a biologist wants to do is look at millions of cells, across all the genes. There are ~20,000 genes in the human genome, so that is a 20,000 dimensional space. There is no good way to plot that. We want to bring the number of dimensions down.
 
 ## Principal Component Analysis
 
