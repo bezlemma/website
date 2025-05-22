@@ -23,9 +23,11 @@ website:
           - "stories/annapurnacrescent.qmd"
           - "stories/coexistence.qmd"
           - "stories/first.qmd"
+          - "stories/mareksdisease.qmd"
       - section: "Other"
         contents:
           - "other/active_nematic_tennis.qmd"
+          - "other/sphere_of_life.qmd"
 format:
   html:
     theme:
