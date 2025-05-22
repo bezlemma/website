@@ -226,14 +226,18 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="a-umap-of-life" class="level2">
+<h2 class="anchored" data-anchor-id="a-umap-of-life">A UMAP of Life</h2>
+<p>There are a lot of parameters to life. We might talk about it as highly-dimensional , not in terms of space and time, but in terms of all the parameters our life can move along. Some dimensions might be: How much money we have, our relationship with each loved one, the quality of our memories, the quality of our hopes and asperations, how much muscle we have, how much fat we have, the quality of our health, how important we feel, how moral we feel, how content we feel, the amount we have contributed to society, etc. A lot of those dimensions of life contain dimensions in and of themselves. In such a vast paramter space, it is hard to understand how to optimize the short life you are given to be the best life you can have.</p>
+<p>Genetics also consists of a lot of paramters. You have ~20,000 genes, and each gene can be expressed as RNA at a different density. Again there are sub-dimensions here, in that the RNA expression can vary spatially, but if we smudge that out how can we think about the state of cells through their genetics? An interesting (and by interesteing I tend to mean difficult and dumb) technique that geneticists use is the UMAP. UMAP (Uniform manifold approximation and projection) is a form of nonlinear dimensionality reduction, and it’s the go-to method in genetics to turn many dimensions into a nice plot that fits on a piece of paper, which means two dimensions. The two dimensions are UMAP1 and UMAP2.</p>
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { margin: 0; overflow: hidden; font-family: Arial, sans-serif; background-color: #f0f0f0; }
+        body { margin: 0; overflow: hidden; font-family: 'Arial', sans-serif; background-color: #f0f0f0; }
         #sphereAppContainer {
-            max-width: 600px; /* Max size */
-            width: 95%;     /* Responsive width */
+            max-width: 600px; 
+            width: 95%;     
             margin: 20px auto;
             border: 1px solid #ccc;
             padding: 10px;
@@ -241,15 +245,54 @@ ul.task-list li input[type="checkbox"] {
             background-color: #fff;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center canvas if it's smaller than container */
+            align-items: center; 
+            position: relative; /* For positioning overlay elements */
+        }
+        #canvasContainer { /* New container for canvas and overlays */
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Ensure it doesn't exceed canvas max */
+            aspect-ratio: 1 / 1; /* Maintain square aspect ratio for canvas area */
+            margin-bottom: 10px;
         }
         #renderCanvas {
             display: block;
-            /* width and height will be set by JS, but provide fallback/max */
-            max-width: 100%;
-            /* height: auto; /* This would be for responsive aspect ratio based on width, but we fix it in JS */
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff; 
+        }
+        #runTimePercentDisplay {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 3.0em;
+            z-index: 10;
+        }
+        #radiusInfoDisplay {
+            width: 100%;
+            max-width: 600px;
+            padding: 10px 0;
             margin-bottom: 10px;
-            background-color: #ffffff; /* Canvas background, scene background will overlay this */
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #eee;
+        }
+        #radiusInfoDisplay p {
+            margin: 5px 0;
+            font-size: 1.1em;
+            color: #333;
+        }
+        #radiusInfoDisplay .label {
+            font-weight: bold;
+            color: #555;
+        }
+        #radiusInfoDisplay .value {
+            color: #007bff;
         }
         #controls {
             background-color: #f0f0f0;
@@ -257,31 +300,69 @@ ul.task-list li input[type="checkbox"] {
             padding: 10px;
             border-radius: 5px;
             text-align: left;
-            width: calc(100% - 20px); /* Full width of container minus padding */
+            width: calc(100% - 20px); 
             box-sizing: border-box;
-        }
-        #coordinates {
-            margin-top: 10px;
             font-size: 0.9em;
-            line-height: 1.4;
-            word-break: break-all;
         }
-        #controls p {
+        #controls p { /* Only for the instruction paragraph now */
             margin-top: 0;
         }
+        #statsMenu {
+            display: none; 
+            position: absolute; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            text-align: center;
+            width: 80%;
+            max-width: 350px;
+        }
+        #statsMenu h2 { margin-top: 0; color: #333; }
+        #statsMenu p { margin: 8px 0; color: #555; font-size: 0.95em; }
+        #statsMenu button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        #statsMenu button:hover { background-color: #45a049; }
     </style>
 
 
 
     <div id="sphereAppContainer">
-        <canvas id="renderCanvas"></canvas>
         <div id="controls">
+            <center>
             <p>Use mouse to rotate. Hold WASD to move the dot. Dot also rolls with gravity.</p>
-            <div id="coordinates">
-                Theta: N/A, Phi: N/A, Radius: N/A<br>
-                X: N/A, Y: N/A, Z: N/A<br>
-                Lowest Radius: N/A
+            </center>
             </div>
+        <div id="canvasContainer">
+            <canvas id="renderCanvas"></canvas>
+            <div id="runTimePercentDisplay">0%</div>
+        </div>
+        <div id="radiusInfoDisplay">
+            <p><span class="label">Current Radius:</span> <span class="value" id="currentRDisplay">N/A</span></p>
+            <p><span class="label">Lowest Radius:</span> <span class="value" id="lowestRDisplay">N/A</span></p>
+        </div>
+        
+        <div id="statsMenu">
+            <h2 class="anchored">Run Complete!</h2>
+            <p>Lowest Radius: <span id="statLowestR">N/A</span></p>
+            <p>Mean Radius: <span id="statMeanR">N/A</span></p>
+            <p>Std Dev Radius: <span id="statStdDevR">N/A</span></p>
+            <p>Max Radius: <span id="statMaxR">N/A</span></p>
+            <button id="resetButton">Play Again</button>
         </div>
     </div>
 
@@ -299,22 +380,32 @@ ul.task-list li input[type="checkbox"] {
         import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
         let scene, camera, renderer, orbitControls;
-        let noisySphere, playerDot;
+        let noisySphere, playerDot, playerDotLight;
 
         const baseRadius = 5;
         const noiseAmplitude = 1.4;
+        const noiseEvolutionSpeed = 0.1; 
 
         // Player's state
         let playerTheta = 0;
         let playerPhi = Math.PI / 2;
         let playerR = baseRadius;
-        let lowestRadiusAchieved = Infinity; // Initialize with a very high number
+        let lowestRadiusAchieved = Infinity;
 
         // Player physics state
         let playerVelTheta = 0.0;
         let playerVelPhi = 0.0;
 
-        // Constants for physics and controls
+        // Time tracking & Simulation State
+        let physicsLastTime = performance.now(); 
+        let globalTimeSeconds = 0; 
+        let simulationStartTime = performance.now();
+        const RUN_DURATION_SECONDS = 100;
+        let simulationRunning = true;
+        let animationFrameId;
+        let radiusHistory = [];
+        let currentBaseHue = 0.66; // Initial hue (blue-ish)
+
         const USER_SPEED_RAD_PER_SEC = 0.3;
         const K_GRAVITY = 3.0;
         const FRICTION_FACTOR = 0.95;
@@ -322,15 +413,16 @@ ul.task-list li input[type="checkbox"] {
         const GRADIENT_DELTA_ANGLE = 0.01;
 
         const keysPressed = {};
-        const tempUnitVec = new THREE.Vector3();
-        let lastTime = performance.now();
+        const tempUnitVec = new THREE.Vector3(); 
 
-        // Trail constants
         const MAX_TRAIL_SEGMENTS = 60;
-        const TRAIL_SEGMENT_LIFETIME = 1.2; // seconds
-        const TRAIL_UPDATE_INTERVAL = 0.04; // seconds, add new segment if enough time passed
+        const TRAIL_SEGMENT_LIFETIME = 1.2; 
+        const TRAIL_UPDATE_INTERVAL = 0.04; 
         let lastTrailUpdateTime = 0;
         const trailSegments = [];
+
+        const sphereUpdate_tempVertex = new THREE.Vector3();
+        const sphereUpdate_unitSpherePos = new THREE.Vector3();
 
 
         function init() {
@@ -343,12 +435,12 @@ ul.task-list li input[type="checkbox"] {
             const canvas = document.getElementById('renderCanvas');
             renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
             
-            const ambientLight = new THREE.AmbientLight(0xdddddd, 0.9);
+            const ambientLight = new THREE.AmbientLight(0xdddddd, 0.9); // Softer ambient
             scene.add(ambientLight);
-            const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8); // Slightly softer directional
             directionalLight.position.set(1, 1.5, 1).normalize();
             scene.add(directionalLight);
-            const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.5);
+            const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.4); // Slightly softer
             directionalLight2.position.set(-1, -0.5, -1).normalize();
             scene.add(directionalLight2);
 
@@ -359,153 +451,188 @@ ul.task-list li input[type="checkbox"] {
             orbitControls.maxDistance = baseRadius * 5;
             orbitControls.target.set(0, 0, 0);
 
-            noisySphere = createNoisySphere();
-            if (noisySphere) scene.add(noisySphere);
-
-            playerDot = createPlayerDot();
+            playerDot = createPlayerDot(); // Create dot first to apply initial hue
             if (playerDot) scene.add(playerDot);
             
-            // Initialize lowestRadiusAchieved with the starting radius
-            playerR = getHeightAt(playerTheta, playerPhi); // Get initial radius
-            lowestRadiusAchieved = playerR; // Set initial lowest radius
-            updatePlayerDotPosition(); // Initial placement & display update
+            noisySphere = createNoisySphere(0); 
+            if (noisySphere) scene.add(noisySphere);
+            
+            setupNewRun(); 
 
             document.addEventListener('keydown', onKeyDown);
             document.addEventListener('keyup', onKeyUp);
             window.addEventListener('resize', onWindowResize, false);
+            document.getElementById('resetButton').addEventListener('click', resetSimulation);
             
             onWindowResize(); 
-
-            lastTrailUpdateTime = performance.now() / 1000;
-            lastTime = performance.now(); 
-            animate(performance.now()); 
+            
+            animationFrameId = requestAnimationFrame(animate); 
         }
 
-        function getNoiseValue(x, y, z) {
+        function setupNewRun() {
+            simulationStartTime = performance.now();
+            physicsLastTime = simulationStartTime;
+            globalTimeSeconds = 0;
+            radiusHistory = [];
+            simulationRunning = true;
+            
+            // Increment and wrap hue for next run
+            currentBaseHue = (currentBaseHue + 0.15) % 1.0; 
+
+            playerTheta = 0;
+            playerPhi = Math.PI / 2;
+            playerVelTheta = 0.0;
+            playerVelPhi = 0.0;
+
+            // Update sphere and dot colors based on new hue
+            if (noisySphere) updateSphereGeometry(0); // Reset sphere visual state to t=0 with new hue
+            if (playerDot) {
+                const newDotColor = new THREE.Color().setHSL((currentBaseHue + 0.5) % 1.0, 0.9, 0.55); // Complementary-ish
+                playerDot.material.color.copy(newDotColor);
+                if (playerDotLight) playerDotLight.color.copy(newDotColor);
+            }
+            
+            playerR = getHeightAt(playerTheta, playerPhi, 0); 
+            lowestRadiusAchieved = playerR; 
+            updateUIDisplays();
+
+            document.getElementById('statsMenu').style.display = 'none';
+        }
+
+
+        function getNoiseValue(x, y, z, time) {
             let val = 0;
+            const t = time * noiseEvolutionSpeed;
             const f1 = 8.0, f2 = 7.0, f3 = 10.4; 
-            val += Math.sin(x * f1 + y * f2) * Math.cos(z * f1 + x * f3) * 0.4;
-            val += Math.cos(y * f2 - z * f3) * Math.sin(x * f2 + y * f1) * 0.3;
-            val += Math.sin(z * f3 + x * f1 - y * f2) * Math.cos(y * f3 - x * f2) * 0.3;
-            val += Math.cos(x * 3.0) * Math.sin(y * 3.0) * 0.5; 
-            val += Math.sin(z * 4.0) * 0.3; 
+            val += Math.sin(x * f1 + y * f2 + t * 1.1) * Math.cos(z * f1 + x * f3) * 0.4;
+            val += Math.cos(y * f2 - z * f3 - t * 0.9) * Math.sin(x * f2 + y * f1) * 0.3;
+            val += Math.sin(z * f3 + x * f1 - y * f2 + t * 1.3) * Math.cos(y * f3 - x * f2) * 0.3;
+            val += Math.cos(x * 3.0 + t * 0.7) * Math.sin(y * 3.0 - t * 0.8) * 0.5; 
+            val += Math.sin(z * 4.0 + t) * 0.3; 
             return val * 0.8;
         }
 
-        function getHeightAt(theta, phi) {
+        function getHeightAt(theta, phi, time) {
             const safePhi = Math.max(0.0001, Math.min(Math.PI - 0.0001, phi));
-            tempUnitVec.setFromSphericalCoords(1, safePhi, theta);
-            const noise = getNoiseValue(tempUnitVec.x, tempUnitVec.y, tempUnitVec.z);
+            tempUnitVec.setFromSphericalCoords(1, safePhi, theta); 
+            const noise = getNoiseValue(tempUnitVec.x, tempUnitVec.y, tempUnitVec.z, time);
             let r = baseRadius + noise * noiseAmplitude;
-            return Math.max(0.1, r);
+            return Math.max(0.1, r); 
         }
 
         function getColorForHeight(normalizedHeight) {
             const color = new THREE.Color();
-            color.setHSL(0.66 - (normalizedHeight * 0.66), 0.9, 0.55);
+            // Use currentBaseHue and vary saturation/lightness more for contrast
+            const saturation = 0.6 + normalizedHeight * 0.4; // Greener/bluer at peaks
+            const lightness = 0.4 + normalizedHeight * 0.3;  // Brighter at peaks
+            color.setHSL(currentBaseHue, saturation, lightness); 
             return color;
         }
-
-        function createNoisySphere() {
-            const geometry = new THREE.SphereGeometry(baseRadius, 128, 64);
+        
+        function createNoisySphere(initialTime) {
+            const geometry = new THREE.SphereGeometry(baseRadius, 128, 64); 
             const positionAttribute = geometry.attributes.position;
             const colors = [];
-            const tempVertex = new THREE.Vector3();
-            const unitSpherePos = new THREE.Vector3();
             const minRForColor = baseRadius - noiseAmplitude;
             const maxRForColor = baseRadius + noiseAmplitude;
 
             for (let i = 0; i < positionAttribute.count; i++) {
-                tempVertex.fromBufferAttribute(positionAttribute, i);
-                unitSpherePos.copy(tempVertex).normalize();
-                const noise = getNoiseValue(unitSpherePos.x, unitSpherePos.y, unitSpherePos.z);
+                sphereUpdate_tempVertex.fromBufferAttribute(positionAttribute, i); 
+                sphereUpdate_unitSpherePos.copy(sphereUpdate_tempVertex).normalize(); 
+                const noise = getNoiseValue(sphereUpdate_unitSpherePos.x, sphereUpdate_unitSpherePos.y, sphereUpdate_unitSpherePos.z, initialTime);
                 let currentRadius = baseRadius + noise * noiseAmplitude;
                 currentRadius = Math.max(0.1, currentRadius);
-                tempVertex.normalize().multiplyScalar(currentRadius);
-                positionAttribute.setXYZ(i, tempVertex.x, tempVertex.y, tempVertex.z);
+                sphereUpdate_tempVertex.normalize().multiplyScalar(currentRadius);
+                positionAttribute.setXYZ(i, sphereUpdate_tempVertex.x, sphereUpdate_tempVertex.y, sphereUpdate_tempVertex.z);
                 const normalizedHeight = (currentRadius - minRForColor) / (maxRForColor - minRForColor);
                 const vertexColor = getColorForHeight(Math.max(0, Math.min(1, normalizedHeight)));
                 colors.push(vertexColor.r, vertexColor.g, vertexColor.b);
             }
             geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-            geometry.computeVertexNormals();
-            positionAttribute.needsUpdate = true;
+            geometry.computeVertexNormals(); 
+            positionAttribute.needsUpdate = true; 
             const material = new THREE.MeshStandardMaterial({
-                vertexColors: true, metalness: 0.05, 
-                roughness: 1.0, 
+                vertexColors: true, metalness: 0.05, roughness: 1.0, 
             });
             return new THREE.Mesh(geometry, material);
         }
 
+        function updateSphereGeometry(currentTimeForNoise) {
+            if (!noisySphere) return;
+            const positions = noisySphere.geometry.attributes.position;
+            const colors = noisySphere.geometry.attributes.color;
+            const minRForColor = baseRadius - noiseAmplitude;
+            const maxRForColor = baseRadius + noiseAmplitude;
+
+            for (let i = 0; i < positions.count; i++) {
+                sphereUpdate_tempVertex.fromBufferAttribute(positions, i);
+                sphereUpdate_unitSpherePos.copy(sphereUpdate_tempVertex).normalize(); 
+                const noise = getNoiseValue(sphereUpdate_unitSpherePos.x, sphereUpdate_unitSpherePos.y, sphereUpdate_unitSpherePos.z, currentTimeForNoise);
+                let currentRadius = baseRadius + noise * noiseAmplitude;
+                currentRadius = Math.max(0.1, currentRadius);
+                sphereUpdate_tempVertex.copy(sphereUpdate_unitSpherePos).multiplyScalar(currentRadius); 
+                positions.setXYZ(i, sphereUpdate_tempVertex.x, sphereUpdate_tempVertex.y, sphereUpdate_tempVertex.z);
+                const normalizedHeight = (currentRadius - minRForColor) / (maxRForColor - minRForColor);
+                const vertexColor = getColorForHeight(Math.max(0, Math.min(1, normalizedHeight))); // Uses currentBaseHue
+                colors.setXYZ(i, vertexColor.r, vertexColor.g, vertexColor.b);
+            }
+            positions.needsUpdate = true;
+            colors.needsUpdate = true;
+            noisySphere.geometry.computeVertexNormals(); 
+        }
+
         function createPlayerDot() {
             const dotGeometry = new THREE.SphereGeometry(0.12, 16, 8); 
+            // Initial color will be set in setupNewRun
             const dotMaterial = new THREE.MeshBasicMaterial({ color: 0xffaa00 }); 
             const dotMesh = new THREE.Mesh(dotGeometry, dotMaterial);
 
-            const dotLight = new THREE.PointLight(0xffaa00, 3, baseRadius * 0.6); 
-            dotMesh.add(dotLight); 
-
+            playerDotLight = new THREE.PointLight(0xffaa00, 2.5, baseRadius * 0.5); // Slightly reduced intensity/distance
+            dotMesh.add(playerDotLight); 
             return dotMesh;
         }
 
         function updatePlayerDotPosition() {
             if (!playerDot) return;
-            playerR = getHeightAt(playerTheta, playerPhi);
-            
-            // Update lowest radius achieved
-            if (playerR < lowestRadiusAchieved) {
-                lowestRadiusAchieved = playerR;
-            }
-
+            playerR = getHeightAt(playerTheta, playerPhi, globalTimeSeconds); 
+            if (playerR < lowestRadiusAchieved) lowestRadiusAchieved = playerR;
+            if (simulationRunning) radiusHistory.push(playerR);
             playerDot.position.setFromSphericalCoords(playerR, playerPhi, playerTheta);
-            updateCoordinatesDisplay(playerDot.position);
+            updateUIDisplays();
+        }
+        
+        function updateUIDisplays() {
+            // Update Run Time Percentage
+            const percentComplete = Math.floor((globalTimeSeconds / RUN_DURATION_SECONDS) * 100);
+            document.getElementById('runTimePercentDisplay').textContent = `${Math.min(100, Math.max(0,percentComplete))}%`;
+
+            // Update Radius Info
+            document.getElementById('currentRDisplay').textContent = playerR.toFixed(3);
+            document.getElementById('lowestRDisplay').textContent = lowestRadiusAchieved === Infinity ? "N/A" : lowestRadiusAchieved.toFixed(3);
         }
 
-        function updateCoordinatesDisplay(cartesianPos) {
-            const coordDiv = document.getElementById('coordinates');
-            if (!coordDiv) return;
-            coordDiv.innerHTML = `
-                Theta (azimuth): ${playerTheta.toFixed(3)} rad<br>
-                Phi (polar): ${playerPhi.toFixed(3)} rad<br>
-                Current Radius: ${playerR.toFixed(3)}<br> 
-                Vel Theta: ${playerVelTheta.toFixed(4)}, Vel Phi: ${playerVelPhi.toFixed(4)} <br>
-                ---<br>
-                X: ${cartesianPos.x.toFixed(3)}, Y: ${cartesianPos.y.toFixed(3)}, Z: ${cartesianPos.z.toFixed(3)}<br>
-                Lowest Radius: ${lowestRadiusAchieved.toFixed(3)}
-            `;
-        }
 
         function applyGravity(deltaTime) {
             if (deltaTime <= 0) return;
-            const h_current = playerR;
-            const h_theta_plus = getHeightAt(playerTheta + GRADIENT_DELTA_ANGLE, playerPhi);
-            const h_phi_plus = getHeightAt(playerTheta, playerPhi + GRADIENT_DELTA_ANGLE);
-
+            const h_current = playerR; 
+            const h_theta_plus = getHeightAt(playerTheta + GRADIENT_DELTA_ANGLE, playerPhi, globalTimeSeconds);
+            const h_phi_plus = getHeightAt(playerTheta, playerPhi + GRADIENT_DELTA_ANGLE, globalTimeSeconds);
             let grad_R_dTheta = (h_theta_plus - h_current) / GRADIENT_DELTA_ANGLE;
             let grad_R_dPhi = (h_phi_plus - h_current) / GRADIENT_DELTA_ANGLE;
-
             let effectiveSinPhi = Math.sin(playerPhi);
-            if (Math.abs(effectiveSinPhi) < 0.01) {
-                effectiveSinPhi = (effectiveSinPhi >= 0 ? 0.01 : -0.01);
-            }
-            
+            if (Math.abs(effectiveSinPhi) < 0.01) effectiveSinPhi = (effectiveSinPhi >= 0 ? 0.01 : -0.01);
             let acc_theta = -K_GRAVITY * grad_R_dTheta / (playerR * effectiveSinPhi);
             let acc_phi   = -K_GRAVITY * grad_R_dPhi / playerR;
-
             const max_acc_val = 10.0;
             acc_theta = Math.max(-max_acc_val, Math.min(max_acc_val, acc_theta));
             acc_phi   = Math.max(-max_acc_val, Math.min(max_acc_val, acc_phi));
-
             playerVelTheta += acc_theta * deltaTime;
             playerVelPhi   += acc_phi * deltaTime;
-
             const friction = Math.pow(FRICTION_FACTOR, deltaTime * 60);
             playerVelTheta *= friction;
             playerVelPhi   *= friction;
-
             if (Math.abs(playerVelTheta) < MIN_VELOCITY_THRESHOLD) playerVelTheta = 0;
             if (Math.abs(playerVelPhi) < MIN_VELOCITY_THRESHOLD) playerVelPhi = 0;
-
             if (Math.abs(playerVelTheta) > 0 || Math.abs(playerVelPhi) > 0) {
                 playerTheta += playerVelTheta * deltaTime;
                 playerPhi   += playerVelPhi * deltaTime;
@@ -517,24 +644,21 @@ ul.task-list li input[type="checkbox"] {
         function handleContinuousMovement(deltaTime) {
             let movedByUserInput = false;
             const userDisplacement = USER_SPEED_RAD_PER_SEC * deltaTime;
-
             if (keysPressed['w']) { playerPhi -= userDisplacement; movedByUserInput = true; }
             if (keysPressed['s']) { playerPhi += userDisplacement; movedByUserInput = true; }
             if (keysPressed['a']) { playerTheta -= userDisplacement; movedByUserInput = true; }
             if (keysPressed['d']) { playerTheta += userDisplacement; movedByUserInput = true; }
-
             if (movedByUserInput) {
-                playerVelTheta = 0;
-                playerVelPhi = 0;
+                playerVelTheta = 0; playerVelPhi = 0;
                 playerPhi = Math.max(0.001, Math.min(Math.PI - 0.001, playerPhi));
                 playerTheta = (playerTheta + 2 * Math.PI * 1000) % (2 * Math.PI);
             }
         }
 
-        function updateTrail(deltaTime, currentTimeInSeconds) {
+        function updateTrail(deltaTime, currentTotalTimeInSeconds) {
             for (let i = trailSegments.length - 1; i >= 0; i--) {
                 const segment = trailSegments[i];
-                segment.age += deltaTime;
+                segment.age += deltaTime; 
                 if (segment.age >= TRAIL_SEGMENT_LIFETIME) {
                     scene.remove(segment.mesh);
                     if (segment.mesh.geometry) segment.mesh.geometry.dispose();
@@ -546,92 +670,111 @@ ul.task-list li input[type="checkbox"] {
                     segment.mesh.scale.setScalar(Math.max(0.05, 1.0 - lifeRatio * 0.85)); 
                 }
             }
-
             const speed = Math.sqrt(playerVelTheta * playerVelTheta + playerVelPhi * playerVelPhi);
             const minSpeedForTrail = 0.03; 
-
             const isMovingByKey = keysPressed['w'] || keysPressed['s'] || keysPressed['a'] || keysPressed['d'];
             const isRollingFastEnough = speed > minSpeedForTrail && !isMovingByKey; 
-
-            if ((isMovingByKey || isRollingFastEnough) && (currentTimeInSeconds - lastTrailUpdateTime > TRAIL_UPDATE_INTERVAL)) {
-                if (trailSegments.length >= MAX_TRAIL_SEGMENTS) {
+            if ((isMovingByKey || isRollingFastEnough) && (currentTotalTimeInSeconds * 1000 - lastTrailUpdateTime > TRAIL_UPDATE_INTERVAL * 1000 )) {
+                 if (trailSegments.length >= MAX_TRAIL_SEGMENTS) {
                     const oldestSegment = trailSegments.shift(); 
                     scene.remove(oldestSegment.mesh);
                     if (oldestSegment.mesh.geometry) oldestSegment.mesh.geometry.dispose();
                     if (oldestSegment.mesh.material) oldestSegment.mesh.material.dispose();
                 }
-
                 const trailSegmentGeo = new THREE.SphereGeometry(0.06, 8, 4);
                 const trailSegmentMat = new THREE.MeshBasicMaterial({
-                    color: 0xffddaa, 
-                    transparent: true,
-                    opacity: 0.85 
+                    color: playerDot.material.color, // Trail matches current dot color
+                    transparent: true, opacity: 0.85 
                 });
                 const trailMesh = new THREE.Mesh(trailSegmentGeo, trailSegmentMat);
                 trailMesh.position.copy(playerDot.position); 
-
                 scene.add(trailMesh);
                 trailSegments.push({ mesh: trailMesh, age: 0 });
-                lastTrailUpdateTime = currentTimeInSeconds;
+                lastTrailUpdateTime = currentTotalTimeInSeconds * 1000; 
             }
         }
 
+        function calculateStatistics() {
+            if (radiusHistory.length === 0) return { min: lowestRadiusAchieved, max: 0, mean: 0, stdDev: 0 };
+            const sum = radiusHistory.reduce((acc, val) => acc + val, 0);
+            const mean = sum / radiusHistory.length;
+            const max = Math.max(...radiusHistory);
+            const squaredDifferences = radiusHistory.map(val => Math.pow(val - mean, 2));
+            const variance = squaredDifferences.reduce((acc, val) => acc + val, 0) / radiusHistory.length;
+            const stdDev = Math.sqrt(variance);
+            return { min: lowestRadiusAchieved, max, mean, stdDev };
+        }
+
+        function showStatisticsMenu() {
+            const stats = calculateStatistics();
+            document.getElementById('statLowestR').textContent = stats.min.toFixed(3);
+            document.getElementById('statMeanR').textContent = stats.mean.toFixed(3);
+            document.getElementById('statStdDevR').textContent = stats.stdDev.toFixed(3);
+            document.getElementById('statMaxR').textContent = stats.max.toFixed(3);
+            document.getElementById('statsMenu').style.display = 'block';
+        }
+
+        function resetSimulation() {
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+            setupNewRun(); 
+            animationFrameId = requestAnimationFrame(animate); 
+        }
 
         function onKeyDown(event) {
             const key = event.key.toLowerCase();
-            if (['w', 'a', 's', 'd'].includes(key)) {
-                keysPressed[key] = true;
-                event.preventDefault();
-            }
+            if (['w', 'a', 's', 'd'].includes(key)) { keysPressed[key] = true; event.preventDefault(); }
         }
-
         function onKeyUp(event) {
             const key = event.key.toLowerCase();
-            if (['w', 'a', 's', 'd'].includes(key)) {
-                keysPressed[key] = false;
-                event.preventDefault();
-            }
+            if (['w', 'a', 's', 'd'].includes(key)) { keysPressed[key] = false; event.preventDefault(); }
         }
         
         function onWindowResize() {
-            const container = document.getElementById('sphereAppContainer');
+            const canvasContainer = document.getElementById('canvasContainer');
             const canvas = document.getElementById('renderCanvas');
+            const appContainer = document.getElementById('sphereAppContainer');
             
-            let availableWidth = 600; 
-            if (container) {
-                availableWidth = container.clientWidth - parseFloat(getComputedStyle(container).paddingLeft) - parseFloat(getComputedStyle(container).paddingRight);
-            }
+            // Calculate width based on appContainer, subtracting its padding
+            let availableWidth = appContainer.clientWidth - parseFloat(getComputedStyle(appContainer).paddingLeft) - parseFloat(getComputedStyle(appContainer).paddingRight);
+            availableWidth = Math.min(600, availableWidth); // Cap at 600px or use smaller available width
             
-            const newWidth = Math.min(600, availableWidth); 
-            const newHeight = newWidth; 
+            // Set canvasContainer size (which dictates canvas size via 100% width/height)
+            canvasContainer.style.width = availableWidth + 'px';
+            canvasContainer.style.height = availableWidth + 'px'; // Maintain 1:1 aspect ratio for the container
 
-            canvas.style.width = newWidth + 'px';
-            canvas.style.height = newHeight + 'px';
-
-            camera.aspect = newWidth / newHeight;
+            camera.aspect = 1; // Canvas is square
             camera.updateProjectionMatrix();
-            renderer.setSize(newWidth, newHeight);
+            renderer.setSize(availableWidth, availableWidth);
         }
 
+        function animate(timestamp) {
+            if (!simulationRunning) { renderer.render(scene, camera); return; }
+            animationFrameId = requestAnimationFrame(animate); 
+            const physicsDeltaTime = Math.min(0.1, (timestamp - physicsLastTime) * 0.001);
+            physicsLastTime = timestamp;
+            globalTimeSeconds = (timestamp - simulationStartTime) * 0.001; 
 
-        function animate(currentTime) {
-            requestAnimationFrame(animate);
-            
-            const deltaTime = Math.min(0.1, (currentTime - lastTime) * 0.001);
-            lastTime = currentTime;
-
-            if (deltaTime > 0) {
-                handleContinuousMovement(deltaTime); 
-                applyGravity(deltaTime);             
-                updateTrail(deltaTime, currentTime / 1000); 
+            if (globalTimeSeconds >= RUN_DURATION_SECONDS) {
+                simulationRunning = false;
+                globalTimeSeconds = RUN_DURATION_SECONDS; 
+                updateUIDisplays();
+                updateSphereGeometry(globalTimeSeconds); 
+                updatePlayerDotPosition(); 
+                showStatisticsMenu();
+                renderer.render(scene, camera);
+                return; 
             }
-
-            updatePlayerDotPosition(); 
             
+            updateSphereGeometry(globalTimeSeconds);
+            if (physicsDeltaTime > 0) {
+                handleContinuousMovement(physicsDeltaTime); 
+                applyGravity(physicsDeltaTime);             
+                updateTrail(physicsDeltaTime, timestamp * 0.001); 
+            }
+            updatePlayerDotPosition(); // This also calls updateUIDisplays
             orbitControls.update();
             renderer.render(scene, camera);
         }
-
         init();
     </script>
 
@@ -639,8 +782,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
