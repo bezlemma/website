@@ -5,35 +5,34 @@ format:
     toc: false
 ---
 
-## A UMAP of Life
+## Dimensions of Life
 
-There are a lot of parameters to life. We might talk about it as highly-dimensional, not in terms of space and time, but in terms of all the parameters our life can move along. Some dimensions might be: How much money we have, our relationship with each loved one, the quality of our memories, the quality of our hopes and asperations, how much muscle we have, how much fat we have, the quality of our health, how important we feel, how moral we feel, how content we feel, the amount we have contributed to society, etc. A lot of those dimensions of life contain dimensions in and of themselves. In such a vast paramter space, it is hard to understand how to optimize the short life you are given to be the best life you can have.
+There are a lot of parameters to life. We might talk about it as highly-dimensional, not in terms of space and time, but in terms of all the parameters our life can move along. Some dimensions might be: How much money we have, our relationship with each loved one, the quality of our memories, the quality of our hopes and aspirations, how much muscle we have, how much fat we have, the quality of our health, how important we feel, how moral we feel, how content we feel, the amount we have contributed to society, etc. A lot of those dimensions of life contain dimensions in and of themselves. In such a vast parameter space, it is hard to understand how to optimize the short life you are given to be the best life you can have.
 
 Let's have a matrix, with some dimensions of life, and some normalized values from 0 to 1:
 
-|          | Bez |
-|----------|----------|
-| Money              | 0.1  |
-| Fame               | 0.01 |
-| # of hotdogs eaten | 0.2  |
-| Mean Happiness     | 0.4  |
-| Mean Unhappiness   | 0.7  |
+|                     | Bez  |
+|---------------------|------|
+| Money               | 0.1  |
+| Fame                | 0.01 |
+| \# of hotdogs eaten | 0.2  |
+| Mean Happiness      | 0.4  |
+| Mean Unhappiness    | 0.7  |
 
-Some of these parameteres higher numbers might be bad, some of them higher numebers might be good. For $p_i$ parameters, the optimizaiton function of life is $L(p_1, p_2, p_3, ..., p_i)$. Let's go by golf rules and say that lower $L$ is better life. 
+Some of these parameters higher numbers might be bad, some of them higher numbers might be good. For $p_i$ parameters, the optimization function of life is $L(p_1, p_2, p_3, ..., p_i)$. Let's go by golf rules and say that lower $L$ is better life.
 
-Genetics also consists of a lot of paramters. You have ~20,000 genes, and each gene can be expressed as RNA at a different density. Again there are sub-dimensions here, in that the RNA expression can vary spatially, but if we smudge that out how can we think about the state of cells through their genetics? An interesting (and by interesteing I tend to mean difficult and dumb) technique that geneticists use is data reduction via the UMAP. UMAP (Uniform manifold approximation and projection) is a form of [nonlinear dimensionality reduction](https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction) that you can think of as a nonlinear version of [principle componenet analysis](https://en.wikipedia.org/wiki/Principal_component_analysis). The idea of all these things is to bring down all those dimensions to two arbitrary dimensions that the quality of life vary with, which I will call $\lambda_1$ and $\lambda_2$:
+Genetics also consists of a lot of dimensions. You have \~20,000 genes, and each gene can be expressed as RNA at a different density. Again there are sub-dimensions here, in that the RNA expression can vary spatially, but if we smudge that out how can we think about the state of cells through their genetics? An interesting (and by interesting I tend to mean difficult and dumb) technique that geneticists use is data reduction via the UMAP. UMAP (Uniform manifold approximation and projection) is a form of [nonlinear dimensionality reduction](https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction) that you can think of as a nonlinear version of [principle component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis). The idea of all these things is to bring down all those dimensions to two arbitrary dimensions. We brind down all the parameters, $p_1, p_2, p_3, ...$, that the quality of life vary with into two parameters $\lambda_1$ and $\lambda_2$:
 
-::: {.text-center}
-|          | Bez |
-|:--------:|:---:|
+::: text-center
+|             | Bez |
+|:-----------:|:---:|
 | $\lambda_1$ | 0.6 |
 | $\lambda_2$ | 0.4 |
 :::
 
-All the deicisions in my life move me around in this two-dimensional space and change the values of $\lambda_1$ and $\lambda_2$. We've lost a tremendous amount of information by doing this, but now we can represent this life on a computer screen. Let there be a space $L(\lambda_1, \lambda_2)$ and say that we have defined these two paramteres $\lambda_1$ and $\lambda_2$ such that they are the angular coordinates of a sphere (they wrap back around on each themselves!). The spheroid with radius generated by $L$ represents the life you can have, of course the definition of $L$ evolves over the course of your life in some mysterious way. You want to find the minima, a lower $L$ is a better life. But you might find local minima instead. Or your minima that you found might change over time so that it becomes no longer the ideal minima.
+All the decisions in my life move me around in this two-dimensional space and change the values of $\lambda_1$ and $\lambda_2$. We've lost a tremendous amount of information by doing this, but now we can represent this life on a computer screen. Let there be a space $L(\lambda_1, \lambda_2)$ and say that we have defined these two parameters $\lambda_1$ and $\lambda_2$ such that they are the angular coordinates of a sphere (they wrap back around on each themselves!). The spheroid with radius generated by $L$ represents the life you can have, of course the definition of $L$ evolves over the course of your life in some mysterious way. You want to find the minima, a lower $L$ is a better life. But you might find local minima instead. Or your minima that you found might change over time so that it becomes no longer the ideal minima.
 
 Here is a sphere of life to move around on. Wht strategies give you the lowest minima? What about the lowest average minima?
-
 
 ```{=html}
 <html>
@@ -613,6 +612,5 @@ Here is a sphere of life to move around on. Wht strategies give you the lowest m
     </script>
 </body>
 </html>
-
 
 ```

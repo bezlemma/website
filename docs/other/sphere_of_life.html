@@ -255,9 +255,9 @@ window.Quarto = {
 </header>
 
 
-<section id="a-umap-of-life" class="level2">
-<h2 class="anchored" data-anchor-id="a-umap-of-life">A UMAP of Life</h2>
-<p>There are a lot of parameters to life. We might talk about it as highly-dimensional, not in terms of space and time, but in terms of all the parameters our life can move along. Some dimensions might be: How much money we have, our relationship with each loved one, the quality of our memories, the quality of our hopes and asperations, how much muscle we have, how much fat we have, the quality of our health, how important we feel, how moral we feel, how content we feel, the amount we have contributed to society, etc. A lot of those dimensions of life contain dimensions in and of themselves. In such a vast paramter space, it is hard to understand how to optimize the short life you are given to be the best life you can have.</p>
+<section id="dimensions-of-life" class="level2">
+<h2 class="anchored" data-anchor-id="dimensions-of-life">Dimensions of Life</h2>
+<p>There are a lot of parameters to life. We might talk about it as highly-dimensional, not in terms of space and time, but in terms of all the parameters our life can move along. Some dimensions might be: How much money we have, our relationship with each loved one, the quality of our memories, the quality of our hopes and aspirations, how much muscle we have, how much fat we have, the quality of our health, how important we feel, how moral we feel, how content we feel, the amount we have contributed to society, etc. A lot of those dimensions of life contain dimensions in and of themselves. In such a vast parameter space, it is hard to understand how to optimize the short life you are given to be the best life you can have.</p>
 <p>Let’s have a matrix, with some dimensions of life, and some normalized values from 0 to 1:</p>
 <table class="caption-top table">
 <thead>
@@ -289,8 +289,8 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>Some of these parameteres higher numbers might be bad, some of them higher numebers might be good. For <span class="math inline">\(p_i\)</span> parameters, the optimizaiton function of life is <span class="math inline">\(L(p_1, p_2, p_3, ..., p_i)\)</span>. Let’s go by golf rules and say that lower <span class="math inline">\(L\)</span> is better life.</p>
-<p>Genetics also consists of a lot of paramters. You have ~20,000 genes, and each gene can be expressed as RNA at a different density. Again there are sub-dimensions here, in that the RNA expression can vary spatially, but if we smudge that out how can we think about the state of cells through their genetics? An interesting (and by interesteing I tend to mean difficult and dumb) technique that geneticists use is data reduction via the UMAP. UMAP (Uniform manifold approximation and projection) is a form of <a href="https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction">nonlinear dimensionality reduction</a> that you can think of as a nonlinear version of <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">principle componenet analysis</a>. The idea of all these things is to bring down all those dimensions to two arbitrary dimensions that the quality of life vary with, which I will call <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_2\)</span>:</p>
+<p>Some of these parameters higher numbers might be bad, some of them higher numbers might be good. For <span class="math inline">\(p_i\)</span> parameters, the optimization function of life is <span class="math inline">\(L(p_1, p_2, p_3, ..., p_i)\)</span>. Let’s go by golf rules and say that lower <span class="math inline">\(L\)</span> is better life.</p>
+<p>Genetics also consists of a lot of dimensions. You have ~20,000 genes, and each gene can be expressed as RNA at a different density. Again there are sub-dimensions here, in that the RNA expression can vary spatially, but if we smudge that out how can we think about the state of cells through their genetics? An interesting (and by interesting I tend to mean difficult and dumb) technique that geneticists use is data reduction via the UMAP. UMAP (Uniform manifold approximation and projection) is a form of <a href="https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction">nonlinear dimensionality reduction</a> that you can think of as a nonlinear version of <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">principle component analysis</a>. The idea of all these things is to bring down all those dimensions to two arbitrary dimensions. We brind down all the parameters, <span class="math inline">\(p_1, p_2, p_3, ...\)</span>, that the quality of life vary with into two parameters <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_2\)</span>:</p>
 <div class="text-center">
 <table class="caption-top table">
 <thead>
@@ -311,7 +311,7 @@ window.Quarto = {
 </tbody>
 </table>
 </div>
-<p>All the deicisions in my life move me around in this two-dimensional space and change the values of <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_2\)</span>. We’ve lost a tremendous amount of information by doing this, but now we can represent this life on a computer screen. Let there be a space <span class="math inline">\(L(\lambda_1, \lambda_2)\)</span> and say that we have defined these two paramteres <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_2\)</span> such that they are the angular coordinates of a sphere (they wrap back around on each themselves!). The spheroid with radius generated by <span class="math inline">\(L\)</span> represents the life you can have, of course the definition of <span class="math inline">\(L\)</span> evolves over the course of your life in some mysterious way. You want to find the minima, a lower <span class="math inline">\(L\)</span> is a better life. But you might find local minima instead. Or your minima that you found might change over time so that it becomes no longer the ideal minima.</p>
+<p>All the decisions in my life move me around in this two-dimensional space and change the values of <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_2\)</span>. We’ve lost a tremendous amount of information by doing this, but now we can represent this life on a computer screen. Let there be a space <span class="math inline">\(L(\lambda_1, \lambda_2)\)</span> and say that we have defined these two parameters <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_2\)</span> such that they are the angular coordinates of a sphere (they wrap back around on each themselves!). The spheroid with radius generated by <span class="math inline">\(L\)</span> represents the life you can have, of course the definition of <span class="math inline">\(L\)</span> evolves over the course of your life in some mysterious way. You want to find the minima, a lower <span class="math inline">\(L\)</span> is a better life. But you might find local minima instead. Or your minima that you found might change over time so that it becomes no longer the ideal minima.</p>
 <p>Here is a sphere of life to move around on. Wht strategies give you the lowest minima? What about the lowest average minima?</p>
 
 
@@ -888,7 +888,6 @@ window.Quarto = {
         }
         init();
     </script>
-
 
 
 

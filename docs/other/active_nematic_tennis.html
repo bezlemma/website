@@ -57,11 +57,40 @@ ul.task-list li input[type="checkbox"] {
   }
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating fullcontent quarto-light">
+<body class="nav-sidebar floating slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -208,9 +237,10 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../other/active_nematic_tennis.html">Other</a></li><li class="breadcrumb-item"><a href="../other/active_nematic_tennis.html">Active Nematic Tennis</a></li></ol></nav>
 <div class="quarto-title">
@@ -888,14 +918,114 @@ function drawCircle(x,y,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y
 
 </script>
 
-
 <hr>
 <section id="what-is-this" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-this">What is this?</h2>
 <p>My significant other Linnea Lemma <a href="https://www.proquest.com/docview/2632199059?fromopenview=true&amp;pq-origsite=gscholar&amp;sourcetype=Dissertations%20&amp;%20Theses">studies active nematic liquid crystals</a> from time to time. This is a game of 2D table tennis, inspired by Steve Taylor’s <a href="https://en.wikipedia.org/wiki/Plasma_Pong">Plasma Pong</a> in which the paddles produce flow with the arrow keys, and the ball is influenced by the active nematic liquid crystal flow.</p>
 <p>I’ve written this in Julia using Makie, and here re-written it in javascript. You can find the Julia code (and also an compressible normal fluid version of the game) <a href="https://github.com/bezlemma/active_nematic_tennis">here on GitHub</a>.</p>
+</section>
+<section id="what-precisely-is-this" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="what-precisely-is-this">What <em>precisely</em> is this?</h2>
+<p>The simulation uses finite difference methods on a 2D Cartesian grid to simulate an incompressible active nematic. The single biggest source of this code is from the papers of <a href="https://scholar.google.com/citations?user=3JW5RxsAAAAJ&amp;hl=en&amp;oi=sra">Michael Norton</a>. Particularly the paper “Mechanochemical topological defects in an active nematic” which I strive to follow except I’ve dropped the friction term, the intertia terms, changed the boundary conditions, and butchered the numerical methods. I also read through active nematic simulation papers by Suraj Shankar, Luca Giomi, and Mattia Serra and some of my attempts to replicate those papers may have slipped into the algorithms here.</p>
+<p>The simulation domain is a 2D Cartesian grid with cell dimensions <span class="math inline">\(\Delta x\)</span> and <span class="math inline">\(\Delta y\)</span>. Ghost cells at the boundaries apply no-slip boundary conditions. Spatial derivatives are approximated using second-order central finite differences:</p>
+<ul>
+<li>Gradient: <span class="math inline">\(\partial_x f \Big|_{i,j} \approx \frac{f_{i+1,j} - f_{i-1,j}}{2 \Delta x}\)</span></li>
+<li>Laplacian: <span class="math inline">\(\nabla^2 f \Big|_{i,j} \approx \frac{f_{i+1,j} - 2f_{i,j} + f_{i-1,j}}{(\Delta x)^2} + \frac{f_{i,j+1} - 2f_{i,j} + f_{i,j-1}}{(\Delta y)^2}\)</span></li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>A ghost cell is a part of the matrix at the edges which are used by the simulation but not really updated by the simulation. If you give them specific values, they create boundary conditions. So for instance, if the ghost cells have their velocity set to 0 forever, then they create no-slip boundary conditions.</p>
+</div></div><p>The system evolves over discrete time steps of duration <span class="math inline">\(\Delta t\)</span>. Following three big steps.</p>
+<ol type="1">
+<li>Advection of material based on the previous steps velocity</li>
+<li>The evolution of the nematic structure</li>
+<li>The calculation of forces, and subsequently velocities from the nematic structure, while enforcing fluid incompressibility</li>
+</ol>
+<section id="advection" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="advection">1. Advection</h3>
+<p>Ok this is the easy bit. It’s not really worth writing about, but it gives you a warm up before the grimier bits.</p>
+<p>Scalar quantities <span class="math inline">\(\phi\)</span>, such as the components of the nematic order parameter (<span class="math inline">\(Q_{xx}, Q_{xy}\)</span>) and passive color tracers (red and blue created by the paddles), are transported by the fluid’s velocity field <span class="math inline">\(\mathbf{u}\)</span>: <span class="math display">\[\partial_t \phi + (\mathbf{u} \cdot \nabla) \phi = 0 \quad\]</span></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>The equivalent material derivative form, <span class="math inline">\(\frac{D\phi}{Dt} = 0\)</span>, indicates that <span class="math inline">\(\phi\)</span> is constant along fluid particle paths.</p>
+</div></div><p>To find the value <span class="math inline">\(\phi^{n+1}(\mathbf{x}_{i,j})\)</span> at a grid point <span class="math inline">\(\mathbf{x}_{i,j}\)</span> at the new time <span class="math inline">\(t^{n+1}\)</span>:</p>
+<ul>
+<li>First we identify the fluid particle that arrives at <span class="math inline">\(\mathbf{x}_{i,j}\)</span> at <span class="math inline">\(t^{n+1}\)</span>. Its position <span class="math inline">\(\mathbf{x}_p\)</span> at the previous time <span class="math inline">\(t^n\)</span> is found by tracing backward from <span class="math inline">\(\mathbf{x}_{i,j}\)</span> along the fluid particle path. A first-order estimate is <span class="math inline">\(\mathbf{x}_p \approx \mathbf{x}_{i,j} - \mathbf{u}(\mathbf{x}_{i,j}, t^n) \Delta t\)</span>, using the velocity field from the previous time step <span class="math inline">\(t^n\)</span>.</li>
+<li><span class="math inline">\(\phi(\mathbf{x}_p, t^n)\)</span> is obtained by interpolation from the known values of <span class="math inline">\(\phi^n\)</span> at the vertices of the grid cell surrounding <span class="math inline">\(\mathbf{x}_p\)</span>.</li>
+<li>The new value is set as <span class="math inline">\(\phi^{n+1}(\mathbf{x}_{i,j}) = \phi(\mathbf{x}_p, t^n)\)</span>.</li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>This is a “semi-Lagrangian method”. It’s “semi” because while it uses the Lagrangian idea of tracing particle paths, it does so only for one time step at a time and then immediately interpolates the result back onto the fixed Eulerian grid. It doesn’t track individual particles for the entire simulation.</p>
+</div></div></section>
+<section id="nematic-evolution" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="nematic-evolution">2. Nematic evolution</h3>
+<p>The local nematic order is described by <span class="math inline">\(\mathbf{Q}\)</span>, a symmetric and traceless tensor defined by <span class="math inline">\(Q_{xx}\)</span> and <span class="math inline">\(Q_{xy}\)</span>. <span class="math inline">\(\mathbf{Q}\)</span> evolves according to: <span class="math display">\[\partial_t \mathbf{Q} = \mathbf{S}_{\text{flow}} + \gamma \mathbf{H}\]</span></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>The evolution of is discretized using a forward Euler step. <span class="math display">\[\mathbf{Q}^{n+1} = \mathbf{Q} + \Delta t (\mathbf{S}_{\text{flow}} + \gamma \mathbf{H})\]</span></p>
+<p>There is no point using a higher order method because breaking up the active nematic into three sections really limits the total order of the simulation.</p>
+</div></div><ul>
+<li><p><span class="math inline">\(\mathbf{S}_{\text{flow}}\)</span> represents the alignment and deformation of the nematic director field due to gradients in the fluid flow. <span class="math display">\[S_{ij} = \lambda D_{ij} - \Omega_{ik}Q_{kj}\]</span></p>
+<p>The components are: <span class="math display">\[S_{xx} = \lambda (\partial_x u_x) - 2 \omega_z Q_{xy}\]</span> <span class="math display">\[S_{xy} =  \frac{\lambda}{2} (\partial_y u_x + \partial_x u_y) + 2 \omega_z Q_{xx}\]</span></p>
+<p>where <span class="math inline">\(\lambda\)</span> is the flow alignment parameter.</p>
+<ul>
+<li><p><span class="math inline">\(\mathbf{D}\)</span> is the strain rate tensor: <span class="math inline">\(D_{ij} = \frac{1}{2} \left( \partial_{x_j} u_i + \partial_{x_i} u_j \right)\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathbf{\Omega}\)</span> is the vorticity tensor: <span class="math inline">\(\Omega_{ij} = \frac{1}{2} \left( \partial_{x_j} u_i - \partial_{x_i} u_j \right)\)</span>.</p></li>
+<li><p><span class="math inline">\(\Omega_{ik}Q_{kj}\)</span> describes the rotation of <span class="math inline">\(\mathbf{Q}\)</span> by the local fluid vorticity.</p></li>
+</ul></li>
+<li><p><span class="math inline">\(\gamma\)</span> is a rotational fluidity (inversely related to rotational viscosity), controlling the rate at which <span class="math inline">\(\mathbf{Q}\)</span> responds to these influences.</p></li>
+<li><p><span class="math inline">\(\mathbf{H}\)</span> is the molecular field, which drives <span class="math inline">\(\mathbf{Q}\)</span> towards a local minimum of the Landau-de Gennes free energy density <span class="math inline">\(f_{LG}\)</span>, representing the nematics tendency to achieve a molecularly preferred state. <span class="math display">\[f_{LG} = \frac{A}{2} \text{Tr}(\mathbf{Q}^2) + \frac{C}{4} (\text{Tr}(\mathbf{Q}^2))^2 + \frac{K}{2} |\nabla \mathbf{Q}|^2\]</span></p>
+<p>The components of <span class="math inline">\(\mathbf{H}\)</span> are <span class="math inline">\(H_{ij} = - \frac{\delta F}{\delta Q_{ij}}\)</span>, where <span class="math inline">\(F=\int f_{LG} dV\)</span>.</p>
+<p><span class="math display">\[H_{xx} = -\left(A Q_{xx} + 2C \text{Tr}(\mathbf{Q}^2) Q_{xx} - K \nabla^2 Q_{xx}\right)\]</span> <span class="math display">\[H_{xy} = -\left(A Q_{xy} + 2C \text{Tr}(\mathbf{Q}^2) Q_{xy} - K \nabla^2 Q_{xy}\right)\]</span></p>
+<p>In 2D, <span class="math inline">\(\text{Tr}(\mathbf{Q}^2) = 2(Q_{xx}^2 + Q_{xy}^2)\)</span>. Note, each term in <span class="math inline">\(H_{ij}\)</span> contributes to driving <span class="math inline">\(Q_{ij}\)</span> towards equilibrium:</p>
+<ul>
+<li><p><span class="math inline">\(A Q_{ij}\)</span> promotes nematic order (or surpresses it if negative).</p></li>
+<li><p><span class="math inline">\(C (\text{Tr}(\mathbf{Q}^2)) Q_{ij}\)</span> is a higher-order term that stabilizes and saturates the magnitude of order.</p></li>
+<li><p><span class="math inline">\(-K \nabla^2 Q_{ij}\)</span> term is an elastic restoring force, penalizing variations in <span class="math inline">\(\mathbf{Q}\)</span>.</p></li>
+</ul></li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>It is <span class="math inline">\(K\)</span>, the elasticity, that you can change in the game. A lot of theories think very hard about this parameter.</p>
+</div></div></section>
+<section id="forces-lead-to-new-velocities" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="forces-lead-to-new-velocities">3. Forces lead to new velocities</h3>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>It is <span class="math inline">\(\mu\)</span>, the viscosity, that you can change in the game. In real life this is tricky to change and so is often not thought about as deeply.</p>
+</div></div><p>The fluid velocity <span class="math inline">\(\mathbf{u}^{n+1}\)</span> at the new time step is determined by the forces exerted by the nematic and the constraint of incompressibility. The governing equations for an incompressible fluid with viscosity <span class="math inline">\(\mu\)</span> and density <span class="math inline">\(\rho\)</span> are the Navier-Stokes equations.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>This simulation solves a simplified form where inertial effects <span class="math inline">\(\rho (\partial_t \mathbf{u} + (\mathbf{u} \cdot \nabla)\mathbf{u})\)</span> are ignored.</p>
+</div></div><p><strong>a. Total Force Calculation</strong> The total force density <span class="math inline">\(\mathbf{F}_{\text{total}}\)</span> driving the fluid is composed of active and elastic nematic stresses: <span class="math display">\[\mathbf{F}_{\text{total}} = \nabla \cdot (\boldsymbol{\sigma}^{\text{active}} + \boldsymbol{\sigma}^{\text{elastic}}) + \mathbf{F}_{\text{ext}}\]</span></p>
+<ul>
+<li><p><strong>Active Stress</strong>: <span class="math inline">\(\boldsymbol{\sigma}^A = -\alpha \mathbf{Q}\)</span>, where <span class="math inline">\(\alpha\)</span> is the activity coefficient. The components of the resulting force density are: <span class="math display">\[(\nabla \cdot \boldsymbol{\sigma}^A)_x = -\alpha \left( \partial_x Q_{xx} + \partial_y Q_{xy} \right)\]</span> <span class="math display">\[(\nabla \cdot \boldsymbol{\sigma}^A)_y = -\alpha \left( \partial_x Q_{xy} + \partial_y Q_{yy} \right)\]</span>.</p></li>
+<li><p><strong>Elastic Stress</strong>: <span class="math inline">\(\boldsymbol{\sigma}^E = \sigma^{[H]} + \sigma^{[K]}\)</span>, with <span class="math inline">\(\sigma_{ij}^{[H]} = -\lambda [\mathbf{Q},\mathbf{H}]_{ij}\)</span> and <span class="math inline">\(\sigma_{ij}^{[K]} = -K (\partial_{x_i} Q_{lm}) (\partial_{x_j} Q_{lm})\)</span>. The divergence <span class="math inline">\(\nabla \cdot \boldsymbol{\sigma}^E\)</span> is computed from these.</p></li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>It only gets a tiny bit of text here, but <span class="math inline">\(\alpha\)</span> is the star of the show! This is what makes an active nematic an active nematic and is one of the parameters you can adjust in the game! This is the source of energy injection into the simulation that turns this from normal physics into active matter physics.</p>
+</div></div><p><strong>b. Velocity Field</strong></p>
+<p>An intermediate velocity field <span class="math inline">\(\mathbf{u}\)</span> is computed by solving a system where the total forces are balanced by viscous dissipation: <span class="math display">\[-\mu \nabla^2 \mathbf{u} = \mathbf{F}_{\text{total}}\]</span></p>
+<p>These are Poisson equations. When discretized using finite differences, each of these PDEs becomes a large system of linear equations. For instance, at a grid point <span class="math inline">\((i,j)\)</span>, the value of <span class="math inline">\(u_{x,i,j}\)</span> becomes linked to its neighboring values <span class="math inline">\(u_{x,i\pm1,j}\)</span>, <span class="math inline">\(u_{x,i,j\pm1}\)</span> and the local force term <span class="math inline">\((\mathbf{F}_{\text{total}})_x \Big|_{i,j}\)</span>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Solving such a large system directly is too computationally intensive. Instead, these equations are solved iteratively using a truncated <a href="https://en.wikipedia.org/wiki/Jacobi_method">Jacobi method</a>:</p>
+</div></div><ul>
+<li><p>We write out the discretized form of <span class="math inline">\(-\mu \nabla^2 u_x = (\mathbf{F}_{\text{total}})_x\)</span> at grid point <span class="math inline">\((i,j)\)</span> and solve for <span class="math inline">\(u_{x,i,j}\)</span>, we get an expression where <span class="math inline">\(u_{x,i,j}\)</span> depends on its neighbors and the force term: <span class="math display">\[u_{x,i,j} = \frac{ \mu \left( \frac{u_{x,i+1,j} + u_{x,i-1,j}}{(\Delta x)^2} + \frac{u_{x,i,j+1} + u_{x,i,j-1}}{(\Delta y)^2} \right) + (\mathbf{F}_{\text{total}})_x \Big|_{i,j} }{ 2\mu \left( \frac{1}{(\Delta x)^2} + \frac{1}{(\Delta y)^2} \right) }\]</span>.</p></li>
+<li><p>The Jacobi method iteratively refines the values of <span class="math inline">\(u\)</span>. In this code it does this 20 times. To get the <span class="math inline">\((k+1)^{th}\)</span> iteration from the <span class="math inline">\(k^{th}\)</span> iteration, the value of <span class="math inline">\(u_{x,i,j}^{(k+1)}\)</span> at each grid point <span class="math inline">\((i,j)\)</span> is calculated using the formula above, but with all <span class="math inline">\(u_x\)</span> values on the right-hand side taken from the <em>previous</em> iteration <span class="math inline">\((k)\)</span>:</p></li>
+</ul>
+<p><span class="math display">\[u_{x,i,j}^{(k+1)} = \frac{ \mu \left( \frac{u_{x,i+1,j}^{(k)} + u_{x,i-1,j}^{(k)}}{(\Delta x)^2} + \frac{u_{x,i,j+1}^{(k)} + u_{x,i,j-1}^{(k)}}{(\Delta y)^2} \right) + (\mathbf{F}_{\text{total}})_x \Big|_{i,j} }{ 2\mu \left( \frac{1}{(\Delta x)^2} + \frac{1}{(\Delta y)^2} \right) }\]</span></p>
+<p><strong>c.&nbsp;Enforcing Incompressibility</strong></p>
+<p>To enforce <span class="math inline">\(\nabla \cdot \mathbf{u}^{n+1} = 0\)</span>, we first calculate the divergence of the velocity field, <span class="math inline">\(D = \nabla \cdot \mathbf{u}\)</span>. Then a scalar pressure field <span class="math inline">\(p\)</span> is found by solving a Poisson equation:</p>
+<p><span class="math display">\[\nabla^2 p = D\]</span></p>
+<p>This equation is also solved for 20 iterations using the Jacobi method.</p>
+<p>To get incompressible flow then, the final velocity is <span class="math inline">\(\mathbf{u}^{n+1} = \mathbf{u} - \nabla p\)</span>. The components are: <span class="math display">\[u_x^{n+1} = u_x - \partial_x p\]</span> <span class="math display">\[u_y^{n+1} = u_y - \partial_y p\]</span></p>
+<p>And that’s a active nematic fluid timestep, repeat until someone scores a point.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -670,13 +670,165 @@ function drawCircle(x,y,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y
 
 </script>
 </body>
-
 ```
 
----
+------------------------------------------------------------------------
 
 ## What is this?
 
 My significant other Linnea Lemma [studies active nematic liquid crystals](https://www.proquest.com/docview/2632199059?fromopenview=true&pq-origsite=gscholar&sourcetype=Dissertations%20&%20Theses) from time to time. This is a game of 2D table tennis, inspired by Steve Taylor's [Plasma Pong](https://en.wikipedia.org/wiki/Plasma_Pong) in which the paddles produce flow with the arrow keys, and the ball is influenced by the active nematic liquid crystal flow.
 
 I've written this in Julia using Makie, and here re-written it in javascript. You can find the Julia code (and also an compressible normal fluid version of the game) [here on GitHub](https://github.com/bezlemma/active_nematic_tennis).
+
+## What *precisely* is this?
+
+The simulation uses finite difference methods on a 2D Cartesian grid to simulate an incompressible active nematic. The single biggest source of this code is from the papers of [Michael Norton](https://scholar.google.com/citations?user=3JW5RxsAAAAJ&hl=en&oi=sra). Particularly the paper "Mechanochemical topological defects in an active nematic" which I strive to follow except I've dropped the friction term, the intertia terms, changed the boundary conditions, and butchered the numerical methods. I also read through active nematic simulation papers by Suraj Shankar, Luca Giomi, and Mattia Serra and some of my attempts to replicate those papers may have slipped into the algorithms here.
+
+The simulation domain is a 2D Cartesian grid with cell dimensions $\Delta x$ and $\Delta y$. Ghost cells at the boundaries apply no-slip boundary conditions. Spatial derivatives are approximated using second-order central finite differences:
+
+  - Gradient: $\partial_x f \Big|_{i,j} \approx \frac{f_{i+1,j} - f_{i-1,j}}{2 \Delta x}$
+  - Laplacian: $\nabla^2 f \Big|_{i,j} \approx \frac{f_{i+1,j} - 2f_{i,j} + f_{i-1,j}}{(\Delta x)^2} + \frac{f_{i,j+1} - 2f_{i,j} + f_{i,j-1}}{(\Delta y)^2}$
+
+::: {.column-margin}
+A ghost cell is a part of the matrix at the edges which are used by the simulation but not really updated by the simulation. If you give them specific values, they create boundary conditions. So for instance, if the ghost cells have their velocity set to 0 forever, then they create no-slip boundary conditions.
+:::
+
+The system evolves over discrete time steps of duration $\Delta t$. Following three big steps. 
+
+1. Advection of material based on the previous steps velocity
+2. The evolution of the nematic structure
+3. The calculation of forces, and subsequently velocities from the nematic structure, while enforcing fluid incompressibility
+
+
+### 1. Advection
+
+Ok this is the easy bit. It's not really worth writing about, but it gives you a warm up before the grimier bits. 
+
+Scalar quantities $\phi$, such as the components of the nematic order parameter ($Q_{xx}, Q_{xy}$) and passive color tracers (red and blue created by the paddles), are transported by the fluid's velocity field $\mathbf{u}$:
+$$\partial_t \phi + (\mathbf{u} \cdot \nabla) \phi = 0 \quad$$
+
+::: {.column-margin}
+The equivalent material derivative form, $\frac{D\phi}{Dt} = 0$, indicates that $\phi$ is constant along fluid particle paths.
+:::
+
+
+To find the value $\phi^{n+1}(\mathbf{x}_{i,j})$ at a grid point $\mathbf{x}_{i,j}$ at the new time $t^{n+1}$:
+
+  - First we identify the fluid particle that arrives at $\mathbf{x}_{i,j}$ at $t^{n+1}$. Its position $\mathbf{x}_p$ at the previous time $t^n$ is found by tracing backward from $\mathbf{x}_{i,j}$ along the fluid particle path. A first-order estimate is $\mathbf{x}_p \approx \mathbf{x}_{i,j} - \mathbf{u}(\mathbf{x}_{i,j}, t^n) \Delta t$, using the velocity field from the previous time step $t^n$.
+  - $\phi(\mathbf{x}_p, t^n)$ is obtained by interpolation from the known values of $\phi^n$ at the vertices of the grid cell surrounding $\mathbf{x}_p$.
+  - The new value is set as $\phi^{n+1}(\mathbf{x}_{i,j}) = \phi(\mathbf{x}_p, t^n)$.
+
+::: {.column-margin}
+This is a "semi-Lagrangian method". It's "semi" because while it uses the Lagrangian idea of tracing particle paths, it does so only for one time step at a time and then immediately interpolates the result back onto the fixed Eulerian grid. It doesn't track individual particles for the entire simulation.
+:::
+
+### 2. Nematic evolution
+
+The local nematic order is described by $\mathbf{Q}$, a symmetric and traceless tensor defined by $Q_{xx}$ and $Q_{xy}$. $\mathbf{Q}$ evolves according to:
+$$\partial_t \mathbf{Q} = \mathbf{S}_{\text{flow}} + \gamma \mathbf{H}$$
+
+::: {.column-margin}
+The evolution of \mathbf{Q} is discretized using a forward Euler step. 
+$$\mathbf{Q}^{n+1} = \mathbf{Q} + \Delta t (\mathbf{S}_{\text{flow}} + \gamma \mathbf{H})$$
+
+There is no point using a higher order method because breaking up the active nematic into three sections really limits the total order of the simulation.
+:::
+
+  - $\mathbf{S}_{\text{flow}}$ represents the alignment and deformation of the nematic director field due to gradients in the fluid flow.
+  $$S_{ij} = \lambda D_{ij} - \Omega_{ik}Q_{kj}$$
+
+    The components are:
+    $$S_{xx} = \lambda (\partial_x u_x) - 2 \omega_z Q_{xy}$$
+    $$S_{xy} =  \frac{\lambda}{2} (\partial_y u_x + \partial_x u_y) + 2 \omega_z Q_{xx}$$
+
+    where $\lambda$ is the flow alignment parameter.
+
+      - $\mathbf{D}$ is the strain rate tensor: $D_{ij} = \frac{1}{2} \left( \partial_{x_j} u_i + \partial_{x_i} u_j \right)$.
+
+      - $\mathbf{\Omega}$ is the vorticity tensor: $\Omega_{ij} = \frac{1}{2} \left( \partial_{x_j} u_i - \partial_{x_i} u_j \right)$.
+
+      - $\Omega_{ik}Q_{kj}$ describes the rotation of $\mathbf{Q}$ by the local fluid vorticity.
+
+  - $\gamma$ is a rotational fluidity (inversely related to rotational viscosity), controlling the rate at which $\mathbf{Q}$ responds to these influences.
+
+  - $\mathbf{H}$ is the molecular field, which drives $\mathbf{Q}$ towards a local minimum of the Landau-de Gennes free energy density $f_{LG}$, representing the nematics tendency to achieve a molecularly preferred state.
+  $$f_{LG} = \frac{A}{2} \text{Tr}(\mathbf{Q}^2) + \frac{C}{4} (\text{Tr}(\mathbf{Q}^2))^2 + \frac{K}{2} |\nabla \mathbf{Q}|^2$$
+
+    The components of $\mathbf{H}$ are $H_{ij} = - \frac{\delta F}{\delta Q_{ij}}$, where $F=\int f_{LG} dV$. 
+    
+    $$H_{xx} = -\left(A Q_{xx} + 2C \text{Tr}(\mathbf{Q}^2) Q_{xx} - K \nabla^2 Q_{xx}\right)$$
+    $$H_{xy} = -\left(A Q_{xy} + 2C \text{Tr}(\mathbf{Q}^2) Q_{xy} - K \nabla^2 Q_{xy}\right)$$
+
+    In 2D, $\text{Tr}(\mathbf{Q}^2) = 2(Q_{xx}^2 + Q_{xy}^2)$. Note, each term in $H_{ij}$ contributes to driving $Q_{ij}$ towards equilibrium:
+
+      - $A Q_{ij}$ promotes nematic order (or surpresses it if negative).
+
+      - $C (\text{Tr}(\mathbf{Q}^2)) Q_{ij}$ is a higher-order term that stabilizes and saturates the magnitude of order.
+
+      - $-K \nabla^2 Q_{ij}$ term is an elastic restoring force, penalizing  variations in $\mathbf{Q}$.
+
+::: {.column-margin}
+It is $K$, the elasticity, that you can change in the game. A lot of theories think very hard about this parameter.
+:::
+
+
+### 3. Forces lead to new velocities
+
+::: {.column-margin}
+It is $\mu$, the viscosity, that you can change in the game. In real life this is tricky to change and so is often not thought about as deeply.
+:::
+
+The fluid velocity $\mathbf{u}^{n+1}$ at the new time step is determined by the forces exerted by the nematic and the constraint of incompressibility. The governing equations for an incompressible fluid with viscosity $\mu$ and density $\rho$ are the Navier-Stokes equations. 
+
+::: {.column-margin}
+This simulation solves a simplified form where inertial effects $\rho (\partial_t \mathbf{u} + (\mathbf{u} \cdot \nabla)\mathbf{u})$ are ignored. 
+:::
+
+**a. Total Force Calculation**
+The total force density $\mathbf{F}_{\text{total}}$ driving the fluid is composed of active and elastic nematic stresses:
+$$\mathbf{F}_{\text{total}} = \nabla \cdot (\boldsymbol{\sigma}^{\text{active}} + \boldsymbol{\sigma}^{\text{elastic}}) + \mathbf{F}_{\text{ext}}$$
+  
+  - **Active Stress**: $\boldsymbol{\sigma}^A = -\alpha \mathbf{Q}$, where $\alpha$ is the activity coefficient.  The components of the resulting force density are:
+    $$(\nabla \cdot \boldsymbol{\sigma}^A)_x = -\alpha \left( \partial_x Q_{xx} + \partial_y Q_{xy} \right)$$
+    $$(\nabla \cdot \boldsymbol{\sigma}^A)_y = -\alpha \left( \partial_x Q_{xy} + \partial_y Q_{yy} \right)$$. 
+
+  - **Elastic Stress**: $\boldsymbol{\sigma}^E = \sigma^{[H]} + \sigma^{[K]}$, with $\sigma_{ij}^{[H]} = -\lambda [\mathbf{Q},\mathbf{H}]_{ij}$ and $\sigma_{ij}^{[K]} = -K (\partial_{x_i} Q_{lm}) (\partial_{x_j} Q_{lm})$. The divergence $\nabla \cdot \boldsymbol{\sigma}^E$ is computed from these.
+
+::: {.column-margin}
+It only gets a tiny bit of text here, but $\alpha$ is the star of the show! This is what makes an active nematic an active nematic and is one of the parameters you can adjust in the game! This is the source of energy injection into the simulation that turns this from normal physics into active matter physics.
+:::
+
+**b. Velocity Field**
+
+An intermediate velocity field $\mathbf{u}$ is computed by solving a system where the total forces are balanced by viscous dissipation:
+$$-\mu \nabla^2 \mathbf{u} = \mathbf{F}_{\text{total}}$$
+
+These are Poisson equations. When discretized using finite differences, each of these PDEs becomes a large system of linear equations. For instance, at a grid point $(i,j)$, the value of $u_{x,i,j}$ becomes linked to its neighboring values $u_{x,i\pm1,j}$, $u_{x,i,j\pm1}$ and the local force term $(\mathbf{F}_{\text{total}})_x \Big|_{i,j}$.
+
+::: {.column-margin}
+
+Solving such a large system directly is too computationally intensive. Instead, these equations are solved iteratively using a truncated [Jacobi method](https://en.wikipedia.org/wiki/Jacobi_method):
+
+:::
+
+  - We write out the discretized form of $-\mu \nabla^2 u_x = (\mathbf{F}_{\text{total}})_x$ at grid point $(i,j)$ and solve for $u_{x,i,j}$, we get an expression where $u_{x,i,j}$ depends on its neighbors and the force term:
+  $$u_{x,i,j} = \frac{ \mu \left( \frac{u_{x,i+1,j} + u_{x,i-1,j}}{(\Delta x)^2} + \frac{u_{x,i,j+1} + u_{x,i,j-1}}{(\Delta y)^2} \right) + (\mathbf{F}_{\text{total}})_x \Big|_{i,j} }{ 2\mu \left( \frac{1}{(\Delta x)^2} + \frac{1}{(\Delta y)^2} \right) }$$.
+
+  - The Jacobi method iteratively refines the values of $u$. In this code it does this 20 times. To get the $(k+1)^{th}$ iteration from the $k^{th}$ iteration, the value of $u_{x,i,j}^{(k+1)}$ at each grid point $(i,j)$ is calculated using the formula above, but with all $u_x$ values on the right-hand side taken from the *previous* iteration $(k)$:
+
+  $$u_{x,i,j}^{(k+1)} = \frac{ \mu \left( \frac{u_{x,i+1,j}^{(k)} + u_{x,i-1,j}^{(k)}}{(\Delta x)^2} + \frac{u_{x,i,j+1}^{(k)} + u_{x,i,j-1}^{(k)}}{(\Delta y)^2} \right) + (\mathbf{F}_{\text{total}})_x \Big|_{i,j} }{ 2\mu \left( \frac{1}{(\Delta x)^2} + \frac{1}{(\Delta y)^2} \right) }$$
+
+**c. Enforcing Incompressibility**
+
+To enforce $\nabla \cdot \mathbf{u}^{n+1} = 0$, we first calculate the divergence of the velocity field, $D = \nabla \cdot \mathbf{u}$. Then a scalar pressure field $p$ is found by solving a Poisson equation:
+
+$$\nabla^2 p = D$$
+
+This equation is also solved for 20 iterations using the Jacobi method.
+
+To get incompressible flow then, the final velocity is $\mathbf{u}^{n+1} = \mathbf{u} - \nabla p$. The components are:
+    $$u_x^{n+1} = u_x - \partial_x p$$
+    $$u_y^{n+1} = u_y - \partial_y p$$
+
+
+And that's a active nematic fluid timestep, repeat until someone scores a point.
